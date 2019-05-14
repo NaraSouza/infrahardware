@@ -1,0 +1,41 @@
+module mux_memToReg(
+	input wire[3:0] selector,
+	input wire[31:0] inputA,//0000
+	input wire[31:0] inputB,//0001
+	input wire[31:0] inputC,//0010
+	input wire[31:0] inputD,//0011
+	input wire[31:0] inputE,//0100
+	input wire[31:0] inputF,//0101
+	input wire[31:0] inputG,//0110
+	input wire[31:0] inputH,//0111
+					//227 =   1000
+					//0   =   1001
+					//1   =   1010
+	output wire [31:0] out);
+	
+wire[31:0] auxA;
+wire[31:0] auxB;
+wire[31:0] auxC;
+wire[31:0] auxD;
+wire[31:0] auxE;
+wire[31:0] auxF;
+wire[31:0] auxG;
+wire[31:0] auxH;
+wire[31:0] auxI
+
+assign auxA = (selector[0]) ? inputB : inputA;
+assign auxB = (selector[0]) ? inputD : inputC;
+assign auxC = (selector[0]) ? inputF : inputE;
+assign auxD = (selector[0]) ? inputH : inputG;
+assign auxH = (selector[0]) ? 31'd227: 31'd0;
+
+assign auxE = (selector[1]) ? auxB : auxA;
+assign auxF = (selector[1]) ? auxD : auxC;
+assign auxI = (selector[1]) ? 31'd1: auxH
+ 
+assign auxG = (selector[2]) ? auxF : auxE;
+
+assign out = (selector[3]) ? auxI : auxG; 
+
+
+endmodule

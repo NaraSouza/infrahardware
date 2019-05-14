@@ -1,0 +1,16 @@
+module mux_pcSrc(
+	input wire [2:0] selector,
+	input wire [31:0] inputA,
+	input wire [31:0] inputB,
+	input wire [31:0] inputC,
+	input wire [31:0] inputD,
+	output wire [31:0] out);
+	
+wire [31:0] auxA;
+wire [31:0] auxB;
+
+assign auxA = (selector[0]) ? inputB : inputA;
+assign auxB = (selector[1]) ? inputD : inputC;
+assign out = (selector[2]) ? auxB : auxA;
+
+endmodule

@@ -1,0 +1,22 @@
+module mux_aluSrcB(
+	input wire [2:0] selector,
+	input wire [31:0] inputA,//000
+						// 1 = 001
+						// 4 = 010
+	input wire [31:0] inputB,//011
+	input wire [31:0] inputC,//100
+	output wire [31:0] out);
+	
+	
+wire [31:0] auxA;
+wire [31:0] auxB;
+wire [31:0] auxC;
+
+assign auxA = (selector[0]) ? {32'd1} :inputA;
+assign auxB = (selector[0]) ? inputB : {32'd4};
+assign auxC = (selector[1]) ? auxB: auxA;
+assign out = (selector[2]) ? auxC :  inputC;
+
+endmodule
+	 
+	

@@ -1,0 +1,2 @@
+Warning (10268): Verilog HDL information at mult.v(27): always construct contains both blocking and non-blocking assignments
+Info (10281): Verilog HDL Declaration information at UnidadeControle.v(5): object "reset" differs only in case from object "Reset" in the same scope
