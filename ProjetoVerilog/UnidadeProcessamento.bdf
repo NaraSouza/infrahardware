@@ -3959,11 +3959,6 @@ applicable agreement for further details.
 	(pt 1912 744)
 )
 (connector
-	(pt 1568 448)
-	(pt 1832 448)
-	(bus)
-)
-(connector
 	(text "Instr15_0[10..6]" (rect 1826 446 1838 523)(font "Arial" )(vertical)(invisible))
 	(pt 1848 512)
 	(pt 1848 528)
@@ -3985,14 +3980,19 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(text "Saida[31..0]" (rect 1816 468 1828 527)(font "Arial" )(vertical))
-	(pt 1832 528)
+	(pt 1568 448)
 	(pt 1832 448)
 	(bus)
 )
 (connector
 	(pt 1832 448)
 	(pt 1872 448)
+	(bus)
+)
+(connector
+	(text "<<__$DEF_ALIAS371>>" (rect 1815 506 1827 624)(font "Arial" )(vertical)(invisible))
+	(pt 1832 528)
+	(pt 1832 448)
 	(bus)
 )
 (junction (pt 2408 176))

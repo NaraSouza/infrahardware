@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Proj_Hardware
-Tue May 14 08:59:59 2019
+Tue May 14 12:54:57 2019
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -10,12 +10,8 @@ Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Analysis & Synthesis Messages
- 10. Analysis & Synthesis Suppressed Messages
+  5. Analysis & Synthesis Messages
+  6. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -41,21 +37,21 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                 ;
 +-------------------------------+----------------------------------------------+
-; Analysis & Synthesis Status   ; Successful - Tue May 14 08:59:59 2019        ;
+; Analysis & Synthesis Status   ; Failed - Tue May 14 12:54:57 2019            ;
 ; Quartus II Version            ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                 ; Proj_Hardware                                ;
-; Top-level Entity Name         ; VCPU                                         ;
+; Top-level Entity Name         ; CPU                                          ;
 ; Family                        ; Stratix II                                   ;
-; Logic utilization             ; N/A                                          ;
-;     Combinational ALUTs       ; 0                                            ;
-;     Dedicated logic registers ; 0                                            ;
-; Total registers               ; 0                                            ;
-; Total pins                    ; 137                                          ;
-; Total virtual pins            ; 0                                            ;
-; Total block memory bits       ; 0                                            ;
-; DSP block 9-bit elements      ; 0                                            ;
-; Total PLLs                    ; 0                                            ;
-; Total DLLs                    ; 0                                            ;
+; Logic utilization             ; N/A until Partition Merge                    ;
+;     Combinational ALUTs       ; N/A until Partition Merge                    ;
+;     Dedicated logic registers ; N/A until Partition Merge                    ;
+; Total registers               ; N/A until Partition Merge                    ;
+; Total pins                    ; N/A until Partition Merge                    ;
+; Total virtual pins            ; N/A until Partition Merge                    ;
+; Total block memory bits       ; N/A until Partition Merge                    ;
+; DSP block 9-bit elements      ; N/A until Partition Merge                    ;
+; Total PLLs                    ; N/A until Partition Merge                    ;
+; Total DLLs                    ; N/A until Partition Merge                    ;
 +-------------------------------+----------------------------------------------+
 
 
@@ -64,7 +60,7 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
-; Top-level entity name                                                      ; VCPU               ; Proj_Hardware      ;
+; Top-level entity name                                                      ; CPU                ; Proj_Hardware      ;
 ; Family name                                                                ; Stratix II         ; Stratix II         ;
 ; Use Generated Physical Constraints File                                    ; Off                ;                    ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
@@ -156,82 +152,13 @@ applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                            ;
-+----------------------------------+-----------------+------------------------------+---------------------------------------------------------------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                  ;
-+----------------------------------+-----------------+------------------------------+---------------------------------------------------------------+
-; VCPU.sv                          ; yes             ; User SystemVerilog HDL File  ; C:/Users/insbs/Desktop/ProjetoVerilog - fiosajeitados/VCPU.sv ;
-+----------------------------------+-----------------+------------------------------+---------------------------------------------------------------+
-
-
-+------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary          ;
-+----------------------------------------------+-------+
-; Resource                                     ; Usage ;
-+----------------------------------------------+-------+
-; Estimated ALUTs Used                         ; 0     ;
-; Dedicated logic registers                    ; 0     ;
-;                                              ;       ;
-; Estimated ALUTs Unavailable                  ; 0     ;
-;                                              ;       ;
-; Total combinational functions                ; 0     ;
-; Combinational ALUT usage by number of inputs ;       ;
-;     -- 7 input functions                     ; 0     ;
-;     -- 6 input functions                     ; 0     ;
-;     -- 5 input functions                     ; 0     ;
-;     -- 4 input functions                     ; 0     ;
-;     -- <=3 input functions                   ; 0     ;
-;                                              ;       ;
-; Combinational ALUTs by mode                  ;       ;
-;     -- normal mode                           ; 0     ;
-;     -- extended LUT mode                     ; 0     ;
-;     -- arithmetic mode                       ; 0     ;
-;     -- shared arithmetic mode                ; 0     ;
-;                                              ;       ;
-; Estimated ALUT/register pairs used           ; 0     ;
-;                                              ;       ;
-; Total registers                              ; 0     ;
-;     -- Dedicated logic registers             ; 0     ;
-;     -- I/O registers                         ; 0     ;
-;                                              ;       ;
-;                                              ;       ;
-; I/O pins                                     ; 137   ;
-+----------------------------------------------+-------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                           ;
-+----------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+---------------------+--------------+
-; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
-+----------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+---------------------+--------------+
-; |VCPU                      ; 0 (0)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 137  ; 0            ; |VCPU               ; work         ;
-+----------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+---------------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 0     ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Tue May 14 08:59:56 2019
+    Info: Processing started: Tue May 14 12:54:55 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Proj_Hardware -c Proj_Hardware
 Info: Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info: Found 1 design units, including 1 entities, in source file div.v
@@ -297,170 +224,24 @@ Info: Found 1 design units, including 1 entities, in source file proc_control.bd
     Info: Found entity 1: Proc_Control
 Info: Found 1 design units, including 1 entities, in source file vcpu.sv
     Info: Found entity 1: VCPU
-Warning (10236): Verilog HDL Implicit Net warning at sign_extend.v(6): created implicit net for "Data_out"
-Info: Elaborating entity "VCPU" for the top level hierarchy
-Warning (10034): Output port "pcout" at VCPU.sv(3) has no driver
-Warning (10034): Output port "epcout" at VCPU.sv(4) has no driver
-Warning (10034): Output port "mdrout" at VCPU.sv(5) has no driver
-Warning (10034): Output port "op" at VCPU.sv(6) has no driver
-Warning (10034): Output port "rs" at VCPU.sv(7) has no driver
-Warning (10034): Output port "rt" at VCPU.sv(8) has no driver
-Warning (10034): Output port "inst15_0" at VCPU.sv(9) has no driver
-Warning (10034): Output port "stateout" at VCPU.sv(11) has no driver
-Warning: Entity "VCPU" contains only dangling pins
-Warning: Output pins are stuck at VCC or GND
-    Warning (13410): Pin "pcout[0]" is stuck at GND
-    Warning (13410): Pin "pcout[1]" is stuck at GND
-    Warning (13410): Pin "pcout[2]" is stuck at GND
-    Warning (13410): Pin "pcout[3]" is stuck at GND
-    Warning (13410): Pin "pcout[4]" is stuck at GND
-    Warning (13410): Pin "pcout[5]" is stuck at GND
-    Warning (13410): Pin "pcout[6]" is stuck at GND
-    Warning (13410): Pin "pcout[7]" is stuck at GND
-    Warning (13410): Pin "pcout[8]" is stuck at GND
-    Warning (13410): Pin "pcout[9]" is stuck at GND
-    Warning (13410): Pin "pcout[10]" is stuck at GND
-    Warning (13410): Pin "pcout[11]" is stuck at GND
-    Warning (13410): Pin "pcout[12]" is stuck at GND
-    Warning (13410): Pin "pcout[13]" is stuck at GND
-    Warning (13410): Pin "pcout[14]" is stuck at GND
-    Warning (13410): Pin "pcout[15]" is stuck at GND
-    Warning (13410): Pin "pcout[16]" is stuck at GND
-    Warning (13410): Pin "pcout[17]" is stuck at GND
-    Warning (13410): Pin "pcout[18]" is stuck at GND
-    Warning (13410): Pin "pcout[19]" is stuck at GND
-    Warning (13410): Pin "pcout[20]" is stuck at GND
-    Warning (13410): Pin "pcout[21]" is stuck at GND
-    Warning (13410): Pin "pcout[22]" is stuck at GND
-    Warning (13410): Pin "pcout[23]" is stuck at GND
-    Warning (13410): Pin "pcout[24]" is stuck at GND
-    Warning (13410): Pin "pcout[25]" is stuck at GND
-    Warning (13410): Pin "pcout[26]" is stuck at GND
-    Warning (13410): Pin "pcout[27]" is stuck at GND
-    Warning (13410): Pin "pcout[28]" is stuck at GND
-    Warning (13410): Pin "pcout[29]" is stuck at GND
-    Warning (13410): Pin "pcout[30]" is stuck at GND
-    Warning (13410): Pin "pcout[31]" is stuck at GND
-    Warning (13410): Pin "epcout[0]" is stuck at GND
-    Warning (13410): Pin "epcout[1]" is stuck at GND
-    Warning (13410): Pin "epcout[2]" is stuck at GND
-    Warning (13410): Pin "epcout[3]" is stuck at GND
-    Warning (13410): Pin "epcout[4]" is stuck at GND
-    Warning (13410): Pin "epcout[5]" is stuck at GND
-    Warning (13410): Pin "epcout[6]" is stuck at GND
-    Warning (13410): Pin "epcout[7]" is stuck at GND
-    Warning (13410): Pin "epcout[8]" is stuck at GND
-    Warning (13410): Pin "epcout[9]" is stuck at GND
-    Warning (13410): Pin "epcout[10]" is stuck at GND
-    Warning (13410): Pin "epcout[11]" is stuck at GND
-    Warning (13410): Pin "epcout[12]" is stuck at GND
-    Warning (13410): Pin "epcout[13]" is stuck at GND
-    Warning (13410): Pin "epcout[14]" is stuck at GND
-    Warning (13410): Pin "epcout[15]" is stuck at GND
-    Warning (13410): Pin "epcout[16]" is stuck at GND
-    Warning (13410): Pin "epcout[17]" is stuck at GND
-    Warning (13410): Pin "epcout[18]" is stuck at GND
-    Warning (13410): Pin "epcout[19]" is stuck at GND
-    Warning (13410): Pin "epcout[20]" is stuck at GND
-    Warning (13410): Pin "epcout[21]" is stuck at GND
-    Warning (13410): Pin "epcout[22]" is stuck at GND
-    Warning (13410): Pin "epcout[23]" is stuck at GND
-    Warning (13410): Pin "epcout[24]" is stuck at GND
-    Warning (13410): Pin "epcout[25]" is stuck at GND
-    Warning (13410): Pin "epcout[26]" is stuck at GND
-    Warning (13410): Pin "epcout[27]" is stuck at GND
-    Warning (13410): Pin "epcout[28]" is stuck at GND
-    Warning (13410): Pin "epcout[29]" is stuck at GND
-    Warning (13410): Pin "epcout[30]" is stuck at GND
-    Warning (13410): Pin "epcout[31]" is stuck at GND
-    Warning (13410): Pin "mdrout[0]" is stuck at GND
-    Warning (13410): Pin "mdrout[1]" is stuck at GND
-    Warning (13410): Pin "mdrout[2]" is stuck at GND
-    Warning (13410): Pin "mdrout[3]" is stuck at GND
-    Warning (13410): Pin "mdrout[4]" is stuck at GND
-    Warning (13410): Pin "mdrout[5]" is stuck at GND
-    Warning (13410): Pin "mdrout[6]" is stuck at GND
-    Warning (13410): Pin "mdrout[7]" is stuck at GND
-    Warning (13410): Pin "mdrout[8]" is stuck at GND
-    Warning (13410): Pin "mdrout[9]" is stuck at GND
-    Warning (13410): Pin "mdrout[10]" is stuck at GND
-    Warning (13410): Pin "mdrout[11]" is stuck at GND
-    Warning (13410): Pin "mdrout[12]" is stuck at GND
-    Warning (13410): Pin "mdrout[13]" is stuck at GND
-    Warning (13410): Pin "mdrout[14]" is stuck at GND
-    Warning (13410): Pin "mdrout[15]" is stuck at GND
-    Warning (13410): Pin "mdrout[16]" is stuck at GND
-    Warning (13410): Pin "mdrout[17]" is stuck at GND
-    Warning (13410): Pin "mdrout[18]" is stuck at GND
-    Warning (13410): Pin "mdrout[19]" is stuck at GND
-    Warning (13410): Pin "mdrout[20]" is stuck at GND
-    Warning (13410): Pin "mdrout[21]" is stuck at GND
-    Warning (13410): Pin "mdrout[22]" is stuck at GND
-    Warning (13410): Pin "mdrout[23]" is stuck at GND
-    Warning (13410): Pin "mdrout[24]" is stuck at GND
-    Warning (13410): Pin "mdrout[25]" is stuck at GND
-    Warning (13410): Pin "mdrout[26]" is stuck at GND
-    Warning (13410): Pin "mdrout[27]" is stuck at GND
-    Warning (13410): Pin "mdrout[28]" is stuck at GND
-    Warning (13410): Pin "mdrout[29]" is stuck at GND
-    Warning (13410): Pin "mdrout[30]" is stuck at GND
-    Warning (13410): Pin "mdrout[31]" is stuck at GND
-    Warning (13410): Pin "op[0]" is stuck at GND
-    Warning (13410): Pin "op[1]" is stuck at GND
-    Warning (13410): Pin "op[2]" is stuck at GND
-    Warning (13410): Pin "op[3]" is stuck at GND
-    Warning (13410): Pin "op[4]" is stuck at GND
-    Warning (13410): Pin "op[5]" is stuck at GND
-    Warning (13410): Pin "rs[0]" is stuck at GND
-    Warning (13410): Pin "rs[1]" is stuck at GND
-    Warning (13410): Pin "rs[2]" is stuck at GND
-    Warning (13410): Pin "rs[3]" is stuck at GND
-    Warning (13410): Pin "rs[4]" is stuck at GND
-    Warning (13410): Pin "rt[0]" is stuck at GND
-    Warning (13410): Pin "rt[1]" is stuck at GND
-    Warning (13410): Pin "rt[2]" is stuck at GND
-    Warning (13410): Pin "rt[3]" is stuck at GND
-    Warning (13410): Pin "rt[4]" is stuck at GND
-    Warning (13410): Pin "inst15_0[0]" is stuck at GND
-    Warning (13410): Pin "inst15_0[1]" is stuck at GND
-    Warning (13410): Pin "inst15_0[2]" is stuck at GND
-    Warning (13410): Pin "inst15_0[3]" is stuck at GND
-    Warning (13410): Pin "inst15_0[4]" is stuck at GND
-    Warning (13410): Pin "inst15_0[5]" is stuck at GND
-    Warning (13410): Pin "inst15_0[6]" is stuck at GND
-    Warning (13410): Pin "inst15_0[7]" is stuck at GND
-    Warning (13410): Pin "inst15_0[8]" is stuck at GND
-    Warning (13410): Pin "inst15_0[9]" is stuck at GND
-    Warning (13410): Pin "inst15_0[10]" is stuck at GND
-    Warning (13410): Pin "inst15_0[11]" is stuck at GND
-    Warning (13410): Pin "inst15_0[12]" is stuck at GND
-    Warning (13410): Pin "inst15_0[13]" is stuck at GND
-    Warning (13410): Pin "inst15_0[14]" is stuck at GND
-    Warning (13410): Pin "inst15_0[15]" is stuck at GND
-    Warning (13410): Pin "stateout[0]" is stuck at GND
-    Warning (13410): Pin "stateout[1]" is stuck at GND
-    Warning (13410): Pin "stateout[2]" is stuck at GND
-    Warning (13410): Pin "stateout[3]" is stuck at GND
-    Warning (13410): Pin "stateout[4]" is stuck at GND
-    Warning (13410): Pin "stateout[5]" is stuck at GND
-    Warning (13410): Pin "stateout[6]" is stuck at GND
-Info: Generated suppressed messages file C:/Users/insbs/Desktop/ProjetoVerilog - fiosajeitados/Proj_Hardware.map.smsg
-Warning: Design contains 2 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "clock"
-    Warning (15610): No output dependent on input pin "reset"
-Info: Implemented 137 device resources after synthesis - the final resource count might be different
-    Info: Implemented 2 input pins
-    Info: Implemented 135 output pins
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 149 warnings
-    Info: Peak virtual memory: 299 megabytes
-    Info: Processing ended: Tue May 14 08:59:59 2019
-    Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:03
+Error (10170): Verilog HDL syntax error at CPU.v(1) near text ""Memoria.vhd";  expecting ".", or an identifier File: C:/Users/insbs/Desktop/infrahardware/ProjetoVerilog/CPU.v Line: 1
+Error (10839): Verilog HDL error at CPU.v(1): declaring global objects is a SystemVerilog feature File: C:/Users/insbs/Desktop/infrahardware/ProjetoVerilog/CPU.v Line: 1
+Error (10839): Verilog HDL error at CPU.v(2): declaring global objects is a SystemVerilog feature File: C:/Users/insbs/Desktop/infrahardware/ProjetoVerilog/CPU.v Line: 2
+Error (10839): Verilog HDL error at CPU.v(3): declaring global objects is a SystemVerilog feature File: C:/Users/insbs/Desktop/infrahardware/ProjetoVerilog/CPU.v Line: 3
+Error (10839): Verilog HDL error at CPU.v(4): declaring global objects is a SystemVerilog feature File: C:/Users/insbs/Desktop/infrahardware/ProjetoVerilog/CPU.v Line: 4
+Error (10112): Ignored design unit "CPU" at CPU.v(6) due to previous errors File: C:/Users/insbs/Desktop/infrahardware/ProjetoVerilog/CPU.v Line: 6
+Info: Found 0 design units, including 0 entities, in source file cpu.v
+Info: Generated suppressed messages file C:/Users/insbs/Desktop/infrahardware/ProjetoVerilog/Proj_Hardware.map.smsg
+Error: Quartus II Analysis & Synthesis was unsuccessful. 6 errors, 0 warnings
+    Error: Peak virtual memory: 296 megabytes
+    Error: Processing ended: Tue May 14 12:54:57 2019
+    Error: Elapsed time: 00:00:02
+    Error: Total CPU time (on all processors): 00:00:02
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in C:/Users/insbs/Desktop/ProjetoVerilog - fiosajeitados/Proj_Hardware.map.smsg.
+The suppressed messages can be found in C:/Users/insbs/Desktop/infrahardware/ProjetoVerilog/Proj_Hardware.map.smsg.
 
 

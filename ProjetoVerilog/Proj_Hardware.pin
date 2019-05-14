@@ -77,18 +77,18 @@ GND                          : A1        : gnd    :                   :         
 TEMPDIODEp                   : A2        :        :                   :         :           :                
 VCCIO4                       : A3        : power  :                   : 3.3V    : 4         :                
 MSEL3                        : A4        :        :                   :         : 4         :                
-pcout[15]                    : A5        : output : 3.3-V LVTTL       :         : 4         : N              
+PCout[9]                     : A5        : output : 3.3-V LVTTL       :         : 4         : N              
 GND*                         : A6        :        :                   :         : 4         :                
 GND*                         : A7        :        :                   :         : 4         :                
 inst15_0[4]                  : A8        : output : 3.3-V LVTTL       :         : 4         : N              
 GND                          : A9        : gnd    :                   :         :           :                
-mdrout[31]                   : A10       : output : 3.3-V LVTTL       :         : 9         : N              
+MDRout[25]                   : A10       : output : 3.3-V LVTTL       :         : 9         : N              
 VCCIO4                       : A11       : power  :                   : 3.3V    : 4         :                
 VCCIO3                       : A12       : power  :                   : 3.3V    : 3         :                
-epcout[30]                   : A13       : output : 3.3-V LVTTL       :         : 3         : N              
+EPCout[24]                   : A13       : output : 3.3-V LVTTL       :         : 3         : N              
 GND                          : A14       : gnd    :                   :         :           :                
 GND*                         : A15       :        :                   :         : 3         :                
-mdrout[5]                    : A16       : output : 3.3-V LVTTL       :         : 3         : N              
+EPCout[31]                   : A16       : output : 3.3-V LVTTL       :         : 3         : N              
 GND*                         : A17       :        :                   :         : 3         :                
 GND*                         : A18       :        :                   :         : 3         :                
 GND*                         : A19       :        :                   :         : 3         :                
@@ -99,8 +99,8 @@ VCCIO6                       : AA1       : power  :                   : 3.3V    
 GND                          : AA2       : gnd    :                   :         :           :                
 nCEO                         : AA3       :        :                   :         : 7         :                
 GND*                         : AA4       :        :                   :         : 7         :                
-epcout[3]                    : AA5       : output : 3.3-V LVTTL       :         : 7         : N              
-op[3]                        : AA6       : output : 3.3-V LVTTL       :         : 7         : N              
+PCout[29]                    : AA5       : output : 3.3-V LVTTL       :         : 7         : N              
+MDRout[29]                   : AA6       : output : 3.3-V LVTTL       :         : 7         : N              
 GND*                         : AA7       :        :                   :         : 7         :                
 GND*                         : AA8       :        :                   :         : 7         :                
 inst15_0[12]                 : AA9       : output : 3.3-V LVTTL       :         : 10        : N              
@@ -109,10 +109,10 @@ GND*                         : AA11      :        :                   :         
 rs[3]                        : AA12      : output : 3.3-V LVTTL       :         : 8         : N              
 GND*                         : AA13      :        :                   :         : 8         :                
 VREFB8                       : AA14      : power  :                   :         : 8         :                
-mdrout[13]                   : AA15      : output : 3.3-V LVTTL       :         : 8         : N              
-mdrout[14]                   : AA16      : output : 3.3-V LVTTL       :         : 8         : N              
-pcout[5]                     : AA17      : output : 3.3-V LVTTL       :         : 8         : N              
-pcout[2]                     : AA18      : output : 3.3-V LVTTL       :         : 8         : N              
+MDRout[7]                    : AA15      : output : 3.3-V LVTTL       :         : 8         : N              
+MDRout[8]                    : AA16      : output : 3.3-V LVTTL       :         : 8         : N              
+ControlOp[5]                 : AA17      : output : 3.3-V LVTTL       :         : 8         : N              
+ControlOp[2]                 : AA18      : output : 3.3-V LVTTL       :         : 8         : N              
 TCK                          : AA19      : input  :                   :         : 8         :                
 TMS                          : AA20      : input  :                   :         : 8         :                
 GND                          : AA21      : gnd    :                   :         :           :                
@@ -132,7 +132,7 @@ VCCIO8                       : AB12      : power  :                   : 3.3V    
 GND*                         : AB13      :        :                   :         : 8         :                
 GND                          : AB14      : gnd    :                   :         :           :                
 GND*                         : AB15      :        :                   :         : 8         :                
-mdrout[2]                    : AB16      : output : 3.3-V LVTTL       :         : 8         : N              
+EPCout[28]                   : AB16      : output : 3.3-V LVTTL       :         : 8         : N              
 GND*                         : AB17      :        :                   :         : 8         :                
 GND*                         : AB18      :        :                   :         : 8         :                
 TRST                         : AB19      : input  :                   :         : 8         :                
@@ -146,10 +146,10 @@ MSEL2                        : B4        :        :                   :         
 GND*                         : B5        :        :                   :         : 4         :                
 GND*                         : B6        :        :                   :         : 4         :                
 GND*                         : B7        :        :                   :         : 4         :                
-pcout[22]                    : B8        : output : 3.3-V LVTTL       :         : 4         : N              
-epcout[13]                   : B9        : output : 3.3-V LVTTL       :         : 9         : N              
-epcout[0]                    : B10       : output : 3.3-V LVTTL       :         : 9         : N              
-pcout[23]                    : B11       : output : 3.3-V LVTTL       :         : 4         : N              
+PCout[16]                    : B8        : output : 3.3-V LVTTL       :         : 4         : N              
+EPCout[7]                    : B9        : output : 3.3-V LVTTL       :         : 9         : N              
+PCout[26]                    : B10       : output : 3.3-V LVTTL       :         : 9         : N              
+PCout[17]                    : B11       : output : 3.3-V LVTTL       :         : 4         : N              
 GND*                         : B12       :        :                   :         : 4         :                
 GND*                         : B13       :        :                   :         : 3         :                
 VREFB3                       : B14       : power  :                   :         : 3         :                
@@ -161,7 +161,7 @@ GND*                         : B19       :        :                   :         
 nSTATUS                      : B20       :        :                   :         : 3         :                
 GND                          : B21       : gnd    :                   :         :           :                
 VCCIO2                       : B22       : power  :                   : 3.3V    : 2         :                
-epcout[29]                   : C1        : output : 3.3-V LVTTL       :         : 5         : N              
+EPCout[23]                   : C1        : output : 3.3-V LVTTL       :         : 5         : N              
 GND*                         : C2        :        :                   :         : 5         :                
 TEMPDIODEn                   : C3        :        :                   :         :           :                
 GND*                         : C4        :        :                   :         : 4         :                
@@ -169,38 +169,38 @@ GND*                         : C5        :        :                   :         
 GND*                         : C6        :        :                   :         : 4         :                
 GND*                         : C7        :        :                   :         : 4         :                
 rs[0]                        : C8        : output : 3.3-V LVTTL       :         : 4         : N              
-epcout[28]                   : C9        : output : 3.3-V LVTTL       :         : 9         : N              
-mdrout[8]                    : C10       : output : 3.3-V LVTTL       :         : 9         : N              
+EPCout[22]                   : C9        : output : 3.3-V LVTTL       :         : 9         : N              
+MDRout[2]                    : C10       : output : 3.3-V LVTTL       :         : 9         : N              
 GND*                         : C11       :        :                   :         : 4         :                
 GND*                         : C12       :        :                   :         : 4         :                
 GND*                         : C13       :        :                   :         : 3         :                
-epcout[17]                   : C14       : output : 3.3-V LVTTL       :         : 3         : N              
-pcout[12]                    : C15       : output : 3.3-V LVTTL       :         : 3         : N              
-stateout[0]                  : C16       : output : 3.3-V LVTTL       :         : 3         : N              
+EPCout[11]                   : C14       : output : 3.3-V LVTTL       :         : 3         : N              
+PCout[6]                     : C15       : output : 3.3-V LVTTL       :         : 3         : N              
+CurState[0]                  : C16       : output : 3.3-V LVTTL       :         : 3         : N              
 rt[0]                        : C17       : output : 3.3-V LVTTL       :         : 3         : N              
 clock                        : C18       : input  : 3.3-V LVTTL       :         : 3         : N              
 GND*                         : C19       :        :                   :         : 3         :                
 CONF_DONE                    : C20       :        :                   :         : 3         :                
-pcout[30]                    : C21       : output : 3.3-V LVTTL       :         : 2         : N              
+PCout[24]                    : C21       : output : 3.3-V LVTTL       :         : 2         : N              
 GND*                         : C22       :        :                   :         : 2         :                
 GND*                         : D1        :        :                   :         : 5         :                
-pcout[9]                     : D2        : output : 3.3-V LVTTL       :         : 5         : N              
+PCout[3]                     : D2        : output : 3.3-V LVTTL       :         : 5         : N              
 GND*                         : D3        :        :                   :         : 4         :                
 MSEL1                        : D4        :        :                   :         : 4         :                
-mdrout[18]                   : D5        : output : 3.3-V LVTTL       :         : 4         : N              
+MDRout[12]                   : D5        : output : 3.3-V LVTTL       :         : 4         : N              
 GND*                         : D6        :        :                   :         : 4         :                
 VREFB4                       : D7        : power  :                   :         : 4         :                
 GND*                         : D8        :        :                   :         : 4         :                
 VREFB4                       : D9        : power  :                   :         : 4         :                
-stateout[5]                  : D10       : output : 3.3-V LVTTL       :         : 9         : N              
+CurState[5]                  : D10       : output : 3.3-V LVTTL       :         : 9         : N              
 GND*                         : D11       :        :                   :         : 3         :                
-pcout[13]                    : D12       : output : 3.3-V LVTTL       :         : 3         : N              
+PCout[7]                     : D12       : output : 3.3-V LVTTL       :         : 3         : N              
 GND*                         : D13       :        :                   :         : 3         :                
 rs[4]                        : D14       : output : 3.3-V LVTTL       :         : 3         : N              
 GND*                         : D15       :        :                   :         : 3         :                
 VREFB3                       : D16       : power  :                   :         : 3         :                
 GND*                         : D17       :        :                   :         : 3         :                
-pcout[0]                     : D18       : output : 3.3-V LVTTL       :         : 3         : N              
+ControlOp[0]                 : D18       : output : 3.3-V LVTTL       :         : 3         : N              
 DCLK                         : D19       :        :                   :         : 3         :                
 GND*                         : D20       :        :                   :         : 3         :                
 inst15_0[5]                  : D21       : output : 3.3-V LVTTL       :         : 2         : N              
@@ -210,12 +210,12 @@ GND*                         : E2        :        :                   :         
 GND*                         : E3        :        :                   :         : 5         :                
 GND*                         : E4        :        :                   :         : 5         :                
 MSEL0                        : E5        :        :                   :         : 4         :                
-epcout[4]                    : E6        : output : 3.3-V LVTTL       :         : 4         : N              
+PCout[30]                    : E6        : output : 3.3-V LVTTL       :         : 4         : N              
 inst15_0[3]                  : E7        : output : 3.3-V LVTTL       :         : 4         : N              
-epcout[26]                   : E8        : output : 3.3-V LVTTL       :         : 4         : N              
+EPCout[20]                   : E8        : output : 3.3-V LVTTL       :         : 4         : N              
 GND*                         : E9        :        :                   :         : 4         :                
 GND*                         : E10       :        :                   :         : 4         :                
-mdrout[22]                   : E11       : output : 3.3-V LVTTL       :         : 3         : N              
+MDRout[16]                   : E11       : output : 3.3-V LVTTL       :         : 3         : N              
 GND*                         : E12       :        :                   :         : 3         :                
 ~DATA0~ / RESERVED_INPUT     : E13       : input  : 3.3-V LVTTL       :         : 3         : N              
 GND*                         : E14       :        :                   :         : 3         :                
@@ -228,33 +228,33 @@ inst15_0[2]                  : E20       : output : 3.3-V LVTTL       :         
 GND*                         : E21       :        :                   :         : 2         :                
 GND*                         : E22       :        :                   :         : 2         :                
 GND*                         : F1        :        :                   :         : 5         :                
-epcout[1]                    : F2        : output : 3.3-V LVTTL       :         : 5         : N              
+PCout[27]                    : F2        : output : 3.3-V LVTTL       :         : 5         : N              
 VREFB5                       : F3        : power  :                   :         : 5         :                
 GND*                         : F4        :        :                   :         : 5         :                
 GND*                         : F5        :        :                   :         : 5         :                
 GND*                         : F6        :        :                   :         : 4         :                
 GND*                         : F7        :        :                   :         : 4         :                
-op[1]                        : F8        : output : 3.3-V LVTTL       :         : 4         : N              
-pcout[21]                    : F9        : output : 3.3-V LVTTL       :         : 4         : N              
+MDRout[27]                   : F8        : output : 3.3-V LVTTL       :         : 4         : N              
+PCout[15]                    : F9        : output : 3.3-V LVTTL       :         : 4         : N              
 GNDA_PLL5                    : F10       : gnd    :                   :         :           :                
 GNDA_PLL5                    : F11       : gnd    :                   :         :           :                
 VCCA_PLL5                    : F12       : power  :                   : 1.2V    :           :                
-op[0]                        : F13       : output : 3.3-V LVTTL       :         : 3         : N              
+MDRout[26]                   : F13       : output : 3.3-V LVTTL       :         : 3         : N              
 GND*                         : F14       :        :                   :         : 3         :                
 GND*                         : F15       :        :                   :         : 3         :                
 GND*                         : F16       :        :                   :         : 3         :                
-pcout[31]                    : F17       : output : 3.3-V LVTTL       :         : 3         : N              
+PCout[25]                    : F17       : output : 3.3-V LVTTL       :         : 3         : N              
 VREFB2                       : F18       : power  :                   :         : 2         :                
-pcout[1]                     : F19       : output : 3.3-V LVTTL       :         : 2         : N              
+ControlOp[1]                 : F19       : output : 3.3-V LVTTL       :         : 2         : N              
 GND*                         : F20       :        :                   :         : 2         :                
-stateout[2]                  : F21       : output : 3.3-V LVTTL       :         : 2         : N              
-mdrout[15]                   : F22       : output : 3.3-V LVTTL       :         : 2         : N              
+CurState[2]                  : F21       : output : 3.3-V LVTTL       :         : 2         : N              
+MDRout[9]                    : F22       : output : 3.3-V LVTTL       :         : 2         : N              
 GND*                         : G1        :        :                   :         : 5         :                
 GND*                         : G2        :        :                   :         : 5         :                
-mdrout[11]                   : G3        : output : 3.3-V LVTTL       :         : 5         : N              
+MDRout[5]                    : G3        : output : 3.3-V LVTTL       :         : 5         : N              
 GND*                         : G4        :        :                   :         : 5         :                
-mdrout[4]                    : G5        : output : 3.3-V LVTTL       :         : 5         : N              
-pcout[3]                     : G6        : output : 3.3-V LVTTL       :         : 5         : N              
+EPCout[30]                   : G5        : output : 3.3-V LVTTL       :         : 5         : N              
+ControlOp[3]                 : G6        : output : 3.3-V LVTTL       :         : 5         : N              
 GND*                         : G7        :        :                   :         : 4         :                
 GND*                         : G8        :        :                   :         : 4         :                
 inst15_0[10]                 : G9        : output : 3.3-V LVTTL       :         : 4         : N              
@@ -264,14 +264,14 @@ GND*                         : G12       :        :                   :         
 GND*                         : G13       :        :                   :         : 3         :                
 inst15_0[14]                 : G14       : output : 3.3-V LVTTL       :         : 3         : N              
 GND*                         : G15       :        :                   :         : 3         :                
-epcout[12]                   : G16       : output : 3.3-V LVTTL       :         : 3         : N              
-pcout[28]                    : G17       : output : 3.3-V LVTTL       :         : 2         : N              
+EPCout[6]                    : G16       : output : 3.3-V LVTTL       :         : 3         : N              
+PCout[22]                    : G17       : output : 3.3-V LVTTL       :         : 2         : N              
 GND*                         : G18       :        :                   :         : 2         :                
-mdrout[12]                   : G19       : output : 3.3-V LVTTL       :         : 2         : N              
+MDRout[6]                    : G19       : output : 3.3-V LVTTL       :         : 2         : N              
 GND*                         : G20       :        :                   :         : 2         :                
 GND*                         : G21       :        :                   :         : 2         :                
-epcout[5]                    : G22       : output : 3.3-V LVTTL       :         : 2         : N              
-mdrout[17]                   : H1        : output : 3.3-V LVTTL       :         : 5         : N              
+PCout[31]                    : G22       : output : 3.3-V LVTTL       :         : 2         : N              
+MDRout[11]                   : H1        : output : 3.3-V LVTTL       :         : 5         : N              
 GND*                         : H2        :        :                   :         : 5         :                
 GND*                         : H3        :        :                   :         : 5         :                
 GND*                         : H4        :        :                   :         : 5         :                
@@ -291,16 +291,16 @@ GND*                         : H17       :        :                   :         
 GND*                         : H18       :        :                   :         : 2         :                
 GND*                         : H19       :        :                   :         : 2         :                
 GND*                         : H20       :        :                   :         : 2         :                
-pcout[29]                    : H21       : output : 3.3-V LVTTL       :         : 2         : N              
+PCout[23]                    : H21       : output : 3.3-V LVTTL       :         : 2         : N              
 GND*                         : H22       :        :                   :         : 2         :                
 GND                          : J1        : gnd    :                   :         :           :                
 GND*                         : J2        :        :                   :         : 5         :                
-mdrout[23]                   : J3        : output : 3.3-V LVTTL       :         : 5         : N              
+MDRout[17]                   : J3        : output : 3.3-V LVTTL       :         : 5         : N              
 VREFB5                       : J4        : power  :                   :         : 5         :                
 rt[1]                        : J5        : output : 3.3-V LVTTL       :         : 5         : N              
 GND*                         : J6        :        :                   :         : 5         :                
 GND*                         : J7        :        :                   :         : 5         :                
-mdrout[7]                    : J8        : output : 3.3-V LVTTL       :         : 5         : N              
+MDRout[1]                    : J8        : output : 3.3-V LVTTL       :         : 5         : N              
 VCCINT                       : J9        : power  :                   : 1.2V    :           :                
 GND                          : J10       : gnd    :                   :         :           :                
 VCCINT                       : J11       : power  :                   : 1.2V    :           :                
@@ -308,21 +308,21 @@ GND                          : J12       : gnd    :                   :         
 VCCINT                       : J13       : power  :                   : 1.2V    :           :                
 GND                          : J14       : gnd    :                   :         :           :                
 GND*                         : J15       :        :                   :         : 3         :                
-mdrout[26]                   : J16       : output : 3.3-V LVTTL       :         : 2         : N              
+MDRout[20]                   : J16       : output : 3.3-V LVTTL       :         : 2         : N              
 GND*                         : J17       :        :                   :         : 2         :                
-epcout[10]                   : J18       : output : 3.3-V LVTTL       :         : 2         : N              
-mdrout[16]                   : J19       : output : 3.3-V LVTTL       :         : 2         : N              
+EPCout[4]                    : J18       : output : 3.3-V LVTTL       :         : 2         : N              
+MDRout[10]                   : J19       : output : 3.3-V LVTTL       :         : 2         : N              
 GND*                         : J20       :        :                   :         : 2         :                
-epcout[2]                    : J21       : output : 3.3-V LVTTL       :         : 2         : N              
+PCout[28]                    : J21       : output : 3.3-V LVTTL       :         : 2         : N              
 GND                          : J22       : gnd    :                   :         :           :                
 GND*                         : K1        :        :                   :         : 5         :                
 GND*                         : K2        :        :                   :         : 5         :                
-pcout[8]                     : K3        : output : 3.3-V LVTTL       :         : 5         : N              
+PCout[2]                     : K3        : output : 3.3-V LVTTL       :         : 5         : N              
 GND*                         : K4        :        :                   :         : 5         :                
 GND*                         : K5        :        :                   :         : 5         :                
-pcout[4]                     : K6        : output : 3.3-V LVTTL       :         : 5         : N              
-stateout[3]                  : K7        : output : 3.3-V LVTTL       :         : 5         : N              
-pcout[18]                    : K8        : output : 3.3-V LVTTL       :         : 5         : N              
+ControlOp[4]                 : K6        : output : 3.3-V LVTTL       :         : 5         : N              
+CurState[3]                  : K7        : output : 3.3-V LVTTL       :         : 5         : N              
+PCout[12]                    : K8        : output : 3.3-V LVTTL       :         : 5         : N              
 GND                          : K9        : gnd    :                   :         :           :                
 VCCINT                       : K10       : power  :                   : 1.2V    :           :                
 GND                          : K11       : gnd    :                   :         :           :                
@@ -332,10 +332,10 @@ VCCPD2                       : K14       : power  :                   : 3.3V    
 GND*                         : K15       :        :                   :         : 2         :                
 GND*                         : K16       :        :                   :         : 2         :                
 GND*                         : K17       :        :                   :         : 2         :                
-pcout[11]                    : K18       : output : 3.3-V LVTTL       :         : 2         : N              
-epcout[6]                    : K19       : output : 3.3-V LVTTL       :         : 2         : N              
+PCout[5]                     : K18       : output : 3.3-V LVTTL       :         : 2         : N              
+EPCout[0]                    : K19       : output : 3.3-V LVTTL       :         : 2         : N              
 GND*                         : K20       :        :                   :         : 2         :                
-mdrout[29]                   : K21       : output : 3.3-V LVTTL       :         : 2         : N              
+MDRout[23]                   : K21       : output : 3.3-V LVTTL       :         : 2         : N              
 GND*                         : K22       :        :                   :         : 2         :                
 VCCIO5                       : L1        : power  :                   : 3.3V    : 5         :                
 GND*                         : L2        :        :                   :         : 5         :                
@@ -343,7 +343,7 @@ GND*                         : L3        :        :                   :         
 GNDA_PLL4                    : L4        : gnd    :                   :         :           :                
 GNDA_PLL4                    : L5        : gnd    :                   :         :           :                
 VCCD_PLL4                    : L6        : power  :                   : 1.2V    :           :                
-stateout[1]                  : L7        : output : 3.3-V LVTTL       :         : 5         : N              
+CurState[1]                  : L7        : output : 3.3-V LVTTL       :         : 5         : N              
 inst15_0[7]                  : L8        : output : 3.3-V LVTTL       :         : 5         : N              
 VCCPD5                       : L9        : power  :                   : 3.3V    : 5         :                
 GND                          : L10       : gnd    :                   :         :           :                
@@ -352,7 +352,7 @@ GND                          : L12       : gnd    :                   :         
 VCCINT                       : L13       : power  :                   : 1.2V    :           :                
 GND                          : L14       : gnd    :                   :         :           :                
 GND*                         : L15       :        :                   :         : 2         :                
-op[4]                        : L16       : output : 3.3-V LVTTL       :         : 2         : N              
+MDRout[30]                   : L16       : output : 3.3-V LVTTL       :         : 2         : N              
 GNDA_PLL1                    : L17       : gnd    :                   :         :           :                
 GNDA_PLL1                    : L18       : gnd    :                   :         :           :                
 VREFB2                       : L19       : power  :                   :         : 2         :                
@@ -381,7 +381,7 @@ VCCA_PLL2                    : M19       : power  :                   : 1.2V    
 GND+                         : M20       :        :                   :         : 2         :                
 GND+                         : M21       :        :                   :         : 2         :                
 VCCIO1                       : M22       : power  :                   : 3.3V    : 1         :                
-mdrout[0]                    : N1        : output : 3.3-V LVTTL       :         : 6         : N              
+EPCout[26]                   : N1        : output : 3.3-V LVTTL       :         : 6         : N              
 GND*                         : N2        :        :                   :         : 6         :                
 GND+                         : N3        :        :                   :         : 6         :                
 GND+                         : N4        :        :                   :         : 6         :                
@@ -408,9 +408,9 @@ GND*                         : P2        :        :                   :         
 GND*                         : P3        :        :                   :         : 6         :                
 VREFB6                       : P4        : power  :                   :         : 6         :                
 GND*                         : P5        :        :                   :         : 6         :                
-epcout[9]                    : P6        : output : 3.3-V LVTTL       :         : 6         : N              
+EPCout[3]                    : P6        : output : 3.3-V LVTTL       :         : 6         : N              
 GND*                         : P7        :        :                   :         : 6         :                
-pcout[26]                    : P8        : output : 3.3-V LVTTL       :         : 6         : N              
+PCout[20]                    : P8        : output : 3.3-V LVTTL       :         : 6         : N              
 VCCINT                       : P9        : power  :                   : 1.2V    :           :                
 VCCPD7                       : P10       : power  :                   : 3.3V    : 7         :                
 GND                          : P11       : gnd    :                   :         :           :                
@@ -418,82 +418,82 @@ VCCINT                       : P12       : power  :                   : 1.2V    
 GND                          : P13       : gnd    :                   :         :           :                
 VCCINT                       : P14       : power  :                   : 1.2V    :           :                
 VCCPD1                       : P15       : power  :                   : 3.3V    : 1         :                
-epcout[15]                   : P16       : output : 3.3-V LVTTL       :         : 1         : N              
+EPCout[9]                    : P16       : output : 3.3-V LVTTL       :         : 1         : N              
 GND*                         : P17       :        :                   :         : 1         :                
 GND*                         : P18       :        :                   :         : 1         :                
-epcout[7]                    : P19       : output : 3.3-V LVTTL       :         : 1         : N              
-pcout[10]                    : P20       : output : 3.3-V LVTTL       :         : 1         : N              
-epcout[21]                   : P21       : output : 3.3-V LVTTL       :         : 1         : N              
+EPCout[1]                    : P19       : output : 3.3-V LVTTL       :         : 1         : N              
+PCout[4]                     : P20       : output : 3.3-V LVTTL       :         : 1         : N              
+EPCout[15]                   : P21       : output : 3.3-V LVTTL       :         : 1         : N              
 GND                          : P22       : gnd    :                   :         :           :                
-pcout[25]                    : R1        : output : 3.3-V LVTTL       :         : 6         : N              
+PCout[19]                    : R1        : output : 3.3-V LVTTL       :         : 6         : N              
 GND*                         : R2        :        :                   :         : 6         :                
-epcout[18]                   : R3        : output : 3.3-V LVTTL       :         : 6         : N              
+EPCout[12]                   : R3        : output : 3.3-V LVTTL       :         : 6         : N              
 GND*                         : R4        :        :                   :         : 6         :                
 GND*                         : R5        :        :                   :         : 6         :                
 GND*                         : R6        :        :                   :         : 6         :                
 GND*                         : R7        :        :                   :         : 6         :                
-epcout[20]                   : R8        : output : 3.3-V LVTTL       :         : 6         : N              
+EPCout[14]                   : R8        : output : 3.3-V LVTTL       :         : 6         : N              
 GND*                         : R9        :        :                   :         : 7         :                
 GND                          : R10       : gnd    :                   :         :           :                
 VCC_PLL6_OUT                 : R11       : power  :                   : 3.3V    : 10        :                
 VCCA_PLL6                    : R12       : power  :                   : 1.2V    :           :                
 VCCPD8                       : R13       : power  :                   : 3.3V    : 8         :                
 reset                        : R14       : input  : 3.3-V LVTTL       :         : 8         : N              
-epcout[24]                   : R15       : output : 3.3-V LVTTL       :         : 8         : N              
-mdrout[28]                   : R16       : output : 3.3-V LVTTL       :         : 1         : N              
+EPCout[18]                   : R15       : output : 3.3-V LVTTL       :         : 8         : N              
+MDRout[22]                   : R16       : output : 3.3-V LVTTL       :         : 1         : N              
 rt[3]                        : R17       : output : 3.3-V LVTTL       :         : 1         : N              
-epcout[23]                   : R18       : output : 3.3-V LVTTL       :         : 1         : N              
+EPCout[17]                   : R18       : output : 3.3-V LVTTL       :         : 1         : N              
 GND*                         : R19       :        :                   :         : 1         :                
 VREFB1                       : R20       : power  :                   :         : 1         :                
 GND*                         : R21       :        :                   :         : 1         :                
 GND*                         : R22       :        :                   :         : 1         :                
 GND*                         : T1        :        :                   :         : 6         :                
-pcout[6]                     : T2        : output : 3.3-V LVTTL       :         : 6         : N              
-mdrout[24]                   : T3        : output : 3.3-V LVTTL       :         : 6         : N              
+PCout[0]                     : T2        : output : 3.3-V LVTTL       :         : 6         : N              
+MDRout[18]                   : T3        : output : 3.3-V LVTTL       :         : 6         : N              
 GND*                         : T4        :        :                   :         : 6         :                
-epcout[14]                   : T5        : output : 3.3-V LVTTL       :         : 6         : N              
+EPCout[8]                    : T5        : output : 3.3-V LVTTL       :         : 6         : N              
 GND*                         : T6        :        :                   :         : 6         :                
-mdrout[27]                   : T7        : output : 3.3-V LVTTL       :         : 7         : N              
-stateout[4]                  : T8        : output : 3.3-V LVTTL       :         : 7         : N              
+MDRout[21]                   : T7        : output : 3.3-V LVTTL       :         : 7         : N              
+CurState[4]                  : T8        : output : 3.3-V LVTTL       :         : 7         : N              
 rt[4]                        : T9        : output : 3.3-V LVTTL       :         : 7         : N              
 GND*                         : T10       :        :                   :         : 7         :                
 GNDA_PLL6                    : T11       : gnd    :                   :         :           :                
 GNDA_PLL6                    : T12       : gnd    :                   :         :           :                
-epcout[11]                   : T13       : output : 3.3-V LVTTL       :         : 8         : N              
-mdrout[3]                    : T14       : output : 3.3-V LVTTL       :         : 8         : N              
+EPCout[5]                    : T13       : output : 3.3-V LVTTL       :         : 8         : N              
+EPCout[29]                   : T14       : output : 3.3-V LVTTL       :         : 8         : N              
 GND*                         : T15       :        :                   :         : 8         :                
-epcout[25]                   : T16       : output : 3.3-V LVTTL       :         : 8         : N              
-mdrout[9]                    : T17       : output : 3.3-V LVTTL       :         : 1         : N              
-mdrout[1]                    : T18       : output : 3.3-V LVTTL       :         : 1         : N              
-mdrout[20]                   : T19       : output : 3.3-V LVTTL       :         : 1         : N              
+EPCout[19]                   : T16       : output : 3.3-V LVTTL       :         : 8         : N              
+MDRout[3]                    : T17       : output : 3.3-V LVTTL       :         : 1         : N              
+EPCout[27]                   : T18       : output : 3.3-V LVTTL       :         : 1         : N              
+MDRout[14]                   : T19       : output : 3.3-V LVTTL       :         : 1         : N              
 inst15_0[6]                  : T20       : output : 3.3-V LVTTL       :         : 1         : N              
 GND*                         : T21       :        :                   :         : 1         :                
 GND*                         : T22       :        :                   :         : 1         :                
-op[2]                        : U1        : output : 3.3-V LVTTL       :         : 6         : N              
+MDRout[28]                   : U1        : output : 3.3-V LVTTL       :         : 6         : N              
 GND*                         : U2        :        :                   :         : 6         :                
 VREFB6                       : U3        : power  :                   :         : 6         :                
 GND*                         : U4        :        :                   :         : 6         :                
-pcout[14]                    : U5        : output : 3.3-V LVTTL       :         : 6         : N              
+PCout[8]                     : U5        : output : 3.3-V LVTTL       :         : 6         : N              
 GND*                         : U6        :        :                   :         : 7         :                
-pcout[27]                    : U7        : output : 3.3-V LVTTL       :         : 7         : N              
+PCout[21]                    : U7        : output : 3.3-V LVTTL       :         : 7         : N              
 GND*                         : U8        :        :                   :         : 7         :                
 inst15_0[9]                  : U9        : output : 3.3-V LVTTL       :         : 7         : N              
 inst15_0[1]                  : U10       : output : 3.3-V LVTTL       :         : 7         : N              
 VCCD_PLL6                    : U11       : power  :                   : 1.2V    :           :                
 GND*                         : U12       :        :                   :         : 8         :                
-epcout[27]                   : U13       : output : 3.3-V LVTTL       :         : 8         : N              
-pcout[16]                    : U14       : output : 3.3-V LVTTL       :         : 8         : N              
+EPCout[21]                   : U13       : output : 3.3-V LVTTL       :         : 8         : N              
+PCout[10]                    : U14       : output : 3.3-V LVTTL       :         : 8         : N              
 GND*                         : U15       :        :                   :         : 8         :                
 GND*                         : U16       :        :                   :         : 8         :                
 GND*                         : U17       :        :                   :         : 1         :                
 GND*                         : U18       :        :                   :         : 1         :                
 GND*                         : U19       :        :                   :         : 1         :                
 inst15_0[15]                 : U20       : output : 3.3-V LVTTL       :         : 1         : N              
-mdrout[25]                   : U21       : output : 3.3-V LVTTL       :         : 1         : N              
+MDRout[19]                   : U21       : output : 3.3-V LVTTL       :         : 1         : N              
 GND*                         : U22       :        :                   :         : 1         :                
 inst15_0[11]                 : V1        : output : 3.3-V LVTTL       :         : 6         : N              
 GND*                         : V2        :        :                   :         : 6         :                
-pcout[17]                    : V3        : output : 3.3-V LVTTL       :         : 6         : N              
+PCout[11]                    : V3        : output : 3.3-V LVTTL       :         : 6         : N              
 GND*                         : V4        :        :                   :         : 6         :                
 PORSEL                       : V5        :        :                   :         : 7         :                
 GND*                         : V6        :        :                   :         : 7         :                
@@ -501,11 +501,11 @@ GND*                         : V7        :        :                   :         
 GND*                         : V8        :        :                   :         : 7         :                
 GND*                         : V9        :        :                   :         : 10        :                
 GND*                         : V10       :        :                   :         : 7         :                
-mdrout[21]                   : V11       : output : 3.3-V LVTTL       :         : 8         : N              
+MDRout[15]                   : V11       : output : 3.3-V LVTTL       :         : 8         : N              
 GND*                         : V12       :        :                   :         : 8         :                
 GND*                         : V13       :        :                   :         : 8         :                
 GND*                         : V14       :        :                   :         : 8         :                
-mdrout[30]                   : V15       : output : 3.3-V LVTTL       :         : 8         : N              
+MDRout[24]                   : V15       : output : 3.3-V LVTTL       :         : 8         : N              
 GND*                         : V16       :        :                   :         : 8         :                
 VCCSEL                       : V17       :        :                   :         : 8         :                
 GND*                         : V18       :        :                   :         : 1         :                
@@ -513,47 +513,47 @@ GND*                         : V19       :        :                   :         
 VREFB1                       : V20       : power  :                   :         : 1         :                
 GND*                         : V21       :        :                   :         : 1         :                
 GND*                         : V22       :        :                   :         : 1         :                
-epcout[22]                   : W1        : output : 3.3-V LVTTL       :         : 6         : N              
+EPCout[16]                   : W1        : output : 3.3-V LVTTL       :         : 6         : N              
 GND*                         : W2        :        :                   :         : 6         :                
-stateout[6]                  : W3        : output : 3.3-V LVTTL       :         : 6         : N              
+CurState[6]                  : W3        : output : 3.3-V LVTTL       :         : 6         : N              
 GND*                         : W4        :        :                   :         : 6         :                
-pcout[20]                    : W5        : output : 3.3-V LVTTL       :         : 7         : N              
+PCout[14]                    : W5        : output : 3.3-V LVTTL       :         : 7         : N              
 VREFB7                       : W6        : power  :                   :         : 7         :                
 GND*                         : W7        :        :                   :         : 7         :                
 VREFB7                       : W8        : power  :                   :         : 7         :                
 GND*                         : W9        :        :                   :         : 10        :                
 GND*                         : W10       :        :                   :         : 7         :                
 GND*                         : W11       :        :                   :         : 8         :                
-pcout[19]                    : W12       : output : 3.3-V LVTTL       :         : 8         : N              
+PCout[13]                    : W12       : output : 3.3-V LVTTL       :         : 8         : N              
 GND*                         : W13       :        :                   :         : 8         :                
 GND*                         : W14       :        :                   :         : 8         :                
 rs[1]                        : W15       : output : 3.3-V LVTTL       :         : 8         : N              
-epcout[31]                   : W16       : output : 3.3-V LVTTL       :         : 8         : N              
+EPCout[25]                   : W16       : output : 3.3-V LVTTL       :         : 8         : N              
 GND*                         : W17       :        :                   :         : 8         :                
 nCONFIG                      : W18       :        :                   :         : 8         :                
-op[5]                        : W19       : output : 3.3-V LVTTL       :         : 1         : N              
+MDRout[31]                   : W19       : output : 3.3-V LVTTL       :         : 1         : N              
 GND*                         : W20       :        :                   :         : 1         :                
-epcout[8]                    : W21       : output : 3.3-V LVTTL       :         : 1         : N              
+EPCout[2]                    : W21       : output : 3.3-V LVTTL       :         : 1         : N              
 GND*                         : W22       :        :                   :         : 1         :                
 rs[2]                        : Y1        : output : 3.3-V LVTTL       :         : 6         : N              
 GND*                         : Y2        :        :                   :         : 6         :                
 GND*                         : Y3        :        :                   :         : 7         :                
 PLL_ENA                      : Y4        :        :                   :         : 7         :                
-mdrout[6]                    : Y5        : output : 3.3-V LVTTL       :         : 7         : N              
+MDRout[0]                    : Y5        : output : 3.3-V LVTTL       :         : 7         : N              
 GND*                         : Y6        :        :                   :         : 7         :                
 GND*                         : Y7        :        :                   :         : 7         :                
-mdrout[19]                   : Y8        : output : 3.3-V LVTTL       :         : 7         : N              
+MDRout[13]                   : Y8        : output : 3.3-V LVTTL       :         : 7         : N              
 GND*                         : Y9        :        :                   :         : 10        :                
 GND*                         : Y10       :        :                   :         : 7         :                
-pcout[24]                    : Y11       : output : 3.3-V LVTTL       :         : 7         : N              
+PCout[18]                    : Y11       : output : 3.3-V LVTTL       :         : 7         : N              
 GND*                         : Y12       :        :                   :         : 8         :                
 GND*                         : Y13       :        :                   :         : 8         :                
-epcout[16]                   : Y14       : output : 3.3-V LVTTL       :         : 8         : N              
+EPCout[10]                   : Y14       : output : 3.3-V LVTTL       :         : 8         : N              
 rt[2]                        : Y15       : output : 3.3-V LVTTL       :         : 8         : N              
-mdrout[10]                   : Y16       : output : 3.3-V LVTTL       :         : 8         : N              
+MDRout[4]                    : Y16       : output : 3.3-V LVTTL       :         : 8         : N              
 GND*                         : Y17       :        :                   :         : 8         :                
-pcout[7]                     : Y18       : output : 3.3-V LVTTL       :         : 8         : N              
+PCout[1]                     : Y18       : output : 3.3-V LVTTL       :         : 8         : N              
 VREFB8                       : Y19       : power  :                   :         : 8         :                
 GND*                         : Y20       :        :                   :         : 8         :                
-epcout[19]                   : Y21       : output : 3.3-V LVTTL       :         : 1         : N              
+EPCout[13]                   : Y21       : output : 3.3-V LVTTL       :         : 1         : N              
 GND*                         : Y22       :        :                   :         : 1         :                

@@ -5,41 +5,41 @@ Timing Analyzer Summary
 Type           : Worst-case tsu
 Slack          : N/A
 Required Time  : None
-Actual Time    : 6.242 ns
-From           : funct[2]
-To             : state[1]~reg0
+Actual Time    : 5.093 ns
+From           : Address[7]
+To             : lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|ram_block1a0~porta_address_reg7
 From Clock     : --
-To Clock       : clock
+To Clock       : Clock
 Failed Paths   : 0
 
 Type           : Worst-case tco
 Slack          : N/A
 Required Time  : None
-Actual Time    : 7.287 ns
-From           : ALUSrcB[0]~reg0
-To             : ALUSrcB[0]
-From Clock     : clock
+Actual Time    : 6.799 ns
+From           : lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[0]
+To             : Dataout[8]
+From Clock     : Clock
 To Clock       : --
 Failed Paths   : 0
 
 Type           : Worst-case th
 Slack          : N/A
 Required Time  : None
-Actual Time    : -3.306 ns
-From           : funct[5]
-To             : state[1]~reg0
+Actual Time    : -2.180 ns
+From           : Datain[20]
+To             : lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|ram_block1a0~porta_datain_reg4
 From Clock     : --
-To Clock       : clock
+To Clock       : Clock
 Failed Paths   : 0
 
-Type           : Clock Setup: 'clock'
+Type           : Clock Setup: 'Clock'
 Slack          : N/A
 Required Time  : None
 Actual Time    : Restricted to 500.00 MHz ( period = 2.000 ns )
-From           : state[4]~reg0
-To             : PCSource[1]~reg0
-From Clock     : clock
-To Clock       : clock
+From           : lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|ram_block1a0~porta_address_reg2
+To             : lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[4]
+From Clock     : Clock
+To Clock       : Clock
 Failed Paths   : 0
 
 Type           : Total number of failed paths
