@@ -8,7 +8,7 @@ Repositório para os códigos das listas de Infraestrutura de Hardware, além do
 - ~~Modificacao arquitetura div (tá certo?):~~
     - ~~Colocar wait (esperar 32 ciclos)~~
     - ~~Depois do wait ativar High e Low~~
-- Addi
+- ~~Addi
     - ~~Criar outra caixa pro addi e mudar o regdst 
 - ~~Mudar posição da caixa do overflow~~
 - Alterações para instruções tipo I
@@ -20,7 +20,7 @@ Repositório para os códigos das listas de Infraestrutura de Hardware, além do
 - Alterações nos stores (mesmas dos loads), adicionar wait ao ler da memória
 - ALUOp e mudar entrada MemToReg (jal)
 - Colocar estados iniciais de Inc e dec
-- Colocar addiu (não gera overflow)
+- ~~Colocar addiu (não gera overflow)
 
 ## Exceções:
 - Fazer PC-4 para EP
