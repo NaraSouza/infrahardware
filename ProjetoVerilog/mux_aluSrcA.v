@@ -1,4 +1,5 @@
 module mux_aluSrcA(
+	//TODO: Verificar se output está correto
 	input wire [1:0] selector,
 	input wire [31:0] inputA,//00
 	input wire [31:0] inputB,//01

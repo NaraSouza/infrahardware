@@ -1,8 +1,3 @@
-import Memoria::*;
-import Registrador::*;
-import Instr_Reg::*;
-import mux_iOrD::*;
-
 module VCPU(
 	input clock,
 	input reset,
@@ -18,11 +13,15 @@ module VCPU(
     
     output logic [15:0] inst15_0,
     
-	output logic [6:0] CurState
+	output logic [6:0] CurState // ???? verificar o que eh. Provavelmente eh o estado atual da maquina de estados
 );
+
+logic [4:0] rd;
+logic [25:0] inst25_0;
 
 logic ALUorMem;
 logic [31:0] AorMemOut;
+
 logic [3:0] IorD;
 logic [31:0] IorDOut;
 
@@ -40,14 +39,12 @@ logic [31:0] MemOut;
 logic IRWrite;
 logic WrMDR;
 
-logic BWDSE;
 logic [1:0] BWD;
 logic [31:0] BWDOut;
 
 logic WriteData;
 logic [31:0] WriteDataOut;
 
-logic MWDSE;
 logic [1:0] MemWD;
 logic [31:0] MemWDout;
 
@@ -59,6 +56,8 @@ logic [31:0] RegAIn;
 logic [31:0] RegAOut;
 logic [31:0] RegBIn;
 logic [31:0] RegBOut;
+logic [15:0] RegBHalf;
+logic [8:0]  RegBByte;
 
 logic [1:0] AluSrcA;
 logic RegAWrite;
@@ -77,21 +76,24 @@ logic [31:0] USExtOut;
 logic [31:0] SL16Out;
 logic [31:0] SL2Out;
 
+logic ALUWrite;
 logic [2:0] ALUOp;
-logic [31:0] ALUOut;
-logic [31:0] ALURegOut;
+logic [31:0] ALUOut; // ALU output
+logic [31:0] ALURegOut; // Registrador que guarda ALU output
 
 logic EPCWrite;
 logic [1:0] PCSource;
 logic PCWriteCond;
 logic PCWrite;
-logic PCWCtrl; // controla se escreve ou n em PC; baseado nos bools anteriores
+logic PCWCtrl; // controla se escreve ou n em PC; baseado nos bools anteriores(resultado final, basicamente)
 logic [31:0] PCSrcOut;
 
-logic Greater;
-logic Equal;
-logic Zero;
 logic Overflow;
+logic Negative;
+logic Zero;
+logic Equal;
+logic GreaterThan;
+logic LessThan;
 
 
 
@@ -124,6 +126,14 @@ logic [31:0] DR2Out;
 logic [3:0] ShiftCtrl;
 logic [31:0] DesReg;
 
+mux_2inputs ALUorMemMux(
+	// TODO: Verificar se tá ok
+	.selector(ALUorMem),
+	.inputA(PCSrcOut),//0
+	.inputB(MDROut),//1
+	.outputA(AorMemOut)
+);
+
 Registrador PC(
 	.Clk(clock),
 	.Reset(reset),
@@ -132,21 +142,58 @@ Registrador PC(
 	.Saida(PCout)
 );
 
-Memoria mem(
-	.Address(PCOut), //PCOut?
-	.Clock(clock),
-	.Wr(MemWR),
-	.Datain(IorDOut),
-	.Dataout(MemOut)
+mux_iOrD IorDMux(
+	// 253, 254 e 255
+	// escolhidos dentro da un.
+	//253 = 010
+	//254 = 011
+	//255 = 100
+	.selector(IorD),
+	.inputA(IRConcExt), //000
+	.inputB(PCOut), //001
+	.inputC(ALURegOut), //101
+	.out(IorDOut)
 );
 
+mux_2inputs WriteDataMux(
+	// TODO: Verificar se tá ok
+	.selector( WriteData ),
+	.inputA( ALURegOut ),//0
+	.inputB( BWDOut ),//1
+	.outputA( WriteDataOut ) // Realmente escreve em MemOut?
+);
+
+mux_BWD BWDMux(
+	.selector(BWD),
+	.MDRVal(MDROut),
+	.FullWord( RegBOut ),//00. FullWord
+	.HalfWord( RegBHalf ),//01
+	.Byte( RegBByte ),//10
+	.out( BWDOut )
+);
+
+Memoria Mem(
+	// Datain é MemOut ou IorDOut?
+	// Dataout é IorDOut ou MemOut?
+	.Address( IorDOut ), //PCOut?
+	.Clock(clock),
+	.Wr( MemWR ),
+	.Datain( WriteDataOut ),
+	.Dataout( MemOut )
+);
+
+mux_memWD(
+	.selector( MemWD ),
+	.FullWord( MDROut ),//00. FullWord
+	.out(MemWDout)
+);
 
 Registrador MDR(
 	.Clk(clock),
 	.Reset(reset),
 	.Load(WrMDR), //conferir se é isso(ta certo tbm. bois)
-	.Entrada(MemOut),
-	.Saida(MDRout)
+	.Entrada( MemOut ),
+	.Saida( MDRout )
 );
 
 Instr_Reg IR(
@@ -160,6 +207,24 @@ Instr_Reg IR(
 	.Instr15_0(inst15_0)
 );
 
+mux_regDst RegDSTMux(
+	.selector(RegDst),
+	.inputA( rt ), // rd?
+	.inputB( rd ),  // rt?
+	.out(RegDstOut)
+);
+
+Banco_Reg registers(
+	.Clk(clock),
+	.Reset(reset),
+	.RegWrite(RegWrite),
+	.ReadReg1(rs),
+	.ReadReg2(rt),
+	.writeReg(RegDstOut),
+	.WriteData(MemToRegOut),
+	.ReadData1(RegAIn),
+	.ReadData2(RegBIn)
+);
 
 Registrador A(
 	.Clk(clock),
@@ -175,6 +240,53 @@ Registrador B(
 	.Load(RegBWrite),
 	.Entrada(RegBIn),
 	.Saida(RegBOut)
+);
+
+mux_aluSrcA ALUSrcA(
+	.selector(AluSrcA),
+	.inputA(PCOut),
+	.inputB(MDROut),
+	.inputC(RegAOut),
+	.out(AluSrcAOut)
+);
+
+mux_aluSrcB ALUSrcB(
+	// 1 e 4 sao retornados pela caixa magica
+	.selector(AluSrcB),
+	.inputA(RegBOut), //000
+	.inputB(SL2Out),  //011
+	.inputC(USExtOut),//100
+	.out(AluSrcBOut)
+);
+
+ula32 ALU(
+	.A(AluSrcAOut),
+	.B(AluSrcBOut),
+	.Seletor(ALUOp),
+	.S(ALUOut),
+	.Overflow(Overflow),
+	.Negativo(Negative), // nao tem!
+	.z(Zero),
+	.Igual(Equal),
+	.Maior(GreaterThan),
+	.Menor(LessThan)
+);
+
+Registrador ALUOutReg(
+	.Clk(clock),
+	.Reset(reset),
+	.Load(ALURegWrite), //conferir se é isso(ok. bois)
+	.Entrada(ALUOut),
+	.Saida(ALURegOut)
+);
+
+mux_pcSrc(
+	.selector(PCSource),
+	.inputA(IRPCConc),
+	.inputB(ALUOut),
+	.inputC(EPCOut),
+	.inputD(ALURegOut),
+	.out(PCSrcOut)	
 );
 
 Registrador high(
@@ -193,18 +305,19 @@ Registrador low(
 	.Saida(RegLowOut)
 );
 
-mux_iOrD IorDMux(
-	// 253, 254 e 255
-	// escolhidos dentro da un.
-	//253 = 010
-	//254 = 011
-	//255 = 100
-	.selector(IorD),
-	.inputA(IRConcExt), //000
-	.inputB(PCOut), //001
-	.inputC(ALURegOut), //101
-	.out(IorDOut)
-);
+// TODO: Verificar como setar e inst15_0 rs e rt direito neste projeto
+
+assign inst25_0 [25:21] = rs;
+assign inst25_0 [20:16] = rt;
+assign inst25_0 [15:0] = inst15_0;
+
+// TODO: 15:0 e 8:0 ou 31:16 e 31:24?
+assign RegBHalf = RegBOut[15:0];
+assign RegBByte = RegBOut[8:0];
+
+assign rd = inst15_0 [15:11];
+assign shamt = inst15_0 [10:6];
+assign funct = inst15_0 [5:0];
 
 
 endmodule: VCPU

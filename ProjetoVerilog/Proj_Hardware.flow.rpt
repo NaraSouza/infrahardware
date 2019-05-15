@@ -1,5 +1,5 @@
 Flow report for Proj_Hardware
-Tue May 14 12:54:57 2019
+Tue May 14 23:35:32 2019
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -38,10 +38,10 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------+
 ; Flow Summary                                                                 ;
 +-------------------------------+----------------------------------------------+
-; Flow Status                   ; Flow Failed - Tue May 14 12:54:57 2019       ;
+; Flow Status                   ; Flow Failed - Tue May 14 23:35:32 2019       ;
 ; Quartus II Version            ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                 ; Proj_Hardware                                ;
-; Top-level Entity Name         ; CPU                                          ;
+; Top-level Entity Name         ; VCPU                                         ;
 ; Family                        ; Stratix II                                   ;
 ; Met timing requirements       ; N/A                                          ;
 ; Logic utilization             ; N/A until Partition Merge                    ;
@@ -62,7 +62,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/14/2019 12:54:55 ;
+; Start date & time ; 05/14/2019 23:35:31 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Proj_Hardware       ;
 +-------------------+---------------------+
@@ -73,11 +73,11 @@ applicable agreement for further details.
 +------------------------------------+-----------------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                    ; Value                                         ; Default Value ; Entity Name ; Section Id     ;
 +------------------------------------+-----------------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID              ; 10995770589203.155784929513912                ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID              ; 116232563436.155788773103364                  ; --            ; --          ; --             ;
 ; MISC_FILE                          ; H:/PROJETO VERILOG HARDWARE/Proj_Hardware.dpf ; --            ; --          ; --             ;
-; PARTITION_COLOR                    ; 16764057                                      ; --            ; CPU         ; Top            ;
-; PARTITION_NETLIST_TYPE             ; SOURCE                                        ; --            ; CPU         ; Top            ;
-; TOP_LEVEL_ENTITY                   ; CPU                                           ; Proj_Hardware ; --          ; --             ;
+; PARTITION_COLOR                    ; 16764057                                      ; --            ; VCPU        ; Top            ;
+; PARTITION_NETLIST_TYPE             ; SOURCE                                        ; --            ; VCPU        ; Top            ;
+; TOP_LEVEL_ENTITY                   ; VCPU                                          ; Proj_Hardware ; --          ; --             ;
 ; USE_GENERATED_PHYSICAL_CONSTRAINTS ; Off                                           ; --            ; --          ; eda_blast_fpga ;
 +------------------------------------+-----------------------------------------------+---------------+-------------+----------------+
 
@@ -87,8 +87,8 @@ applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:02     ; 1.0                     ; 296 MB              ; 00:00:02                           ;
-; Total                ; 00:00:02     ; --                      ; --                  ; 00:00:02                           ;
+; Analysis & Synthesis ; 00:00:01     ; 1.0                     ; 240 MB              ; 00:00:01                           ;
+; Total                ; 00:00:01     ; --                      ; --                  ; 00:00:01                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -97,7 +97,7 @@ applicable agreement for further details.
 +----------------------+------------------+---------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name       ; OS Version ; Processor type ;
 +----------------------+------------------+---------------+------------+----------------+
-; Analysis & Synthesis ; G1C41            ; Windows Vista ; 6.2        ; x86_64         ;
+; Analysis & Synthesis ; DESKTOP-BFVANTC  ; Windows Vista ; 6.2        ; x86_64         ;
 +----------------------+------------------+---------------+------------+----------------+
 
 

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Proj_Hardware
-Tue May 14 12:54:57 2019
+Tue May 14 23:35:32 2019
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -37,10 +37,10 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                 ;
 +-------------------------------+----------------------------------------------+
-; Analysis & Synthesis Status   ; Failed - Tue May 14 12:54:57 2019            ;
+; Analysis & Synthesis Status   ; Failed - Tue May 14 23:35:32 2019            ;
 ; Quartus II Version            ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                 ; Proj_Hardware                                ;
-; Top-level Entity Name         ; CPU                                          ;
+; Top-level Entity Name         ; VCPU                                         ;
 ; Family                        ; Stratix II                                   ;
 ; Logic utilization             ; N/A until Partition Merge                    ;
 ;     Combinational ALUTs       ; N/A until Partition Merge                    ;
@@ -60,7 +60,7 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
-; Top-level entity name                                                      ; CPU                ; Proj_Hardware      ;
+; Top-level entity name                                                      ; VCPU               ; Proj_Hardware      ;
 ; Family name                                                                ; Stratix II         ; Stratix II         ;
 ; Use Generated Physical Constraints File                                    ; Off                ;                    ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
@@ -135,21 +135,15 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+--------------------+--------------------+
 
 
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 4           ;
-; Maximum allowed            ; 4           ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     1 processor            ; 100.0%      ;
-;     2-4 processors         ;   0.0%      ;
-+----------------------------+-------------+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 16     ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
 
 
 +-------------------------------+
@@ -158,9 +152,8 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Tue May 14 12:54:55 2019
+    Info: Processing started: Tue May 14 23:35:31 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Proj_Hardware -c Proj_Hardware
-Info: Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info: Found 1 design units, including 1 entities, in source file div.v
     Info: Found entity 1: div
 Info: Found 1 design units, including 1 entities, in source file mult.v
@@ -222,26 +215,24 @@ Info: Found 1 design units, including 1 entities, in source file unidadecontrole
     Info: Found entity 1: UnidadeControle
 Info: Found 1 design units, including 1 entities, in source file proc_control.bdf
     Info: Found entity 1: Proc_Control
-Info: Found 1 design units, including 1 entities, in source file vcpu.sv
-    Info: Found entity 1: VCPU
-Error (10170): Verilog HDL syntax error at CPU.v(1) near text ""Memoria.vhd";  expecting ".", or an identifier File: C:/Users/insbs/Desktop/infrahardware/ProjetoVerilog/CPU.v Line: 1
-Error (10839): Verilog HDL error at CPU.v(1): declaring global objects is a SystemVerilog feature File: C:/Users/insbs/Desktop/infrahardware/ProjetoVerilog/CPU.v Line: 1
-Error (10839): Verilog HDL error at CPU.v(2): declaring global objects is a SystemVerilog feature File: C:/Users/insbs/Desktop/infrahardware/ProjetoVerilog/CPU.v Line: 2
-Error (10839): Verilog HDL error at CPU.v(3): declaring global objects is a SystemVerilog feature File: C:/Users/insbs/Desktop/infrahardware/ProjetoVerilog/CPU.v Line: 3
-Error (10839): Verilog HDL error at CPU.v(4): declaring global objects is a SystemVerilog feature File: C:/Users/insbs/Desktop/infrahardware/ProjetoVerilog/CPU.v Line: 4
-Error (10112): Ignored design unit "CPU" at CPU.v(6) due to previous errors File: C:/Users/insbs/Desktop/infrahardware/ProjetoVerilog/CPU.v Line: 6
-Info: Found 0 design units, including 0 entities, in source file cpu.v
-Info: Generated suppressed messages file C:/Users/insbs/Desktop/infrahardware/ProjetoVerilog/Proj_Hardware.map.smsg
-Error: Quartus II Analysis & Synthesis was unsuccessful. 6 errors, 0 warnings
-    Error: Peak virtual memory: 296 megabytes
-    Error: Processing ended: Tue May 14 12:54:57 2019
-    Error: Elapsed time: 00:00:02
-    Error: Total CPU time (on all processors): 00:00:02
+Error (10170): Verilog HDL syntax error at VCPU.sv(187) near text "input";  expecting ")" File: C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/VCPU.sv Line: 187
+Error (10112): Ignored design unit "VCPU" at VCPU.sv(1) due to previous errors File: C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/VCPU.sv Line: 1
+Info: Found 0 design units, including 0 entities, in source file vcpu.sv
+Info: Found 1 design units, including 1 entities, in source file mux_bwd.v
+    Info: Found entity 1: mux_BWD
+Info: Found 1 design units, including 1 entities, in source file mux_memwd.v
+    Info: Found entity 1: mux_memWD
+Info: Generated suppressed messages file C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/Proj_Hardware.map.smsg
+Error: Quartus II Analysis & Synthesis was unsuccessful. 2 errors, 0 warnings
+    Error: Peak virtual memory: 240 megabytes
+    Error: Processing ended: Tue May 14 23:35:32 2019
+    Error: Elapsed time: 00:00:01
+    Error: Total CPU time (on all processors): 00:00:01
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in C:/Users/insbs/Desktop/infrahardware/ProjetoVerilog/Proj_Hardware.map.smsg.
+The suppressed messages can be found in C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/Proj_Hardware.map.smsg.
 
 

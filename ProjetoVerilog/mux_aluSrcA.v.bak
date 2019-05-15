@@ -1,7 +1,7 @@
 module mux_aluSrcA(
 	input wire [1:0] selector,
 	input wire [31:0] inputA,//00
-	input wire [31,0] inputB,//01
+	input wire [31:0] inputB,//01
 	input wire [31:0] inputC,//11
 	output wire [31:0] out);
 	
