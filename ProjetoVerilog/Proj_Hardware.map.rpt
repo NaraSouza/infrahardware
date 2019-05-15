@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Proj_Hardware
-Tue May 14 23:35:32 2019
+Wed May 15 00:21:34 2019
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -10,8 +10,28 @@ Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
-  6. Analysis & Synthesis Suppressed Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Source assignments for Memoria:Mem|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
+ 12. Source assignments for Memoria:Mem|LPM_RAM_DQ:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
+ 13. Source assignments for Memoria:Mem|LPM_RAM_DQ:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
+ 14. Source assignments for Memoria:Mem|LPM_RAM_DQ:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
+ 15. Parameter Settings for User Entity Instance: Memoria:Mem|LPM_RAM_DQ:MEM
+ 16. Parameter Settings for User Entity Instance: Memoria:Mem|LPM_RAM_DQ:MEM_plus_One
+ 17. Parameter Settings for User Entity Instance: Memoria:Mem|LPM_RAM_DQ:MEM_plus_Two
+ 18. Parameter Settings for User Entity Instance: Memoria:Mem|LPM_RAM_DQ:MEM_plus_Three
+ 19. Port Connectivity Checks: "RegDesloc:RegD"
+ 20. Port Connectivity Checks: "Ula32:ALU"
+ 21. Port Connectivity Checks: "Banco_reg:registers"
+ 22. Port Connectivity Checks: "mux_regDst:RegDSTMux"
+ 23. Port Connectivity Checks: "mux_BWD:BWDMux"
+ 24. Port Connectivity Checks: "mux_iOrD:IorDMux"
+ 25. Analysis & Synthesis Messages
+ 26. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -37,21 +57,21 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                 ;
 +-------------------------------+----------------------------------------------+
-; Analysis & Synthesis Status   ; Failed - Tue May 14 23:35:32 2019            ;
+; Analysis & Synthesis Status   ; Successful - Wed May 15 00:21:34 2019        ;
 ; Quartus II Version            ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                 ; Proj_Hardware                                ;
 ; Top-level Entity Name         ; VCPU                                         ;
 ; Family                        ; Stratix II                                   ;
-; Logic utilization             ; N/A until Partition Merge                    ;
-;     Combinational ALUTs       ; N/A until Partition Merge                    ;
-;     Dedicated logic registers ; N/A until Partition Merge                    ;
-; Total registers               ; N/A until Partition Merge                    ;
-; Total pins                    ; N/A until Partition Merge                    ;
-; Total virtual pins            ; N/A until Partition Merge                    ;
-; Total block memory bits       ; N/A until Partition Merge                    ;
-; DSP block 9-bit elements      ; N/A until Partition Merge                    ;
-; Total PLLs                    ; N/A until Partition Merge                    ;
-; Total DLLs                    ; N/A until Partition Merge                    ;
+; Logic utilization             ; N/A                                          ;
+;     Combinational ALUTs       ; 0                                            ;
+;     Dedicated logic registers ; 0                                            ;
+; Total registers               ; 0                                            ;
+; Total pins                    ; 137                                          ;
+; Total virtual pins            ; 0                                            ;
+; Total block memory bits       ; 0                                            ;
+; DSP block 9-bit elements      ; 0                                            ;
+; Total PLLs                    ; 0                                            ;
+; Total DLLs                    ; 0                                            ;
 +-------------------------------+----------------------------------------------+
 
 
@@ -146,13 +166,1034 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                     ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                           ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------+
+; Banco_reg.vhd                    ; yes             ; User VHDL File               ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/Banco_reg.vhd                 ;
+; Instr_Reg.vhd                    ; yes             ; User VHDL File               ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/Instr_Reg.vhd                 ;
+; Memoria.vhd                      ; yes             ; User VHDL File               ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/Memoria.vhd                   ;
+; RegDesloc.vhd                    ; yes             ; User VHDL File               ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/RegDesloc.vhd                 ;
+; Registrador.vhd                  ; yes             ; User VHDL File               ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/Registrador.vhd               ;
+; ula32.vhd                        ; yes             ; User VHDL File               ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/ula32.vhd                     ;
+; mux_2inputs.v                    ; yes             ; User Verilog HDL File        ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/mux_2inputs.v                 ;
+; mux_aluSrcA.v                    ; yes             ; User Verilog HDL File        ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/mux_aluSrcA.v                 ;
+; mux_aluSrcB.v                    ; yes             ; User Verilog HDL File        ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/mux_aluSrcB.v                 ;
+; mux_iOrD.v                       ; yes             ; User Verilog HDL File        ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/mux_iOrD.v                    ;
+; mux_regDst.v                     ; yes             ; User Verilog HDL File        ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/mux_regDst.v                  ;
+; mux_memToReg.v                   ; yes             ; User Verilog HDL File        ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/mux_memToReg.v                ;
+; mux_pcSrc.v                      ; yes             ; User Verilog HDL File        ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/mux_pcSrc.v                   ;
+; VCPU.sv                          ; yes             ; User SystemVerilog HDL File  ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/VCPU.sv                       ;
+; mux_BWD.v                        ; yes             ; User Verilog HDL File        ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/mux_BWD.v                     ;
+; mux_memWD.V                      ; yes             ; User Verilog HDL File        ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/mux_memWD.V                   ;
+; lpm_ram_dq.tdf                   ; yes             ; Megafunction                 ; d:/downloads/alteraquartus91sp2portable/quartus/libraries/megafunctions/lpm_ram_dq.tdf ;
+; altram.tdf                       ; yes             ; Megafunction                 ; d:/downloads/alteraquartus91sp2portable/quartus/libraries/megafunctions/altram.tdf     ;
+; altsyncram.tdf                   ; yes             ; Megafunction                 ; d:/downloads/alteraquartus91sp2portable/quartus/libraries/megafunctions/altsyncram.tdf ;
+; db/altsyncram_g2a1.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/db/altsyncram_g2a1.tdf        ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary          ;
++----------------------------------------------+-------+
+; Resource                                     ; Usage ;
++----------------------------------------------+-------+
+; Estimated ALUTs Used                         ; 0     ;
+; Dedicated logic registers                    ; 0     ;
+;                                              ;       ;
+; Estimated ALUTs Unavailable                  ; 0     ;
+;                                              ;       ;
+; Total combinational functions                ; 0     ;
+; Combinational ALUT usage by number of inputs ;       ;
+;     -- 7 input functions                     ; 0     ;
+;     -- 6 input functions                     ; 0     ;
+;     -- 5 input functions                     ; 0     ;
+;     -- 4 input functions                     ; 0     ;
+;     -- <=3 input functions                   ; 0     ;
+;                                              ;       ;
+; Combinational ALUTs by mode                  ;       ;
+;     -- normal mode                           ; 0     ;
+;     -- extended LUT mode                     ; 0     ;
+;     -- arithmetic mode                       ; 0     ;
+;     -- shared arithmetic mode                ; 0     ;
+;                                              ;       ;
+; Estimated ALUT/register pairs used           ; 0     ;
+;                                              ;       ;
+; Total registers                              ; 0     ;
+;     -- Dedicated logic registers             ; 0     ;
+;     -- I/O registers                         ; 0     ;
+;                                              ;       ;
+;                                              ;       ;
+; I/O pins                                     ; 137   ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                           ;
++----------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+---------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+---------------------+--------------+
+; |VCPU                      ; 0 (0)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 137  ; 0            ; |VCPU               ; work         ;
++----------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                     ;
++------------------------------------------+---------------------------------------------+
+; Register name                            ; Reason for Removal                          ;
++------------------------------------------+---------------------------------------------+
+; Registrador:low|Saida[0..31]             ; Stuck at GND due to stuck port clock_enable ;
+; Registrador:high|Saida[0..31]            ; Stuck at GND due to stuck port clock_enable ;
+; Registrador:ALUOutReg|Saida[31]          ; Stuck at GND due to stuck port clock_enable ;
+; Registrador:A|Saida[31]                  ; Lost fanout                                 ;
+; Registrador:ALUOutReg|Saida[30]          ; Stuck at GND due to stuck port clock_enable ;
+; Registrador:A|Saida[30]                  ; Lost fanout                                 ;
+; Registrador:ALUOutReg|Saida[29]          ; Stuck at GND due to stuck port clock_enable ;
+; Registrador:A|Saida[29]                  ; Lost fanout                                 ;
+; Registrador:ALUOutReg|Saida[28]          ; Stuck at GND due to stuck port clock_enable ;
+; Registrador:A|Saida[28]                  ; Lost fanout                                 ;
+; Registrador:ALUOutReg|Saida[27]          ; Stuck at GND due to stuck port clock_enable ;
+; Registrador:A|Saida[27]                  ; Lost fanout                                 ;
+; Registrador:ALUOutReg|Saida[26]          ; Stuck at GND due to stuck port clock_enable ;
+; Registrador:A|Saida[26]                  ; Lost fanout                                 ;
+; Registrador:ALUOutReg|Saida[25]          ; Stuck at GND due to stuck port clock_enable ;
+; Registrador:A|Saida[25]                  ; Lost fanout                                 ;
+; Registrador:ALUOutReg|Saida[24]          ; Stuck at GND due to stuck port clock_enable ;
+; Registrador:A|Saida[24]                  ; Lost fanout                                 ;
+; Registrador:ALUOutReg|Saida[23]          ; Stuck at GND due to stuck port clock_enable ;
+; Registrador:A|Saida[23]                  ; Lost fanout                                 ;
+; Registrador:ALUOutReg|Saida[22]          ; Stuck at GND due to stuck port clock_enable ;
+; Registrador:A|Saida[22]                  ; Lost fanout                                 ;
+; Registrador:ALUOutReg|Saida[21]          ; Stuck at GND due to stuck port clock_enable ;
+; Registrador:A|Saida[21]                  ; Lost fanout                                 ;
+; Registrador:ALUOutReg|Saida[20]          ; Stuck at GND due to stuck port clock_enable ;
+; Registrador:A|Saida[20]                  ; Lost fanout                                 ;
+; Registrador:ALUOutReg|Saida[19]          ; Stuck at GND due to stuck port clock_enable ;
+; Registrador:A|Saida[19]                  ; Lost fanout                                 ;
+; Registrador:ALUOutReg|Saida[18]          ; Stuck at GND due to stuck port clock_enable ;
+; Registrador:A|Saida[18]                  ; Lost fanout                                 ;
+; Registrador:ALUOutReg|Saida[17]          ; Stuck at GND due to stuck port clock_enable ;
+; Registrador:A|Saida[17]                  ; Lost fanout                                 ;
+; Registrador:ALUOutReg|Saida[16]          ; Stuck at GND due to stuck port clock_enable ;
+; Registrador:A|Saida[16]                  ; Lost fanout                                 ;
+; Registrador:ALUOutReg|Saida[15]          ; Stuck at GND due to stuck port clock_enable ;
+; Registrador:A|Saida[15]                  ; Lost fanout                                 ;
+; Registrador:ALUOutReg|Saida[14]          ; Stuck at GND due to stuck port clock_enable ;
+; Registrador:A|Saida[14]                  ; Lost fanout                                 ;
+; Registrador:ALUOutReg|Saida[13]          ; Stuck at GND due to stuck port clock_enable ;
+; Registrador:A|Saida[13]                  ; Lost fanout                                 ;
+; Registrador:ALUOutReg|Saida[12]          ; Stuck at GND due to stuck port clock_enable ;
+; Registrador:A|Saida[12]                  ; Lost fanout                                 ;
+; Registrador:ALUOutReg|Saida[11]          ; Stuck at GND due to stuck port clock_enable ;
+; Registrador:A|Saida[11]                  ; Lost fanout                                 ;
+; Registrador:ALUOutReg|Saida[10]          ; Stuck at GND due to stuck port clock_enable ;
+; Registrador:A|Saida[10]                  ; Lost fanout                                 ;
+; Registrador:ALUOutReg|Saida[9]           ; Stuck at GND due to stuck port clock_enable ;
+; Registrador:A|Saida[9]                   ; Lost fanout                                 ;
+; Registrador:ALUOutReg|Saida[8]           ; Stuck at GND due to stuck port clock_enable ;
+; Registrador:A|Saida[8]                   ; Lost fanout                                 ;
+; Registrador:ALUOutReg|Saida[7]           ; Stuck at GND due to stuck port clock_enable ;
+; Registrador:A|Saida[7]                   ; Lost fanout                                 ;
+; Registrador:ALUOutReg|Saida[6]           ; Stuck at GND due to stuck port clock_enable ;
+; Registrador:A|Saida[6]                   ; Lost fanout                                 ;
+; Registrador:ALUOutReg|Saida[5]           ; Stuck at GND due to stuck port clock_enable ;
+; Registrador:A|Saida[5]                   ; Lost fanout                                 ;
+; Registrador:ALUOutReg|Saida[4]           ; Stuck at GND due to stuck port clock_enable ;
+; Registrador:A|Saida[4]                   ; Lost fanout                                 ;
+; Registrador:ALUOutReg|Saida[3]           ; Stuck at GND due to stuck port clock_enable ;
+; Registrador:A|Saida[3]                   ; Lost fanout                                 ;
+; Registrador:ALUOutReg|Saida[2]           ; Stuck at GND due to stuck port clock_enable ;
+; Registrador:A|Saida[2]                   ; Lost fanout                                 ;
+; Registrador:ALUOutReg|Saida[1]           ; Stuck at GND due to stuck port clock_enable ;
+; Registrador:A|Saida[1]                   ; Lost fanout                                 ;
+; Registrador:ALUOutReg|Saida[0]           ; Stuck at GND due to stuck port clock_enable ;
+; Registrador:A|Saida[0]                   ; Lost fanout                                 ;
+; Registrador:B|Saida[0..31]               ; Stuck at GND due to stuck port clock_enable ;
+; Banco_reg:registers|Reg0[0..31]          ; Stuck at GND due to stuck port clock_enable ;
+; Banco_reg:registers|Reg1[0..31]          ; Stuck at GND due to stuck port clock_enable ;
+; Banco_reg:registers|Reg2[0..31]          ; Stuck at GND due to stuck port clock_enable ;
+; Banco_reg:registers|Reg3[0..31]          ; Stuck at GND due to stuck port clock_enable ;
+; Banco_reg:registers|Reg4[0..31]          ; Stuck at GND due to stuck port clock_enable ;
+; Banco_reg:registers|Reg5[0..31]          ; Stuck at GND due to stuck port clock_enable ;
+; Banco_reg:registers|Reg6[0..31]          ; Stuck at GND due to stuck port clock_enable ;
+; Banco_reg:registers|Reg7[0..31]          ; Stuck at GND due to stuck port clock_enable ;
+; Banco_reg:registers|Reg8[0..31]          ; Stuck at GND due to stuck port clock_enable ;
+; Banco_reg:registers|Reg9[0..31]          ; Stuck at GND due to stuck port clock_enable ;
+; Banco_reg:registers|Reg10[0..31]         ; Stuck at GND due to stuck port clock_enable ;
+; Banco_reg:registers|Reg11[0..31]         ; Stuck at GND due to stuck port clock_enable ;
+; Banco_reg:registers|Reg12[0..31]         ; Stuck at GND due to stuck port clock_enable ;
+; Banco_reg:registers|Reg13[0..31]         ; Stuck at GND due to stuck port clock_enable ;
+; Banco_reg:registers|Reg14[0..31]         ; Stuck at GND due to stuck port clock_enable ;
+; Banco_reg:registers|Reg15[0..31]         ; Stuck at GND due to stuck port clock_enable ;
+; Banco_reg:registers|Reg16[0..31]         ; Stuck at GND due to stuck port clock_enable ;
+; Banco_reg:registers|Reg17[0..31]         ; Stuck at GND due to stuck port clock_enable ;
+; Banco_reg:registers|Reg18[0..31]         ; Stuck at GND due to stuck port clock_enable ;
+; Banco_reg:registers|Reg19[0..31]         ; Stuck at GND due to stuck port clock_enable ;
+; Banco_reg:registers|Reg20[0..31]         ; Stuck at GND due to stuck port clock_enable ;
+; Banco_reg:registers|Reg21[0..31]         ; Stuck at GND due to stuck port clock_enable ;
+; Banco_reg:registers|Reg22[0..31]         ; Stuck at GND due to stuck port clock_enable ;
+; Banco_reg:registers|Reg23[0..31]         ; Stuck at GND due to stuck port clock_enable ;
+; Banco_reg:registers|Reg24[0..31]         ; Stuck at GND due to stuck port clock_enable ;
+; Banco_reg:registers|Reg25[0..31]         ; Stuck at GND due to stuck port clock_enable ;
+; Banco_reg:registers|Reg26[0..31]         ; Stuck at GND due to stuck port clock_enable ;
+; Banco_reg:registers|Reg27[0..31]         ; Stuck at GND due to stuck port clock_enable ;
+; Banco_reg:registers|Reg28[0..31]         ; Stuck at GND due to stuck port clock_enable ;
+; Banco_reg:registers|Reg29[0..31]         ; Stuck at GND due to stuck port clock_enable ;
+; Banco_reg:registers|Reg30[0..31]         ; Stuck at GND due to stuck port clock_enable ;
+; Banco_reg:registers|Reg31[0..31]         ; Stuck at GND due to stuck port clock_enable ;
+; Instr_Reg:IR|Instr31_26[0..5]            ; Stuck at GND due to stuck port clock_enable ;
+; Instr_Reg:IR|Instr25_21[0..4]            ; Stuck at GND due to stuck port clock_enable ;
+; Instr_Reg:IR|Instr20_16[0..4]            ; Stuck at GND due to stuck port clock_enable ;
+; Instr_Reg:IR|Instr15_0[0..15]            ; Stuck at GND due to stuck port clock_enable ;
+; Registrador:MDR|Saida[0..31]             ; Stuck at GND due to stuck port clock_enable ;
+; Registrador:PC|Saida[0..31]              ; Stuck at GND due to stuck port clock_enable ;
+; RegDesloc:RegD|temp[0..31]               ; Lost fanout                                 ;
+; Total Number of Removed Registers = 1312 ;                                             ;
++------------------------------------------+---------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                           ;
++---------------------------------+--------------------------------+------------------------------------------------------------------------------------+
+; Register name                   ; Reason for Removal             ; Registers Removed due to This Register                                             ;
++---------------------------------+--------------------------------+------------------------------------------------------------------------------------+
+; Registrador:ALUOutReg|Saida[7]  ; Stuck at GND                   ; Registrador:A|Saida[7], Instr_Reg:IR|Instr15_0[7], Instr_Reg:IR|Instr15_0[6],      ;
+;                                 ; due to stuck port clock_enable ; Instr_Reg:IR|Instr15_0[5], Instr_Reg:IR|Instr15_0[4], Instr_Reg:IR|Instr15_0[3],   ;
+;                                 ;                                ; Instr_Reg:IR|Instr15_0[2], Instr_Reg:IR|Instr15_0[1], Instr_Reg:IR|Instr15_0[0],   ;
+;                                 ;                                ; Registrador:MDR|Saida[31], Registrador:MDR|Saida[30], Registrador:MDR|Saida[29],   ;
+;                                 ;                                ; Registrador:MDR|Saida[28], Registrador:MDR|Saida[27], Registrador:MDR|Saida[26],   ;
+;                                 ;                                ; Registrador:MDR|Saida[25], Registrador:MDR|Saida[24], Registrador:MDR|Saida[23],   ;
+;                                 ;                                ; Registrador:MDR|Saida[22], Registrador:MDR|Saida[21], Registrador:MDR|Saida[20],   ;
+;                                 ;                                ; Registrador:MDR|Saida[19], Registrador:MDR|Saida[18], Registrador:MDR|Saida[17],   ;
+;                                 ;                                ; Registrador:MDR|Saida[16], Registrador:MDR|Saida[15], Registrador:MDR|Saida[14],   ;
+;                                 ;                                ; Registrador:MDR|Saida[13], Registrador:MDR|Saida[12], Registrador:MDR|Saida[11],   ;
+;                                 ;                                ; Registrador:MDR|Saida[10], Registrador:MDR|Saida[9], Registrador:MDR|Saida[8],     ;
+;                                 ;                                ; Registrador:MDR|Saida[6], Registrador:MDR|Saida[5], Registrador:MDR|Saida[4],      ;
+;                                 ;                                ; Registrador:MDR|Saida[3], Registrador:MDR|Saida[2], Registrador:MDR|Saida[1],      ;
+;                                 ;                                ; Registrador:MDR|Saida[0], Registrador:PC|Saida[31], Registrador:PC|Saida[30],      ;
+;                                 ;                                ; Registrador:PC|Saida[29], Registrador:PC|Saida[28], Registrador:PC|Saida[27],      ;
+;                                 ;                                ; Registrador:PC|Saida[26], Registrador:PC|Saida[25], Registrador:PC|Saida[24],      ;
+;                                 ;                                ; Registrador:PC|Saida[23], Registrador:PC|Saida[22], Registrador:PC|Saida[21],      ;
+;                                 ;                                ; Registrador:PC|Saida[20], Registrador:PC|Saida[19], Registrador:PC|Saida[18],      ;
+;                                 ;                                ; Registrador:PC|Saida[17], Registrador:PC|Saida[16], Registrador:PC|Saida[15],      ;
+;                                 ;                                ; Registrador:PC|Saida[14], Registrador:PC|Saida[13], Registrador:PC|Saida[12],      ;
+;                                 ;                                ; Registrador:PC|Saida[11], Registrador:PC|Saida[10], Registrador:PC|Saida[9],       ;
+;                                 ;                                ; Registrador:PC|Saida[8], Registrador:PC|Saida[6], Registrador:PC|Saida[5],         ;
+;                                 ;                                ; Registrador:PC|Saida[4], Registrador:PC|Saida[3], Registrador:PC|Saida[2],         ;
+;                                 ;                                ; Registrador:PC|Saida[1]                                                            ;
+; Registrador:low|Saida[30]       ; Stuck at GND                   ; Banco_reg:registers|Reg0[30], Banco_reg:registers|Reg1[30],                        ;
+;                                 ; due to stuck port clock_enable ; Banco_reg:registers|Reg2[30], Banco_reg:registers|Reg3[30],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg4[30], Banco_reg:registers|Reg5[30],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg6[30], Banco_reg:registers|Reg7[30],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg8[30], Banco_reg:registers|Reg9[30],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg10[30], Banco_reg:registers|Reg11[30],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg12[30], Banco_reg:registers|Reg13[30],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg14[30], Banco_reg:registers|Reg15[30],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg16[30], Banco_reg:registers|Reg17[30],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg18[30], Banco_reg:registers|Reg19[30],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg20[30], Banco_reg:registers|Reg21[30],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg22[30], Banco_reg:registers|Reg23[30],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg24[30], Banco_reg:registers|Reg25[30],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg26[30], Banco_reg:registers|Reg27[30],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg28[30], Banco_reg:registers|Reg29[30],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg30[30], Banco_reg:registers|Reg31[30],                      ;
+;                                 ;                                ; RegDesloc:RegD|temp[30]                                                            ;
+; Registrador:low|Saida[29]       ; Stuck at GND                   ; Banco_reg:registers|Reg0[29], Banco_reg:registers|Reg1[29],                        ;
+;                                 ; due to stuck port clock_enable ; Banco_reg:registers|Reg2[29], Banco_reg:registers|Reg3[29],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg4[29], Banco_reg:registers|Reg5[29],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg6[29], Banco_reg:registers|Reg7[29],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg8[29], Banco_reg:registers|Reg9[29],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg10[29], Banco_reg:registers|Reg11[29],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg12[29], Banco_reg:registers|Reg13[29],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg14[29], Banco_reg:registers|Reg15[29],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg16[29], Banco_reg:registers|Reg17[29],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg18[29], Banco_reg:registers|Reg19[29],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg20[29], Banco_reg:registers|Reg21[29],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg22[29], Banco_reg:registers|Reg23[29],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg24[29], Banco_reg:registers|Reg25[29],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg26[29], Banco_reg:registers|Reg27[29],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg28[29], Banco_reg:registers|Reg29[29],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg30[29], Banco_reg:registers|Reg31[29],                      ;
+;                                 ;                                ; RegDesloc:RegD|temp[29]                                                            ;
+; Registrador:low|Saida[28]       ; Stuck at GND                   ; Banco_reg:registers|Reg0[28], Banco_reg:registers|Reg1[28],                        ;
+;                                 ; due to stuck port clock_enable ; Banco_reg:registers|Reg2[28], Banco_reg:registers|Reg3[28],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg4[28], Banco_reg:registers|Reg5[28],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg6[28], Banco_reg:registers|Reg7[28],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg8[28], Banco_reg:registers|Reg9[28],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg10[28], Banco_reg:registers|Reg11[28],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg12[28], Banco_reg:registers|Reg13[28],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg14[28], Banco_reg:registers|Reg15[28],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg16[28], Banco_reg:registers|Reg17[28],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg18[28], Banco_reg:registers|Reg19[28],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg20[28], Banco_reg:registers|Reg21[28],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg22[28], Banco_reg:registers|Reg23[28],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg24[28], Banco_reg:registers|Reg25[28],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg26[28], Banco_reg:registers|Reg27[28],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg28[28], Banco_reg:registers|Reg29[28],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg30[28], Banco_reg:registers|Reg31[28],                      ;
+;                                 ;                                ; RegDesloc:RegD|temp[28]                                                            ;
+; Registrador:low|Saida[27]       ; Stuck at GND                   ; Banco_reg:registers|Reg0[27], Banco_reg:registers|Reg1[27],                        ;
+;                                 ; due to stuck port clock_enable ; Banco_reg:registers|Reg2[27], Banco_reg:registers|Reg3[27],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg4[27], Banco_reg:registers|Reg5[27],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg6[27], Banco_reg:registers|Reg7[27],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg8[27], Banco_reg:registers|Reg9[27],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg10[27], Banco_reg:registers|Reg11[27],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg12[27], Banco_reg:registers|Reg13[27],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg14[27], Banco_reg:registers|Reg15[27],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg16[27], Banco_reg:registers|Reg17[27],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg18[27], Banco_reg:registers|Reg19[27],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg20[27], Banco_reg:registers|Reg21[27],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg22[27], Banco_reg:registers|Reg23[27],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg24[27], Banco_reg:registers|Reg25[27],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg26[27], Banco_reg:registers|Reg27[27],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg28[27], Banco_reg:registers|Reg29[27],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg30[27], Banco_reg:registers|Reg31[27],                      ;
+;                                 ;                                ; RegDesloc:RegD|temp[27]                                                            ;
+; Registrador:low|Saida[26]       ; Stuck at GND                   ; Banco_reg:registers|Reg0[26], Banco_reg:registers|Reg1[26],                        ;
+;                                 ; due to stuck port clock_enable ; Banco_reg:registers|Reg2[26], Banco_reg:registers|Reg3[26],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg4[26], Banco_reg:registers|Reg5[26],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg6[26], Banco_reg:registers|Reg7[26],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg8[26], Banco_reg:registers|Reg9[26],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg10[26], Banco_reg:registers|Reg11[26],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg12[26], Banco_reg:registers|Reg13[26],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg14[26], Banco_reg:registers|Reg15[26],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg16[26], Banco_reg:registers|Reg17[26],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg18[26], Banco_reg:registers|Reg19[26],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg20[26], Banco_reg:registers|Reg21[26],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg22[26], Banco_reg:registers|Reg23[26],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg24[26], Banco_reg:registers|Reg25[26],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg26[26], Banco_reg:registers|Reg27[26],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg28[26], Banco_reg:registers|Reg29[26],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg30[26], Banco_reg:registers|Reg31[26],                      ;
+;                                 ;                                ; RegDesloc:RegD|temp[26]                                                            ;
+; Registrador:low|Saida[25]       ; Stuck at GND                   ; Banco_reg:registers|Reg0[25], Banco_reg:registers|Reg1[25],                        ;
+;                                 ; due to stuck port clock_enable ; Banco_reg:registers|Reg2[25], Banco_reg:registers|Reg3[25],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg4[25], Banco_reg:registers|Reg5[25],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg6[25], Banco_reg:registers|Reg7[25],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg8[25], Banco_reg:registers|Reg9[25],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg10[25], Banco_reg:registers|Reg11[25],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg12[25], Banco_reg:registers|Reg13[25],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg14[25], Banco_reg:registers|Reg15[25],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg16[25], Banco_reg:registers|Reg17[25],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg18[25], Banco_reg:registers|Reg19[25],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg20[25], Banco_reg:registers|Reg21[25],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg22[25], Banco_reg:registers|Reg23[25],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg24[25], Banco_reg:registers|Reg25[25],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg26[25], Banco_reg:registers|Reg27[25],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg28[25], Banco_reg:registers|Reg29[25],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg30[25], Banco_reg:registers|Reg31[25],                      ;
+;                                 ;                                ; RegDesloc:RegD|temp[25]                                                            ;
+; Registrador:low|Saida[24]       ; Stuck at GND                   ; Banco_reg:registers|Reg0[24], Banco_reg:registers|Reg1[24],                        ;
+;                                 ; due to stuck port clock_enable ; Banco_reg:registers|Reg2[24], Banco_reg:registers|Reg3[24],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg4[24], Banco_reg:registers|Reg5[24],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg6[24], Banco_reg:registers|Reg7[24],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg8[24], Banco_reg:registers|Reg9[24],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg10[24], Banco_reg:registers|Reg11[24],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg12[24], Banco_reg:registers|Reg13[24],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg14[24], Banco_reg:registers|Reg15[24],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg16[24], Banco_reg:registers|Reg17[24],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg18[24], Banco_reg:registers|Reg19[24],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg20[24], Banco_reg:registers|Reg21[24],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg22[24], Banco_reg:registers|Reg23[24],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg24[24], Banco_reg:registers|Reg25[24],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg26[24], Banco_reg:registers|Reg27[24],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg28[24], Banco_reg:registers|Reg29[24],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg30[24], Banco_reg:registers|Reg31[24],                      ;
+;                                 ;                                ; RegDesloc:RegD|temp[24]                                                            ;
+; Registrador:low|Saida[23]       ; Stuck at GND                   ; Banco_reg:registers|Reg0[23], Banco_reg:registers|Reg1[23],                        ;
+;                                 ; due to stuck port clock_enable ; Banco_reg:registers|Reg2[23], Banco_reg:registers|Reg3[23],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg4[23], Banco_reg:registers|Reg5[23],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg6[23], Banco_reg:registers|Reg7[23],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg8[23], Banco_reg:registers|Reg9[23],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg10[23], Banco_reg:registers|Reg11[23],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg12[23], Banco_reg:registers|Reg13[23],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg14[23], Banco_reg:registers|Reg15[23],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg16[23], Banco_reg:registers|Reg17[23],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg18[23], Banco_reg:registers|Reg19[23],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg20[23], Banco_reg:registers|Reg21[23],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg22[23], Banco_reg:registers|Reg23[23],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg24[23], Banco_reg:registers|Reg25[23],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg26[23], Banco_reg:registers|Reg27[23],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg28[23], Banco_reg:registers|Reg29[23],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg30[23], Banco_reg:registers|Reg31[23],                      ;
+;                                 ;                                ; RegDesloc:RegD|temp[23]                                                            ;
+; Registrador:low|Saida[22]       ; Stuck at GND                   ; Banco_reg:registers|Reg0[22], Banco_reg:registers|Reg1[22],                        ;
+;                                 ; due to stuck port clock_enable ; Banco_reg:registers|Reg2[22], Banco_reg:registers|Reg3[22],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg4[22], Banco_reg:registers|Reg5[22],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg6[22], Banco_reg:registers|Reg7[22],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg8[22], Banco_reg:registers|Reg9[22],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg10[22], Banco_reg:registers|Reg11[22],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg12[22], Banco_reg:registers|Reg13[22],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg14[22], Banco_reg:registers|Reg15[22],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg16[22], Banco_reg:registers|Reg17[22],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg18[22], Banco_reg:registers|Reg19[22],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg20[22], Banco_reg:registers|Reg21[22],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg22[22], Banco_reg:registers|Reg23[22],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg24[22], Banco_reg:registers|Reg25[22],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg26[22], Banco_reg:registers|Reg27[22],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg28[22], Banco_reg:registers|Reg29[22],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg30[22], Banco_reg:registers|Reg31[22],                      ;
+;                                 ;                                ; RegDesloc:RegD|temp[22]                                                            ;
+; Registrador:low|Saida[21]       ; Stuck at GND                   ; Banco_reg:registers|Reg0[21], Banco_reg:registers|Reg1[21],                        ;
+;                                 ; due to stuck port clock_enable ; Banco_reg:registers|Reg2[21], Banco_reg:registers|Reg3[21],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg4[21], Banco_reg:registers|Reg5[21],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg6[21], Banco_reg:registers|Reg7[21],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg8[21], Banco_reg:registers|Reg9[21],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg10[21], Banco_reg:registers|Reg11[21],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg12[21], Banco_reg:registers|Reg13[21],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg14[21], Banco_reg:registers|Reg15[21],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg16[21], Banco_reg:registers|Reg17[21],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg18[21], Banco_reg:registers|Reg19[21],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg20[21], Banco_reg:registers|Reg21[21],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg22[21], Banco_reg:registers|Reg23[21],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg24[21], Banco_reg:registers|Reg25[21],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg26[21], Banco_reg:registers|Reg27[21],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg28[21], Banco_reg:registers|Reg29[21],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg30[21], Banco_reg:registers|Reg31[21],                      ;
+;                                 ;                                ; RegDesloc:RegD|temp[21]                                                            ;
+; Registrador:low|Saida[20]       ; Stuck at GND                   ; Banco_reg:registers|Reg0[20], Banco_reg:registers|Reg1[20],                        ;
+;                                 ; due to stuck port clock_enable ; Banco_reg:registers|Reg2[20], Banco_reg:registers|Reg3[20],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg4[20], Banco_reg:registers|Reg5[20],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg6[20], Banco_reg:registers|Reg7[20],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg8[20], Banco_reg:registers|Reg9[20],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg10[20], Banco_reg:registers|Reg11[20],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg12[20], Banco_reg:registers|Reg13[20],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg14[20], Banco_reg:registers|Reg15[20],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg16[20], Banco_reg:registers|Reg17[20],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg18[20], Banco_reg:registers|Reg19[20],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg20[20], Banco_reg:registers|Reg21[20],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg22[20], Banco_reg:registers|Reg23[20],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg24[20], Banco_reg:registers|Reg25[20],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg26[20], Banco_reg:registers|Reg27[20],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg28[20], Banco_reg:registers|Reg29[20],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg30[20], Banco_reg:registers|Reg31[20],                      ;
+;                                 ;                                ; RegDesloc:RegD|temp[20]                                                            ;
+; Registrador:low|Saida[19]       ; Stuck at GND                   ; Banco_reg:registers|Reg0[19], Banco_reg:registers|Reg1[19],                        ;
+;                                 ; due to stuck port clock_enable ; Banco_reg:registers|Reg2[19], Banco_reg:registers|Reg3[19],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg4[19], Banco_reg:registers|Reg5[19],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg6[19], Banco_reg:registers|Reg7[19],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg8[19], Banco_reg:registers|Reg9[19],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg10[19], Banco_reg:registers|Reg11[19],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg12[19], Banco_reg:registers|Reg13[19],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg14[19], Banco_reg:registers|Reg15[19],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg16[19], Banco_reg:registers|Reg17[19],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg18[19], Banco_reg:registers|Reg19[19],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg20[19], Banco_reg:registers|Reg21[19],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg22[19], Banco_reg:registers|Reg23[19],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg24[19], Banco_reg:registers|Reg25[19],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg26[19], Banco_reg:registers|Reg27[19],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg28[19], Banco_reg:registers|Reg29[19],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg30[19], Banco_reg:registers|Reg31[19],                      ;
+;                                 ;                                ; RegDesloc:RegD|temp[19]                                                            ;
+; Registrador:low|Saida[18]       ; Stuck at GND                   ; Banco_reg:registers|Reg0[18], Banco_reg:registers|Reg1[18],                        ;
+;                                 ; due to stuck port clock_enable ; Banco_reg:registers|Reg2[18], Banco_reg:registers|Reg3[18],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg4[18], Banco_reg:registers|Reg5[18],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg6[18], Banco_reg:registers|Reg7[18],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg8[18], Banco_reg:registers|Reg9[18],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg10[18], Banco_reg:registers|Reg11[18],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg12[18], Banco_reg:registers|Reg13[18],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg14[18], Banco_reg:registers|Reg15[18],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg16[18], Banco_reg:registers|Reg17[18],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg18[18], Banco_reg:registers|Reg19[18],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg20[18], Banco_reg:registers|Reg21[18],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg22[18], Banco_reg:registers|Reg23[18],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg24[18], Banco_reg:registers|Reg25[18],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg26[18], Banco_reg:registers|Reg27[18],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg28[18], Banco_reg:registers|Reg29[18],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg30[18], Banco_reg:registers|Reg31[18],                      ;
+;                                 ;                                ; RegDesloc:RegD|temp[18]                                                            ;
+; Registrador:low|Saida[17]       ; Stuck at GND                   ; Banco_reg:registers|Reg0[17], Banco_reg:registers|Reg1[17],                        ;
+;                                 ; due to stuck port clock_enable ; Banco_reg:registers|Reg2[17], Banco_reg:registers|Reg3[17],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg4[17], Banco_reg:registers|Reg5[17],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg6[17], Banco_reg:registers|Reg7[17],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg8[17], Banco_reg:registers|Reg9[17],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg10[17], Banco_reg:registers|Reg11[17],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg12[17], Banco_reg:registers|Reg13[17],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg14[17], Banco_reg:registers|Reg15[17],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg16[17], Banco_reg:registers|Reg17[17],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg18[17], Banco_reg:registers|Reg19[17],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg20[17], Banco_reg:registers|Reg21[17],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg22[17], Banco_reg:registers|Reg23[17],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg24[17], Banco_reg:registers|Reg25[17],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg26[17], Banco_reg:registers|Reg27[17],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg28[17], Banco_reg:registers|Reg29[17],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg30[17], Banco_reg:registers|Reg31[17],                      ;
+;                                 ;                                ; RegDesloc:RegD|temp[17]                                                            ;
+; Registrador:low|Saida[16]       ; Stuck at GND                   ; Banco_reg:registers|Reg0[16], Banco_reg:registers|Reg1[16],                        ;
+;                                 ; due to stuck port clock_enable ; Banco_reg:registers|Reg2[16], Banco_reg:registers|Reg3[16],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg4[16], Banco_reg:registers|Reg5[16],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg6[16], Banco_reg:registers|Reg7[16],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg8[16], Banco_reg:registers|Reg9[16],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg10[16], Banco_reg:registers|Reg11[16],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg12[16], Banco_reg:registers|Reg13[16],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg14[16], Banco_reg:registers|Reg15[16],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg16[16], Banco_reg:registers|Reg17[16],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg18[16], Banco_reg:registers|Reg19[16],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg20[16], Banco_reg:registers|Reg21[16],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg22[16], Banco_reg:registers|Reg23[16],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg24[16], Banco_reg:registers|Reg25[16],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg26[16], Banco_reg:registers|Reg27[16],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg28[16], Banco_reg:registers|Reg29[16],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg30[16], Banco_reg:registers|Reg31[16],                      ;
+;                                 ;                                ; RegDesloc:RegD|temp[16]                                                            ;
+; Registrador:low|Saida[15]       ; Stuck at GND                   ; Banco_reg:registers|Reg0[15], Banco_reg:registers|Reg1[15],                        ;
+;                                 ; due to stuck port clock_enable ; Banco_reg:registers|Reg2[15], Banco_reg:registers|Reg3[15],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg4[15], Banco_reg:registers|Reg5[15],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg6[15], Banco_reg:registers|Reg7[15],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg8[15], Banco_reg:registers|Reg9[15],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg10[15], Banco_reg:registers|Reg11[15],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg12[15], Banco_reg:registers|Reg13[15],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg14[15], Banco_reg:registers|Reg15[15],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg16[15], Banco_reg:registers|Reg17[15],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg18[15], Banco_reg:registers|Reg19[15],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg20[15], Banco_reg:registers|Reg21[15],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg22[15], Banco_reg:registers|Reg23[15],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg24[15], Banco_reg:registers|Reg25[15],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg26[15], Banco_reg:registers|Reg27[15],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg28[15], Banco_reg:registers|Reg29[15],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg30[15], Banco_reg:registers|Reg31[15],                      ;
+;                                 ;                                ; RegDesloc:RegD|temp[15]                                                            ;
+; Registrador:low|Saida[14]       ; Stuck at GND                   ; Banco_reg:registers|Reg0[14], Banco_reg:registers|Reg1[14],                        ;
+;                                 ; due to stuck port clock_enable ; Banco_reg:registers|Reg2[14], Banco_reg:registers|Reg3[14],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg4[14], Banco_reg:registers|Reg5[14],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg6[14], Banco_reg:registers|Reg7[14],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg8[14], Banco_reg:registers|Reg9[14],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg10[14], Banco_reg:registers|Reg11[14],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg12[14], Banco_reg:registers|Reg13[14],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg14[14], Banco_reg:registers|Reg15[14],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg16[14], Banco_reg:registers|Reg17[14],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg18[14], Banco_reg:registers|Reg19[14],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg20[14], Banco_reg:registers|Reg21[14],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg22[14], Banco_reg:registers|Reg23[14],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg24[14], Banco_reg:registers|Reg25[14],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg26[14], Banco_reg:registers|Reg27[14],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg28[14], Banco_reg:registers|Reg29[14],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg30[14], Banco_reg:registers|Reg31[14],                      ;
+;                                 ;                                ; RegDesloc:RegD|temp[14]                                                            ;
+; Registrador:low|Saida[13]       ; Stuck at GND                   ; Banco_reg:registers|Reg0[13], Banco_reg:registers|Reg1[13],                        ;
+;                                 ; due to stuck port clock_enable ; Banco_reg:registers|Reg2[13], Banco_reg:registers|Reg3[13],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg4[13], Banco_reg:registers|Reg5[13],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg6[13], Banco_reg:registers|Reg7[13],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg8[13], Banco_reg:registers|Reg9[13],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg10[13], Banco_reg:registers|Reg11[13],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg12[13], Banco_reg:registers|Reg13[13],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg14[13], Banco_reg:registers|Reg15[13],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg16[13], Banco_reg:registers|Reg17[13],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg18[13], Banco_reg:registers|Reg19[13],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg20[13], Banco_reg:registers|Reg21[13],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg22[13], Banco_reg:registers|Reg23[13],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg24[13], Banco_reg:registers|Reg25[13],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg26[13], Banco_reg:registers|Reg27[13],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg28[13], Banco_reg:registers|Reg29[13],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg30[13], Banco_reg:registers|Reg31[13],                      ;
+;                                 ;                                ; RegDesloc:RegD|temp[13]                                                            ;
+; Registrador:low|Saida[12]       ; Stuck at GND                   ; Banco_reg:registers|Reg0[12], Banco_reg:registers|Reg1[12],                        ;
+;                                 ; due to stuck port clock_enable ; Banco_reg:registers|Reg2[12], Banco_reg:registers|Reg3[12],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg4[12], Banco_reg:registers|Reg5[12],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg6[12], Banco_reg:registers|Reg7[12],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg8[12], Banco_reg:registers|Reg9[12],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg10[12], Banco_reg:registers|Reg11[12],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg12[12], Banco_reg:registers|Reg13[12],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg14[12], Banco_reg:registers|Reg15[12],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg16[12], Banco_reg:registers|Reg17[12],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg18[12], Banco_reg:registers|Reg19[12],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg20[12], Banco_reg:registers|Reg21[12],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg22[12], Banco_reg:registers|Reg23[12],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg24[12], Banco_reg:registers|Reg25[12],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg26[12], Banco_reg:registers|Reg27[12],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg28[12], Banco_reg:registers|Reg29[12],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg30[12], Banco_reg:registers|Reg31[12],                      ;
+;                                 ;                                ; RegDesloc:RegD|temp[12]                                                            ;
+; Registrador:low|Saida[11]       ; Stuck at GND                   ; Banco_reg:registers|Reg0[11], Banco_reg:registers|Reg1[11],                        ;
+;                                 ; due to stuck port clock_enable ; Banco_reg:registers|Reg2[11], Banco_reg:registers|Reg3[11],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg4[11], Banco_reg:registers|Reg5[11],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg6[11], Banco_reg:registers|Reg7[11],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg8[11], Banco_reg:registers|Reg9[11],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg10[11], Banco_reg:registers|Reg11[11],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg12[11], Banco_reg:registers|Reg13[11],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg14[11], Banco_reg:registers|Reg15[11],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg16[11], Banco_reg:registers|Reg17[11],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg18[11], Banco_reg:registers|Reg19[11],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg20[11], Banco_reg:registers|Reg21[11],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg22[11], Banco_reg:registers|Reg23[11],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg24[11], Banco_reg:registers|Reg25[11],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg26[11], Banco_reg:registers|Reg27[11],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg28[11], Banco_reg:registers|Reg29[11],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg30[11], Banco_reg:registers|Reg31[11],                      ;
+;                                 ;                                ; RegDesloc:RegD|temp[11]                                                            ;
+; Registrador:low|Saida[10]       ; Stuck at GND                   ; Banco_reg:registers|Reg0[10], Banco_reg:registers|Reg1[10],                        ;
+;                                 ; due to stuck port clock_enable ; Banco_reg:registers|Reg2[10], Banco_reg:registers|Reg3[10],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg4[10], Banco_reg:registers|Reg5[10],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg6[10], Banco_reg:registers|Reg7[10],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg8[10], Banco_reg:registers|Reg9[10],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg10[10], Banco_reg:registers|Reg11[10],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg12[10], Banco_reg:registers|Reg13[10],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg14[10], Banco_reg:registers|Reg15[10],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg16[10], Banco_reg:registers|Reg17[10],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg18[10], Banco_reg:registers|Reg19[10],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg20[10], Banco_reg:registers|Reg21[10],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg22[10], Banco_reg:registers|Reg23[10],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg24[10], Banco_reg:registers|Reg25[10],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg26[10], Banco_reg:registers|Reg27[10],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg28[10], Banco_reg:registers|Reg29[10],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg30[10], Banco_reg:registers|Reg31[10],                      ;
+;                                 ;                                ; RegDesloc:RegD|temp[10]                                                            ;
+; Registrador:low|Saida[9]        ; Stuck at GND                   ; Banco_reg:registers|Reg0[9], Banco_reg:registers|Reg1[9],                          ;
+;                                 ; due to stuck port clock_enable ; Banco_reg:registers|Reg2[9], Banco_reg:registers|Reg3[9],                          ;
+;                                 ;                                ; Banco_reg:registers|Reg4[9], Banco_reg:registers|Reg5[9],                          ;
+;                                 ;                                ; Banco_reg:registers|Reg6[9], Banco_reg:registers|Reg7[9],                          ;
+;                                 ;                                ; Banco_reg:registers|Reg8[9], Banco_reg:registers|Reg9[9],                          ;
+;                                 ;                                ; Banco_reg:registers|Reg10[9], Banco_reg:registers|Reg11[9],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg12[9], Banco_reg:registers|Reg13[9],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg14[9], Banco_reg:registers|Reg15[9],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg16[9], Banco_reg:registers|Reg17[9],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg18[9], Banco_reg:registers|Reg19[9],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg20[9], Banco_reg:registers|Reg21[9],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg22[9], Banco_reg:registers|Reg23[9],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg24[9], Banco_reg:registers|Reg25[9],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg26[9], Banco_reg:registers|Reg27[9],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg28[9], Banco_reg:registers|Reg29[9],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg30[9], Banco_reg:registers|Reg31[9], RegDesloc:RegD|temp[9] ;
+; Registrador:low|Saida[8]        ; Stuck at GND                   ; Banco_reg:registers|Reg0[8], Banco_reg:registers|Reg1[8],                          ;
+;                                 ; due to stuck port clock_enable ; Banco_reg:registers|Reg2[8], Banco_reg:registers|Reg3[8],                          ;
+;                                 ;                                ; Banco_reg:registers|Reg4[8], Banco_reg:registers|Reg5[8],                          ;
+;                                 ;                                ; Banco_reg:registers|Reg6[8], Banco_reg:registers|Reg7[8],                          ;
+;                                 ;                                ; Banco_reg:registers|Reg8[8], Banco_reg:registers|Reg9[8],                          ;
+;                                 ;                                ; Banco_reg:registers|Reg10[8], Banco_reg:registers|Reg11[8],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg12[8], Banco_reg:registers|Reg13[8],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg14[8], Banco_reg:registers|Reg15[8],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg16[8], Banco_reg:registers|Reg17[8],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg18[8], Banco_reg:registers|Reg19[8],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg20[8], Banco_reg:registers|Reg21[8],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg22[8], Banco_reg:registers|Reg23[8],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg24[8], Banco_reg:registers|Reg25[8],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg26[8], Banco_reg:registers|Reg27[8],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg28[8], Banco_reg:registers|Reg29[8],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg30[8], Banco_reg:registers|Reg31[8], RegDesloc:RegD|temp[8] ;
+; Registrador:low|Saida[7]        ; Stuck at GND                   ; Banco_reg:registers|Reg0[7], Banco_reg:registers|Reg1[7],                          ;
+;                                 ; due to stuck port clock_enable ; Banco_reg:registers|Reg2[7], Banco_reg:registers|Reg3[7],                          ;
+;                                 ;                                ; Banco_reg:registers|Reg4[7], Banco_reg:registers|Reg5[7],                          ;
+;                                 ;                                ; Banco_reg:registers|Reg6[7], Banco_reg:registers|Reg7[7],                          ;
+;                                 ;                                ; Banco_reg:registers|Reg8[7], Banco_reg:registers|Reg9[7],                          ;
+;                                 ;                                ; Banco_reg:registers|Reg10[7], Banco_reg:registers|Reg11[7],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg12[7], Banco_reg:registers|Reg13[7],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg14[7], Banco_reg:registers|Reg15[7],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg16[7], Banco_reg:registers|Reg17[7],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg18[7], Banco_reg:registers|Reg19[7],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg20[7], Banco_reg:registers|Reg21[7],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg22[7], Banco_reg:registers|Reg23[7],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg24[7], Banco_reg:registers|Reg25[7],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg26[7], Banco_reg:registers|Reg27[7],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg28[7], Banco_reg:registers|Reg29[7],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg30[7], Banco_reg:registers|Reg31[7], RegDesloc:RegD|temp[7] ;
+; Registrador:low|Saida[6]        ; Stuck at GND                   ; Banco_reg:registers|Reg0[6], Banco_reg:registers|Reg1[6],                          ;
+;                                 ; due to stuck port clock_enable ; Banco_reg:registers|Reg2[6], Banco_reg:registers|Reg3[6],                          ;
+;                                 ;                                ; Banco_reg:registers|Reg4[6], Banco_reg:registers|Reg5[6],                          ;
+;                                 ;                                ; Banco_reg:registers|Reg6[6], Banco_reg:registers|Reg7[6],                          ;
+;                                 ;                                ; Banco_reg:registers|Reg8[6], Banco_reg:registers|Reg9[6],                          ;
+;                                 ;                                ; Banco_reg:registers|Reg10[6], Banco_reg:registers|Reg11[6],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg12[6], Banco_reg:registers|Reg13[6],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg14[6], Banco_reg:registers|Reg15[6],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg16[6], Banco_reg:registers|Reg17[6],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg18[6], Banco_reg:registers|Reg19[6],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg20[6], Banco_reg:registers|Reg21[6],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg22[6], Banco_reg:registers|Reg23[6],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg24[6], Banco_reg:registers|Reg25[6],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg26[6], Banco_reg:registers|Reg27[6],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg28[6], Banco_reg:registers|Reg29[6],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg30[6], Banco_reg:registers|Reg31[6], RegDesloc:RegD|temp[6] ;
+; Registrador:low|Saida[5]        ; Stuck at GND                   ; Banco_reg:registers|Reg0[5], Banco_reg:registers|Reg1[5],                          ;
+;                                 ; due to stuck port clock_enable ; Banco_reg:registers|Reg2[5], Banco_reg:registers|Reg3[5],                          ;
+;                                 ;                                ; Banco_reg:registers|Reg4[5], Banco_reg:registers|Reg5[5],                          ;
+;                                 ;                                ; Banco_reg:registers|Reg6[5], Banco_reg:registers|Reg7[5],                          ;
+;                                 ;                                ; Banco_reg:registers|Reg8[5], Banco_reg:registers|Reg9[5],                          ;
+;                                 ;                                ; Banco_reg:registers|Reg10[5], Banco_reg:registers|Reg11[5],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg12[5], Banco_reg:registers|Reg13[5],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg14[5], Banco_reg:registers|Reg15[5],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg16[5], Banco_reg:registers|Reg17[5],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg18[5], Banco_reg:registers|Reg19[5],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg20[5], Banco_reg:registers|Reg21[5],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg22[5], Banco_reg:registers|Reg23[5],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg24[5], Banco_reg:registers|Reg25[5],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg26[5], Banco_reg:registers|Reg27[5],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg28[5], Banco_reg:registers|Reg29[5],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg30[5], Banco_reg:registers|Reg31[5], RegDesloc:RegD|temp[5] ;
+; Registrador:low|Saida[4]        ; Stuck at GND                   ; Banco_reg:registers|Reg0[4], Banco_reg:registers|Reg1[4],                          ;
+;                                 ; due to stuck port clock_enable ; Banco_reg:registers|Reg2[4], Banco_reg:registers|Reg3[4],                          ;
+;                                 ;                                ; Banco_reg:registers|Reg4[4], Banco_reg:registers|Reg5[4],                          ;
+;                                 ;                                ; Banco_reg:registers|Reg6[4], Banco_reg:registers|Reg7[4],                          ;
+;                                 ;                                ; Banco_reg:registers|Reg8[4], Banco_reg:registers|Reg9[4],                          ;
+;                                 ;                                ; Banco_reg:registers|Reg10[4], Banco_reg:registers|Reg11[4],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg12[4], Banco_reg:registers|Reg13[4],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg14[4], Banco_reg:registers|Reg15[4],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg16[4], Banco_reg:registers|Reg17[4],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg18[4], Banco_reg:registers|Reg19[4],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg20[4], Banco_reg:registers|Reg21[4],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg22[4], Banco_reg:registers|Reg23[4],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg24[4], Banco_reg:registers|Reg25[4],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg26[4], Banco_reg:registers|Reg27[4],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg28[4], Banco_reg:registers|Reg29[4],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg30[4], Banco_reg:registers|Reg31[4], RegDesloc:RegD|temp[4] ;
+; Registrador:low|Saida[3]        ; Stuck at GND                   ; Banco_reg:registers|Reg0[3], Banco_reg:registers|Reg1[3],                          ;
+;                                 ; due to stuck port clock_enable ; Banco_reg:registers|Reg2[3], Banco_reg:registers|Reg3[3],                          ;
+;                                 ;                                ; Banco_reg:registers|Reg4[3], Banco_reg:registers|Reg5[3],                          ;
+;                                 ;                                ; Banco_reg:registers|Reg6[3], Banco_reg:registers|Reg7[3],                          ;
+;                                 ;                                ; Banco_reg:registers|Reg8[3], Banco_reg:registers|Reg9[3],                          ;
+;                                 ;                                ; Banco_reg:registers|Reg10[3], Banco_reg:registers|Reg11[3],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg12[3], Banco_reg:registers|Reg13[3],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg14[3], Banco_reg:registers|Reg15[3],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg16[3], Banco_reg:registers|Reg17[3],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg18[3], Banco_reg:registers|Reg19[3],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg20[3], Banco_reg:registers|Reg21[3],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg22[3], Banco_reg:registers|Reg23[3],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg24[3], Banco_reg:registers|Reg25[3],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg26[3], Banco_reg:registers|Reg27[3],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg28[3], Banco_reg:registers|Reg29[3],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg30[3], Banco_reg:registers|Reg31[3], RegDesloc:RegD|temp[3] ;
+; Registrador:low|Saida[2]        ; Stuck at GND                   ; Banco_reg:registers|Reg0[2], Banco_reg:registers|Reg1[2],                          ;
+;                                 ; due to stuck port clock_enable ; Banco_reg:registers|Reg2[2], Banco_reg:registers|Reg3[2],                          ;
+;                                 ;                                ; Banco_reg:registers|Reg4[2], Banco_reg:registers|Reg5[2],                          ;
+;                                 ;                                ; Banco_reg:registers|Reg6[2], Banco_reg:registers|Reg7[2],                          ;
+;                                 ;                                ; Banco_reg:registers|Reg8[2], Banco_reg:registers|Reg9[2],                          ;
+;                                 ;                                ; Banco_reg:registers|Reg10[2], Banco_reg:registers|Reg11[2],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg12[2], Banco_reg:registers|Reg13[2],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg14[2], Banco_reg:registers|Reg15[2],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg16[2], Banco_reg:registers|Reg17[2],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg18[2], Banco_reg:registers|Reg19[2],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg20[2], Banco_reg:registers|Reg21[2],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg22[2], Banco_reg:registers|Reg23[2],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg24[2], Banco_reg:registers|Reg25[2],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg26[2], Banco_reg:registers|Reg27[2],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg28[2], Banco_reg:registers|Reg29[2],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg30[2], Banco_reg:registers|Reg31[2], RegDesloc:RegD|temp[2] ;
+; Registrador:low|Saida[1]        ; Stuck at GND                   ; Banco_reg:registers|Reg0[1], Banco_reg:registers|Reg1[1],                          ;
+;                                 ; due to stuck port clock_enable ; Banco_reg:registers|Reg2[1], Banco_reg:registers|Reg3[1],                          ;
+;                                 ;                                ; Banco_reg:registers|Reg4[1], Banco_reg:registers|Reg5[1],                          ;
+;                                 ;                                ; Banco_reg:registers|Reg6[1], Banco_reg:registers|Reg7[1],                          ;
+;                                 ;                                ; Banco_reg:registers|Reg8[1], Banco_reg:registers|Reg9[1],                          ;
+;                                 ;                                ; Banco_reg:registers|Reg10[1], Banco_reg:registers|Reg11[1],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg12[1], Banco_reg:registers|Reg13[1],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg14[1], Banco_reg:registers|Reg15[1],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg16[1], Banco_reg:registers|Reg17[1],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg18[1], Banco_reg:registers|Reg19[1],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg20[1], Banco_reg:registers|Reg21[1],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg22[1], Banco_reg:registers|Reg23[1],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg24[1], Banco_reg:registers|Reg25[1],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg26[1], Banco_reg:registers|Reg27[1],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg28[1], Banco_reg:registers|Reg29[1],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg30[1], Banco_reg:registers|Reg31[1], RegDesloc:RegD|temp[1] ;
+; Registrador:low|Saida[0]        ; Stuck at GND                   ; Banco_reg:registers|Reg0[0], Banco_reg:registers|Reg1[0],                          ;
+;                                 ; due to stuck port clock_enable ; Banco_reg:registers|Reg2[0], Banco_reg:registers|Reg3[0],                          ;
+;                                 ;                                ; Banco_reg:registers|Reg4[0], Banco_reg:registers|Reg5[0],                          ;
+;                                 ;                                ; Banco_reg:registers|Reg6[0], Banco_reg:registers|Reg7[0],                          ;
+;                                 ;                                ; Banco_reg:registers|Reg8[0], Banco_reg:registers|Reg9[0],                          ;
+;                                 ;                                ; Banco_reg:registers|Reg10[0], Banco_reg:registers|Reg11[0],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg12[0], Banco_reg:registers|Reg13[0],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg14[0], Banco_reg:registers|Reg15[0],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg16[0], Banco_reg:registers|Reg17[0],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg18[0], Banco_reg:registers|Reg19[0],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg20[0], Banco_reg:registers|Reg21[0],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg22[0], Banco_reg:registers|Reg23[0],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg24[0], Banco_reg:registers|Reg25[0],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg26[0], Banco_reg:registers|Reg27[0],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg28[0], Banco_reg:registers|Reg29[0],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg30[0], Banco_reg:registers|Reg31[0], RegDesloc:RegD|temp[0] ;
+; Registrador:low|Saida[31]       ; Stuck at GND                   ; Banco_reg:registers|Reg0[31], Banco_reg:registers|Reg1[31],                        ;
+;                                 ; due to stuck port clock_enable ; Banco_reg:registers|Reg2[31], Banco_reg:registers|Reg3[31],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg4[31], Banco_reg:registers|Reg5[31],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg6[31], Banco_reg:registers|Reg7[31],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg8[31], Banco_reg:registers|Reg9[31],                        ;
+;                                 ;                                ; Banco_reg:registers|Reg10[31], Banco_reg:registers|Reg11[31],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg12[31], Banco_reg:registers|Reg13[31],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg14[31], Banco_reg:registers|Reg15[31],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg16[31], Banco_reg:registers|Reg17[31],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg18[31], Banco_reg:registers|Reg19[31],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg20[31], Banco_reg:registers|Reg21[31],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg22[31], Banco_reg:registers|Reg23[31],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg24[31], Banco_reg:registers|Reg25[31],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg26[31], Banco_reg:registers|Reg27[31],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg28[31], Banco_reg:registers|Reg29[31],                      ;
+;                                 ;                                ; Banco_reg:registers|Reg30[31], Banco_reg:registers|Reg31[31],                      ;
+;                                 ;                                ; RegDesloc:RegD|temp[31]                                                            ;
+; Registrador:ALUOutReg|Saida[6]  ; Stuck at GND                   ; Registrador:A|Saida[6], Registrador:MDR|Saida[7], Registrador:PC|Saida[7]          ;
+;                                 ; due to stuck port clock_enable ;                                                                                    ;
+; Registrador:ALUOutReg|Saida[29] ; Stuck at GND                   ; Registrador:A|Saida[29], Instr_Reg:IR|Instr31_26[3]                                ;
+;                                 ; due to stuck port clock_enable ;                                                                                    ;
+; Registrador:ALUOutReg|Saida[28] ; Stuck at GND                   ; Registrador:A|Saida[28], Instr_Reg:IR|Instr31_26[2]                                ;
+;                                 ; due to stuck port clock_enable ;                                                                                    ;
+; Registrador:ALUOutReg|Saida[27] ; Stuck at GND                   ; Registrador:A|Saida[27], Instr_Reg:IR|Instr31_26[1]                                ;
+;                                 ; due to stuck port clock_enable ;                                                                                    ;
+; Registrador:ALUOutReg|Saida[26] ; Stuck at GND                   ; Registrador:A|Saida[26], Instr_Reg:IR|Instr31_26[0]                                ;
+;                                 ; due to stuck port clock_enable ;                                                                                    ;
+; Registrador:ALUOutReg|Saida[25] ; Stuck at GND                   ; Registrador:A|Saida[25], Instr_Reg:IR|Instr25_21[4]                                ;
+;                                 ; due to stuck port clock_enable ;                                                                                    ;
+; Registrador:ALUOutReg|Saida[24] ; Stuck at GND                   ; Registrador:A|Saida[24], Instr_Reg:IR|Instr25_21[3]                                ;
+;                                 ; due to stuck port clock_enable ;                                                                                    ;
+; Registrador:ALUOutReg|Saida[23] ; Stuck at GND                   ; Registrador:A|Saida[23], Instr_Reg:IR|Instr25_21[2]                                ;
+;                                 ; due to stuck port clock_enable ;                                                                                    ;
+; Registrador:ALUOutReg|Saida[22] ; Stuck at GND                   ; Registrador:A|Saida[22], Instr_Reg:IR|Instr25_21[1]                                ;
+;                                 ; due to stuck port clock_enable ;                                                                                    ;
+; Registrador:ALUOutReg|Saida[21] ; Stuck at GND                   ; Registrador:A|Saida[21], Instr_Reg:IR|Instr25_21[0]                                ;
+;                                 ; due to stuck port clock_enable ;                                                                                    ;
+; Registrador:ALUOutReg|Saida[20] ; Stuck at GND                   ; Registrador:A|Saida[20], Instr_Reg:IR|Instr20_16[4]                                ;
+;                                 ; due to stuck port clock_enable ;                                                                                    ;
+; Registrador:ALUOutReg|Saida[19] ; Stuck at GND                   ; Registrador:A|Saida[19], Instr_Reg:IR|Instr20_16[3]                                ;
+;                                 ; due to stuck port clock_enable ;                                                                                    ;
+; Registrador:ALUOutReg|Saida[18] ; Stuck at GND                   ; Registrador:A|Saida[18], Instr_Reg:IR|Instr20_16[2]                                ;
+;                                 ; due to stuck port clock_enable ;                                                                                    ;
+; Registrador:ALUOutReg|Saida[17] ; Stuck at GND                   ; Registrador:A|Saida[17], Instr_Reg:IR|Instr20_16[1]                                ;
+;                                 ; due to stuck port clock_enable ;                                                                                    ;
+; Registrador:ALUOutReg|Saida[16] ; Stuck at GND                   ; Registrador:A|Saida[16], Instr_Reg:IR|Instr20_16[0]                                ;
+;                                 ; due to stuck port clock_enable ;                                                                                    ;
+; Registrador:ALUOutReg|Saida[15] ; Stuck at GND                   ; Registrador:A|Saida[15], Instr_Reg:IR|Instr15_0[15]                                ;
+;                                 ; due to stuck port clock_enable ;                                                                                    ;
+; Registrador:ALUOutReg|Saida[14] ; Stuck at GND                   ; Registrador:A|Saida[14], Instr_Reg:IR|Instr15_0[14]                                ;
+;                                 ; due to stuck port clock_enable ;                                                                                    ;
+; Registrador:ALUOutReg|Saida[13] ; Stuck at GND                   ; Registrador:A|Saida[13], Instr_Reg:IR|Instr15_0[13]                                ;
+;                                 ; due to stuck port clock_enable ;                                                                                    ;
+; Registrador:ALUOutReg|Saida[12] ; Stuck at GND                   ; Registrador:A|Saida[12], Instr_Reg:IR|Instr15_0[12]                                ;
+;                                 ; due to stuck port clock_enable ;                                                                                    ;
+; Registrador:ALUOutReg|Saida[11] ; Stuck at GND                   ; Registrador:A|Saida[11], Instr_Reg:IR|Instr15_0[11]                                ;
+;                                 ; due to stuck port clock_enable ;                                                                                    ;
+; Registrador:ALUOutReg|Saida[10] ; Stuck at GND                   ; Registrador:A|Saida[10], Instr_Reg:IR|Instr15_0[10]                                ;
+;                                 ; due to stuck port clock_enable ;                                                                                    ;
+; Registrador:ALUOutReg|Saida[9]  ; Stuck at GND                   ; Registrador:A|Saida[9], Instr_Reg:IR|Instr15_0[9]                                  ;
+;                                 ; due to stuck port clock_enable ;                                                                                    ;
+; Registrador:ALUOutReg|Saida[8]  ; Stuck at GND                   ; Registrador:A|Saida[8], Instr_Reg:IR|Instr15_0[8]                                  ;
+;                                 ; due to stuck port clock_enable ;                                                                                    ;
+; Registrador:ALUOutReg|Saida[31] ; Stuck at GND                   ; Registrador:A|Saida[31], Instr_Reg:IR|Instr31_26[5]                                ;
+;                                 ; due to stuck port clock_enable ;                                                                                    ;
+; Registrador:ALUOutReg|Saida[30] ; Stuck at GND                   ; Registrador:A|Saida[30], Instr_Reg:IR|Instr31_26[4]                                ;
+;                                 ; due to stuck port clock_enable ;                                                                                    ;
+; Registrador:ALUOutReg|Saida[5]  ; Stuck at GND                   ; Registrador:A|Saida[5]                                                             ;
+;                                 ; due to stuck port clock_enable ;                                                                                    ;
+; Registrador:ALUOutReg|Saida[4]  ; Stuck at GND                   ; Registrador:A|Saida[4]                                                             ;
+;                                 ; due to stuck port clock_enable ;                                                                                    ;
+; Registrador:ALUOutReg|Saida[3]  ; Stuck at GND                   ; Registrador:A|Saida[3]                                                             ;
+;                                 ; due to stuck port clock_enable ;                                                                                    ;
+; Registrador:ALUOutReg|Saida[2]  ; Stuck at GND                   ; Registrador:A|Saida[2]                                                             ;
+;                                 ; due to stuck port clock_enable ;                                                                                    ;
+; Registrador:ALUOutReg|Saida[1]  ; Stuck at GND                   ; Registrador:A|Saida[1]                                                             ;
+;                                 ; due to stuck port clock_enable ;                                                                                    ;
+; Registrador:ALUOutReg|Saida[0]  ; Stuck at GND                   ; Registrador:A|Saida[0]                                                             ;
+;                                 ; due to stuck port clock_enable ;                                                                                    ;
++---------------------------------+--------------------------------+------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Source assignments for Memoria:Mem|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated ;
++---------------------------------+--------------------+------+-----------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                  ;
++---------------------------------+--------------------+------+-----------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                   ;
++---------------------------------+--------------------+------+-----------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for Memoria:Mem|LPM_RAM_DQ:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated ;
++---------------------------------+--------------------+------+--------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                           ;
++---------------------------------+--------------------+------+--------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                            ;
++---------------------------------+--------------------+------+--------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for Memoria:Mem|LPM_RAM_DQ:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated ;
++---------------------------------+--------------------+------+--------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                           ;
++---------------------------------+--------------------+------+--------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                            ;
++---------------------------------+--------------------+------+--------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for Memoria:Mem|LPM_RAM_DQ:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated ;
++---------------------------------+--------------------+------+----------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                             ;
++---------------------------------+--------------------+------+----------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                              ;
++---------------------------------+--------------------+------+----------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Memoria:Mem|LPM_RAM_DQ:MEM ;
++------------------------+----------------+-------------------------------+
+; Parameter Name         ; Value          ; Type                          ;
++------------------------+----------------+-------------------------------+
+; LPM_WIDTH              ; 8              ; Signed Integer                ;
+; LPM_WIDTHAD            ; 8              ; Signed Integer                ;
+; LPM_NUMWORDS           ; 0              ; Signed Integer                ;
+; LPM_INDATA             ; REGISTERED     ; Untyped                       ;
+; LPM_ADDRESS_CONTROL    ; REGISTERED     ; Untyped                       ;
+; LPM_OUTDATA            ; REGISTERED     ; Untyped                       ;
+; LPM_FILE               ; instrucoes.mif ; Untyped                       ;
+; USE_EAB                ; ON             ; Untyped                       ;
+; DEVICE_FAMILY          ; Stratix II     ; Untyped                       ;
+; CBXI_PARAMETER         ; NOTHING        ; Untyped                       ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                    ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                  ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                  ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                ;
++------------------------+----------------+-------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Memoria:Mem|LPM_RAM_DQ:MEM_plus_One ;
++------------------------+----------------+----------------------------------------+
+; Parameter Name         ; Value          ; Type                                   ;
++------------------------+----------------+----------------------------------------+
+; LPM_WIDTH              ; 8              ; Signed Integer                         ;
+; LPM_WIDTHAD            ; 8              ; Signed Integer                         ;
+; LPM_NUMWORDS           ; 0              ; Signed Integer                         ;
+; LPM_INDATA             ; REGISTERED     ; Untyped                                ;
+; LPM_ADDRESS_CONTROL    ; REGISTERED     ; Untyped                                ;
+; LPM_OUTDATA            ; REGISTERED     ; Untyped                                ;
+; LPM_FILE               ; instrucoes.mif ; Untyped                                ;
+; USE_EAB                ; ON             ; Untyped                                ;
+; DEVICE_FAMILY          ; Stratix II     ; Untyped                                ;
+; CBXI_PARAMETER         ; NOTHING        ; Untyped                                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                         ;
++------------------------+----------------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Memoria:Mem|LPM_RAM_DQ:MEM_plus_Two ;
++------------------------+----------------+----------------------------------------+
+; Parameter Name         ; Value          ; Type                                   ;
++------------------------+----------------+----------------------------------------+
+; LPM_WIDTH              ; 8              ; Signed Integer                         ;
+; LPM_WIDTHAD            ; 8              ; Signed Integer                         ;
+; LPM_NUMWORDS           ; 0              ; Signed Integer                         ;
+; LPM_INDATA             ; REGISTERED     ; Untyped                                ;
+; LPM_ADDRESS_CONTROL    ; REGISTERED     ; Untyped                                ;
+; LPM_OUTDATA            ; REGISTERED     ; Untyped                                ;
+; LPM_FILE               ; instrucoes.mif ; Untyped                                ;
+; USE_EAB                ; ON             ; Untyped                                ;
+; DEVICE_FAMILY          ; Stratix II     ; Untyped                                ;
+; CBXI_PARAMETER         ; NOTHING        ; Untyped                                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                         ;
++------------------------+----------------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Memoria:Mem|LPM_RAM_DQ:MEM_plus_Three ;
++------------------------+----------------+------------------------------------------+
+; Parameter Name         ; Value          ; Type                                     ;
++------------------------+----------------+------------------------------------------+
+; LPM_WIDTH              ; 8              ; Signed Integer                           ;
+; LPM_WIDTHAD            ; 8              ; Signed Integer                           ;
+; LPM_NUMWORDS           ; 0              ; Signed Integer                           ;
+; LPM_INDATA             ; REGISTERED     ; Untyped                                  ;
+; LPM_ADDRESS_CONTROL    ; REGISTERED     ; Untyped                                  ;
+; LPM_OUTDATA            ; REGISTERED     ; Untyped                                  ;
+; LPM_FILE               ; instrucoes.mif ; Untyped                                  ;
+; USE_EAB                ; ON             ; Untyped                                  ;
+; DEVICE_FAMILY          ; Stratix II     ; Untyped                                  ;
+; CBXI_PARAMETER         ; NOTHING        ; Untyped                                  ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                               ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                             ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                             ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                           ;
++------------------------+----------------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------+
+; Port Connectivity Checks: "RegDesloc:RegD"                  ;
++---------+-------+------------------+------------------------+
+; Port    ; Type  ; Severity         ; Details                ;
++---------+-------+------------------+------------------------+
+; shift   ; Input ; Critical Warning ; Types are incompatible ;
+; n       ; Input ; Critical Warning ; Types are incompatible ;
+; entrada ; Input ; Critical Warning ; Types are incompatible ;
++---------+-------+------------------+------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Ula32:ALU"                                                                              ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; overflow ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; negativo ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; z        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; igual    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; maior    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; menor    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Banco_reg:registers"                                                                                               ;
++----------+-------+------------------+---------------------------------------------------------------------------------------------------------+
+; Port     ; Type  ; Severity         ; Details                                                                                                 ;
++----------+-------+------------------+---------------------------------------------------------------------------------------------------------+
+; writereg ; Input ; Critical Warning ; Can't connect array with 32 elements in array dimension 1 to port with 5 elements in the same dimension ;
++----------+-------+------------------+---------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "mux_regDst:RegDSTMux"                                                                                                                                                   ;
++------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                                                                 ;
++------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; out  ; Output ; Warning  ; Output or bidir port (5 bits) is smaller than the port expression (32 bits) it drives.  The 27 most-significant bit(s) in the port expression will be connected to GND. ;
++------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "mux_BWD:BWDMux"                                                                                                                                                                 ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                          ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Byte ; Input ; Warning  ; Input port expression (9 bits) is wider than the input port (8 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "mux_iOrD:IorDMux"                                                                                                                                                                   ;
++----------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type  ; Severity ; Details                                                                                                                                                                          ;
++----------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; selector ; Input ; Warning  ; Input port expression (4 bits) is wider than the input port (3 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; inputA   ; Input ; Warning  ; Input port expression (26 bits) is smaller than the input port (32 bits) it drives.  Extra input bit(s) "inputA[31..26]" will be connected to GND.                               ;
++----------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Tue May 14 23:35:31 2019
+    Info: Processing started: Wed May 15 00:21:31 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Proj_Hardware -c Proj_Hardware
 Info: Found 1 design units, including 1 entities, in source file div.v
     Info: Found entity 1: div
@@ -215,19 +1256,586 @@ Info: Found 1 design units, including 1 entities, in source file unidadecontrole
     Info: Found entity 1: UnidadeControle
 Info: Found 1 design units, including 1 entities, in source file proc_control.bdf
     Info: Found entity 1: Proc_Control
-Error (10170): Verilog HDL syntax error at VCPU.sv(187) near text "input";  expecting ")" File: C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/VCPU.sv Line: 187
-Error (10112): Ignored design unit "VCPU" at VCPU.sv(1) due to previous errors File: C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/VCPU.sv Line: 1
-Info: Found 0 design units, including 0 entities, in source file vcpu.sv
+Info: Found 1 design units, including 1 entities, in source file vcpu.sv
+    Info: Found entity 1: VCPU
 Info: Found 1 design units, including 1 entities, in source file mux_bwd.v
     Info: Found entity 1: mux_BWD
 Info: Found 1 design units, including 1 entities, in source file mux_memwd.v
     Info: Found entity 1: mux_memWD
+Warning (10236): Verilog HDL Implicit Net warning at VCPU.sv(312): created implicit net for "shiftop"
+Warning (10236): Verilog HDL Implicit Net warning at VCPU.sv(313): created implicit net for "shiftsout"
+Warning (10236): Verilog HDL Implicit Net warning at VCPU.sv(314): created implicit net for "reginout"
+Info: Elaborating entity "VCPU" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at VCPU.sv(20): object "inst25_0" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at VCPU.sv(21): object "shamt" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at VCPU.sv(22): object "funct" assigned a value but never read
+Warning (10034): Output port "CurState" at VCPU.sv(17) has no driver
+Info: Elaborating entity "mux_2inputs" for hierarchy "mux_2inputs:ALUorMemMux"
+Info: Elaborating entity "Registrador" for hierarchy "Registrador:PC"
+Info: Elaborating entity "mux_iOrD" for hierarchy "mux_iOrD:IorDMux"
+Info: Elaborating entity "mux_BWD" for hierarchy "mux_BWD:BWDMux"
+Info: Elaborating entity "Memoria" for hierarchy "Memoria:Mem"
+Info: Elaborating entity "LPM_RAM_DQ" for hierarchy "Memoria:Mem|LPM_RAM_DQ:MEM"
+Info: Elaborated megafunction instantiation "Memoria:Mem|LPM_RAM_DQ:MEM"
+Info: Instantiated megafunction "Memoria:Mem|LPM_RAM_DQ:MEM" with the following parameter:
+    Info: Parameter "LPM_WIDTH" = "8"
+    Info: Parameter "LPM_WIDTHAD" = "8"
+    Info: Parameter "LPM_NUMWORDS" = "0"
+    Info: Parameter "LPM_INDATA" = "REGISTERED"
+    Info: Parameter "LPM_ADDRESS_CONTROL" = "REGISTERED"
+    Info: Parameter "LPM_OUTDATA" = "REGISTERED"
+    Info: Parameter "LPM_FILE" = "instrucoes.mif"
+    Info: Parameter "LPM_TYPE" = "LPM_RAM_DQ"
+    Info: Parameter "USE_EAB" = "ON"
+    Info: Parameter "INTENDED_DEVICE_FAMILY" = "UNUSED"
+    Info: Parameter "LPM_HINT" = "UNUSED"
+Info: Elaborating entity "altram" for hierarchy "Memoria:Mem|LPM_RAM_DQ:MEM|altram:sram"
+Warning: Assertion warning: altram does not support Stratix II device family -- attempting best-case memory conversions, but power-up states and read during write behavior will be different for Stratix II devices
+Info: Elaborated megafunction instantiation "Memoria:Mem|LPM_RAM_DQ:MEM|altram:sram", which is child of megafunction instantiation "Memoria:Mem|LPM_RAM_DQ:MEM"
+Info: Elaborating entity "altsyncram" for hierarchy "Memoria:Mem|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block"
+Info: Elaborated megafunction instantiation "Memoria:Mem|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block", which is child of megafunction instantiation "Memoria:Mem|LPM_RAM_DQ:MEM"
+Info: Found 1 design units, including 1 entities, in source file db/altsyncram_g2a1.tdf
+    Info: Found entity 1: altsyncram_g2a1
+Info: Elaborating entity "altsyncram_g2a1" for hierarchy "Memoria:Mem|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated"
+Info: Elaborating entity "mux_memWD" for hierarchy "mux_memWD:memWDMux"
+Info: Elaborating entity "Instr_Reg" for hierarchy "Instr_Reg:IR"
+Info: Elaborating entity "mux_regDst" for hierarchy "mux_regDst:RegDSTMux"
+Info: Elaborating entity "mux_memToReg" for hierarchy "mux_memToReg:MemToRegMux"
+Info: Elaborating entity "Banco_reg" for hierarchy "Banco_reg:registers"
+Info: Elaborating entity "mux_aluSrcA" for hierarchy "mux_aluSrcA:ALUSrcA"
+Info: Elaborating entity "mux_aluSrcB" for hierarchy "mux_aluSrcB:ALUSrcB"
+Info: Elaborating entity "Ula32" for hierarchy "Ula32:ALU"
+Info: Elaborating entity "mux_pcSrc" for hierarchy "mux_pcSrc:pcSrcMux"
+Info: Elaborating entity "RegDesloc" for hierarchy "RegDesloc:RegD"
+Warning (10492): VHDL Process Statement warning at RegDesloc.vhd(1072): signal "temp" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning: Net is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[31]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[30]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[29]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[28]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[27]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[26]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[25]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[24]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[23]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[22]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[21]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[20]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[19]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[18]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[17]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[16]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[15]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[14]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[13]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[12]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[11]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[10]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[9]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[8]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[7]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[6]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[5]" is missing source, defaulting to GND
+Warning: Net is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[31]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[30]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[29]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[28]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[27]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[26]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[25]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[24]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[23]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[22]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[21]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[20]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[19]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[18]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[17]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[16]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[15]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[14]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[13]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[12]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[11]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[10]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[9]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[8]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[7]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[6]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[5]" is missing source, defaulting to GND
+Warning: Net is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[31]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[30]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[29]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[28]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[27]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[26]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[25]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[24]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[23]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[22]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[21]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[20]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[19]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[18]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[17]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[16]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[15]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[14]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[13]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[12]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[11]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[10]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[9]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[8]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[7]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[6]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[5]" is missing source, defaulting to GND
+Warning: Net is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[31]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[30]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[29]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[28]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[27]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[26]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[25]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[24]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[23]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[22]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[21]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[20]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[19]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[18]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[17]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[16]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[15]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[14]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[13]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[12]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[11]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[10]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[9]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[8]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[7]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[6]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[5]" is missing source, defaulting to GND
+Warning: Net is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[31]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[30]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[29]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[28]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[27]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[26]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[25]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[24]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[23]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[22]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[21]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[20]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[19]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[18]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[17]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[16]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[15]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[14]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[13]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[12]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[11]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[10]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[9]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[8]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[7]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[6]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[5]" is missing source, defaulting to GND
+Warning: Net is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[31]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[30]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[29]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[28]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[27]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[26]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[25]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[24]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[23]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[22]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[21]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[20]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[19]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[18]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[17]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[16]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[15]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[14]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[13]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[12]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[11]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[10]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[9]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[8]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[7]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[6]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[5]" is missing source, defaulting to GND
+Warning: Net is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[31]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[30]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[29]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[28]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[27]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[26]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[25]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[24]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[23]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[22]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[21]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[20]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[19]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[18]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[17]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[16]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[15]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[14]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[13]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[12]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[11]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[10]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[9]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[8]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[7]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[6]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[5]" is missing source, defaulting to GND
+Warning: Net is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[31]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[30]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[29]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[28]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[27]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[26]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[25]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[24]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[23]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[22]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[21]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[20]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[19]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[18]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[17]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[16]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[15]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[14]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[13]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[12]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[11]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[10]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[9]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[8]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[7]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[6]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[5]" is missing source, defaulting to GND
+Warning: Net is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[31]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[30]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[29]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[28]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[27]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[26]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[25]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[24]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[23]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[22]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[21]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[20]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[19]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[18]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[17]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[16]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[15]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[14]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[13]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[12]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[11]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[10]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[9]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[8]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[7]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[6]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[5]" is missing source, defaulting to GND
+Warning: Net is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[31]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[30]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[29]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[28]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[27]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[26]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[25]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[24]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[23]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[22]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[21]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[20]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[19]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[18]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[17]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[16]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[15]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[14]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[13]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[12]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[11]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[10]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[9]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[8]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[7]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[6]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDstOut[5]" is missing source, defaulting to GND
+Warning: Synthesized away the following node(s):
+    Warning: Synthesized away the following RAM node(s):
+        Warning (14320): Synthesized away node "Memoria:Mem|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[0]"
+        Warning (14320): Synthesized away node "Memoria:Mem|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[1]"
+        Warning (14320): Synthesized away node "Memoria:Mem|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[2]"
+        Warning (14320): Synthesized away node "Memoria:Mem|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[3]"
+        Warning (14320): Synthesized away node "Memoria:Mem|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[4]"
+        Warning (14320): Synthesized away node "Memoria:Mem|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[5]"
+        Warning (14320): Synthesized away node "Memoria:Mem|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[6]"
+        Warning (14320): Synthesized away node "Memoria:Mem|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[7]"
+        Warning (14320): Synthesized away node "Memoria:Mem|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[0]"
+        Warning (14320): Synthesized away node "Memoria:Mem|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[1]"
+        Warning (14320): Synthesized away node "Memoria:Mem|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[2]"
+        Warning (14320): Synthesized away node "Memoria:Mem|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[3]"
+        Warning (14320): Synthesized away node "Memoria:Mem|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[4]"
+        Warning (14320): Synthesized away node "Memoria:Mem|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[5]"
+        Warning (14320): Synthesized away node "Memoria:Mem|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[6]"
+        Warning (14320): Synthesized away node "Memoria:Mem|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[7]"
+        Warning (14320): Synthesized away node "Memoria:Mem|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[0]"
+        Warning (14320): Synthesized away node "Memoria:Mem|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[1]"
+        Warning (14320): Synthesized away node "Memoria:Mem|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[2]"
+        Warning (14320): Synthesized away node "Memoria:Mem|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[3]"
+        Warning (14320): Synthesized away node "Memoria:Mem|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[4]"
+        Warning (14320): Synthesized away node "Memoria:Mem|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[5]"
+        Warning (14320): Synthesized away node "Memoria:Mem|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[6]"
+        Warning (14320): Synthesized away node "Memoria:Mem|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[7]"
+        Warning (14320): Synthesized away node "Memoria:Mem|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[0]"
+        Warning (14320): Synthesized away node "Memoria:Mem|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[1]"
+        Warning (14320): Synthesized away node "Memoria:Mem|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[2]"
+        Warning (14320): Synthesized away node "Memoria:Mem|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[3]"
+        Warning (14320): Synthesized away node "Memoria:Mem|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[4]"
+        Warning (14320): Synthesized away node "Memoria:Mem|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[5]"
+        Warning (14320): Synthesized away node "Memoria:Mem|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[6]"
+        Warning (14320): Synthesized away node "Memoria:Mem|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[7]"
+Warning: 5 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning: Output pins are stuck at VCC or GND
+    Warning (13410): Pin "ControlOp[0]" is stuck at GND
+    Warning (13410): Pin "ControlOp[1]" is stuck at GND
+    Warning (13410): Pin "ControlOp[2]" is stuck at GND
+    Warning (13410): Pin "ControlOp[3]" is stuck at GND
+    Warning (13410): Pin "ControlOp[4]" is stuck at GND
+    Warning (13410): Pin "ControlOp[5]" is stuck at GND
+    Warning (13410): Pin "PCOut[0]" is stuck at GND
+    Warning (13410): Pin "PCOut[1]" is stuck at GND
+    Warning (13410): Pin "PCOut[2]" is stuck at GND
+    Warning (13410): Pin "PCOut[3]" is stuck at GND
+    Warning (13410): Pin "PCOut[4]" is stuck at GND
+    Warning (13410): Pin "PCOut[5]" is stuck at GND
+    Warning (13410): Pin "PCOut[6]" is stuck at GND
+    Warning (13410): Pin "PCOut[7]" is stuck at GND
+    Warning (13410): Pin "PCOut[8]" is stuck at GND
+    Warning (13410): Pin "PCOut[9]" is stuck at GND
+    Warning (13410): Pin "PCOut[10]" is stuck at GND
+    Warning (13410): Pin "PCOut[11]" is stuck at GND
+    Warning (13410): Pin "PCOut[12]" is stuck at GND
+    Warning (13410): Pin "PCOut[13]" is stuck at GND
+    Warning (13410): Pin "PCOut[14]" is stuck at GND
+    Warning (13410): Pin "PCOut[15]" is stuck at GND
+    Warning (13410): Pin "PCOut[16]" is stuck at GND
+    Warning (13410): Pin "PCOut[17]" is stuck at GND
+    Warning (13410): Pin "PCOut[18]" is stuck at GND
+    Warning (13410): Pin "PCOut[19]" is stuck at GND
+    Warning (13410): Pin "PCOut[20]" is stuck at GND
+    Warning (13410): Pin "PCOut[21]" is stuck at GND
+    Warning (13410): Pin "PCOut[22]" is stuck at GND
+    Warning (13410): Pin "PCOut[23]" is stuck at GND
+    Warning (13410): Pin "PCOut[24]" is stuck at GND
+    Warning (13410): Pin "PCOut[25]" is stuck at GND
+    Warning (13410): Pin "PCOut[26]" is stuck at GND
+    Warning (13410): Pin "PCOut[27]" is stuck at GND
+    Warning (13410): Pin "PCOut[28]" is stuck at GND
+    Warning (13410): Pin "PCOut[29]" is stuck at GND
+    Warning (13410): Pin "PCOut[30]" is stuck at GND
+    Warning (13410): Pin "PCOut[31]" is stuck at GND
+    Warning (13410): Pin "EPCOut[0]" is stuck at GND
+    Warning (13410): Pin "EPCOut[1]" is stuck at GND
+    Warning (13410): Pin "EPCOut[2]" is stuck at GND
+    Warning (13410): Pin "EPCOut[3]" is stuck at GND
+    Warning (13410): Pin "EPCOut[4]" is stuck at GND
+    Warning (13410): Pin "EPCOut[5]" is stuck at GND
+    Warning (13410): Pin "EPCOut[6]" is stuck at GND
+    Warning (13410): Pin "EPCOut[7]" is stuck at GND
+    Warning (13410): Pin "EPCOut[8]" is stuck at GND
+    Warning (13410): Pin "EPCOut[9]" is stuck at GND
+    Warning (13410): Pin "EPCOut[10]" is stuck at GND
+    Warning (13410): Pin "EPCOut[11]" is stuck at GND
+    Warning (13410): Pin "EPCOut[12]" is stuck at GND
+    Warning (13410): Pin "EPCOut[13]" is stuck at GND
+    Warning (13410): Pin "EPCOut[14]" is stuck at GND
+    Warning (13410): Pin "EPCOut[15]" is stuck at GND
+    Warning (13410): Pin "EPCOut[16]" is stuck at GND
+    Warning (13410): Pin "EPCOut[17]" is stuck at GND
+    Warning (13410): Pin "EPCOut[18]" is stuck at GND
+    Warning (13410): Pin "EPCOut[19]" is stuck at GND
+    Warning (13410): Pin "EPCOut[20]" is stuck at GND
+    Warning (13410): Pin "EPCOut[21]" is stuck at GND
+    Warning (13410): Pin "EPCOut[22]" is stuck at GND
+    Warning (13410): Pin "EPCOut[23]" is stuck at GND
+    Warning (13410): Pin "EPCOut[24]" is stuck at GND
+    Warning (13410): Pin "EPCOut[25]" is stuck at GND
+    Warning (13410): Pin "EPCOut[26]" is stuck at GND
+    Warning (13410): Pin "EPCOut[27]" is stuck at GND
+    Warning (13410): Pin "EPCOut[28]" is stuck at GND
+    Warning (13410): Pin "EPCOut[29]" is stuck at GND
+    Warning (13410): Pin "EPCOut[30]" is stuck at GND
+    Warning (13410): Pin "EPCOut[31]" is stuck at GND
+    Warning (13410): Pin "MDROut[0]" is stuck at GND
+    Warning (13410): Pin "MDROut[1]" is stuck at GND
+    Warning (13410): Pin "MDROut[2]" is stuck at GND
+    Warning (13410): Pin "MDROut[3]" is stuck at GND
+    Warning (13410): Pin "MDROut[4]" is stuck at GND
+    Warning (13410): Pin "MDROut[5]" is stuck at GND
+    Warning (13410): Pin "MDROut[6]" is stuck at GND
+    Warning (13410): Pin "MDROut[7]" is stuck at GND
+    Warning (13410): Pin "MDROut[8]" is stuck at GND
+    Warning (13410): Pin "MDROut[9]" is stuck at GND
+    Warning (13410): Pin "MDROut[10]" is stuck at GND
+    Warning (13410): Pin "MDROut[11]" is stuck at GND
+    Warning (13410): Pin "MDROut[12]" is stuck at GND
+    Warning (13410): Pin "MDROut[13]" is stuck at GND
+    Warning (13410): Pin "MDROut[14]" is stuck at GND
+    Warning (13410): Pin "MDROut[15]" is stuck at GND
+    Warning (13410): Pin "MDROut[16]" is stuck at GND
+    Warning (13410): Pin "MDROut[17]" is stuck at GND
+    Warning (13410): Pin "MDROut[18]" is stuck at GND
+    Warning (13410): Pin "MDROut[19]" is stuck at GND
+    Warning (13410): Pin "MDROut[20]" is stuck at GND
+    Warning (13410): Pin "MDROut[21]" is stuck at GND
+    Warning (13410): Pin "MDROut[22]" is stuck at GND
+    Warning (13410): Pin "MDROut[23]" is stuck at GND
+    Warning (13410): Pin "MDROut[24]" is stuck at GND
+    Warning (13410): Pin "MDROut[25]" is stuck at GND
+    Warning (13410): Pin "MDROut[26]" is stuck at GND
+    Warning (13410): Pin "MDROut[27]" is stuck at GND
+    Warning (13410): Pin "MDROut[28]" is stuck at GND
+    Warning (13410): Pin "MDROut[29]" is stuck at GND
+    Warning (13410): Pin "MDROut[30]" is stuck at GND
+    Warning (13410): Pin "MDROut[31]" is stuck at GND
+    Warning (13410): Pin "rs[0]" is stuck at GND
+    Warning (13410): Pin "rs[1]" is stuck at GND
+    Warning (13410): Pin "rs[2]" is stuck at GND
+    Warning (13410): Pin "rs[3]" is stuck at GND
+    Warning (13410): Pin "rs[4]" is stuck at GND
+    Warning (13410): Pin "rt[0]" is stuck at GND
+    Warning (13410): Pin "rt[1]" is stuck at GND
+    Warning (13410): Pin "rt[2]" is stuck at GND
+    Warning (13410): Pin "rt[3]" is stuck at GND
+    Warning (13410): Pin "rt[4]" is stuck at GND
+    Warning (13410): Pin "inst15_0[0]" is stuck at GND
+    Warning (13410): Pin "inst15_0[1]" is stuck at GND
+    Warning (13410): Pin "inst15_0[2]" is stuck at GND
+    Warning (13410): Pin "inst15_0[3]" is stuck at GND
+    Warning (13410): Pin "inst15_0[4]" is stuck at GND
+    Warning (13410): Pin "inst15_0[5]" is stuck at GND
+    Warning (13410): Pin "inst15_0[6]" is stuck at GND
+    Warning (13410): Pin "inst15_0[7]" is stuck at GND
+    Warning (13410): Pin "inst15_0[8]" is stuck at GND
+    Warning (13410): Pin "inst15_0[9]" is stuck at GND
+    Warning (13410): Pin "inst15_0[10]" is stuck at GND
+    Warning (13410): Pin "inst15_0[11]" is stuck at GND
+    Warning (13410): Pin "inst15_0[12]" is stuck at GND
+    Warning (13410): Pin "inst15_0[13]" is stuck at GND
+    Warning (13410): Pin "inst15_0[14]" is stuck at GND
+    Warning (13410): Pin "inst15_0[15]" is stuck at GND
+    Warning (13410): Pin "CurState[0]" is stuck at GND
+    Warning (13410): Pin "CurState[1]" is stuck at GND
+    Warning (13410): Pin "CurState[2]" is stuck at GND
+    Warning (13410): Pin "CurState[3]" is stuck at GND
+    Warning (13410): Pin "CurState[4]" is stuck at GND
+    Warning (13410): Pin "CurState[5]" is stuck at GND
+    Warning (13410): Pin "CurState[6]" is stuck at GND
+Info: 64 registers lost all their fanouts during netlist optimizations. The first 64 are displayed below.
+    Info: Register "Registrador:A|Saida[31]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:A|Saida[30]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:A|Saida[29]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:A|Saida[28]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:A|Saida[27]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:A|Saida[26]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:A|Saida[25]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:A|Saida[24]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:A|Saida[23]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:A|Saida[22]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:A|Saida[21]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:A|Saida[20]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:A|Saida[19]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:A|Saida[18]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:A|Saida[17]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:A|Saida[16]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:A|Saida[15]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:A|Saida[14]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:A|Saida[13]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:A|Saida[12]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:A|Saida[11]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:A|Saida[10]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:A|Saida[9]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:A|Saida[8]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:A|Saida[7]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:A|Saida[6]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:A|Saida[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:A|Saida[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:A|Saida[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:A|Saida[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:A|Saida[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:A|Saida[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "RegDesloc:RegD|temp[31]" lost all its fanouts during netlist optimizations.
+    Info: Register "RegDesloc:RegD|temp[30]" lost all its fanouts during netlist optimizations.
+    Info: Register "RegDesloc:RegD|temp[29]" lost all its fanouts during netlist optimizations.
+    Info: Register "RegDesloc:RegD|temp[28]" lost all its fanouts during netlist optimizations.
+    Info: Register "RegDesloc:RegD|temp[27]" lost all its fanouts during netlist optimizations.
+    Info: Register "RegDesloc:RegD|temp[26]" lost all its fanouts during netlist optimizations.
+    Info: Register "RegDesloc:RegD|temp[25]" lost all its fanouts during netlist optimizations.
+    Info: Register "RegDesloc:RegD|temp[24]" lost all its fanouts during netlist optimizations.
+    Info: Register "RegDesloc:RegD|temp[23]" lost all its fanouts during netlist optimizations.
+    Info: Register "RegDesloc:RegD|temp[22]" lost all its fanouts during netlist optimizations.
+    Info: Register "RegDesloc:RegD|temp[21]" lost all its fanouts during netlist optimizations.
+    Info: Register "RegDesloc:RegD|temp[20]" lost all its fanouts during netlist optimizations.
+    Info: Register "RegDesloc:RegD|temp[19]" lost all its fanouts during netlist optimizations.
+    Info: Register "RegDesloc:RegD|temp[18]" lost all its fanouts during netlist optimizations.
+    Info: Register "RegDesloc:RegD|temp[17]" lost all its fanouts during netlist optimizations.
+    Info: Register "RegDesloc:RegD|temp[16]" lost all its fanouts during netlist optimizations.
+    Info: Register "RegDesloc:RegD|temp[15]" lost all its fanouts during netlist optimizations.
+    Info: Register "RegDesloc:RegD|temp[14]" lost all its fanouts during netlist optimizations.
+    Info: Register "RegDesloc:RegD|temp[13]" lost all its fanouts during netlist optimizations.
+    Info: Register "RegDesloc:RegD|temp[12]" lost all its fanouts during netlist optimizations.
+    Info: Register "RegDesloc:RegD|temp[11]" lost all its fanouts during netlist optimizations.
+    Info: Register "RegDesloc:RegD|temp[10]" lost all its fanouts during netlist optimizations.
+    Info: Register "RegDesloc:RegD|temp[9]" lost all its fanouts during netlist optimizations.
+    Info: Register "RegDesloc:RegD|temp[8]" lost all its fanouts during netlist optimizations.
+    Info: Register "RegDesloc:RegD|temp[7]" lost all its fanouts during netlist optimizations.
+    Info: Register "RegDesloc:RegD|temp[6]" lost all its fanouts during netlist optimizations.
+    Info: Register "RegDesloc:RegD|temp[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "RegDesloc:RegD|temp[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "RegDesloc:RegD|temp[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "RegDesloc:RegD|temp[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "RegDesloc:RegD|temp[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "RegDesloc:RegD|temp[0]" lost all its fanouts during netlist optimizations.
 Info: Generated suppressed messages file C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/Proj_Hardware.map.smsg
-Error: Quartus II Analysis & Synthesis was unsuccessful. 2 errors, 0 warnings
-    Error: Peak virtual memory: 240 megabytes
-    Error: Processing ended: Tue May 14 23:35:32 2019
-    Error: Elapsed time: 00:00:01
-    Error: Total CPU time (on all processors): 00:00:01
+Warning: Design contains 2 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "clock"
+    Warning (15610): No output dependent on input pin "reset"
+Info: Implemented 137 device resources after synthesis - the final resource count might be different
+    Info: Implemented 2 input pins
+    Info: Implemented 135 output pins
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 463 warnings
+    Info: Peak virtual memory: 260 megabytes
+    Info: Processing ended: Wed May 15 00:21:34 2019
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:03
 
 
 +------------------------------------------+

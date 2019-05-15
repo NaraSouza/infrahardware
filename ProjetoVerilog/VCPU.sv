@@ -4,9 +4,9 @@ module VCPU(
 	
 	output logic [5:0] ControlOp,
 	
-	output logic [31:0] PCout,
-	output logic [31:0] EPCout,
-	output logic [31:0] MDRout,
+	output logic [31:0] PCOut,
+	output logic [31:0] EPCOut,
+	output logic [31:0] MDROut,
 	
 	output logic [4:0] rs,
     output logic [4:0] rt,
@@ -18,6 +18,8 @@ module VCPU(
 
 logic [4:0] rd;
 logic [25:0] inst25_0;
+logic [4:0] shamt;
+logic [5:0] funct;
 
 logic ALUorMem;
 logic [31:0] AorMemOut;
@@ -30,7 +32,7 @@ logic [31:0] IRConctOut;
 logic [25:0] IRShiftL2;
 logic [27:0] IRShiftL2Out;
 logic [31:0] IRPCConc;
-// assign IRPCCont = {PCout[31:28]; IRShiftL2Out}; // NAO DA PRA TESTAR
+// assign IRPCCont = {PCOut[31:28]; IRShiftL2Out}; // NAO DA PRA TESTAR
 
 
 logic MemWR;
@@ -76,7 +78,7 @@ logic [31:0] USExtOut;
 logic [31:0] SL16Out;
 logic [31:0] SL2Out;
 
-logic ALUWrite;
+logic ALURegWrite;
 logic [2:0] ALUOp;
 logic [31:0] ALUOut; // ALU output
 logic [31:0] ALURegOut; // Registrador que guarda ALU output
@@ -124,7 +126,7 @@ logic DR2;
 logic [31:0] DR2Out;
 
 logic [3:0] ShiftCtrl;
-logic [31:0] DesReg;
+logic [31:0] DesRegOut;
 
 mux_2inputs ALUorMemMux(
 	// TODO: Verificar se tá ok
@@ -139,7 +141,7 @@ Registrador PC(
 	.Reset(reset),
 	.Load(PCWCtrl),
 	.Entrada(AorMemOut),
-	.Saida(PCout)
+	.Saida(PCOut)
 );
 
 mux_iOrD IorDMux(
@@ -182,7 +184,7 @@ Memoria Mem(
 	.Dataout( MemOut )
 );
 
-mux_memWD(
+mux_memWD memWDMux(
 	.selector( MemWD ),
 	.FullWord( MDROut ),//00. FullWord
 	.out(MemWDout)
@@ -193,7 +195,7 @@ Registrador MDR(
 	.Reset(reset),
 	.Load(WrMDR), //conferir se é isso(ta certo tbm. bois)
 	.Entrada( MemOut ),
-	.Saida( MDRout )
+	.Saida( MDROut )
 );
 
 Instr_Reg IR(
@@ -201,7 +203,7 @@ Instr_Reg IR(
 	.Reset(reset),
 	.Load_ir(IRWrite),
 	.Entrada(MemOut),
-	.Instr31_26(op),
+	.Instr31_26(ControlOp),
 	.Instr25_21(rs),
 	.Instr20_16(rt),
 	.Instr15_0(inst15_0)
@@ -212,6 +214,21 @@ mux_regDst RegDSTMux(
 	.inputA( rt ), // rd?
 	.inputB( rd ),  // rt?
 	.out(RegDstOut)
+);
+
+mux_memToReg MemToRegMux(
+	// 227, 0 e 1 estão sendo usados dentro da caixa magica
+	.selector(MemToReg),
+	.inputA(ALURegOut),//0000
+	.inputB(MemWDout),//0001
+	.inputC(RegLowOut),//0010
+	.inputD(RegHighOut),//0011
+	.inputE(DesRegOut),//0100
+	.inputF(PCSrcOut),//0101
+	.inputG(SL16Out),//0110
+	.inputH(PCOut),//0111
+	.out(MemToRegOut)
+	
 );
 
 Banco_Reg registers(
@@ -280,13 +297,22 @@ Registrador ALUOutReg(
 	.Saida(ALURegOut)
 );
 
-mux_pcSrc(
+mux_pcSrc pcSrcMux(
 	.selector(PCSource),
 	.inputA(IRPCConc),
 	.inputB(ALUOut),
 	.inputC(EPCOut),
 	.inputD(ALURegOut),
 	.out(PCSrcOut)	
+);
+
+RegDesloc RegD( //reg desloc
+	.Clk(clock),
+	.Reset(reset),
+	.Shift(shiftop),	// fix
+	.N(shiftsout),		// fix
+	.Entrada(reginout),	// fix
+	.Saida(DesRegOut)// fix
 );
 
 Registrador high(

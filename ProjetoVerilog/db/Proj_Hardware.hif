@@ -378,7 +378,7 @@ VERILOG_NON_CONSTANT_LOOP_LIMIT
 250
 }
 # hierarchies {
-mux_pcSrc:comb_4
+mux_pcSrc:pcSrcMux
 }
 # macro_sequence
 
@@ -486,39 +486,6 @@ VERILOG_NON_CONSTANT_LOOP_LIMIT
 
 # end
 # entity
-sign_extend
-# storage
-db|Proj_Hardware.(21).cnf
-db|Proj_Hardware.(21).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-sign_extend.v
-eb2fcbdf52409ef0a495ea8c5e495591
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# macro_sequence
-
-# end
-# entity
 mux_store_f_h_or_b
 # storage
 db|Proj_Hardware.(22).cnf
@@ -580,6 +547,9 @@ VERILOG_CONSTANT_LOOP_LIMIT
 5000
 VERILOG_NON_CONSTANT_LOOP_LIMIT
 250
+}
+# hierarchies {
+mux_memToReg:MemToRegMux
 }
 # macro_sequence
 
@@ -1570,7 +1540,7 @@ VERILOG_NON_CONSTANT_LOOP_LIMIT
 250
 }
 # hierarchies {
-mux_BWD:comb_3
+mux_BWD:BWDMux
 }
 # macro_sequence
 
@@ -1612,6 +1582,75 @@ mux_aluSrcA:ALUSrcA
 
 # end
 # entity
+mux_memWD
+# storage
+db|Proj_Hardware.(26).cnf
+db|Proj_Hardware.(26).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+mux_memwd.v
+8d968e35b36399a54b46add9b0584fdc
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+mux_memWD:memWDMux
+}
+# macro_sequence
+
+# end
+# entity
+RegDesloc
+# storage
+db|Proj_Hardware.(30).cnf
+db|Proj_Hardware.(30).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+regdesloc.vhd
+71b6e34bf1c79c645cf497581bd388e
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+RegDesloc:RegD
+}
+# lmf
+d:|downloads|alteraquartus91sp2portable|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
 VCPU
 # storage
 db|Proj_Hardware.(18).cnf
@@ -1623,7 +1662,7 @@ ON
 # case_sensitive
 # source_file
 vcpu.sv
-77a75468febd4c5724cdc259495bcbd
+4c67d6fc6c9cf9898f4e70422c1415
 9
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
