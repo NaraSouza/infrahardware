@@ -28,5 +28,5 @@ Repositório para os códigos das listas de Infraestrutura de Hardware, além do
 
 ## VERILOG:
 - Verificar se caixinhas dos MUX estão corretas
-    - Aparentemente mux_ALUSrcA está escolhendo inputC com 11 e não 10
+    - Aparentemente mux_ALUSrcA e mux_BWD estão escolhendo inputC com 11 e não 10
     - Verificar se outros MUX não tem esse problema (se é que há um)
