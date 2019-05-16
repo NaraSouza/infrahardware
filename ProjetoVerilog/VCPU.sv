@@ -133,7 +133,7 @@ logic [31:0] DesRegOut;
 // Ainda é a versão provisória!!
 UnidadeControle CtrlUnit(
 	//sinais de entrada
-	.Clk(clock),
+	.clock(clock),
 	.reset(reset),
 	.funct(funct),
 	.Opcode(OPCode),
@@ -157,7 +157,19 @@ UnidadeControle CtrlUnit(
 	.AWrite(RegAWrite),
 	.BWrite(RegBWrite),
 	.ALUOutWrite(ALURegWrite),
-	.state(CurState)
+	.state(CurState),
+	.MemWD(MemWD),
+	.BWD(BWD),
+	.DR1(DR1),
+	.DR2(DR2),
+	.Low(MuxLowSel),
+	.High(MuxHighSel),
+	.PCCond(PCCond),
+	//Escrita em Registradores
+	.MDRWrite(WrMDR),
+	.LowReg(WrLow),
+	.HighReg(WrHigh),
+	.EPCWrite(EPCWrite)
 );
 
 
@@ -405,7 +417,7 @@ div DIVOp(
 	.DivFim(DivEnd),
 	.DivisaoPorZero(DivZero),
 	.Hi(DivHighOut),
-	.Lo(DivLowOut),
+	.Lo(DivLowOut)
 );
 
 mult MULTOp(
@@ -416,7 +428,7 @@ mult MULTOp(
 	.reset(reset),
 	.hi(MultHighOut),
 	.lo(MultLowOut),
-	.done(MultEnd),
+	.done(MultEnd)
 );
 
 mux_2inputs LOWMux(

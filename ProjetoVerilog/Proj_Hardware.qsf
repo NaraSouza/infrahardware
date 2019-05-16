@@ -68,7 +68,6 @@ set_global_assignment -name VERILOG_FILE sign_extend26_32.v
 set_global_assignment -name VERILOG_FILE mux_dr2.v
 set_global_assignment -name VERILOG_FILE mux_store_f_h_or_b.v
 set_global_assignment -name VERILOG_FILE UnidadeControle.v
-set_global_assignment -name BDF_FILE Proc_Control.bdf
 
 # Analysis & Synthesis Assignments
 # ================================

@@ -80,22 +80,22 @@ parameter [6:0] branch_3 = 7'd38;
 parameter [6:0] bgt = 7'd39;
 parameter [6:0] branch_4 = 7'd40;
 parameter [6:0] lui = 7'd41;
-parameter [6:0] decode = 7'42;
-parameter [6:0] lw_1 = 7'43;
-parameter [6:0] lh_1 = 7'44;
-parameter [6:0] lb_1 = 7'45;
-parameter [6:0] sw_1 = 7'46;
-parameter [6:0] sh_1 = 7'47;
-parameter [6:0] sb_1 = 7'48;
-parameter [6:0] Break = 7'49;
-parameter [6:0] rte = 7'50;
-parameter [6:0] sll = 7'51;
-parameter [6:0] sllv = 7'52;
-parameter [6:0] sra = 7'53;
-parameter [6:0] srav = 7'54;
-parameter [6:0] srl = 7'55;
-parameter [6:0] OPcodeIN = 7'56;
-parameter [6:0] Reset = 7'57;
+parameter [6:0] decode = 7'd42;
+parameter [6:0] lw_1 = 7'd43;
+parameter [6:0] lh_1 = 7'd44;
+parameter [6:0] lb_1 = 7'd45;
+parameter [6:0] sw_1 = 7'd46;
+parameter [6:0] sh_1 = 7'd47;
+parameter [6:0] sb_1 = 7'd48;
+parameter [6:0] Break = 7'd49;
+parameter [6:0] rte = 7'd50;
+parameter [6:0] sll = 7'd51;
+parameter [6:0] sllv = 7'd52;
+parameter [6:0] sra = 7'd53;
+parameter [6:0] srav = 7'd54;
+parameter [6:0] srl = 7'd55;
+parameter [6:0] OPcodeIN = 7'd56;
+parameter [6:0] Reset = 7'd57;
 
 parameter [5:0] Opcode_R = 6'h00;
 
@@ -153,7 +153,7 @@ always@ (posedge clock) begin
 			IRWrite = 1;
 			MDRWrite = 1;
 			ALUSrcA = 2'b00;
-			ALUSrcB = 10;
+			ALUSrcB = 3'b010;
 			ALUOp = 3'b001;
 			PCSource = 2'b01;
 			ALUorMem = 0;
@@ -165,13 +165,13 @@ always@ (posedge clock) begin
 			AWrite = 1;
 			BWrite = 1;
 			ALUSrcA = 2'b00;
-			ALUSrcB = 3'b011
+			ALUSrcB = 3'b011;
 			USExt = 1;
 			ALUOp = 3'b001;
 			state = decode;
 		end
 		decode: begin
-			case (ControlOp)
+			case (Opcode)
 				Opcode_R: begin
 					case(funct)
 						funct_add: state = add;
