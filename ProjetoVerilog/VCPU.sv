@@ -281,7 +281,7 @@ ula32 ALU(
 	.Seletor(ALUOp),
 	.S(ALUOut),
 	.Overflow(Overflow),
-	.Negativo(Negative), // nao tem!
+	.Negativo(Negative),
 	.z(Zero),
 	.Igual(Equal),
 	.Maior(GreaterThan),
@@ -291,7 +291,7 @@ ula32 ALU(
 Registrador ALUOutReg(
 	.Clk(clock),
 	.Reset(reset),
-	.Load(ALURegWrite), //conferir se é isso(ok. bois)
+	.Load(ALURegWrite),
 	.Entrada(ALUOut),
 	.Saida(ALURegOut)
 );
@@ -414,7 +414,7 @@ assign inst25_0 [25:21] = rs;
 assign inst25_0 [20:16] = rt;
 assign inst25_0 [15:0] = inst15_0;
 
-// TODO: 15:0 e 8:0 ou 31:16 e 31:24?
+
 assign RegBHalf = RegBOut[15:0];
 assign RegBByte = RegBOut[8:0];
 
