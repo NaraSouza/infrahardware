@@ -139,7 +139,7 @@ UnidadeControle CtrlUnit(
 	.Opcode(OPCode),
 	//sinais de saida
 	.MemWR(MemWR),
-	.USExt(USext),
+	.USExt(USExt),
 	//Mux
 	.IorD(IorD), 
 	.ALUSrcA(ALUSrcA),
@@ -170,10 +170,10 @@ mux_2inputs ALUorMemMux(
 );
 
 mux_pccond MuxPCCond(
-	input wire [1:0] selector(PCCond),
-	input wire equal(Equal),//00
-	input wire greater(GreaterThan),//01
-	output wire out(PCCondOut)
+	.selector(PCCond),
+	.equal(Equal),//00
+	.greater(GreaterThan),//01
+	.out(PCCondOut)
 );
 
 Registrador PC(
@@ -191,7 +191,7 @@ mux_iOrD IorDMux(
 	//254 = 011
 	//255 = 100
 	.selector(IorD),
-	.inputA(IRConcExt), //000
+	.inputA(SL2Jumpinst25_0Out), //000
 	.inputB(PCOut), //001
 	.inputC(ALURegOut), //101
 	.out(IorDOut)

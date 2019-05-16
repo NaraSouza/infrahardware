@@ -139,7 +139,7 @@ UnidadeControle CtrlUnit(
 	.Opcode(OPCode),
 	//sinais de saida
 	.MemWR(MemWR),
-	.USExt(USext),
+	.USExt(USExt),
 	//Mux
 	.IorD(IorD), 
 	.ALUSrcA(ALUSrcA),
@@ -191,7 +191,7 @@ mux_iOrD IorDMux(
 	//254 = 011
 	//255 = 100
 	.selector(IorD),
-	.inputA(IRConcExt), //000
+	.inputA(SL2Jumpinst25_0Out), //000
 	.inputB(PCOut), //001
 	.inputC(ALURegOut), //101
 	.out(IorDOut)
@@ -437,7 +437,7 @@ Registrador HIGH(
 	.Clk(clock),
 	.Reset(reset),
 	.Load(WrLow),
-	.Entrada(MuxHightOut),
+	.Entrada(MuxHighOut),
 	.Saida(RegHighOut)
 );
 

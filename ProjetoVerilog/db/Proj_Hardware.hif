@@ -20,89 +20,6 @@ VHSM_ON
 -- Start VHDL Libraries --
 -- End VHDL Libraries --
 # entity
-UnidadeControle
-# storage
-db|Proj_Hardware.(0).cnf
-db|Proj_Hardware.(0).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-unidadecontrole.v
-798017432032e04436ff886a36759b2
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# user_parameter {
-Reset
-0000001
-PARAMETER_UNSIGNED_BIN
-DEF
-PC4
-0000010
-PARAMETER_UNSIGNED_BIN
-DEF
-Decode
-0000110
-PARAMETER_UNSIGNED_BIN
-DEF
-Write_Reg
-0000111
-PARAMETER_UNSIGNED_BIN
-DEF
-Add
-0001011
-PARAMETER_UNSIGNED_BIN
-DEF
-PC0
-0111111
-PARAMETER_UNSIGNED_BIN
-DEF
-Wait_Decode
-0000101
-PARAMETER_UNSIGNED_BIN
-DEF
-Wait_Decode_2
-0111100
-PARAMETER_UNSIGNED_BIN
-DEF
-Wait_Decode_3
-0111101
-PARAMETER_UNSIGNED_BIN
-DEF
-Opcode_R
-000000
-PARAMETER_UNSIGNED_BIN
-DEF
-Opcode_Inexistente
-0111011
-PARAMETER_UNSIGNED_BIN
-DEF
-funct_add
-100000
-PARAMETER_UNSIGNED_BIN
-DEF
-}
-# macro_sequence
-
-# end
-# entity
 altsyncram_g2a1
 # storage
 db|Proj_Hardware.(10).cnf
@@ -309,46 +226,6 @@ VERILOG_CONSTANT_LOOP_LIMIT
 5000
 VERILOG_NON_CONSTANT_LOOP_LIMIT
 250
-}
-# macro_sequence
-
-# end
-# entity
-mux_2inputs
-# storage
-db|Proj_Hardware.(14).cnf
-db|Proj_Hardware.(14).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-mux_2inputs.v
-53ca4dcbb4427bddb5eade614f6b8e21
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# hierarchies {
-mux_2inputs:ALUorMemMux
-mux_2inputs:WriteDataMux
-mux_2inputs:DR1Mux
-mux_2inputs:LOWMux
-mux_2inputs:HIGHMux
 }
 # macro_sequence
 
@@ -1705,42 +1582,6 @@ mux_dr2:DR2Mux
 
 # end
 # entity
-VCPU
-# storage
-db|Proj_Hardware.(3).cnf
-db|Proj_Hardware.(3).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-vcpu.sv
-a733b9c6cec57393ae678e57dab09f34
-9
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# hierarchies {
-|
-}
-# macro_sequence
-
-# end
-# entity
 div
 # storage
 db|Proj_Hardware.(31).cnf
@@ -1826,6 +1667,204 @@ DEF
 }
 # hierarchies {
 mult:MULTOp
+}
+# macro_sequence
+
+# end
+# entity
+mux_pccond
+# storage
+db|Proj_Hardware.(0).cnf
+db|Proj_Hardware.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+mux_pccond.sv
+cbd95a27e960d84fa8d2caf33f89b485
+9
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+mux_pccond:MuxPCCond
+}
+# macro_sequence
+
+# end
+# entity
+UnidadeControle
+# storage
+db|Proj_Hardware.(14).cnf
+db|Proj_Hardware.(14).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+unidadecontrole.v
+61c122321f99be0fe44eea83a1ae45
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+Reset
+0000001
+PARAMETER_UNSIGNED_BIN
+DEF
+PC4
+0000010
+PARAMETER_UNSIGNED_BIN
+DEF
+Decode
+0000110
+PARAMETER_UNSIGNED_BIN
+DEF
+Write_Reg
+0000111
+PARAMETER_UNSIGNED_BIN
+DEF
+Add
+0001011
+PARAMETER_UNSIGNED_BIN
+DEF
+PC0
+0111111
+PARAMETER_UNSIGNED_BIN
+DEF
+Wait_Decode
+0000101
+PARAMETER_UNSIGNED_BIN
+DEF
+Wait_Decode_2
+0111100
+PARAMETER_UNSIGNED_BIN
+DEF
+Wait_Decode_3
+0111101
+PARAMETER_UNSIGNED_BIN
+DEF
+Opcode_R
+000000
+PARAMETER_UNSIGNED_BIN
+DEF
+Opcode_Inexistente
+0111011
+PARAMETER_UNSIGNED_BIN
+DEF
+funct_add
+100000
+PARAMETER_UNSIGNED_BIN
+DEF
+}
+# hierarchies {
+UnidadeControle:CtrlUnit
+}
+# macro_sequence
+
+# end
+# entity
+mux_2inputs
+# storage
+db|Proj_Hardware.(33).cnf
+db|Proj_Hardware.(33).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+mux_2inputs.sv
+f1a9bb7f1ee7d09fa952f1b0e5121cb7
+9
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+mux_2inputs:ALUorMemMux
+mux_2inputs:WriteDataMux
+mux_2inputs:DR1Mux
+mux_2inputs:LOWMux
+mux_2inputs:HIGHMux
+}
+# macro_sequence
+
+# end
+# entity
+VCPU
+# storage
+db|Proj_Hardware.(3).cnf
+db|Proj_Hardware.(3).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+vcpu.sv
+19d4d79af1c3bdeae1e0c547c56d6c7c
+9
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+|
 }
 # macro_sequence
 
