@@ -69,14 +69,14 @@ logic [31:0] AluSrcBOut;
 logic [3:0] MemToReg;
 logic [31:0] MemToRegOut;
 
-logic USExt;
+logic USExt;			// Flag de (un)sign extend p/ ALUSrcB
 logic [31:0] USExtOut;
 logic [31:0] SL16Out;
 logic [31:0] SL2Out;
 
 logic ALURegWrite;
 logic [2:0] ALUOp;
-logic [31:0] ALUOut; // ALU output
+logic [31:0] ALUOut; 	// ALU output
 logic [31:0] ALURegOut; // Registrador que guarda ALU output
 
 logic EPCWrite;
@@ -106,21 +106,21 @@ logic MultEnd;
 logic [31:0] MultHighOut;
 logic [31:0] MultLowOut;	
 
-logic MuxHighSel;
-logic MuxLowSel;
+logic MuxHighSel;	// Seletor do mux que escolhe entre High de Div ou Mult
+logic MuxLowSel;	// Seletor do mux que escolhe entre Low de Div ou Mult
 logic [31:0] MuxHighOut;
 logic [31:0] MuxLowOut;
 
 
-logic WrLow;
-logic WrHigh;
+logic WrLow;	// Flag pra escrever no LowReg
+logic WrHigh;	// Flag pra escrever no HighReg
 logic [31:0] RegHighOut;
 logic [31:0] RegLowOut;
 
 
-logic DR1;
-logic [31:0] DR1Out;
-logic DR2;
+logic DR1;				// Seletor do mux DR1
+logic [31:0] DR1Out;	
+logic DR2;				// Seletor do mux DR2
 logic [4:0] DR2Out;
 
 logic [2:0] ShiftCtrl;
@@ -393,11 +393,6 @@ mux_2inputs HIGHMux(
 	.outputA(MuxHighOut)
 );
 
-logic MuxHighSel;
-logic MuxLowSel;
-logic [31:0] MuxHighOut;
-logic [31:0] MuxLowOut;
-
 Registrador HIGH(
 	.Clk(clock),
 	.Reset(reset),
@@ -413,8 +408,6 @@ Registrador LOW(
 	.Entrada(MuxLowOut),
 	.Saida(RegLowOut)
 );
-
-// TODO: Verificar como setar e inst15_0 rs e rt direito neste projeto
 
 assign inst25_0 [25:21] = rs;
 assign inst25_0 [20:16] = rt;
