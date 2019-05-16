@@ -1,5 +1,5 @@
 Flow report for Proj_Hardware
-Wed May 15 00:21:40 2019
+Thu May 16 09:05:14 2019
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------+
 ; Flow Summary                                                                 ;
 +-------------------------------+----------------------------------------------+
-; Flow Status                   ; Successful - Wed May 15 00:21:40 2019        ;
+; Flow Status                   ; Successful - Thu May 16 09:05:14 2019        ;
 ; Quartus II Version            ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                 ; Proj_Hardware                                ;
 ; Top-level Entity Name         ; VCPU                                         ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/15/2019 00:21:31 ;
+; Start date & time ; 05/16/2019 09:05:00 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Proj_Hardware       ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +------------------------------------+-----------------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                    ; Value                                         ; Default Value ; Entity Name ; Section Id     ;
 +------------------------------------+-----------------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID              ; 116232563436.155789049109472                  ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID              ; 10995770589203.155800829901468                ; --            ; --          ; --             ;
 ; MISC_FILE                          ; H:/PROJETO VERILOG HARDWARE/Proj_Hardware.dpf ; --            ; --          ; --             ;
 ; PARTITION_COLOR                    ; 16764057                                      ; --            ; VCPU        ; Top            ;
 ; PARTITION_NETLIST_TYPE             ; SOURCE                                        ; --            ; VCPU        ; Top            ;
@@ -89,11 +89,11 @@ applicable agreement for further details.
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name             ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis    ; 00:00:02     ; 1.0                     ; 260 MB              ; 00:00:02                           ;
-; Fitter                  ; 00:00:03     ; 1.0                     ; 269 MB              ; 00:00:03                           ;
-; Assembler               ; 00:00:01     ; 1.0                     ; 236 MB              ; 00:00:01                           ;
-; Classic Timing Analyzer ; 00:00:00     ; 1.0                     ; 165 MB              ; 00:00:00                           ;
-; Total                   ; 00:00:06     ; --                      ; --                  ; 00:00:06                           ;
+; Analysis & Synthesis    ; 00:00:04     ; 1.0                     ; 318 MB              ; 00:00:04                           ;
+; Fitter                  ; 00:00:04     ; 2.7                     ; 407 MB              ; 00:00:05                           ;
+; Assembler               ; 00:00:03     ; 1.0                     ; 294 MB              ; 00:00:02                           ;
+; Classic Timing Analyzer ; 00:00:00     ; 1.0                     ; 222 MB              ; 00:00:00                           ;
+; Total                   ; 00:00:11     ; --                      ; --                  ; 00:00:11                           ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -102,10 +102,10 @@ applicable agreement for further details.
 +-------------------------+------------------+---------------+------------+----------------+
 ; Module Name             ; Machine Hostname ; OS Name       ; OS Version ; Processor type ;
 +-------------------------+------------------+---------------+------------+----------------+
-; Analysis & Synthesis    ; DESKTOP-BFVANTC  ; Windows Vista ; 6.2        ; x86_64         ;
-; Fitter                  ; DESKTOP-BFVANTC  ; Windows Vista ; 6.2        ; x86_64         ;
-; Assembler               ; DESKTOP-BFVANTC  ; Windows Vista ; 6.2        ; x86_64         ;
-; Classic Timing Analyzer ; DESKTOP-BFVANTC  ; Windows Vista ; 6.2        ; x86_64         ;
+; Analysis & Synthesis    ; g1c24            ; Windows Vista ; 6.2        ; x86_64         ;
+; Fitter                  ; g1c24            ; Windows Vista ; 6.2        ; x86_64         ;
+; Assembler               ; g1c24            ; Windows Vista ; 6.2        ; x86_64         ;
+; Classic Timing Analyzer ; g1c24            ; Windows Vista ; 6.2        ; x86_64         ;
 +-------------------------+------------------+---------------+------------+----------------+
 
 

@@ -17,7 +17,6 @@ module VCPU(
 );
 
 logic [4:0] rd;
-logic [25:0] inst25_0;
 logic [4:0] shamt;
 logic [5:0] funct;
 
@@ -27,12 +26,9 @@ logic [31:0] AorMemOut;
 logic [3:0] IorD;
 logic [31:0] IorDOut;
 
-logic [25:0] IRConcExt;
-logic [31:0] IRConctOut;
-logic [25:0] IRShiftL2;
-logic [27:0] IRShiftL2Out;
-logic [31:0] IRPCConc;
-// assign IRPCCont = {PCOut[31:28]; IRShiftL2Out}; // NAO DA PRA TESTAR
+logic [25:0] inst25_0;
+logic [31:0] SEinst25_0;
+logic [31:0] SL2Jumpinst25_0Out;
 
 
 logic MemWR;
@@ -123,7 +119,7 @@ logic [31:0] RegLowOut;
 logic DR1;
 logic [31:0] DR1Out;
 logic DR2;
-logic [31:0] DR2Out;
+logic [4:0] DR2Out;
 
 logic [3:0] ShiftCtrl;
 logic [31:0] DesRegOut;
@@ -299,14 +295,39 @@ Registrador ALUOutReg(
 
 mux_pcSrc pcSrcMux(
 	.selector(PCSource),
-	.inputA(IRPCConc),
+	.inputA(SL2Jumpinst25_0Out),
 	.inputB(ALUOut),
 	.inputC(EPCOut),
 	.inputD(ALURegOut),
 	.out(PCSrcOut)	
 );
 
-RegDesloc RegD( //reg desloc
+sign_extend26_32 SE26_32(
+	.inst(inst25_0), 
+	.out(SEinst25_0)
+);
+
+shift_leftJump SLJump(
+	.entry(inst25_0), 
+	.pc(PCOut), 
+	.out(SL2Jumpinst25_0Out)
+);
+
+mux_2inputs DR1Mux(
+	.selector(DR1),
+	.inputA(RegAOut),//0
+	.inputB(RegBOut),//1
+	.outputA(DR1Out)
+);
+
+mux_dr2 DR2Mux(
+	.selector(DR2),
+	.shamt(shamt), //0
+	.b(RegBOut),   //1
+	.out(DR2Out)
+);
+
+RegDesloc DesReg( //reg desloc
 	.Clk(clock),
 	.Reset(reset),
 	.Shift(shiftop),	// fix
@@ -315,7 +336,26 @@ RegDesloc RegD( //reg desloc
 	.Saida(DesRegOut)// fix
 );
 
-Registrador high(
+sign_extend USExtMux(
+	.wireIn(inst15_0), 
+	.sign(USExt), 
+	.wireOut(USExtOut)
+);
+
+shift_left2 SL2(
+	.in(USExtOut), 
+	.out(SL2Out)
+);
+
+shift_left16 SL16(
+	.in(USExtOut), 
+	.out(SL16Out)
+);
+
+
+
+
+Registrador HIGH(
 	.Clk(clock),
 	.Reset(reset),
 	.Load(WrLow),
@@ -323,7 +363,7 @@ Registrador high(
 	.Saida(RegHighOut)
 );
 
-Registrador low(
+Registrador LOW(
 	.Clk(clock),
 	.Reset(reset),
 	.Load(WrHigh),

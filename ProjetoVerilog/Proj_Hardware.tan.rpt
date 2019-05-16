@@ -1,5 +1,5 @@
 Classic Timing Analyzer report for Proj_Hardware
-Wed May 15 00:21:40 2019
+Thu May 16 09:05:14 2019
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -64,15 +64,21 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
 
 
-Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
-+-------------------------------------+
-; Parallel Compilation                ;
-+----------------------------+--------+
-; Processors                 ; Number ;
-+----------------------------+--------+
-; Number detected on machine ; 16     ;
-; Maximum allowed            ; 1      ;
-+----------------------------+--------+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     1 processor            ; 100.0%      ;
+;     2-4 processors         ;   0.0%      ;
++----------------------------+-------------+
 
 
 +--------------------------+
@@ -81,12 +87,13 @@ Parallel compilation was disabled, but you have multiple processors available. E
 Info: *******************************************************************
 Info: Running Quartus II Classic Timing Analyzer
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Wed May 15 00:21:40 2019
+    Info: Processing started: Thu May 16 09:05:14 2019
 Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off Proj_Hardware -c Proj_Hardware --timing_analysis_only
+Info: Parallel compilation is enabled and will use 4 of the 4 processors detected
 Warning: No paths found for timing analysis
 Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 181 megabytes
-    Info: Processing ended: Wed May 15 00:21:40 2019
+    Info: Peak virtual memory: 238 megabytes
+    Info: Processing ended: Thu May 16 09:05:14 2019
     Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:00
 
