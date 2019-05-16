@@ -2,7 +2,7 @@ module div (
 		Dividendo, 
 		Divisor, 
 		DivStart, 
-		clock, 
+		Clk, 
 		Reset, 
 		DivFim, 
 		DivisaoPorZero, 
@@ -12,7 +12,7 @@ module div (
 	input wire[31:0] Dividendo;
 	input wire[31:0] Divisor;
 	input wire DivStart;
-	input wire clock; 
+	input wire Clk; 
 	input wire Reset; 
 	output reg DivFim;
 	output reg DivisaoPorZero;
@@ -36,7 +36,7 @@ module div (
 		Lo = 0;
 	end
 	
-	always@(negedge clock)
+	always@(negedge Clk)
 	
 	begin
 		if(Reset == 0)		

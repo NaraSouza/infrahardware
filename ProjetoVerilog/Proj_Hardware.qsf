@@ -74,7 +74,7 @@ set_global_assignment -name BDF_FILE Proc_Control.bdf
 # Analysis & Synthesis Assignments
 # ================================
 set_global_assignment -name FAMILY "Stratix II"
-set_global_assignment -name TOP_LEVEL_ENTITY div
+set_global_assignment -name TOP_LEVEL_ENTITY VCPU
 set_global_assignment -name DEVICE_FILTER_SPEED_GRADE FASTEST
 
 # Fitter Assignments

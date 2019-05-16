@@ -1,0 +1,6 @@
+
+State Machine - |VCPU|mult:MULTOp|doing
+Name doing.00 doing.10 doing.01 
+doing.00 0 0 0 
+doing.01 1 0 1 
+doing.10 1 1 0 

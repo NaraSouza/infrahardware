@@ -356,24 +356,22 @@ shift_left16 SL16(
 );	
 
 div DIVOp(
-
-	.Dividendo(RegAOut);
-	.Divisor(RegBOut);
-	.DivStart(StartDiv);
-	.clock(clock); 
-	.Reset(reset); 
-	.DivFim(DivEnd);
-	.DivisaoPorZero(DivZero);
-	.Hi(DivHighOut); 
-	.Lo(DivLowOut);
-
+	.Dividendo(RegAOut),
+	.Divisor(RegBOut),
+	.DivStart(StartDiv),
+	.Clk(clock),
+	.Reset(reset), 
+	.DivFim(DivEnd),
+	.DivisaoPorZero(DivZero),
+	.Hi(DivHighOut),
+	.Lo(DivLowOut),
 );
 
 mult MULTOp(
 	.a(RegAOut), 
 	.b(RegBOut),
 	.multCtrl(StartMult), 
-	.clock(clock), 
+	.Clk(clock), 
 	.reset(reset),
 	.hi(MultHighOut),
 	.lo(MultLowOut),

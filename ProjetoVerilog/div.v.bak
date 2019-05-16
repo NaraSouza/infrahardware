@@ -3,7 +3,8 @@ module div (
 		Divisor, 
 		DivStart, 
 		clock, 
-		Reset,  
+		Reset, 
+		DivFim, 
 		DivisaoPorZero, 
 		Hi, 
 		Lo);
@@ -13,7 +14,7 @@ module div (
 	input wire DivStart;
 	input wire clock; 
 	input wire Reset; 
-	
+	output reg DivFim;
 	output reg DivisaoPorZero;
 	output reg[31:0] Hi; 
 	output reg[31:0] Lo;	
@@ -26,7 +27,7 @@ module div (
 	initial 
 	begin
 		contador = 0;
-				
+		DivFim = 0;			
 		DivisaoPorZero = 0;
 		B = 0;		
 		QUOCIENTE = 0;
@@ -45,7 +46,7 @@ module div (
 				if(Divisor == 0)
 				begin
 					DivisaoPorZero = 1;//Exceção
-					
+					DivFim = 1;
 				end
 				else
 				begin	
@@ -98,13 +99,13 @@ module div (
 							end
 						end		
 						contador = contador + 1;						
-						
+						DivFim = 1;
 						
 					end 
 					else if(contador == 34)
 					begin
 						contador = 0;
-						
+						DivFim = 0;	
 						DivisaoPorZero = 0;
 					end
 				end									

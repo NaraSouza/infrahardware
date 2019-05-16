@@ -1,7 +1,7 @@
-module mult(a, b, hi, lo, done, multCtrl, Clk, reset);
+module mult(a, b, hi, lo, done, multCtrl, clock, reset);
 	
 	input [31:0]a, b;
-	input multCtrl, Clk, reset;
+	input multCtrl, clock, reset;
 	
 	output reg[31:0]hi, lo;
 	output reg done;
@@ -24,7 +24,7 @@ module mult(a, b, hi, lo, done, multCtrl, Clk, reset);
 		SUM = 2'b01,
 		SUB = 2'b10;
 	
-	always@(posedge Clk)begin
+	always@(posedge clock)begin
 		
 		if(reset)begin
 			hi = 32'd0;
