@@ -30,6 +30,8 @@ Repositório para os códigos das listas de Infraestrutura de Hardware, além do
 - Verificar se caixinhas dos MUX estão corretas
     - Aparentemente mux_ALUSrcA e mux_BWD estão escolhendo inputC com 11 e não 10
     - Verificar se outros MUX não tem esse problema (se é que há um)
+- mux_dr2
+    - Verificar se os bits de b que estão sendo usados estão corretos
     
 ## Cartolina: 
 - so precisa de um fio para o memWD
