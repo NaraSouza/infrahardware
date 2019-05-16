@@ -327,13 +327,16 @@ mux_dr2 DR2Mux(
 	.out(DR2Out)
 );
 
+logic [3:0] ShiftCtrl;
+logic [31:0] DesRegOut;
+
 RegDesloc DesReg( //reg desloc
 	.Clk(clock),
 	.Reset(reset),
-	.Shift(shiftop),	// fix
-	.N(shiftsout),		// fix
-	.Entrada(reginout),	// fix
-	.Saida(DesRegOut)// fix
+	.Shift(ShiftCtrl),	
+	.N(DR2Out),		
+	.Entrada(DR1Out),	
+	.Saida(DesRegOut)
 );
 
 sign_extend USExtMux(
@@ -351,6 +354,9 @@ shift_left16 SL16(
 	.in(USExtOut), 
 	.out(SL16Out)
 );
+
+
+
 
 Registrador HIGH(
 	.Clk(clock),
