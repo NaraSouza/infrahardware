@@ -98,15 +98,17 @@ logic LessThan;
 logic StartDiv; // start div
 logic DivZero;
 logic DivEnd;
-logic [31:0] DivHightOut;
+logic [31:0] DivHighOut;
 logic [31:0] DivLowOut;
 
 logic StartMult; //start mult
 logic MultEnd;
-logic [31:0] MultHightOut;
+logic [31:0] MultHighOut;
 logic [31:0] MultLowOut;	
 
-logic [31:0] MuxHightOut;
+logic MuxHighSel;
+logic MuxLowSel;
+logic [31:0] MuxHighOut;
 logic [31:0] MuxLowOut;
 
 
@@ -121,7 +123,7 @@ logic [31:0] DR1Out;
 logic DR2;
 logic [4:0] DR2Out;
 
-logic [3:0] ShiftCtrl;
+logic [2:0] ShiftCtrl;
 logic [31:0] DesRegOut;
 
 mux_2inputs ALUorMemMux(
@@ -327,9 +329,6 @@ mux_dr2 DR2Mux(
 	.out(DR2Out)
 );
 
-logic [3:0] ShiftCtrl;
-logic [31:0] DesRegOut;
-
 RegDesloc DesReg( //reg desloc
 	.Clk(clock),
 	.Reset(reset),
@@ -353,10 +352,51 @@ shift_left2 SL2(
 shift_left16 SL16(
 	.in(USExtOut), 
 	.out(SL16Out)
+);	
+
+div DIVOp(
+
+	.Dividendo(RegAOut);
+	.Divisor(RegBOut);
+	.DivStart(StartDiv);
+	.clock(clock); 
+	.Reset(reset); 
+	.DivFim(DivEnd);
+	.DivisaoPorZero(DivZero);
+	.Hi(DivHighOut); 
+	.Lo(DivLowOut);
+
 );
 
+mult MULTOp(
+	.a(RegAOut), 
+	.b(RegBOut),
+	.multCtrl(StartMult), 
+	.clock(clock), 
+	.reset(reset),
+	.hi(MultHighOut),
+	.lo(MultLowOut),
+	.done(MultEnd),
+);
 
+mux_2inputs LOWMux(
+	.selector(MuxLowSel),
+	.inputA(MultLowOut),//0
+	.inputB(DivLowOut),//1
+	.outputA(MuxLowOut)
+);
 
+mux_2inputs HIGHMux(
+	.selector(MuxHighSel),
+	.inputA(MultHighOut),//0
+	.inputB(DivLowOut),//1
+	.outputA(MuxHighOut)
+);
+
+logic MuxHighSel;
+logic MuxLowSel;
+logic [31:0] MuxHighOut;
+logic [31:0] MuxLowOut;
 
 Registrador HIGH(
 	.Clk(clock),
