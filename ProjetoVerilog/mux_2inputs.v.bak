@@ -1,4 +1,0 @@
-module mux_2inputs(input wire [1:0] selector, input wire [31:0] inputA, input wire [31:0] inputB, output wire [31:0] outputA);
-
-assign outputA = (selector[0])? inputA : inputB;
-endmodule 

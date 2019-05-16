@@ -16,7 +16,6 @@ module VCPU(
 	output logic [6:0] CurState // ???? verificar o que eh. Provavelmente eh o estado atual da maquina de estados
 );
 
-// TODO: Criar mux para PCCond
 
 logic [4:0] rd;
 logic [4:0] shamt;
@@ -88,7 +87,7 @@ logic PCWriteCond;
 logic PCWrite;
 logic PCWCtrl; // controla se escreve ou n em PC; baseado nos bools anteriores(resultado final, basicamente)
 logic [31:0] PCSrcOut;
-logic PCCond;
+logic [1:0] PCCond;
 logic PCCondOut;
 
 logic Overflow;
@@ -143,22 +142,22 @@ UnidadeControle CtrlUnit(
 	.USExt(USext),
 	//Mux
 	.IorD(IorD), 
-	output reg [1:0] ALUSrcA(ALUSrcA),
-	output reg [2:0] ALUSrcB(ALUSrcB),
-	output reg [1:0] PCSource(PCSource),
-	output reg ALUorMem(ALUorMem),
-	output reg [1:0] RegDst(RegDst),
-	output reg [3:0] MemToReg(MemToReg),
+	.ALUSrcA(ALUSrcA),
+	.ALUSrcB(ALUSrcB),
+	.PCSource(PCSource),
+	.ALUorMem(ALUorMem),
+	.RegDst(RegDst),
+	.MemToReg(MemToReg),
 	//Escrita em Registradores
-	output reg IRWrite(IRWrite),
-	output reg [2:0] ALUOp(ALUOp),
-	output reg PCWrite(PCWrite),
-	output reg PCWriteCond(PCWriteCond),
-	output reg RegWrite(RegWrite), 
-	output reg AWrite(RegAWrite),
-	output reg BWrite(RegBWrite),
-	output reg ALUOutWrite(ALURegWrite),
-	output reg [6:0] state(CurState)
+	.IRWrite(IRWrite),
+	.ALUOp(ALUOp),
+	.PCWrite(PCWrite),
+	.PCWriteCond(PCWriteCond),
+	.RegWrite(RegWrite), 
+	.AWrite(RegAWrite),
+	.BWrite(RegBWrite),
+	.ALUOutWrite(ALURegWrite),
+	.state(CurState)
 );
 
 
@@ -168,6 +167,13 @@ mux_2inputs ALUorMemMux(
 	.inputA(PCSrcOut),//0
 	.inputB(MDROut),//1
 	.outputA(AorMemOut)
+);
+
+mux_pccond MuxPCCond(
+	.selector(PCCond),
+	.equal(Equal),//00
+	.greater(GreaterThan),//01
+	.out(PCCondOut)
 );
 
 Registrador PC(

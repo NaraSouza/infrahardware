@@ -52,7 +52,6 @@ set_global_assignment -name VHDL_FILE RegDesloc.vhd
 set_global_assignment -name VHDL_FILE Registrador.vhd
 set_global_assignment -name VHDL_FILE ula32.vhd
 set_global_assignment -name VERILOG_FILE sign_extend.v
-set_global_assignment -name VERILOG_FILE mux_2inputs.v
 set_global_assignment -name VERILOG_FILE mux_f_h_or_b.v
 set_global_assignment -name VERILOG_FILE mux_aluSrcA.v
 set_global_assignment -name VERILOG_FILE mux_aluSrcB.v
@@ -74,7 +73,7 @@ set_global_assignment -name BDF_FILE Proc_Control.bdf
 # Analysis & Synthesis Assignments
 # ================================
 set_global_assignment -name FAMILY "Stratix II"
-set_global_assignment -name TOP_LEVEL_ENTITY VCPU
+set_global_assignment -name TOP_LEVEL_ENTITY mux_pccond
 set_global_assignment -name DEVICE_FILTER_SPEED_GRADE FASTEST
 
 # Fitter Assignments
@@ -129,6 +128,7 @@ set_global_assignment -name DEVICE AUTO
 set_global_assignment -name SYSTEMVERILOG_FILE VCPU.sv
 set_global_assignment -name VERILOG_FILE mux_BWD.v
 set_global_assignment -name VERILOG_FILE mux_memWD.V
+set_global_assignment -name VERILOG_FILE mux_pccond.v
 set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
 set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
