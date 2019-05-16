@@ -1,5 +1,5 @@
 Classic Timing Analyzer report for Proj_Hardware
-Thu May 16 11:39:56 2019
+Thu May 16 11:50:38 2019
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -430,7 +430,7 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II Classic Timing Analyzer
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Thu May 16 11:39:55 2019
+    Info: Processing started: Thu May 16 11:50:38 2019
 Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off Proj_Hardware -c Proj_Hardware --timing_analysis_only
 Info: Parallel compilation is enabled and will use 4 of the 4 processors detected
 Warning: Found pins functioning as undefined clocks and/or memory enables
@@ -502,8 +502,8 @@ Info: th for register "UnidadeControle:CtrlUnit|ALUOutWrite" (data pin = "reset"
         Info: Total interconnect delay = 4.516 ns ( 78.36 % )
 Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 240 megabytes
-    Info: Processing ended: Thu May 16 11:39:56 2019
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:00
+    Info: Processing ended: Thu May 16 11:50:38 2019
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:01
 
 
