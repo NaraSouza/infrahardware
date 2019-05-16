@@ -1,30 +1,30 @@
 module UnidadeControle(
-
-//sinais de entrada
-input clock,
-input reset,
-input [5:0] funct,
-input [5:0] Opcode,
-//sinais de saida
-output reg MemWR,
-output reg USExt,
-//Mux
-output reg [2:0] IorD, 
-output reg [1:0] ALUSrcA,
-output reg [1:0] ALUSrcB,
-output reg [1:0] PCSource,
-output reg ALUorMem,
-output reg [1:0] RegDst,
-output reg [3:0] MemToReg,
-//Escrita em Registradores
-output reg IRWrite,
-output reg [2:0] ALUOp,
-output reg PCWrite,
-output reg RegWrite, 
-output reg AWrite,
-output reg BWrite,
-output reg ALUOutWrite,
-output reg [6:0] state
+	//sinais de entrada
+	input Clk,
+	input reset,
+	input [5:0] funct,
+	input [5:0] Opcode,
+	//sinais de saida
+	output reg MemWR,
+	output reg USExt,
+	//Mux
+	output reg [2:0] IorD, 
+	output reg [1:0] ALUSrcA,
+	output reg [2:0] ALUSrcB,
+	output reg [1:0] PCSource,
+	output reg ALUorMem,
+	output reg [1:0] RegDst,
+	output reg [3:0] MemToReg,
+	//Escrita em Registradores
+	output reg IRWrite,
+	output reg [2:0] ALUOp,
+	output reg PCWrite,	
+	output reg PCWriteCond,
+	output reg RegWrite, 
+	output reg AWrite,
+	output reg BWrite,
+	output reg ALUOutWrite,
+	output reg [6:0] state
 );
 
 parameter [6:0] Reset = 7'd1;
@@ -43,7 +43,7 @@ parameter [6:0] Opcode_Inexistente = 7'd59;
 
 parameter [5:0] funct_add = 6'h20;
 
-always@ (posedge clock) begin
+always@ (posedge Clk) begin
 	if(reset == 1) begin
 		state = Reset;
 	end
@@ -58,11 +58,12 @@ always@ (posedge clock) begin
 			IRWrite = 1;
 			RegWrite = 1;
 			ALUSrcA = 2'b00;
-			ALUSrcB = 2'b10;
+			ALUSrcB = 3'b010;
 			ALUOp = 3'b000;
 			PCSource = 2'b01;
 			ALUorMem = 2'b00;
 			PCWrite = 1;
+			PCWriteCond = 0;
 			// state = 
 			// RegDst = 2'b10; // inicializando R29 com 227 ?
 			// MemToReg = 4'b1001;
@@ -75,15 +76,17 @@ always@ (posedge clock) begin
 			ALUSrcA = 2'b00;
 			ALUSrcB = 2'b10;
 			ALUOp = 3'b000;
-			PCSource = 3'b10;
+			PCSource = 2'b10;
 			ALUorMem = 2'b00;
 			PCWrite = 1;
 			state = Wait_Decode;
+			pcwritecond = 0;
 		end
 		Wait_Decode: begin
 			PCWrite = 0;
 			ALUOp = 3'b000;
 			state = Decode;
+			pcwritecond = 0;
 		end
 		Wait_Decode_2: begin
 			state = Decode;
@@ -95,6 +98,7 @@ always@ (posedge clock) begin
 			ALUSrcB = 2'b11;
 			ALUOp = 3'b000;
 			state = Wait_Decode_2;
+			pcwritecond = 0;
 		end
 		Wait_Decode_3: begin
 			case(Opcode)
@@ -120,6 +124,7 @@ always@ (posedge clock) begin
 			RegWrite = 1;
 			ALUOutWrite = 0;
 			state = PC4;
+			pcwritecond = 0;
 		end		
 	endcase
 	end

@@ -2,7 +2,7 @@ module VCPU(
 	input clock,
 	input reset,
 	
-	output logic [5:0] ControlOp,
+	output logic [5:0] OPCode, //opcode
 	
 	output logic [31:0] PCOut,
 	output logic [31:0] EPCOut,
@@ -15,6 +15,8 @@ module VCPU(
     
 	output logic [6:0] CurState // ???? verificar o que eh. Provavelmente eh o estado atual da maquina de estados
 );
+
+// TODO: Criar mux para PCCond
 
 logic [4:0] rd;
 logic [4:0] shamt;
@@ -86,6 +88,8 @@ logic PCWriteCond;
 logic PCWrite;
 logic PCWCtrl; // controla se escreve ou n em PC; baseado nos bools anteriores(resultado final, basicamente)
 logic [31:0] PCSrcOut;
+logic PCCond;
+logic PCCondOut;
 
 logic Overflow;
 logic Negative;
@@ -126,6 +130,37 @@ logic [4:0] DR2Out;
 
 logic [2:0] ShiftCtrl;
 logic [31:0] DesRegOut;
+
+// Ainda é a versão provisória!!
+UnidadeControle CtrlUnit(
+	//sinais de entrada
+	.Clk(clock),
+	.reset(reset),
+	.funct(funct),
+	.Opcode(OPCode),
+	//sinais de saida
+	.MemWR(MemWR),
+	.USExt(USext),
+	//Mux
+	.IorD(IorD), 
+	output reg [1:0] ALUSrcA(ALUSrcA),
+	output reg [2:0] ALUSrcB(ALUSrcB),
+	output reg [1:0] PCSource(PCSource),
+	output reg ALUorMem(ALUorMem),
+	output reg [1:0] RegDst(RegDst),
+	output reg [3:0] MemToReg(MemToReg),
+	//Escrita em Registradores
+	output reg IRWrite(IRWrite),
+	output reg [2:0] ALUOp(ALUOp),
+	output reg PCWrite(PCWrite),
+	output reg PCWriteCond(PCWriteCond),
+	output reg RegWrite(RegWrite), 
+	output reg AWrite(RegAWrite),
+	output reg BWrite(RegBWrite),
+	output reg ALUOutWrite(ALURegWrite),
+	output reg [6:0] state(CurState)
+);
+
 
 mux_2inputs ALUorMemMux(
 	// TODO: Verificar se tá ok
@@ -202,7 +237,7 @@ Instr_Reg IR(
 	.Reset(reset),
 	.Load_ir(IRWrite),
 	.Entrada(MemOut),
-	.Instr31_26(ControlOp),
+	.Instr31_26(OPCode),
 	.Instr25_21(rs),
 	.Instr20_16(rt),
 	.Instr15_0(inst15_0)
@@ -420,5 +455,6 @@ assign rd = inst15_0 [15:11];
 assign shamt = inst15_0 [10:6];
 assign funct = inst15_0 [5:0];
 
+assign PCWCtrl = (PCWriteCond && PCCondOut) || PCWrite;
 
 endmodule: VCPU
