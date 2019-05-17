@@ -5,38 +5,43 @@ input clock,
 input reset,
 input [5:0] funct,
 input [5:0] Opcode,
+input Z, // verificar se isso é pra ser assim mesmo!!!
+input O,
+input GT,
+input LT,
 //sinais de saida
-output reg MemWR,
-output reg USExt,
+output wire MemWR,
+output wire USExt,
 //Mux
-output reg [2:0] IorD, 
-output reg [1:0] ALUSrcA,
-output reg [2:0] ALUSrcB,
-output reg [1:0] PCSource,
-output reg ALUorMem,
-output reg [1:0] RegDst,
-output reg [3:0] MemToReg,
-output reg [1:0] MemWD,
-output reg [1:0] BWD,
-output reg DR1,
-output reg DR2,
-output reg Low,
-output reg High,
-output reg [1:0] PCCond,
-output reg PCWriteCond,
+output wire [2:0] IorD, 
+output wire [1:0] ALUSrcA,
+output wire [2:0] ALUSrcB,
+output wire [1:0] PCSource,
+output wire ALUorMem,
+output wire [1:0] RegDst,
+output wire [3:0] MemToReg,
+output wire [1:0] MemWD,
+output wire [1:0] BWD,
+output wire DR1,
+output wire DR2,
+output wire Low,
+output wire High,
+output wire [1:0] PCCond,
+output wire PCWriteCond,
 //Escrita em Registradores
-output reg IRWrite,
-output reg [2:0] ALUOp,
-output reg PCWrite,
-output reg RegWrite, 
-output reg AWrite,
-output reg BWrite,
-output reg ALUOutWrite,
-output reg MDRWrite,
-output reg [6:0] state,
-output reg LowReg,
-output reg HighReg,
-output reg EPCWrite
+output wire IRWrite,
+output wire [2:0] ALUOp,
+output wire PCWrite,
+output wire RegWrite, 
+output wire AWrite,
+output wire BWrite,
+output wire ALUOutWrite,
+output wire MDRWrite,
+output wire [6:0] state,
+output wire LowReg,
+output wire HighReg,
+output wire EPCWrite,
+output wire WriteData
 );
 
 parameter [6:0] inicial_1 = 7'd1;
@@ -96,6 +101,42 @@ parameter [6:0] srav = 7'd54;
 parameter [6:0] srl = 7'd55;
 parameter [6:0] OPcodeIN = 7'd56;
 parameter [6:0] Reset = 7'd57;
+parameter [6:0] inicial = 7'd58;
+parameter [6:0] inicial_0 = 7'd59;
+parameter [6:0] write_lt0 = 7'd60;
+parameter [6:0] write_lt1 = 7'd61;
+parameter [6:0] write_lt00 = 7'd62;
+parameter [6:0] write_lt11 = 7'd63;
+parameter [6:0] writemdr_1 = 7'd64;
+parameter [6:0] writemdr_2 = 7'd65;
+parameter [6:0] writemdr_3 = 7'd66;
+parameter [6:0] lw_2 = 7'd67;
+parameter [6:0] lw_3 = 7'd68;
+parameter [6:0] cory_2 = 7'd69;
+parameter [6:0] cory_3 = 7'd70;
+parameter [6:0] lh_2 = 7'd71;
+parameter [6:0] lh_3 = 7'd72;
+parameter [6:0] lb_2 = 7'd73;
+parameter [6:0] lb_3 = 7'd74;
+parameter [6:0] cory_0 = 7'd75;
+parameter [6:0] sw_2 = 7'd76;
+parameter [6:0] sw_3 = 7'd77;
+parameter [6:0] sw_4 = 7'd78;
+parameter [6:0] cory_7 = 7'd79;
+parameter [6:0] cory_8 = 7'd80;
+parameter [6:0] sh_2 = 7'd81;
+parameter [6:0] sh_3 = 7'd82;
+parameter [6:0] sh_4 = 7'd83;
+parameter [6:0] sb_2 = 7'd84;
+parameter [6:0] sb_3 = 7'd85;
+parameter [6:0] sb_4 = 7'd86;
+parameter [6:0] overflow = 7'd87;
+parameter [6:0] OPcodeIN_2 = 7'd88;
+parameter [6:0] OPcodeIN_3 = 7'd89;
+parameter [6:0] cory_9 = 7'd90;
+parameter [6:0] overflow_2 = 7'd91;
+parameter [6:0] overflow_3 = 7'd92;
+parameter [6:0] cory_10 = 7'd93;
 
 parameter [5:0] Opcode_R = 6'h00;
 
@@ -145,19 +186,28 @@ always@ (posedge clock) begin
 		Reset: begin
 			RegDst = 2'b10;
 			MemToReg = 4'b1000;
-			state = inicial_1;
+			state = inicial;
 		end
-		inicial_1: begin
+		inicial: begin
 			IorD = 3'b001;
 			MemWR = 0;
-			IRWrite = 1;
-			MDRWrite = 1;
 			ALUSrcA = 2'b00;
-			ALUSrcB = 10;
+			ALUSrcB = 3'b010;
 			ALUOp = 3'b001;
+			state = cory_0;
+		end
+		cory_0: begin
+			state = inicial_0;
+		end
+		inicial_0:begin
 			PCSource = 2'b01;
 			ALUorMem = 0;
 			PCWrite = 1;
+			state = inicial_1;
+		end
+		inicial_1: begin
+			IRWrite = 1;
+			MDRWrite = 1;
 			state = inicial_2;
 		end
 		inicial_2: begin
@@ -168,6 +218,8 @@ always@ (posedge clock) begin
 			ALUSrcB = 3'b011;
 			USExt = 1;
 			ALUOp = 3'b001;
+			PCWrite = 0;
+			ALUOutWrite = 1;
 			state = decode;
 		end
 		decode: begin
@@ -215,531 +267,499 @@ always@ (posedge clock) begin
 		end
 		addiu: begin
 			ALUSrcA = 2'b10;
-			ALUSrcB = 3'b100;
-			ALUOp = 001;
 			USExt = 1;
+			ALUSrcB = 3'b100;
+			ALUOp = 3'b001;
+			ALUOutWrite = 1;
 			state = write_i;
 		end
 		write_i: begin
 			RegDst = 2'b00;
 			MemToReg = 4'b0000;
 			RegWrite = 1;
-			state = inicial_1;
+			state = inicial;
 		end
-			
-		/*Reset: begin
-			state = PC0;
+		addi: begin
+			ALUSrcA = 2'b10;
+			USExt = 1;
+			ALUSrcB = 3'b100;
+			ALUOp = 3'b001;
+			ALUOutWrite = 1;
+			if (O == 1) begin
+				state = overflow;
+			end
+			else if(O == 0) begin
+				state = write_i;
+			end
 		end
-		PC0: begin
-			IorD = 3'b000;
-			IRWrite = 1;
+		slti: begin
+			ALUSrcA = 2'b10;
+			USExt = 1;
+			ALUSrcB = 3'b100;
+			ALUOp = 3'b111;
+			ALUOutWrite = 1;
+			if (LT == 1) begin
+				state = write_lt1;
+			end
+			else if (LT == 0) begin
+				state = write_lt0;
+			end
+		end
+		write_lt1: begin
+			RegDst = 2'b00;
+			MemToReg = 4'b1010;
 			RegWrite = 1;
-			RegDst = 2'b10; // inicializando R29 com 227
-			MemToReg = 4'b1000;
-			state = Wait_Decode;
+			state = inicial;
 		end
-		PC4: begin
-			IorD = 3'b001;
-			MemWR = 0;
-			IRWrite = 1;
-			ALUSrcA = 2'b00;
-			ALUSrcB = 2'b10;
-			ALUOp = 3'b001;
-			PCSource = 2'b01;
-			ALUorMem = 2'b00;
-			PCWrite = 1;
-			state = Wait_Decode;
+		write_lt0: begin
+			RegDst = 2'b00;
+			MemToReg = 4'b1001;
+			RegWrite = 1;
+			state = inicial;
 		end
-		Wait_Decode: begin
-			PCWrite = 0;
-			ALUOp = 3'b000; //?
-			state = Decode;
-		end
-		Wait_Decode_2: begin
-			state = Decode;
-		end
-		Decode: begin
-			AWrite = 1;
-			BWrite = 1;
+		add: begin
 			ALUSrcA = 2'b10;
-			ALUSrcB = 2'b00;
+			ALUSrcB = 3'b000;
 			ALUOp = 3'b001;
-			state = Wait_Decode_3;
-		end
-		Wait_Decode_3: begin
-			state = Wait_Decode_4;
-		end
-		Wait_Decode_4: begin
-			case(Opcode)
-				Opcode_R: begin
-					case(funct)
-						func_add: state = Add;
-						func_and: state = And;
-						func_div: state = Div;
-						func_mult: state = Mult;
-						func_jr: state = Jr;
-						func_mfhi: state = Mfhi;
-						func_mflo: state = Mflo;
-						func_sll: state = Sll_Sra_Srl;
-						func_sllv: state = Sllv_Srav;
-						func_slt: state = Slt;
-						func_sra: state = Sll_Sra_Srl;
-						func_srav: state = Sllv_Srav;
-						func_srl: state = Sll_Sra_Srl;
-						func_sub: state = Sub;
-						func_break: state = Break;
-						func_rte: state = Rte;
-					endcase
-				end
-				Opcode_addi: state = Addi_Addiu;
-				Opcode_addiu: state = Addi_Addiu;
-				Opcode_beq: state = Beq;
-				Opcode_bne: state = Bne;
-				Opcode_ble: state = Ble;
-				Opcode_bgt: state = Bgt;
-				Opcode_lb: state = Lb_Lh_Lw;
-				Opcode_lh: state = Lb_Lh_Lw;
-				Opcode_lui: state = Lui;
-				Opcode_lw: state = Lb_Lh_Lw;
-				Opcode_sb: state = Sb_Sh;
-				Opcode_sh: state = Sb_Sh;
-				Opcode_slti: state = Slti;
-				Opcode_sw: state = Sw;
-				Opcode_j: state = J;
-				Opcode_jal: state = Jal;
-				Opcode_inc: state = Inc;
-				Opcode_dec: state = Dec;
-				default: state = Opcode_inexistente;
-			endcase
-		end
-		Add: begin
-			ALUSrcA = 2'b10;
-			ALUSrcB = 2'b00;
-			ALUOp = 3'b001;
-			//RorLT = 1;
 			ALUOutWrite = 1;
-			state = Write_1;
+			if (O == 1) begin
+				state = overflow;
+			end
+			else if(O == 0) begin
+				state = write_1;
+			end
 		end
-		Sub: begin
+		write_1: begin
+			RegDst = 2'b01;
+			MemToReg = 4'b0000;
+			RegWrite = 1;
+			state = inicial;
+		end
+		sub: begin
 			ALUSrcA = 2'b10;
-			ALUSrcB = 2'b00;
+			ALUSrcB = 3'b000;
 			ALUOp = 3'b010;
-			//RorLT = 1;
 			ALUOutWrite = 1;
-			state = Write_1;
+			if (O == 1) begin
+				state = overflow;
+			end
+			else if(O == 0) begin
+				state = write_1;
+			end		
 		end
 		And: begin
 			ALUSrcA = 2'b10;
-			ALUSrcB = 2'b00;
+			ALUSrcB = 3'b000;
 			ALUOp = 3'b011;
-			//RorLT = 1;
 			ALUOutWrite = 1;
-			state = Write_1;
+			state = write_1;			
 		end
-		Write_1: begin
-			if(O == 1) begin
-				state = Overflow;
+		slt: begin
+			ALUSrcA = 2'b10;
+			ALUSrcB = 3'b000;
+			ALUOp = 3'b111;
+			ALUOutWrite = 1;
+			if (LT == 1) begin
+				state = write_lt11;
 			end
-			else begin
-				MemToReg = 4'b0000;
-				RegDst = 2'b01;
-				RegWrite = 1;
-				ALUOutWrite = 0;
-				state = PC4;
-			end
+			else if (LT == 0) begin
+				state = write_lt00;
+			end			
 		end
-		Mult: begin
-			StartM = 1;
-			state = Wait_Mult_Div;
+		write_lt11: begin
+			RegDst = 2'b01;
+			MemToReg = 4'b1010;
+			RegWrite = 1;
+			state = inicial;
 		end
-		Div: begin
-			StartD = 1;
-			state = Wait_Mult_Div;
+		write_lt00: begin
+			RegDst = 2'b01;
+			MemToReg = 4'b1001;
+			RegWrite = 1;
+			state = inicial;
 		end
-		Wait_Mult_Div: begin
-			if(MultEnd == 1 || DivEnd == 1) begin
-				if(DivZero == 1) begin
-					StartD = 0;
-					state = Div_zero;
-				end
-				else if(DivEnd == 0) begin
-					MultOrDiv = 0;
-					StartM = 0;
-					state = Mult_2;
-				end
-				else if(MultEnd == 0) begin
-					MultOrDiv = 1;
-					StartD = 0;
-					state = Div_2;
-				end 
-			end
-			else if(MultEnd == 0 || DivEnd == 0) begin
-				state = Wait_Mult_Div;
-			end
+		jr: begin
+			ALUSrcA = 2'b10;
+			ALUOp = 3'b000;
+			PCSource = 2'b01;
+			ALUorMem = 0;
+			PCWrite = 1;	
+			state = inicial;		
 		end
-		Mult_2: begin
-			HIWrite = 1;
-			LOWrite = 1;
-			state = PC4;
+		jump: begin
+			PCSource = 2'b00;
+			ALUorMem = 0;
+			PCWrite = 1;
+			state = inicial;
 		end
-		Div_2: begin
-			HIWrite = 1;
-			LOWrite = 1;
-			state = PC4;
-		end
-		Mfhi: begin
+		jal: begin
+			MemToReg = 4'b101;
 			RegDst = 2'b11;
+			RegWrite = 1;
+			state = jal_2;
+		end
+		jal_2: begin
+			PCSource = 2'b00;
+			ALUorMem = 0;
+			PCWrite = 1;
+			state = inicial;
+		end
+		lui: begin
+			RegDst = 2'b00;
+			USExt = 0;
 			MemToReg = 4'b0110;
 			RegWrite = 1;
-			state = PC4;
-		end
-		Mflo: begin
-			RegDst = 2'b11;
-			MemToReg = 4'b0111;
-			RegWrite = 1;
-			state = PC4;
-		end
-		Sllv_Srav: begin
-			OpReg = 0;
-			RegOrShamt = 0;
-			Shift = 3'b001;
-			case(funct)
-				funct_sllv: state = Sll_Sllv;
-				funct_srav: state = Sra_Srav;
-			endcase
-		end
-		Sll_Sra_Srl: begin
-			OpReg = 1;
-			RegOrShamt = 1;
-			Shift = 3'b001;
-			case(funct)
-				funct_sll: state = Sll_Sllv;
-				funct_sra: state = Sra_Srav;
-				funct_srl: state = Srl;
-			endcase
-		end
-		Sll_Sllv: begin
-			Shift = 3'b010;
-			state = S_All;
-		end
-		Sra_Srav: begin
-			Shift = 3'b100;
-			state = S_All;
-		end
-		Srl: begin
-			Shift = 3'b011;
-			state = S_All;
-		end
-		S_All: begin
-			MemToReg = 4'b0000;
-			RegDst = 2'b11;
-			RegWrite = 1;
-			state = PC4;
-		end
-		Slt: begin
-			ALUOp = 3'b111;
-			ALUSrcA = 2'b10;
-			ALUSrcB = 2'b00;
-			ALUOutWrite = 1;
-			RorLT = 0;
-			state = Write_1;
-		end
-		Slti: begin
-			ALUOp = 3'b111;
-			ALUSrcA = 2'b10;
-			ALUSrcB = 2'b10;
-			RorLT = 0;
-			state = Write_1;
-		end
-		Rte: begin
-			PCSource = 3'b100;
-			PCWrite = 1;
-			state = PC4;
+			state = inicial;
 		end
 		Break: begin
 			state = Break;
 		end
-		Addi_Addiu: begin
+		inc: begin
 			ALUSrcA = 2'b10;
-			ALUSrcB = 2'b10;
-			ALUOp = 3'b001;
-			RorLT = 1;
-			ALUOutWrite = 1;
-			case(Opcode)
-				Opcode_addiu: state = Addiu;
-				Opcode_addi: state = Addi;
-			endcase
-		end
-		Addi: begin
-			if(O == 1) begin
-				state = Overflow;
-			end
-			else begin
-				MemToReg = 4'b0010;
-				RegDst = 2'b00;
-				RegWrite = 1;
-				ALUOutWrite = 0;
-				state = PC4;
-			end
-		end
-		Addiu: begin
-			MemToReg = 4'b0010;
-			RegDst = 2'b00;
-			RegWrite = 1;
-			ALUOutWrite = 0;
-			state = PC4;
-		end
-		Beq: begin
-			ALUSrcA = 2'b00;
-			ALUSrcB = 2'b11;
+			USExt = 1;
+			ALUSrcB = 3'b100;
 			ALUOp = 3'b001;
 			ALUOutWrite = 1;
-			PCSource = 3'b101;
-			Comp = 2'b00;
-			PCWriteCond = 1;
-			RorLT = 1;
-			state = Beq_2;
+			state = inc_2;
 		end
-		Beq_2: begin
+		inc_2: begin
+			IorD = 3'b101;
+			MemWR = 0;
+			state = cory_4;
+		end
+		cory_4: begin
+			state = inc_3;
+		end
+		inc_3: begin
+			ALUSrcA = 2'b01;
+			ALUOp = 3'b100;
+			state = writeMem;
+		end
+		dec: begin
 			ALUSrcA = 2'b10;
-			ALUSrcB = 2'b00;
+			USExt = 1;
+			ALUSrcB = 3'b100;
+			ALUOp = 3'b001;
+			ALUOutWrite = 1;
+			state = inc_2;
+		end
+		dec_2: begin
+			IorD = 3'b101;
+			MemWR = 0;
+			state = cory_5;
+		end
+		cory_5: begin
+			state = inc_3;
+		end
+		dec_3: begin
+			ALUSrcA = 2'b01;
+			ALUSrcB = 3'b001;
 			ALUOp = 3'b010;
-			ALUOutWrite = 0;
-			state = PC4;
+			state = writeMem;
 		end
-		Bne: begin
-			ALUSrcA = 2'b00;
-			ALUSrcB = 2'b11;
-			ALUOp = 3'b001;
-			ALUOutWrite = 1;
-			PCSource = 3'b101;
-			Comp = 2'b01;
-			PCWriteCond = 1;
-			RorLT = 1;
-			state = Bne_2;
+		writeMem: begin
+			IorD = 3'b101;
+			BWD = 2'b11;
+			WriteData = 1;
+			MemWR = 1;
+			state = inicial;
 		end
-		Bne_2: begin
+		rte: begin
+			PCSource = 2'b10;
+			ALUorMem = 0;
+			PCWrite = 1;
+			state = inicial;
+		end
+		beq: begin
 			ALUSrcA = 2'b10;
-			ALUSrcB = 2'b00;
+			ALUSrcB = 3'b000;
 			ALUOp = 3'b010;
-			ALUOutWrite = 0;
-			state = PC4;
+			if (O == 1) begin
+				state = overflow;
+			end
+			else if (O == 0) begin
+				if (Z == 1) begin
+					state = branch_1;
+				end
+				else if (Z == 0) begin
+					state = inicial;
+				end
+			end
 		end
-		Ble: begin
-			ALUSrcA = 2'b00;
-			ALUSrcB = 2'b11;
-			ALUOp = 3'b001;
-			ALUOutWrite = 1;
-			PCSource = 3'b101;
-			Comp = 2'b11;
+		branch_1: begin
+			PCWrite = 0;
+			PCSource = 2'b11;
+			PCCond = 2'b00;
 			PCWriteCond = 1;
-			RorLT = 1;
-			state = Ble_2;
+			ALUorMem = 0;
+			state = inicial;
 		end
-		Ble_2: begin
+		ble: begin
 			ALUSrcA = 2'b10;
-			ALUSrcB = 2'b00;
+			ALUSrcB = 3'b000;
 			ALUOp = 3'b111;
-			ALUOutWrite = 0;
-			state = PC4;
+			if (GT == 0) begin
+				state = branch_2;
+			end
+			else if (GT == 1) begin
+				state = inicial;
+			end
 		end
-		Bgt: begin
-			ALUSrcA = 2'b00;
-			ALUSrcB = 2'b11;
-			ALUOp = 3'b001;
-			ALUOutWrite = 1;
-			PCSource = 3'b101;
-			Comp = 2'b10;
+		branch_2: begin
+			PCWrite = 0;
+			PCSource = 2'b11;
+			PCCond = 2'b10;
 			PCWriteCond = 1;
-			RorLT = 1;
-			state = Bgt_2;
+			ALUorMem = 0;
+			state = inicial;
 		end
-		Bgt_2: begin
+		bne: begin
 			ALUSrcA = 2'b10;
-			ALUSrcB = 2'b00;
+			ALUSrcB = 3'b000;
+			ALUOp = 3'b010;
+			if (O == 1) begin
+				state = overflow;
+			end
+			else if (O == 0) begin
+				if (Z == 0) begin
+					state = branch_3;
+				end
+				else if (Z == 1) begin
+					state = inicial;
+				end
+			end
+		end
+		branch_3: begin
+			PCWrite = 0;
+			PCSource = 2'b11;
+			PCCond = 2'b01;
+			PCWriteCond = 1;
+			ALUorMem = 0;
+			state = inicial;
+		end
+		bgt: begin
+			ALUSrcA = 2'b10;
+			ALUSrcB = 3'b000;
 			ALUOp = 3'b111;
-			ALUOutWrite = 0;
-			state = PC4;
+			if (GT == 1) begin
+				state = branch_4;
+			end
+			else if (GT == 0) begin
+				state = inicial;
+			end
 		end
-		Lb_Lh_
-		: begin
+		branch_4: begin
+			PCWrite = 0;
+			PCSource = 2'b11;
+			PCCond = 2'b11;
+			PCWriteCond = 1;
+			ALUorMem = 0;
+			state = inicial;
+		end
+		lw_1: begin
 			ALUSrcA = 2'b10;
-			ALUSrcB = 2'b10;
-			ALUOp = 3'b001;
-			RorLT = 1;
-			ALUOutWrite = 1;
-			state = Lb_Lh_Lw_2;
-		end
-		Lb_Lh_Lw_2: begin
-			IorD = 3'b100;
-			Wr = 0;
-			IRWrite = 0;
-			ALUOutWrite = 0;
-			state = Wait_Lb_Lh_Lw;
-		end
-		Wait_Lb_Lh_Lw: begin
-			case(Opcode)
-				Opcode_lw: state = Lw;
-				Opcode_lb: state = Lb;
-				Opcode_lh: state = Lh;
-			endcase
-		end
-		Lw : begin
-			MDRWrite = 1;
-			RegDst = 2'b00;
-			MemToReg = 4'b0011;
-			RegWrite = 1;
-			state = Wait_Lb_Lh_Lw_2;
-		end
-		Lh : begin
-			MDRWrite = 1;
-			RegDst = 2'b00;
-			MemToReg = 4'b0100;
-			RegWrite = 1;
-			state = Wait_Lb_Lh_Lw_2;
-		end
-		Lb : begin
-			MDRWrite = 1;
-			RegDst = 2'b00;
-			MemToReg = 4'b0101;
-			RegWrite = 1;
-			state = Wait_Lb_Lh_Lw_2;
-		end
-		Wait_Lb_Lh_Lw_2 : begin
-			state = Wait_Lb_Lh_Lw_3;
-		end
-		Wait_Lb_Lh_Lw_3: begin
-			state = PC4;
-		end
-		Lui: begin
-			MDRWrite = 1;
-			RegDst = 2'b00;
-			MemToReg = 4'b1000;
-			RegWrite = 1;
-			state = Wait_Lb_Lh_Lw_2;
-		end
-		Sw: begin
-			ALUSrcA = 2'b10;
-			ALUSrcB = 2'b10;
-			ALUOutWrite = 1;
-			ALUOp = 3'b001;
-			RorLT = 1;
-			state = Sw_2;
-		end
-		Sw_2: begin
-			IorD = 3'b100;
-			StoreSel = 0;
-			Wr = 1;
-			state = PC4;
-		end
-		Sb_Sh: begin
-			ALUSrcA = 2'b10;
-			ALUSrcB = 2'b10;
+			USExt = 1;
+			ALUSrcB = 3'b100;
 			ALUOp = 3'b001;
 			ALUOutWrite = 1;
-			RorLT = 1;
-			state = Sb_Sh_2;
+			state = lw_2;
 		end
-		Sb_Sh_2: begin
-			IorD = 3'b100;
-			Wr = 0;
-			state = Wait_Sb_Sh;
+		lw_2: begin
+			IorD = 3'b101;
+			MemWR = 0;
+			state = cory_1;
 		end
-		Wait_Sb_Sh : begin
-			case(Opcode)
-				Opcode_sb: state = Sb;
-				Opcode_sh: state = Sh;
-			endcase
+		cory_1: begin
+			state = writemdr_1;
 		end
-		Sb: begin
-			SbOrSh = 0;
-			state = Sb_Sh_3;
+		writemdr_1: begin
+			MDRWrite = 1;
+			state = lw_3;
 		end
-		Sh: begin
-			SbOrSh = 1;
-			state = Sb_Sh_3;
-		end
-		Sb_Sh_3 : begin
-			StoreSel = 1;
-			Wr = 1;
-			state = PC4;
-		end
-		J : begin
-			ALUSrcA = 2'd0; // PC
-			ALUSrcB = 2'd1; // 4
-			ALUOp = 3'b001; // adicao
-			state = J_2;
-		end
-		J_2 : begin
-			PCWrite = 1;
-			PCSource = 3'b001;
-			state = PC4;
-		end
-		Jal : begin
-			ALUSrcA = 2'd0; // PC
-			ALUSrcB = 2'd1; // 4
-			ALUOp = 3'b001; // adicao
-			RorLT = 1;
-			ALUOutWrite = 1;
-			state = Jal_2;
-		end
-		Jal_2 : begin
-			RegDst = 2'b01;
-			MemToReg = 4'b0010;
+		lw_3: begin
+			MemWD = 2'b00;
+			RegDst = 2'b00;
+			MemToReg = 4'b0001;
 			RegWrite = 1;
-			state = Jal_3;
+			state = inicial;
 		end
-		Jal_3 : begin
-			PCWrite = 1;
-			PCSource = 3'b001;
-			state = PC4;
+		lh_1: begin
+			ALUSrcA = 2'b10;
+			USExt = 1;
+			ALUSrcB = 3'b100;
+			ALUOp = 3'b001;
+			ALUOutWrite = 1;
+			state = lh_2;
 		end
-		Jr: begin
-			ALUSrcA = 2'b10; // rs
-			ALUSrcB = 2'b01; // 4
-			ALUOp = 3'b010; // subtracao
-			state = Jr_2;
+		lh_2: begin
+			IorD = 3'b101;
+			MemWR = 0;
+			state = cory_2;
 		end
-		Jr_2 : begin
-			PCWrite = 1;
-			PCSource = 3'b010;
-			state = PC4;
+		cory_2: begin
+			state = writemdr_2;
 		end
-		Opcode_inexistente : begin
+		writemdr_2: begin
+			MDRWrite = 1;
+			state = lh_3;
+		end
+		lh_3: begin
+			MemWD = 2'b01;
+			RegDst = 2'b00;
+			MemToReg = 4'b0001;
+			RegWrite = 1;
+			state = inicial;
+		end
+		lb_1: begin
+			ALUSrcA = 2'b10;
+			USExt = 1;
+			ALUSrcB = 3'b100;
+			ALUOp = 3'b001;
+			ALUOutWrite = 1;
+			state = lb_2;
+		end
+		lb_2: begin
+			IorD = 3'b101;
+			MemWR = 0;
+			state = cory_3;
+		end
+		cory_3: begin
+			state = writemdr_3;
+		end
+		writemdr_3: begin
+			MDRWrite = 1;
+			state = lb_3;
+		end
+		lb_3: begin
+			MemWD = 2'b10;
+			RegDst = 2'b00;
+			MemToReg = 4'b0001;
+			RegWrite = 1;
+			state = inicial;
+		end
+		sw_1: begin
+			ALUSrcA = 2'b10;
+			USExt = 1;
+			ALUSrcB = 3'b100;
+			ALUOp = 3'b001;
+			ALUOutWrite = 1;
+			state = sw_2;
+		end
+		sw_2: begin
+			IorD = 3'b101;
+			MemWR = 0;
+			state = cory_6;
+		end
+		cory_6: begin
+			state = sw_3;
+		end
+		sw_3: begin
+			MDRWrite = 1;
+			state = sw_4;
+		end
+		sw_4: begin
+			BWD = 2'b00;
+			WriteData = 1;
+			IorD = 3'b101;
+			MemWR = 1;
+			state = inicial;
+		end
+		sh_1: begin
+			ALUSrcA = 2'b10;
+			USExt = 1;
+			ALUSrcB = 3'b100;
+			ALUOp = 3'b001;
+			ALUOutWrite = 1;
+			state = sh_2;
+		end
+		sh_2: begin
+			IorD = 3'b101;
+			MemWR = 0;
+			state = cory_7;
+		end
+		cory_7: begin
+			state = sh_3;
+		end
+		sh_3: begin
+			MDRWrite = 1;
+			state = sh_4;
+		end
+		sh_4: begin
+			BWD = 2'b01;
+			WriteData = 1;
+			IorD = 3'b101;
+			MemWR = 1;
+			state = inicial;
+		end
+		sb_1: begin
+			ALUSrcA = 2'b10;
+			USExt = 1;
+			ALUSrcB = 3'b100;
+			ALUOp = 3'b001;
+			ALUOutWrite = 1;
+			state = sb_2;
+		end
+		sb_2: begin
+			IorD = 3'b101;
+			MemWR = 0;
+			state = cory_8;
+		end
+		cory_8: begin
+			state = sb_3;
+		end
+		sb_3: begin
+			MDRWrite = 1;
+			state = sb_4;
+		end
+		sb_4: begin
+			BWD = 2'b10;
+			WriteData = 1;
+			IorD = 3'b101;
+			MemWR = 1;
+			state = inicial;
+		end
+		OPcodeIN: begin
+			ALUSrcA = 2'b00;
+			ALUSrcB = 3'b010;
+			ALUOp = 3'b010;
 			EPCWrite = 1;
-			state = Opcode_inexistente_2;
+			IorD = 3'b010;
+			MemWR = 0;
+			state = cory_9;
 		end
-		Opcode_inexistente_2 : begin
-			Wr = 0;
-			IorD = 3'd1;
-			state = Excecao;
+		cory_9: begin
+			state = OPcodeIN_2;
 		end
-		Overflow: begin
-			EPCWrite = 1;
-			state = Overflow_2;
+		OPcodeIN_2: begin;
+			MDRWrite = 1;
+			state = OPcodeIN_3;
 		end
-		Overflow_2 : begin
-			Wr = 0;
-			IorD = 3'd2;
-			state = Excecao;
-		end
-		Div_zero : begin
-			EPCWrite = 1;
-			state = Div_zero_2;
-		end
-		Div_zero_2 : begin
-			Wr = 0;
-			IorD = 3'd3;
-			state = Excecao;
-		end
-		Excecao : begin
-			PCSource = 3'd3;
-			state = Wait_Excecao;
-		end
-		Wait_Excecao : begin
+		OPcodeIN_3: begin
+			ALUorMem = 1;
 			PCWrite = 1;
-			state = PC4;
-		end	*/
+			state = inicial;
+		end
+		overflow: begin
+			ALUSrcA = 2'b00;
+			ALUSrcB = 3'b010;
+			ALUOp = 3'b010;
+			EPCWrite = 1;
+			IorD = 3'b011;
+			MemWR = 0;
+			state = cory_10;
+		end
+		cory_10: begin
+			state = overflow_2;
+		end
+		overflow_2: begin;
+			MDRWrite = 1;
+			state = overflow_3;
+		end
+		overflow_3: begin
+			ALUorMem = 1;
+			PCWrite = 1;
+			state = inicial;
+		end
 	endcase
 	end
 end

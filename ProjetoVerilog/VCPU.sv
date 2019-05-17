@@ -49,7 +49,7 @@ logic [31:0] MemWDout;
 
 logic RegWrite;
 logic [1:0] RegDst;
-logic [31:0] RegDstOut;
+logic [4:0] RegDstOut;
 
 logic [31:0] RegAIn;
 logic [31:0] RegAOut;
@@ -169,7 +169,11 @@ UnidadeControle CtrlUnit(
 	.MDRWrite(WrMDR),
 	.LowReg(WrLow),
 	.HighReg(WrHigh),
-	.EPCWrite(EPCWrite)
+	.EPCWrite(EPCWrite),
+	.Z(Zero),
+	.O(Overflow),
+	.GT(GreaterThan),
+	.LT(LessThan)
 );
 
 
@@ -295,7 +299,7 @@ Banco_Reg registers(
 	.ReadData2(RegBIn)
 );
 
-Registrador A(
+Registrador RegisterA(
 	.Clk(clock),
 	.Reset(reset),
 	.Load(RegAWrite),
@@ -303,7 +307,7 @@ Registrador A(
 	.Saida(RegAOut)
 );
 
-Registrador B(
+Registrador RegisterB(
 	.Clk(clock),
 	.Reset(reset),
 	.Load(RegBWrite),
@@ -464,7 +468,6 @@ Registrador LOW(
 assign inst25_0 [25:21] = rs;
 assign inst25_0 [20:16] = rt;
 assign inst25_0 [15:0] = inst15_0;
-
 
 assign RegBHalf = RegBOut[15:0];
 assign RegBByte = RegBOut[8:0];

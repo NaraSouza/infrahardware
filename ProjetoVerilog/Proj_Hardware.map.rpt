@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Proj_Hardware
-Thu May 16 20:51:15 2019
+Thu May 16 23:56:41 2019
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -36,15 +36,13 @@ Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
  28. Port Connectivity Checks: "mux_2inputs:DR1Mux"
  29. Port Connectivity Checks: "sign_extend26_32:SE26_32"
  30. Port Connectivity Checks: "Ula32:ALU"
- 31. Port Connectivity Checks: "Banco_reg:registers"
- 32. Port Connectivity Checks: "mux_regDst:RegDSTMux"
- 33. Port Connectivity Checks: "mux_BWD:BWDMux"
- 34. Port Connectivity Checks: "mux_2inputs:WriteDataMux"
- 35. Port Connectivity Checks: "mux_iOrD:IorDMux"
- 36. Port Connectivity Checks: "mux_2inputs:ALUorMemMux"
- 37. Port Connectivity Checks: "UnidadeControle:CtrlUnit"
- 38. Analysis & Synthesis Messages
- 39. Analysis & Synthesis Suppressed Messages
+ 31. Port Connectivity Checks: "mux_BWD:BWDMux"
+ 32. Port Connectivity Checks: "mux_2inputs:WriteDataMux"
+ 33. Port Connectivity Checks: "mux_iOrD:IorDMux"
+ 34. Port Connectivity Checks: "mux_2inputs:ALUorMemMux"
+ 35. Port Connectivity Checks: "UnidadeControle:CtrlUnit"
+ 36. Analysis & Synthesis Messages
+ 37. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -70,15 +68,15 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                 ;
 +-------------------------------+----------------------------------------------+
-; Analysis & Synthesis Status   ; Successful - Thu May 16 20:51:14 2019        ;
+; Analysis & Synthesis Status   ; Successful - Thu May 16 23:56:41 2019        ;
 ; Quartus II Version            ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                 ; Proj_Hardware                                ;
 ; Top-level Entity Name         ; VCPU                                         ;
 ; Family                        ; Stratix II                                   ;
 ; Logic utilization             ; N/A                                          ;
-;     Combinational ALUTs       ; 120                                          ;
-;     Dedicated logic registers ; 102                                          ;
-; Total registers               ; 102                                          ;
+;     Combinational ALUTs       ; 321                                          ;
+;     Dedicated logic registers ; 117                                          ;
+; Total registers               ; 117                                          ;
 ; Total pins                    ; 137                                          ;
 ; Total virtual pins            ; 0                                            ;
 ; Total block memory bits       ; 8,192                                        ;
@@ -179,42 +177,43 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                     ;
-+----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                           ;
-+----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------+
-; div.v                            ; yes             ; User Verilog HDL File        ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/div.v                         ;
-; mult.v                           ; yes             ; User Verilog HDL File        ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/mult.v                        ;
-; Banco_reg.vhd                    ; yes             ; User VHDL File               ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/Banco_reg.vhd                 ;
-; Instr_Reg.vhd                    ; yes             ; User VHDL File               ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/Instr_Reg.vhd                 ;
-; Memoria.vhd                      ; yes             ; User VHDL File               ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/Memoria.vhd                   ;
-; RegDesloc.vhd                    ; yes             ; User VHDL File               ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/RegDesloc.vhd                 ;
-; Registrador.vhd                  ; yes             ; User VHDL File               ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/Registrador.vhd               ;
-; ula32.vhd                        ; yes             ; User VHDL File               ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/ula32.vhd                     ;
-; sign_extend.v                    ; yes             ; User Verilog HDL File        ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/sign_extend.v                 ;
-; mux_aluSrcA.v                    ; yes             ; User Verilog HDL File        ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/mux_aluSrcA.v                 ;
-; mux_aluSrcB.v                    ; yes             ; User Verilog HDL File        ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/mux_aluSrcB.v                 ;
-; mux_iOrD.v                       ; yes             ; User Verilog HDL File        ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/mux_iOrD.v                    ;
-; mux_regDst.v                     ; yes             ; User Verilog HDL File        ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/mux_regDst.v                  ;
-; mux_memToReg.v                   ; yes             ; User Verilog HDL File        ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/mux_memToReg.v                ;
-; mux_pcSrc.v                      ; yes             ; User Verilog HDL File        ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/mux_pcSrc.v                   ;
-; shift_left2.v                    ; yes             ; User Verilog HDL File        ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/shift_left2.v                 ;
-; shift_left16.v                   ; yes             ; User Verilog HDL File        ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/shift_left16.v                ;
-; shift_leftJump.v                 ; yes             ; User Verilog HDL File        ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/shift_leftJump.v              ;
-; sign_extend26_32.v               ; yes             ; User Verilog HDL File        ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/sign_extend26_32.v            ;
-; mux_dr2.v                        ; yes             ; User Verilog HDL File        ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/mux_dr2.v                     ;
-; UnidadeControle.v                ; yes             ; User Verilog HDL File        ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/UnidadeControle.v             ;
-; VCPU.sv                          ; yes             ; User SystemVerilog HDL File  ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/VCPU.sv                       ;
-; mux_BWD.v                        ; yes             ; User Verilog HDL File        ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/mux_BWD.v                     ;
-; mux_memWD.V                      ; yes             ; User Verilog HDL File        ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/mux_memWD.V                   ;
-; mux_pccond.sv                    ; yes             ; User SystemVerilog HDL File  ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/mux_pccond.sv                 ;
-; mux_2inputs.sv                   ; yes             ; User SystemVerilog HDL File  ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/mux_2inputs.sv                ;
-; lpm_ram_dq.tdf                   ; yes             ; Megafunction                 ; d:/downloads/alteraquartus91sp2portable/quartus/libraries/megafunctions/lpm_ram_dq.tdf ;
-; altram.tdf                       ; yes             ; Megafunction                 ; d:/downloads/alteraquartus91sp2portable/quartus/libraries/megafunctions/altram.tdf     ;
-; altsyncram.tdf                   ; yes             ; Megafunction                 ; d:/downloads/alteraquartus91sp2portable/quartus/libraries/megafunctions/altsyncram.tdf ;
-; db/altsyncram_g2a1.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/db/altsyncram_g2a1.tdf        ;
-+----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                         ;
++----------------------------------+-----------------+----------------------------------+----------------------------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                        ; File Name with Absolute Path                                                           ;
++----------------------------------+-----------------+----------------------------------+----------------------------------------------------------------------------------------+
+; instrucoes.mif                   ; yes             ; User Memory Initialization File  ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/instrucoes.mif                ;
+; div.v                            ; yes             ; User Verilog HDL File            ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/div.v                         ;
+; mult.v                           ; yes             ; User Verilog HDL File            ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/mult.v                        ;
+; Banco_reg.vhd                    ; yes             ; User VHDL File                   ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/Banco_reg.vhd                 ;
+; Instr_Reg.vhd                    ; yes             ; User VHDL File                   ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/Instr_Reg.vhd                 ;
+; Memoria.vhd                      ; yes             ; User VHDL File                   ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/Memoria.vhd                   ;
+; RegDesloc.vhd                    ; yes             ; User VHDL File                   ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/RegDesloc.vhd                 ;
+; Registrador.vhd                  ; yes             ; User VHDL File                   ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/Registrador.vhd               ;
+; ula32.vhd                        ; yes             ; User VHDL File                   ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/ula32.vhd                     ;
+; sign_extend.v                    ; yes             ; User Verilog HDL File            ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/sign_extend.v                 ;
+; mux_aluSrcA.v                    ; yes             ; User Verilog HDL File            ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/mux_aluSrcA.v                 ;
+; mux_aluSrcB.v                    ; yes             ; User Verilog HDL File            ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/mux_aluSrcB.v                 ;
+; mux_iOrD.v                       ; yes             ; User Verilog HDL File            ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/mux_iOrD.v                    ;
+; mux_regDst.v                     ; yes             ; User Verilog HDL File            ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/mux_regDst.v                  ;
+; mux_memToReg.v                   ; yes             ; User Verilog HDL File            ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/mux_memToReg.v                ;
+; mux_pcSrc.v                      ; yes             ; User Verilog HDL File            ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/mux_pcSrc.v                   ;
+; shift_left2.v                    ; yes             ; User Verilog HDL File            ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/shift_left2.v                 ;
+; shift_left16.v                   ; yes             ; User Verilog HDL File            ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/shift_left16.v                ;
+; shift_leftJump.v                 ; yes             ; User Verilog HDL File            ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/shift_leftJump.v              ;
+; sign_extend26_32.v               ; yes             ; User Verilog HDL File            ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/sign_extend26_32.v            ;
+; mux_dr2.v                        ; yes             ; User Verilog HDL File            ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/mux_dr2.v                     ;
+; UnidadeControle.v                ; yes             ; User Verilog HDL File            ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/UnidadeControle.v             ;
+; VCPU.sv                          ; yes             ; User SystemVerilog HDL File      ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/VCPU.sv                       ;
+; mux_BWD.v                        ; yes             ; User Verilog HDL File            ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/mux_BWD.v                     ;
+; mux_memWD.V                      ; yes             ; User Verilog HDL File            ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/mux_memWD.V                   ;
+; mux_pccond.sv                    ; yes             ; User SystemVerilog HDL File      ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/mux_pccond.sv                 ;
+; mux_2inputs.sv                   ; yes             ; User SystemVerilog HDL File      ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/mux_2inputs.sv                ;
+; lpm_ram_dq.tdf                   ; yes             ; Megafunction                     ; d:/downloads/alteraquartus91sp2portable/quartus/libraries/megafunctions/lpm_ram_dq.tdf ;
+; altram.tdf                       ; yes             ; Megafunction                     ; d:/downloads/alteraquartus91sp2portable/quartus/libraries/megafunctions/altram.tdf     ;
+; altsyncram.tdf                   ; yes             ; Megafunction                     ; d:/downloads/alteraquartus91sp2portable/quartus/libraries/megafunctions/altsyncram.tdf ;
+; db/altsyncram_g2a1.tdf           ; yes             ; Auto-Generated Megafunction      ; C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/db/altsyncram_g2a1.tdf        ;
++----------------------------------+-----------------+----------------------------------+----------------------------------------------------------------------------------------+
 
 
 +-------------------------------------------------------+
@@ -222,39 +221,39 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-----------------------------------------------+-------+
 ; Resource                                      ; Usage ;
 +-----------------------------------------------+-------+
-; Estimated ALUTs Used                          ; 120   ;
-; Dedicated logic registers                     ; 102   ;
+; Estimated ALUTs Used                          ; 321   ;
+; Dedicated logic registers                     ; 117   ;
 ;                                               ;       ;
-; Estimated ALUTs Unavailable                   ; 0     ;
+; Estimated ALUTs Unavailable                   ; 111   ;
 ;                                               ;       ;
-; Total combinational functions                 ; 120   ;
+; Total combinational functions                 ; 321   ;
 ; Combinational ALUT usage by number of inputs  ;       ;
-;     -- 7 input functions                      ; 0     ;
-;     -- 6 input functions                      ; 19    ;
-;     -- 5 input functions                      ; 31    ;
-;     -- 4 input functions                      ; 24    ;
-;     -- <=3 input functions                    ; 46    ;
+;     -- 7 input functions                      ; 2     ;
+;     -- 6 input functions                      ; 130   ;
+;     -- 5 input functions                      ; 80    ;
+;     -- 4 input functions                      ; 49    ;
+;     -- <=3 input functions                    ; 60    ;
 ;                                               ;       ;
 ; Combinational ALUTs by mode                   ;       ;
-;     -- normal mode                            ; 97    ;
-;     -- extended LUT mode                      ; 0     ;
+;     -- normal mode                            ; 296   ;
+;     -- extended LUT mode                      ; 2     ;
 ;     -- arithmetic mode                        ; 23    ;
 ;     -- shared arithmetic mode                 ; 0     ;
 ;                                               ;       ;
-; Estimated ALUT/register pairs used            ; 154   ;
+; Estimated ALUT/register pairs used            ; 457   ;
 ;                                               ;       ;
-; Total registers                               ; 102   ;
-;     -- Dedicated logic registers              ; 102   ;
+; Total registers                               ; 117   ;
+;     -- Dedicated logic registers              ; 117   ;
 ;     -- I/O registers                          ; 0     ;
 ;                                               ;       ;
-; Estimated ALMs:  partially or completely used ; 77    ;
+; Estimated ALMs:  partially or completely used ; 229   ;
 ;                                               ;       ;
 ; I/O pins                                      ; 137   ;
 ; Total block memory bits                       ; 8192  ;
 ; Maximum fan-out node                          ; clock ;
-; Maximum fan-out                               ; 134   ;
-; Total fan-out                                 ; 1197  ;
-; Average fan-out                               ; 3.06  ;
+; Maximum fan-out                               ; 149   ;
+; Total fan-out                                 ; 2395  ;
+; Average fan-out                               ; 3.95  ;
 +-----------------------------------------------+-------+
 
 
@@ -263,15 +262,15 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-------------------------------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                      ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                         ; Library Name ;
 +-------------------------------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------+--------------+
-; |VCPU                                           ; 120 (1)           ; 102 (0)      ; 8192              ; 0            ; 0       ; 0         ; 0         ; 137  ; 0            ; |VCPU                                                                                                       ; work         ;
+; |VCPU                                           ; 321 (2)           ; 117 (0)      ; 8192              ; 0            ; 0       ; 0         ; 0         ; 137  ; 0            ; |VCPU                                                                                                       ; work         ;
 ;    |Instr_Reg:IR|                               ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Instr_Reg:IR                                                                                          ; work         ;
 ;    |Memoria:Mem|                                ; 23 (23)           ; 0 (0)        ; 8192              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Memoria:Mem                                                                                           ; work         ;
 ;       |lpm_ram_dq:MEM_plus_One|                 ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Memoria:Mem|lpm_ram_dq:MEM_plus_One                                                                   ; work         ;
-;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Memoria:Mem|lpm_ram_dq:MEM_plus_One|altram:sram                                                       ; work         ;
+;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Memoria:Mem|lpm_ram_dq:MEM_plus_One|altram:sram                                                       ;              ;
 ;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Memoria:Mem|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block                                  ;              ;
 ;                |altsyncram_g2a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Memoria:Mem|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated   ;              ;
 ;       |lpm_ram_dq:MEM_plus_Three|               ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Memoria:Mem|lpm_ram_dq:MEM_plus_Three                                                                 ;              ;
-;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Memoria:Mem|lpm_ram_dq:MEM_plus_Three|altram:sram                                                     ;              ;
+;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Memoria:Mem|lpm_ram_dq:MEM_plus_Three|altram:sram                                                     ; work         ;
 ;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Memoria:Mem|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block                                ; work         ;
 ;                |altsyncram_g2a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Memoria:Mem|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated ; work         ;
 ;       |lpm_ram_dq:MEM_plus_Two|                 ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Memoria:Mem|lpm_ram_dq:MEM_plus_Two                                                                   ;              ;
@@ -282,24 +281,27 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Memoria:Mem|lpm_ram_dq:MEM|altram:sram                                                                ; work         ;
 ;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Memoria:Mem|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block                                           ; work         ;
 ;                |altsyncram_g2a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Memoria:Mem|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated            ; work         ;
-;    |Registrador:MDR|                            ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Registrador:MDR                                                                                       ; work         ;
-;    |Registrador:PC|                             ; 1 (1)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Registrador:PC                                                                                        ; work         ;
-;    |Ula32:ALU|                                  ; 50 (50)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Ula32:ALU                                                                                             ; work         ;
-;    |UnidadeControle:CtrlUnit|                   ; 45 (45)           ; 6 (6)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|UnidadeControle:CtrlUnit                                                                              ;              ;
+;    |Registrador:ALUOutReg|                      ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Registrador:ALUOutReg                                                                                 ; work         ;
+;    |Registrador:PC|                             ; 10 (10)           ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Registrador:PC                                                                                        ; work         ;
+;    |Ula32:ALU|                                  ; 127 (127)         ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Ula32:ALU                                                                                             ; work         ;
+;    |UnidadeControle:CtrlUnit|                   ; 117 (117)         ; 21 (21)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|UnidadeControle:CtrlUnit                                                                              ;              ;
+;    |mux_2inputs:ALUorMemMux|                    ; 33 (33)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|mux_2inputs:ALUorMemMux                                                                               ; work         ;
+;    |mux_iOrD:IorDMux|                           ; 8 (8)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|mux_iOrD:IorDMux                                                                                      ; work         ;
+;    |sign_extend:USExtMux|                       ; 1 (1)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|sign_extend:USExtMux                                                                                  ; work         ;
 +-------------------------------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                                                                ;
-+------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+------+
-; Name                                                                                                             ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF  ;
-+------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+------+
-; Memoria:Mem|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|ALTSYNCRAM   ; AUTO ; Single Port ; 256          ; 8            ; --           ; --           ; 2048 ; None ;
-; Memoria:Mem|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 256          ; 8            ; --           ; --           ; 2048 ; None ;
-; Memoria:Mem|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|ALTSYNCRAM   ; AUTO ; Single Port ; 256          ; 8            ; --           ; --           ; 2048 ; None ;
-; Memoria:Mem|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|ALTSYNCRAM            ; AUTO ; Single Port ; 256          ; 8            ; --           ; --           ; 2048 ; None ;
-+------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                          ;
++------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+----------------+
+; Name                                                                                                             ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF            ;
++------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+----------------+
+; Memoria:Mem|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|ALTSYNCRAM   ; AUTO ; Single Port ; 256          ; 8            ; --           ; --           ; 2048 ; instrucoes.mif ;
+; Memoria:Mem|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 256          ; 8            ; --           ; --           ; 2048 ; instrucoes.mif ;
+; Memoria:Mem|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|ALTSYNCRAM   ; AUTO ; Single Port ; 256          ; 8            ; --           ; --           ; 2048 ; instrucoes.mif ;
+; Memoria:Mem|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|ALTSYNCRAM            ; AUTO ; Single Port ; 256          ; 8            ; --           ; --           ; 2048 ; instrucoes.mif ;
++------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+----------------+
 
 
 Encoding Type:  One-Hot
@@ -321,8 +323,7 @@ Encoding Type:  One-Hot
 +------------------------------------------+---------------------------------------------+
 ; Registrador:LOW|Saida[0..31]             ; Stuck at GND due to stuck port clock_enable ;
 ; Registrador:HIGH|Saida[0..31]            ; Stuck at GND due to stuck port clock_enable ;
-; Registrador:ALUOutReg|Saida[0..31]       ; Stuck at GND due to stuck port clock_enable ;
-; Registrador:B|Saida[0..31]               ; Lost fanout                                 ;
+; Registrador:RegisterB|Saida[0..31]       ; Lost fanout                                 ;
 ; mult:MULTOp|multiplicand[0..5]           ; Lost fanout                                 ;
 ; mult:MULTOp|check[0..15]                 ; Lost fanout                                 ;
 ; mult:MULTOp|aCalc[0..15,23..31]          ; Lost fanout                                 ;
@@ -339,7 +340,7 @@ Encoding Type:  One-Hot
 ; div:DIVOp|RESTO[0..63]                   ; Lost fanout                                 ;
 ; div:DIVOp|DivFim                         ; Lost fanout                                 ;
 ; RegDesloc:DesReg|temp[0..31]             ; Lost fanout                                 ;
-; Registrador:A|Saida[0..31]               ; Lost fanout                                 ;
+; Registrador:RegisterA|Saida[0..31]       ; Lost fanout                                 ;
 ; Banco_reg:registers|Reg0[0..31]          ; Lost fanout                                 ;
 ; Banco_reg:registers|Reg1[0..31]          ; Lost fanout                                 ;
 ; Banco_reg:registers|Reg2[0..31]          ; Lost fanout                                 ;
@@ -372,264 +373,260 @@ Encoding Type:  One-Hot
 ; Banco_reg:registers|Reg29[0..31]         ; Lost fanout                                 ;
 ; Banco_reg:registers|Reg30[0..31]         ; Lost fanout                                 ;
 ; Banco_reg:registers|Reg31[0..31]         ; Lost fanout                                 ;
+; UnidadeControle:CtrlUnit|BWD[0..1]       ; Lost fanout                                 ;
+; UnidadeControle:CtrlUnit|MemWD[0..1]     ; Lost fanout                                 ;
+; UnidadeControle:CtrlUnit|RegDst[0..1]    ; Lost fanout                                 ;
+; UnidadeControle:CtrlUnit|MemToReg[0..3]  ; Lost fanout                                 ;
+; UnidadeControle:CtrlUnit|RegWrite        ; Lost fanout                                 ;
 ; UnidadeControle:CtrlUnit|AWrite          ; Lost fanout                                 ;
 ; UnidadeControle:CtrlUnit|BWrite          ; Lost fanout                                 ;
-; UnidadeControle:CtrlUnit|RegWrite        ; Lost fanout                                 ;
-; UnidadeControle:CtrlUnit|MemToReg[0..3]  ; Lost fanout                                 ;
-; UnidadeControle:CtrlUnit|RegDst[0..1]    ; Lost fanout                                 ;
-; UnidadeControle:CtrlUnit|ALUOp[1..2]     ; Stuck at GND due to stuck port data_in      ;
-; UnidadeControle:CtrlUnit|ALUOp[0]        ; Stuck at VCC due to stuck port data_in      ;
-; UnidadeControle:CtrlUnit|USExt           ; Stuck at VCC due to stuck port data_in      ;
-; UnidadeControle:CtrlUnit|IorD[1..2]      ; Stuck at GND due to stuck port data_in      ;
-; UnidadeControle:CtrlUnit|IorD[0]         ; Stuck at VCC due to stuck port data_in      ;
-; UnidadeControle:CtrlUnit|MemWR           ; Stuck at GND due to stuck port data_in      ;
-; UnidadeControle:CtrlUnit|IRWrite         ; Stuck at VCC due to stuck port data_in      ;
 ; UnidadeControle:CtrlUnit|MDRWrite        ; Stuck at VCC due to stuck port data_in      ;
-; UnidadeControle:CtrlUnit|PCSource[1]     ; Stuck at GND due to stuck port data_in      ;
-; UnidadeControle:CtrlUnit|PCSource[0]     ; Stuck at VCC due to stuck port data_in      ;
-; UnidadeControle:CtrlUnit|ALUorMem        ; Stuck at GND due to stuck port data_in      ;
-; UnidadeControle:CtrlUnit|PCWrite         ; Stuck at VCC due to stuck port data_in      ;
-; UnidadeControle:CtrlUnit|state[6]        ; Stuck at GND due to stuck port data_in      ;
+; UnidadeControle:CtrlUnit|ALUOutWrite     ; Stuck at VCC due to stuck port data_in      ;
+; UnidadeControle:CtrlUnit|PCWriteCond     ; Stuck at VCC due to stuck port data_in      ;
+; UnidadeControle:CtrlUnit|IRWrite         ; Stuck at VCC due to stuck port data_in      ;
+; Registrador:MDR|Saida[31]                ; Merged with Instr_Reg:IR|Instr31_26[5]      ;
+; Registrador:MDR|Saida[30]                ; Merged with Instr_Reg:IR|Instr31_26[4]      ;
+; Registrador:MDR|Saida[29]                ; Merged with Instr_Reg:IR|Instr31_26[3]      ;
+; Registrador:MDR|Saida[28]                ; Merged with Instr_Reg:IR|Instr31_26[2]      ;
+; Registrador:MDR|Saida[27]                ; Merged with Instr_Reg:IR|Instr31_26[1]      ;
+; Registrador:MDR|Saida[26]                ; Merged with Instr_Reg:IR|Instr31_26[0]      ;
+; Registrador:MDR|Saida[25]                ; Merged with Instr_Reg:IR|Instr25_21[4]      ;
+; Registrador:MDR|Saida[24]                ; Merged with Instr_Reg:IR|Instr25_21[3]      ;
+; Registrador:MDR|Saida[23]                ; Merged with Instr_Reg:IR|Instr25_21[2]      ;
+; Registrador:MDR|Saida[22]                ; Merged with Instr_Reg:IR|Instr25_21[1]      ;
+; Registrador:MDR|Saida[21]                ; Merged with Instr_Reg:IR|Instr25_21[0]      ;
+; Registrador:MDR|Saida[20]                ; Merged with Instr_Reg:IR|Instr20_16[4]      ;
+; Registrador:MDR|Saida[19]                ; Merged with Instr_Reg:IR|Instr20_16[3]      ;
+; Registrador:MDR|Saida[18]                ; Merged with Instr_Reg:IR|Instr20_16[2]      ;
+; Registrador:MDR|Saida[17]                ; Merged with Instr_Reg:IR|Instr20_16[1]      ;
+; Registrador:MDR|Saida[16]                ; Merged with Instr_Reg:IR|Instr20_16[0]      ;
+; Registrador:MDR|Saida[15]                ; Merged with Instr_Reg:IR|Instr15_0[15]      ;
+; Registrador:MDR|Saida[14]                ; Merged with Instr_Reg:IR|Instr15_0[14]      ;
+; Registrador:MDR|Saida[13]                ; Merged with Instr_Reg:IR|Instr15_0[13]      ;
+; Registrador:MDR|Saida[12]                ; Merged with Instr_Reg:IR|Instr15_0[12]      ;
+; Registrador:MDR|Saida[11]                ; Merged with Instr_Reg:IR|Instr15_0[11]      ;
+; Registrador:MDR|Saida[10]                ; Merged with Instr_Reg:IR|Instr15_0[10]      ;
+; Registrador:MDR|Saida[9]                 ; Merged with Instr_Reg:IR|Instr15_0[9]       ;
+; Registrador:MDR|Saida[8]                 ; Merged with Instr_Reg:IR|Instr15_0[8]       ;
+; Registrador:MDR|Saida[7]                 ; Merged with Instr_Reg:IR|Instr15_0[7]       ;
+; Registrador:MDR|Saida[6]                 ; Merged with Instr_Reg:IR|Instr15_0[6]       ;
+; Registrador:MDR|Saida[5]                 ; Merged with Instr_Reg:IR|Instr15_0[5]       ;
+; Registrador:MDR|Saida[4]                 ; Merged with Instr_Reg:IR|Instr15_0[4]       ;
+; Registrador:MDR|Saida[3]                 ; Merged with Instr_Reg:IR|Instr15_0[3]       ;
+; Registrador:MDR|Saida[2]                 ; Merged with Instr_Reg:IR|Instr15_0[2]       ;
+; Registrador:MDR|Saida[1]                 ; Merged with Instr_Reg:IR|Instr15_0[1]       ;
+; Registrador:MDR|Saida[0]                 ; Merged with Instr_Reg:IR|Instr15_0[0]       ;
 ; mult:MULTOp|doing.01                     ; Lost fanout                                 ;
 ; mult:MULTOp|doing.10                     ; Lost fanout                                 ;
 ; mult:MULTOp|doing.00                     ; Lost fanout                                 ;
-; Total Number of Removed Registers = 1652 ;                                             ;
+; Total Number of Removed Registers = 1645 ;                                             ;
 +------------------------------------------+---------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                        ;
-+---------------------------------+--------------------------------+---------------------------------------------------------------------------------+
-; Register name                   ; Reason for Removal             ; Registers Removed due to This Register                                          ;
-+---------------------------------+--------------------------------+---------------------------------------------------------------------------------+
-; Registrador:LOW|Saida[31]       ; Stuck at GND                   ; mult:MULTOp|lo[31], div:DIVOp|Lo[31], RegDesloc:DesReg|temp[31],                ;
-;                                 ; due to stuck port clock_enable ; UnidadeControle:CtrlUnit|MemToReg[0], UnidadeControle:CtrlUnit|MemToReg[1],     ;
-;                                 ;                                ; UnidadeControle:CtrlUnit|MemToReg[2], UnidadeControle:CtrlUnit|MemToReg[3],     ;
-;                                 ;                                ; UnidadeControle:CtrlUnit|RegDst[0], UnidadeControle:CtrlUnit|RegDst[1]          ;
-; Registrador:ALUOutReg|Saida[31] ; Stuck at GND                   ; Registrador:B|Saida[31], Registrador:A|Saida[31], Banco_reg:registers|Reg0[31], ;
-;                                 ; due to stuck port clock_enable ; Banco_reg:registers|Reg1[31], Banco_reg:registers|Reg2[31],                     ;
-;                                 ;                                ; Banco_reg:registers|Reg3[31], UnidadeControle:CtrlUnit|AWrite,                  ;
-;                                 ;                                ; UnidadeControle:CtrlUnit|RegWrite                                               ;
-; Registrador:ALUOutReg|Saida[0]  ; Stuck at GND                   ; Registrador:B|Saida[0], Registrador:A|Saida[0], Banco_reg:registers|Reg0[0],    ;
-;                                 ; due to stuck port clock_enable ; Banco_reg:registers|Reg1[0], Banco_reg:registers|Reg2[0],                       ;
-;                                 ;                                ; Banco_reg:registers|Reg3[0], UnidadeControle:CtrlUnit|BWrite                    ;
-; Registrador:ALUOutReg|Saida[18] ; Stuck at GND                   ; Registrador:B|Saida[18], Registrador:A|Saida[18], Banco_reg:registers|Reg0[18], ;
-;                                 ; due to stuck port clock_enable ; Banco_reg:registers|Reg1[18], Banco_reg:registers|Reg2[18],                     ;
-;                                 ;                                ; Banco_reg:registers|Reg3[18]                                                    ;
-; Registrador:ALUOutReg|Saida[19] ; Stuck at GND                   ; Registrador:B|Saida[19], Registrador:A|Saida[19], Banco_reg:registers|Reg0[19], ;
-;                                 ; due to stuck port clock_enable ; Banco_reg:registers|Reg1[19], Banco_reg:registers|Reg2[19],                     ;
-;                                 ;                                ; Banco_reg:registers|Reg3[19]                                                    ;
-; Registrador:ALUOutReg|Saida[20] ; Stuck at GND                   ; Registrador:B|Saida[20], Registrador:A|Saida[20], Banco_reg:registers|Reg0[20], ;
-;                                 ; due to stuck port clock_enable ; Banco_reg:registers|Reg1[20], Banco_reg:registers|Reg2[20],                     ;
-;                                 ;                                ; Banco_reg:registers|Reg3[20]                                                    ;
-; Registrador:ALUOutReg|Saida[21] ; Stuck at GND                   ; Registrador:B|Saida[21], Registrador:A|Saida[21], Banco_reg:registers|Reg0[21], ;
-;                                 ; due to stuck port clock_enable ; Banco_reg:registers|Reg1[21], Banco_reg:registers|Reg2[21],                     ;
-;                                 ;                                ; Banco_reg:registers|Reg3[21]                                                    ;
-; Registrador:ALUOutReg|Saida[22] ; Stuck at GND                   ; Registrador:B|Saida[22], Registrador:A|Saida[22], Banco_reg:registers|Reg0[22], ;
-;                                 ; due to stuck port clock_enable ; Banco_reg:registers|Reg1[22], Banco_reg:registers|Reg2[22],                     ;
-;                                 ;                                ; Banco_reg:registers|Reg3[22]                                                    ;
-; Registrador:ALUOutReg|Saida[23] ; Stuck at GND                   ; Registrador:B|Saida[23], Registrador:A|Saida[23], Banco_reg:registers|Reg0[23], ;
-;                                 ; due to stuck port clock_enable ; Banco_reg:registers|Reg1[23], Banco_reg:registers|Reg2[23],                     ;
-;                                 ;                                ; Banco_reg:registers|Reg3[23]                                                    ;
-; Registrador:ALUOutReg|Saida[25] ; Stuck at GND                   ; Registrador:B|Saida[25], Registrador:A|Saida[25], Banco_reg:registers|Reg0[25], ;
-;                                 ; due to stuck port clock_enable ; Banco_reg:registers|Reg1[25], Banco_reg:registers|Reg2[25],                     ;
-;                                 ;                                ; Banco_reg:registers|Reg3[25]                                                    ;
-; Registrador:ALUOutReg|Saida[26] ; Stuck at GND                   ; Registrador:B|Saida[26], Registrador:A|Saida[26], Banco_reg:registers|Reg0[26], ;
-;                                 ; due to stuck port clock_enable ; Banco_reg:registers|Reg1[26], Banco_reg:registers|Reg2[26],                     ;
-;                                 ;                                ; Banco_reg:registers|Reg3[26]                                                    ;
-; Registrador:ALUOutReg|Saida[27] ; Stuck at GND                   ; Registrador:B|Saida[27], Registrador:A|Saida[27], Banco_reg:registers|Reg0[27], ;
-;                                 ; due to stuck port clock_enable ; Banco_reg:registers|Reg1[27], Banco_reg:registers|Reg2[27],                     ;
-;                                 ;                                ; Banco_reg:registers|Reg3[27]                                                    ;
-; Registrador:ALUOutReg|Saida[28] ; Stuck at GND                   ; Registrador:B|Saida[28], Registrador:A|Saida[28], Banco_reg:registers|Reg0[28], ;
-;                                 ; due to stuck port clock_enable ; Banco_reg:registers|Reg1[28], Banco_reg:registers|Reg2[28],                     ;
-;                                 ;                                ; Banco_reg:registers|Reg3[28]                                                    ;
-; Registrador:ALUOutReg|Saida[24] ; Stuck at GND                   ; Registrador:B|Saida[24], Registrador:A|Saida[24], Banco_reg:registers|Reg0[24], ;
-;                                 ; due to stuck port clock_enable ; Banco_reg:registers|Reg1[24], Banco_reg:registers|Reg2[24],                     ;
-;                                 ;                                ; Banco_reg:registers|Reg3[24]                                                    ;
-; Registrador:ALUOutReg|Saida[29] ; Stuck at GND                   ; Registrador:B|Saida[29], Registrador:A|Saida[29], Banco_reg:registers|Reg0[29], ;
-;                                 ; due to stuck port clock_enable ; Banco_reg:registers|Reg1[29], Banco_reg:registers|Reg2[29],                     ;
-;                                 ;                                ; Banco_reg:registers|Reg3[29]                                                    ;
-; Registrador:ALUOutReg|Saida[30] ; Stuck at GND                   ; Registrador:B|Saida[30], Registrador:A|Saida[30], Banco_reg:registers|Reg0[30], ;
-;                                 ; due to stuck port clock_enable ; Banco_reg:registers|Reg1[30], Banco_reg:registers|Reg2[30],                     ;
-;                                 ;                                ; Banco_reg:registers|Reg3[30]                                                    ;
-; Registrador:ALUOutReg|Saida[16] ; Stuck at GND                   ; Registrador:B|Saida[16], Registrador:A|Saida[16], Banco_reg:registers|Reg0[16], ;
-;                                 ; due to stuck port clock_enable ; Banco_reg:registers|Reg1[16], Banco_reg:registers|Reg2[16],                     ;
-;                                 ;                                ; Banco_reg:registers|Reg3[16]                                                    ;
-; Registrador:ALUOutReg|Saida[17] ; Stuck at GND                   ; Registrador:B|Saida[17], Registrador:A|Saida[17], Banco_reg:registers|Reg0[17], ;
-;                                 ; due to stuck port clock_enable ; Banco_reg:registers|Reg1[17], Banco_reg:registers|Reg2[17],                     ;
-;                                 ;                                ; Banco_reg:registers|Reg3[17]                                                    ;
-; Registrador:ALUOutReg|Saida[15] ; Stuck at GND                   ; Registrador:B|Saida[15], Registrador:A|Saida[15], Banco_reg:registers|Reg0[15], ;
-;                                 ; due to stuck port clock_enable ; Banco_reg:registers|Reg1[15], Banco_reg:registers|Reg2[15],                     ;
-;                                 ;                                ; Banco_reg:registers|Reg3[15]                                                    ;
-; Registrador:ALUOutReg|Saida[14] ; Stuck at GND                   ; Registrador:B|Saida[14], Registrador:A|Saida[14], Banco_reg:registers|Reg0[14], ;
-;                                 ; due to stuck port clock_enable ; Banco_reg:registers|Reg1[14], Banco_reg:registers|Reg2[14],                     ;
-;                                 ;                                ; Banco_reg:registers|Reg3[14]                                                    ;
-; Registrador:ALUOutReg|Saida[13] ; Stuck at GND                   ; Registrador:B|Saida[13], Registrador:A|Saida[13], Banco_reg:registers|Reg0[13], ;
-;                                 ; due to stuck port clock_enable ; Banco_reg:registers|Reg1[13], Banco_reg:registers|Reg2[13],                     ;
-;                                 ;                                ; Banco_reg:registers|Reg3[13]                                                    ;
-; Registrador:ALUOutReg|Saida[11] ; Stuck at GND                   ; Registrador:B|Saida[11], Registrador:A|Saida[11], Banco_reg:registers|Reg0[11], ;
-;                                 ; due to stuck port clock_enable ; Banco_reg:registers|Reg1[11], Banco_reg:registers|Reg2[11],                     ;
-;                                 ;                                ; Banco_reg:registers|Reg3[11]                                                    ;
-; Registrador:ALUOutReg|Saida[10] ; Stuck at GND                   ; Registrador:B|Saida[10], Registrador:A|Saida[10], Banco_reg:registers|Reg0[10], ;
-;                                 ; due to stuck port clock_enable ; Banco_reg:registers|Reg1[10], Banco_reg:registers|Reg2[10],                     ;
-;                                 ;                                ; Banco_reg:registers|Reg3[10]                                                    ;
-; Registrador:ALUOutReg|Saida[9]  ; Stuck at GND                   ; Registrador:B|Saida[9], Registrador:A|Saida[9], Banco_reg:registers|Reg0[9],    ;
-;                                 ; due to stuck port clock_enable ; Banco_reg:registers|Reg1[9], Banco_reg:registers|Reg2[9],                       ;
-;                                 ;                                ; Banco_reg:registers|Reg3[9]                                                     ;
-; Registrador:ALUOutReg|Saida[8]  ; Stuck at GND                   ; Registrador:B|Saida[8], Registrador:A|Saida[8], Banco_reg:registers|Reg0[8],    ;
-;                                 ; due to stuck port clock_enable ; Banco_reg:registers|Reg1[8], Banco_reg:registers|Reg2[8],                       ;
-;                                 ;                                ; Banco_reg:registers|Reg3[8]                                                     ;
-; Registrador:ALUOutReg|Saida[7]  ; Stuck at GND                   ; Registrador:B|Saida[7], Registrador:A|Saida[7], Banco_reg:registers|Reg0[7],    ;
-;                                 ; due to stuck port clock_enable ; Banco_reg:registers|Reg1[7], Banco_reg:registers|Reg2[7],                       ;
-;                                 ;                                ; Banco_reg:registers|Reg3[7]                                                     ;
-; Registrador:ALUOutReg|Saida[6]  ; Stuck at GND                   ; Registrador:B|Saida[6], Registrador:A|Saida[6], Banco_reg:registers|Reg0[6],    ;
-;                                 ; due to stuck port clock_enable ; Banco_reg:registers|Reg1[6], Banco_reg:registers|Reg2[6],                       ;
-;                                 ;                                ; Banco_reg:registers|Reg3[6]                                                     ;
-; Registrador:ALUOutReg|Saida[5]  ; Stuck at GND                   ; Registrador:B|Saida[5], Registrador:A|Saida[5], Banco_reg:registers|Reg0[5],    ;
-;                                 ; due to stuck port clock_enable ; Banco_reg:registers|Reg1[5], Banco_reg:registers|Reg2[5],                       ;
-;                                 ;                                ; Banco_reg:registers|Reg3[5]                                                     ;
-; Registrador:ALUOutReg|Saida[4]  ; Stuck at GND                   ; Registrador:B|Saida[4], Registrador:A|Saida[4], Banco_reg:registers|Reg0[4],    ;
-;                                 ; due to stuck port clock_enable ; Banco_reg:registers|Reg1[4], Banco_reg:registers|Reg2[4],                       ;
-;                                 ;                                ; Banco_reg:registers|Reg3[4]                                                     ;
-; Registrador:ALUOutReg|Saida[3]  ; Stuck at GND                   ; Registrador:B|Saida[3], Registrador:A|Saida[3], Banco_reg:registers|Reg0[3],    ;
-;                                 ; due to stuck port clock_enable ; Banco_reg:registers|Reg1[3], Banco_reg:registers|Reg2[3],                       ;
-;                                 ;                                ; Banco_reg:registers|Reg3[3]                                                     ;
-; Registrador:ALUOutReg|Saida[2]  ; Stuck at GND                   ; Registrador:B|Saida[2], Registrador:A|Saida[2], Banco_reg:registers|Reg0[2],    ;
-;                                 ; due to stuck port clock_enable ; Banco_reg:registers|Reg1[2], Banco_reg:registers|Reg2[2],                       ;
-;                                 ;                                ; Banco_reg:registers|Reg3[2]                                                     ;
-; Registrador:ALUOutReg|Saida[1]  ; Stuck at GND                   ; Registrador:B|Saida[1], Registrador:A|Saida[1], Banco_reg:registers|Reg0[1],    ;
-;                                 ; due to stuck port clock_enable ; Banco_reg:registers|Reg1[1], Banco_reg:registers|Reg2[1],                       ;
-;                                 ;                                ; Banco_reg:registers|Reg3[1]                                                     ;
-; Registrador:ALUOutReg|Saida[12] ; Stuck at GND                   ; Registrador:B|Saida[12], Registrador:A|Saida[12], Banco_reg:registers|Reg0[12], ;
-;                                 ; due to stuck port clock_enable ; Banco_reg:registers|Reg1[12], Banco_reg:registers|Reg2[12],                     ;
-;                                 ;                                ; Banco_reg:registers|Reg3[12]                                                    ;
-; Registrador:LOW|Saida[14]       ; Stuck at GND                   ; mult:MULTOp|lo[14], div:DIVOp|Lo[14], RegDesloc:DesReg|temp[14]                 ;
-;                                 ; due to stuck port clock_enable ;                                                                                 ;
-; Registrador:LOW|Saida[13]       ; Stuck at GND                   ; mult:MULTOp|lo[13], div:DIVOp|Lo[13], RegDesloc:DesReg|temp[13]                 ;
-;                                 ; due to stuck port clock_enable ;                                                                                 ;
-; Registrador:LOW|Saida[12]       ; Stuck at GND                   ; mult:MULTOp|lo[12], div:DIVOp|Lo[12], RegDesloc:DesReg|temp[12]                 ;
-;                                 ; due to stuck port clock_enable ;                                                                                 ;
-; Registrador:LOW|Saida[11]       ; Stuck at GND                   ; mult:MULTOp|lo[11], div:DIVOp|Lo[11], RegDesloc:DesReg|temp[11]                 ;
-;                                 ; due to stuck port clock_enable ;                                                                                 ;
-; Registrador:LOW|Saida[10]       ; Stuck at GND                   ; mult:MULTOp|lo[10], div:DIVOp|Lo[10], RegDesloc:DesReg|temp[10]                 ;
-;                                 ; due to stuck port clock_enable ;                                                                                 ;
-; Registrador:LOW|Saida[9]        ; Stuck at GND                   ; mult:MULTOp|lo[9], div:DIVOp|Lo[9], RegDesloc:DesReg|temp[9]                    ;
-;                                 ; due to stuck port clock_enable ;                                                                                 ;
-; Registrador:LOW|Saida[8]        ; Stuck at GND                   ; mult:MULTOp|lo[8], div:DIVOp|Lo[8], RegDesloc:DesReg|temp[8]                    ;
-;                                 ; due to stuck port clock_enable ;                                                                                 ;
-; Registrador:LOW|Saida[7]        ; Stuck at GND                   ; mult:MULTOp|lo[7], div:DIVOp|Lo[7], RegDesloc:DesReg|temp[7]                    ;
-;                                 ; due to stuck port clock_enable ;                                                                                 ;
-; Registrador:LOW|Saida[6]        ; Stuck at GND                   ; mult:MULTOp|lo[6], div:DIVOp|Lo[6], RegDesloc:DesReg|temp[6]                    ;
-;                                 ; due to stuck port clock_enable ;                                                                                 ;
-; Registrador:LOW|Saida[5]        ; Stuck at GND                   ; mult:MULTOp|lo[5], div:DIVOp|Lo[5], RegDesloc:DesReg|temp[5]                    ;
-;                                 ; due to stuck port clock_enable ;                                                                                 ;
-; Registrador:LOW|Saida[4]        ; Stuck at GND                   ; mult:MULTOp|lo[4], div:DIVOp|Lo[4], RegDesloc:DesReg|temp[4]                    ;
-;                                 ; due to stuck port clock_enable ;                                                                                 ;
-; Registrador:LOW|Saida[3]        ; Stuck at GND                   ; mult:MULTOp|lo[3], div:DIVOp|Lo[3], RegDesloc:DesReg|temp[3]                    ;
-;                                 ; due to stuck port clock_enable ;                                                                                 ;
-; Registrador:LOW|Saida[2]        ; Stuck at GND                   ; mult:MULTOp|lo[2], div:DIVOp|Lo[2], RegDesloc:DesReg|temp[2]                    ;
-;                                 ; due to stuck port clock_enable ;                                                                                 ;
-; Registrador:LOW|Saida[1]        ; Stuck at GND                   ; mult:MULTOp|lo[1], div:DIVOp|Lo[1], RegDesloc:DesReg|temp[1]                    ;
-;                                 ; due to stuck port clock_enable ;                                                                                 ;
-; Registrador:LOW|Saida[0]        ; Stuck at GND                   ; mult:MULTOp|lo[0], div:DIVOp|Lo[0], RegDesloc:DesReg|temp[0]                    ;
-;                                 ; due to stuck port clock_enable ;                                                                                 ;
-; Registrador:LOW|Saida[19]       ; Stuck at GND                   ; mult:MULTOp|lo[19], div:DIVOp|Lo[19], RegDesloc:DesReg|temp[19]                 ;
-;                                 ; due to stuck port clock_enable ;                                                                                 ;
-; Registrador:LOW|Saida[30]       ; Stuck at GND                   ; mult:MULTOp|lo[30], div:DIVOp|Lo[30], RegDesloc:DesReg|temp[30]                 ;
-;                                 ; due to stuck port clock_enable ;                                                                                 ;
-; Registrador:LOW|Saida[29]       ; Stuck at GND                   ; mult:MULTOp|lo[29], div:DIVOp|Lo[29], RegDesloc:DesReg|temp[29]                 ;
-;                                 ; due to stuck port clock_enable ;                                                                                 ;
-; Registrador:LOW|Saida[28]       ; Stuck at GND                   ; mult:MULTOp|lo[28], div:DIVOp|Lo[28], RegDesloc:DesReg|temp[28]                 ;
-;                                 ; due to stuck port clock_enable ;                                                                                 ;
-; Registrador:LOW|Saida[27]       ; Stuck at GND                   ; mult:MULTOp|lo[27], div:DIVOp|Lo[27], RegDesloc:DesReg|temp[27]                 ;
-;                                 ; due to stuck port clock_enable ;                                                                                 ;
-; Registrador:LOW|Saida[26]       ; Stuck at GND                   ; mult:MULTOp|lo[26], div:DIVOp|Lo[26], RegDesloc:DesReg|temp[26]                 ;
-;                                 ; due to stuck port clock_enable ;                                                                                 ;
-; Registrador:LOW|Saida[25]       ; Stuck at GND                   ; mult:MULTOp|lo[25], div:DIVOp|Lo[25], RegDesloc:DesReg|temp[25]                 ;
-;                                 ; due to stuck port clock_enable ;                                                                                 ;
-; Registrador:LOW|Saida[24]       ; Stuck at GND                   ; mult:MULTOp|lo[24], div:DIVOp|Lo[24], RegDesloc:DesReg|temp[24]                 ;
-;                                 ; due to stuck port clock_enable ;                                                                                 ;
-; Registrador:LOW|Saida[23]       ; Stuck at GND                   ; mult:MULTOp|lo[23], div:DIVOp|Lo[23], RegDesloc:DesReg|temp[23]                 ;
-;                                 ; due to stuck port clock_enable ;                                                                                 ;
-; Registrador:LOW|Saida[22]       ; Stuck at GND                   ; mult:MULTOp|lo[22], div:DIVOp|Lo[22], RegDesloc:DesReg|temp[22]                 ;
-;                                 ; due to stuck port clock_enable ;                                                                                 ;
-; Registrador:LOW|Saida[21]       ; Stuck at GND                   ; mult:MULTOp|lo[21], div:DIVOp|Lo[21], RegDesloc:DesReg|temp[21]                 ;
-;                                 ; due to stuck port clock_enable ;                                                                                 ;
-; Registrador:LOW|Saida[20]       ; Stuck at GND                   ; mult:MULTOp|lo[20], div:DIVOp|Lo[20], RegDesloc:DesReg|temp[20]                 ;
-;                                 ; due to stuck port clock_enable ;                                                                                 ;
-; Registrador:LOW|Saida[18]       ; Stuck at GND                   ; mult:MULTOp|lo[18], div:DIVOp|Lo[18], RegDesloc:DesReg|temp[18]                 ;
-;                                 ; due to stuck port clock_enable ;                                                                                 ;
-; Registrador:LOW|Saida[17]       ; Stuck at GND                   ; mult:MULTOp|lo[17], div:DIVOp|Lo[17], RegDesloc:DesReg|temp[17]                 ;
-;                                 ; due to stuck port clock_enable ;                                                                                 ;
-; Registrador:LOW|Saida[16]       ; Stuck at GND                   ; mult:MULTOp|lo[16], div:DIVOp|Lo[16], RegDesloc:DesReg|temp[16]                 ;
-;                                 ; due to stuck port clock_enable ;                                                                                 ;
-; Registrador:LOW|Saida[15]       ; Stuck at GND                   ; mult:MULTOp|lo[15], div:DIVOp|Lo[15], RegDesloc:DesReg|temp[15]                 ;
-;                                 ; due to stuck port clock_enable ;                                                                                 ;
-; Registrador:HIGH|Saida[16]      ; Stuck at GND                   ; mult:MULTOp|hi[16]                                                              ;
-;                                 ; due to stuck port clock_enable ;                                                                                 ;
-; Registrador:HIGH|Saida[17]      ; Stuck at GND                   ; mult:MULTOp|hi[17]                                                              ;
-;                                 ; due to stuck port clock_enable ;                                                                                 ;
-; Registrador:HIGH|Saida[18]      ; Stuck at GND                   ; mult:MULTOp|hi[18]                                                              ;
-;                                 ; due to stuck port clock_enable ;                                                                                 ;
-; Registrador:HIGH|Saida[19]      ; Stuck at GND                   ; mult:MULTOp|hi[19]                                                              ;
-;                                 ; due to stuck port clock_enable ;                                                                                 ;
-; Registrador:HIGH|Saida[20]      ; Stuck at GND                   ; mult:MULTOp|hi[20]                                                              ;
-;                                 ; due to stuck port clock_enable ;                                                                                 ;
-; Registrador:HIGH|Saida[21]      ; Stuck at GND                   ; mult:MULTOp|hi[21]                                                              ;
-;                                 ; due to stuck port clock_enable ;                                                                                 ;
-; Registrador:HIGH|Saida[22]      ; Stuck at GND                   ; mult:MULTOp|hi[22]                                                              ;
-;                                 ; due to stuck port clock_enable ;                                                                                 ;
-; Registrador:HIGH|Saida[23]      ; Stuck at GND                   ; mult:MULTOp|hi[23]                                                              ;
-;                                 ; due to stuck port clock_enable ;                                                                                 ;
-; Registrador:HIGH|Saida[24]      ; Stuck at GND                   ; mult:MULTOp|hi[24]                                                              ;
-;                                 ; due to stuck port clock_enable ;                                                                                 ;
-; Registrador:HIGH|Saida[25]      ; Stuck at GND                   ; mult:MULTOp|hi[25]                                                              ;
-;                                 ; due to stuck port clock_enable ;                                                                                 ;
-; Registrador:HIGH|Saida[26]      ; Stuck at GND                   ; mult:MULTOp|hi[26]                                                              ;
-;                                 ; due to stuck port clock_enable ;                                                                                 ;
-; Registrador:HIGH|Saida[27]      ; Stuck at GND                   ; mult:MULTOp|hi[27]                                                              ;
-;                                 ; due to stuck port clock_enable ;                                                                                 ;
-; Registrador:HIGH|Saida[28]      ; Stuck at GND                   ; mult:MULTOp|hi[28]                                                              ;
-;                                 ; due to stuck port clock_enable ;                                                                                 ;
-; Registrador:HIGH|Saida[29]      ; Stuck at GND                   ; mult:MULTOp|hi[29]                                                              ;
-;                                 ; due to stuck port clock_enable ;                                                                                 ;
-; Registrador:HIGH|Saida[30]      ; Stuck at GND                   ; mult:MULTOp|hi[30]                                                              ;
-;                                 ; due to stuck port clock_enable ;                                                                                 ;
-; Registrador:HIGH|Saida[31]      ; Stuck at GND                   ; mult:MULTOp|hi[31]                                                              ;
-;                                 ; due to stuck port clock_enable ;                                                                                 ;
-; Registrador:HIGH|Saida[14]      ; Stuck at GND                   ; mult:MULTOp|hi[14]                                                              ;
-;                                 ; due to stuck port clock_enable ;                                                                                 ;
-; Registrador:HIGH|Saida[13]      ; Stuck at GND                   ; mult:MULTOp|hi[13]                                                              ;
-;                                 ; due to stuck port clock_enable ;                                                                                 ;
-; Registrador:HIGH|Saida[12]      ; Stuck at GND                   ; mult:MULTOp|hi[12]                                                              ;
-;                                 ; due to stuck port clock_enable ;                                                                                 ;
-; Registrador:HIGH|Saida[15]      ; Stuck at GND                   ; mult:MULTOp|hi[15]                                                              ;
-;                                 ; due to stuck port clock_enable ;                                                                                 ;
-; Registrador:HIGH|Saida[11]      ; Stuck at GND                   ; mult:MULTOp|hi[11]                                                              ;
-;                                 ; due to stuck port clock_enable ;                                                                                 ;
-; Registrador:HIGH|Saida[10]      ; Stuck at GND                   ; mult:MULTOp|hi[10]                                                              ;
-;                                 ; due to stuck port clock_enable ;                                                                                 ;
-; Registrador:HIGH|Saida[9]       ; Stuck at GND                   ; mult:MULTOp|hi[9]                                                               ;
-;                                 ; due to stuck port clock_enable ;                                                                                 ;
-; Registrador:HIGH|Saida[8]       ; Stuck at GND                   ; mult:MULTOp|hi[8]                                                               ;
-;                                 ; due to stuck port clock_enable ;                                                                                 ;
-; Registrador:HIGH|Saida[7]       ; Stuck at GND                   ; mult:MULTOp|hi[7]                                                               ;
-;                                 ; due to stuck port clock_enable ;                                                                                 ;
-; Registrador:HIGH|Saida[6]       ; Stuck at GND                   ; mult:MULTOp|hi[6]                                                               ;
-;                                 ; due to stuck port clock_enable ;                                                                                 ;
-; Registrador:HIGH|Saida[5]       ; Stuck at GND                   ; mult:MULTOp|hi[5]                                                               ;
-;                                 ; due to stuck port clock_enable ;                                                                                 ;
-; Registrador:HIGH|Saida[4]       ; Stuck at GND                   ; mult:MULTOp|hi[4]                                                               ;
-;                                 ; due to stuck port clock_enable ;                                                                                 ;
-; Registrador:HIGH|Saida[3]       ; Stuck at GND                   ; mult:MULTOp|hi[3]                                                               ;
-;                                 ; due to stuck port clock_enable ;                                                                                 ;
-; Registrador:HIGH|Saida[2]       ; Stuck at GND                   ; mult:MULTOp|hi[2]                                                               ;
-;                                 ; due to stuck port clock_enable ;                                                                                 ;
-; Registrador:HIGH|Saida[1]       ; Stuck at GND                   ; mult:MULTOp|hi[1]                                                               ;
-;                                 ; due to stuck port clock_enable ;                                                                                 ;
-; Registrador:HIGH|Saida[0]       ; Stuck at GND                   ; mult:MULTOp|hi[0]                                                               ;
-;                                 ; due to stuck port clock_enable ;                                                                                 ;
-+---------------------------------+--------------------------------+---------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                    ;
++---------------------------------+--------------------------------+-----------------------------------------------------------------------------+
+; Register name                   ; Reason for Removal             ; Registers Removed due to This Register                                      ;
++---------------------------------+--------------------------------+-----------------------------------------------------------------------------+
+; Registrador:LOW|Saida[31]       ; Stuck at GND                   ; mult:MULTOp|lo[31], div:DIVOp|Lo[31], RegDesloc:DesReg|temp[31],            ;
+;                                 ; due to stuck port clock_enable ; UnidadeControle:CtrlUnit|MemWD[1], UnidadeControle:CtrlUnit|MemWD[0],       ;
+;                                 ;                                ; UnidadeControle:CtrlUnit|RegDst[1], UnidadeControle:CtrlUnit|RegDst[0],     ;
+;                                 ;                                ; UnidadeControle:CtrlUnit|MemToReg[3], UnidadeControle:CtrlUnit|MemToReg[2], ;
+;                                 ;                                ; UnidadeControle:CtrlUnit|MemToReg[1], UnidadeControle:CtrlUnit|MemToReg[0]  ;
+; Registrador:RegisterB|Saida[0]  ; Lost Fanouts                   ; Banco_reg:registers|Reg0[0], Banco_reg:registers|Reg1[0],                   ;
+;                                 ;                                ; Banco_reg:registers|Reg2[0], Banco_reg:registers|Reg3[0],                   ;
+;                                 ;                                ; UnidadeControle:CtrlUnit|BWrite                                             ;
+; Registrador:RegisterB|Saida[31] ; Lost Fanouts                   ; Banco_reg:registers|Reg0[31], Banco_reg:registers|Reg1[31],                 ;
+;                                 ;                                ; Banco_reg:registers|Reg2[31], Banco_reg:registers|Reg3[31],                 ;
+;                                 ;                                ; UnidadeControle:CtrlUnit|RegWrite                                           ;
+; Registrador:RegisterB|Saida[13] ; Lost Fanouts                   ; Banco_reg:registers|Reg0[13], Banco_reg:registers|Reg1[13],                 ;
+;                                 ;                                ; Banco_reg:registers|Reg2[13], Banco_reg:registers|Reg3[13]                  ;
+; Registrador:RegisterB|Saida[12] ; Lost Fanouts                   ; Banco_reg:registers|Reg0[12], Banco_reg:registers|Reg1[12],                 ;
+;                                 ;                                ; Banco_reg:registers|Reg2[12], Banco_reg:registers|Reg3[12]                  ;
+; Registrador:RegisterB|Saida[11] ; Lost Fanouts                   ; Banco_reg:registers|Reg0[11], Banco_reg:registers|Reg1[11],                 ;
+;                                 ;                                ; Banco_reg:registers|Reg2[11], Banco_reg:registers|Reg3[11]                  ;
+; Registrador:RegisterB|Saida[10] ; Lost Fanouts                   ; Banco_reg:registers|Reg0[10], Banco_reg:registers|Reg1[10],                 ;
+;                                 ;                                ; Banco_reg:registers|Reg2[10], Banco_reg:registers|Reg3[10]                  ;
+; Registrador:RegisterB|Saida[9]  ; Lost Fanouts                   ; Banco_reg:registers|Reg0[9], Banco_reg:registers|Reg1[9],                   ;
+;                                 ;                                ; Banco_reg:registers|Reg2[9], Banco_reg:registers|Reg3[9]                    ;
+; Registrador:RegisterB|Saida[8]  ; Lost Fanouts                   ; Banco_reg:registers|Reg0[8], Banco_reg:registers|Reg1[8],                   ;
+;                                 ;                                ; Banco_reg:registers|Reg2[8], Banco_reg:registers|Reg3[8]                    ;
+; Registrador:RegisterB|Saida[7]  ; Lost Fanouts                   ; Banco_reg:registers|Reg0[7], Banco_reg:registers|Reg1[7],                   ;
+;                                 ;                                ; Banco_reg:registers|Reg2[7], Banco_reg:registers|Reg3[7]                    ;
+; Registrador:RegisterB|Saida[6]  ; Lost Fanouts                   ; Banco_reg:registers|Reg0[6], Banco_reg:registers|Reg1[6],                   ;
+;                                 ;                                ; Banco_reg:registers|Reg2[6], Banco_reg:registers|Reg3[6]                    ;
+; Registrador:RegisterB|Saida[5]  ; Lost Fanouts                   ; Banco_reg:registers|Reg0[5], Banco_reg:registers|Reg1[5],                   ;
+;                                 ;                                ; Banco_reg:registers|Reg2[5], Banco_reg:registers|Reg3[5]                    ;
+; Registrador:RegisterB|Saida[4]  ; Lost Fanouts                   ; Banco_reg:registers|Reg0[4], Banco_reg:registers|Reg1[4],                   ;
+;                                 ;                                ; Banco_reg:registers|Reg2[4], Banco_reg:registers|Reg3[4]                    ;
+; Registrador:RegisterB|Saida[3]  ; Lost Fanouts                   ; Banco_reg:registers|Reg0[3], Banco_reg:registers|Reg1[3],                   ;
+;                                 ;                                ; Banco_reg:registers|Reg2[3], Banco_reg:registers|Reg3[3]                    ;
+; Registrador:RegisterB|Saida[20] ; Lost Fanouts                   ; Banco_reg:registers|Reg0[20], Banco_reg:registers|Reg1[20],                 ;
+;                                 ;                                ; Banco_reg:registers|Reg2[20], Banco_reg:registers|Reg3[20]                  ;
+; Registrador:RegisterB|Saida[2]  ; Lost Fanouts                   ; Banco_reg:registers|Reg0[2], Banco_reg:registers|Reg1[2],                   ;
+;                                 ;                                ; Banco_reg:registers|Reg2[2], Banco_reg:registers|Reg3[2]                    ;
+; Registrador:RegisterB|Saida[1]  ; Lost Fanouts                   ; Banco_reg:registers|Reg0[1], Banco_reg:registers|Reg1[1],                   ;
+;                                 ;                                ; Banco_reg:registers|Reg2[1], Banco_reg:registers|Reg3[1]                    ;
+; Registrador:RegisterB|Saida[14] ; Lost Fanouts                   ; Banco_reg:registers|Reg0[14], Banco_reg:registers|Reg1[14],                 ;
+;                                 ;                                ; Banco_reg:registers|Reg2[14], Banco_reg:registers|Reg3[14]                  ;
+; Registrador:RegisterB|Saida[16] ; Lost Fanouts                   ; Banco_reg:registers|Reg0[16], Banco_reg:registers|Reg1[16],                 ;
+;                                 ;                                ; Banco_reg:registers|Reg2[16], Banco_reg:registers|Reg3[16]                  ;
+; Registrador:RegisterB|Saida[17] ; Lost Fanouts                   ; Banco_reg:registers|Reg0[17], Banco_reg:registers|Reg1[17],                 ;
+;                                 ;                                ; Banco_reg:registers|Reg2[17], Banco_reg:registers|Reg3[17]                  ;
+; Registrador:RegisterB|Saida[18] ; Lost Fanouts                   ; Banco_reg:registers|Reg0[18], Banco_reg:registers|Reg1[18],                 ;
+;                                 ;                                ; Banco_reg:registers|Reg2[18], Banco_reg:registers|Reg3[18]                  ;
+; Registrador:RegisterB|Saida[19] ; Lost Fanouts                   ; Banco_reg:registers|Reg0[19], Banco_reg:registers|Reg1[19],                 ;
+;                                 ;                                ; Banco_reg:registers|Reg2[19], Banco_reg:registers|Reg3[19]                  ;
+; Registrador:RegisterB|Saida[21] ; Lost Fanouts                   ; Banco_reg:registers|Reg0[21], Banco_reg:registers|Reg1[21],                 ;
+;                                 ;                                ; Banco_reg:registers|Reg2[21], Banco_reg:registers|Reg3[21]                  ;
+; Registrador:RegisterB|Saida[22] ; Lost Fanouts                   ; Banco_reg:registers|Reg0[22], Banco_reg:registers|Reg1[22],                 ;
+;                                 ;                                ; Banco_reg:registers|Reg2[22], Banco_reg:registers|Reg3[22]                  ;
+; Registrador:RegisterB|Saida[23] ; Lost Fanouts                   ; Banco_reg:registers|Reg0[23], Banco_reg:registers|Reg1[23],                 ;
+;                                 ;                                ; Banco_reg:registers|Reg2[23], Banco_reg:registers|Reg3[23]                  ;
+; Registrador:RegisterB|Saida[24] ; Lost Fanouts                   ; Banco_reg:registers|Reg0[24], Banco_reg:registers|Reg1[24],                 ;
+;                                 ;                                ; Banco_reg:registers|Reg2[24], Banco_reg:registers|Reg3[24]                  ;
+; Registrador:RegisterB|Saida[25] ; Lost Fanouts                   ; Banco_reg:registers|Reg0[25], Banco_reg:registers|Reg1[25],                 ;
+;                                 ;                                ; Banco_reg:registers|Reg2[25], Banco_reg:registers|Reg3[25]                  ;
+; Registrador:RegisterB|Saida[26] ; Lost Fanouts                   ; Banco_reg:registers|Reg0[26], Banco_reg:registers|Reg1[26],                 ;
+;                                 ;                                ; Banco_reg:registers|Reg2[26], Banco_reg:registers|Reg3[26]                  ;
+; Registrador:RegisterB|Saida[27] ; Lost Fanouts                   ; Banco_reg:registers|Reg0[27], Banco_reg:registers|Reg1[27],                 ;
+;                                 ;                                ; Banco_reg:registers|Reg2[27], Banco_reg:registers|Reg3[27]                  ;
+; Registrador:RegisterB|Saida[28] ; Lost Fanouts                   ; Banco_reg:registers|Reg0[28], Banco_reg:registers|Reg1[28],                 ;
+;                                 ;                                ; Banco_reg:registers|Reg2[28], Banco_reg:registers|Reg3[28]                  ;
+; Registrador:RegisterB|Saida[29] ; Lost Fanouts                   ; Banco_reg:registers|Reg0[29], Banco_reg:registers|Reg1[29],                 ;
+;                                 ;                                ; Banco_reg:registers|Reg2[29], Banco_reg:registers|Reg3[29]                  ;
+; Registrador:RegisterB|Saida[30] ; Lost Fanouts                   ; Banco_reg:registers|Reg0[30], Banco_reg:registers|Reg1[30],                 ;
+;                                 ;                                ; Banco_reg:registers|Reg2[30], Banco_reg:registers|Reg3[30]                  ;
+; Registrador:RegisterB|Saida[15] ; Lost Fanouts                   ; Banco_reg:registers|Reg0[15], Banco_reg:registers|Reg1[15],                 ;
+;                                 ;                                ; Banco_reg:registers|Reg2[15], Banco_reg:registers|Reg3[15]                  ;
+; Registrador:LOW|Saida[14]       ; Stuck at GND                   ; mult:MULTOp|lo[14], div:DIVOp|Lo[14], RegDesloc:DesReg|temp[14]             ;
+;                                 ; due to stuck port clock_enable ;                                                                             ;
+; Registrador:LOW|Saida[13]       ; Stuck at GND                   ; mult:MULTOp|lo[13], div:DIVOp|Lo[13], RegDesloc:DesReg|temp[13]             ;
+;                                 ; due to stuck port clock_enable ;                                                                             ;
+; Registrador:LOW|Saida[12]       ; Stuck at GND                   ; mult:MULTOp|lo[12], div:DIVOp|Lo[12], RegDesloc:DesReg|temp[12]             ;
+;                                 ; due to stuck port clock_enable ;                                                                             ;
+; Registrador:LOW|Saida[11]       ; Stuck at GND                   ; mult:MULTOp|lo[11], div:DIVOp|Lo[11], RegDesloc:DesReg|temp[11]             ;
+;                                 ; due to stuck port clock_enable ;                                                                             ;
+; Registrador:LOW|Saida[10]       ; Stuck at GND                   ; mult:MULTOp|lo[10], div:DIVOp|Lo[10], RegDesloc:DesReg|temp[10]             ;
+;                                 ; due to stuck port clock_enable ;                                                                             ;
+; Registrador:LOW|Saida[9]        ; Stuck at GND                   ; mult:MULTOp|lo[9], div:DIVOp|Lo[9], RegDesloc:DesReg|temp[9]                ;
+;                                 ; due to stuck port clock_enable ;                                                                             ;
+; Registrador:LOW|Saida[8]        ; Stuck at GND                   ; mult:MULTOp|lo[8], div:DIVOp|Lo[8], RegDesloc:DesReg|temp[8]                ;
+;                                 ; due to stuck port clock_enable ;                                                                             ;
+; Registrador:LOW|Saida[7]        ; Stuck at GND                   ; mult:MULTOp|lo[7], div:DIVOp|Lo[7], RegDesloc:DesReg|temp[7]                ;
+;                                 ; due to stuck port clock_enable ;                                                                             ;
+; Registrador:LOW|Saida[6]        ; Stuck at GND                   ; mult:MULTOp|lo[6], div:DIVOp|Lo[6], RegDesloc:DesReg|temp[6]                ;
+;                                 ; due to stuck port clock_enable ;                                                                             ;
+; Registrador:LOW|Saida[5]        ; Stuck at GND                   ; mult:MULTOp|lo[5], div:DIVOp|Lo[5], RegDesloc:DesReg|temp[5]                ;
+;                                 ; due to stuck port clock_enable ;                                                                             ;
+; Registrador:LOW|Saida[4]        ; Stuck at GND                   ; mult:MULTOp|lo[4], div:DIVOp|Lo[4], RegDesloc:DesReg|temp[4]                ;
+;                                 ; due to stuck port clock_enable ;                                                                             ;
+; Registrador:LOW|Saida[3]        ; Stuck at GND                   ; mult:MULTOp|lo[3], div:DIVOp|Lo[3], RegDesloc:DesReg|temp[3]                ;
+;                                 ; due to stuck port clock_enable ;                                                                             ;
+; Registrador:LOW|Saida[2]        ; Stuck at GND                   ; mult:MULTOp|lo[2], div:DIVOp|Lo[2], RegDesloc:DesReg|temp[2]                ;
+;                                 ; due to stuck port clock_enable ;                                                                             ;
+; Registrador:LOW|Saida[1]        ; Stuck at GND                   ; mult:MULTOp|lo[1], div:DIVOp|Lo[1], RegDesloc:DesReg|temp[1]                ;
+;                                 ; due to stuck port clock_enable ;                                                                             ;
+; Registrador:LOW|Saida[0]        ; Stuck at GND                   ; mult:MULTOp|lo[0], div:DIVOp|Lo[0], RegDesloc:DesReg|temp[0]                ;
+;                                 ; due to stuck port clock_enable ;                                                                             ;
+; Registrador:LOW|Saida[19]       ; Stuck at GND                   ; mult:MULTOp|lo[19], div:DIVOp|Lo[19], RegDesloc:DesReg|temp[19]             ;
+;                                 ; due to stuck port clock_enable ;                                                                             ;
+; Registrador:LOW|Saida[30]       ; Stuck at GND                   ; mult:MULTOp|lo[30], div:DIVOp|Lo[30], RegDesloc:DesReg|temp[30]             ;
+;                                 ; due to stuck port clock_enable ;                                                                             ;
+; Registrador:LOW|Saida[29]       ; Stuck at GND                   ; mult:MULTOp|lo[29], div:DIVOp|Lo[29], RegDesloc:DesReg|temp[29]             ;
+;                                 ; due to stuck port clock_enable ;                                                                             ;
+; Registrador:LOW|Saida[28]       ; Stuck at GND                   ; mult:MULTOp|lo[28], div:DIVOp|Lo[28], RegDesloc:DesReg|temp[28]             ;
+;                                 ; due to stuck port clock_enable ;                                                                             ;
+; Registrador:LOW|Saida[27]       ; Stuck at GND                   ; mult:MULTOp|lo[27], div:DIVOp|Lo[27], RegDesloc:DesReg|temp[27]             ;
+;                                 ; due to stuck port clock_enable ;                                                                             ;
+; Registrador:LOW|Saida[26]       ; Stuck at GND                   ; mult:MULTOp|lo[26], div:DIVOp|Lo[26], RegDesloc:DesReg|temp[26]             ;
+;                                 ; due to stuck port clock_enable ;                                                                             ;
+; Registrador:LOW|Saida[25]       ; Stuck at GND                   ; mult:MULTOp|lo[25], div:DIVOp|Lo[25], RegDesloc:DesReg|temp[25]             ;
+;                                 ; due to stuck port clock_enable ;                                                                             ;
+; Registrador:LOW|Saida[24]       ; Stuck at GND                   ; mult:MULTOp|lo[24], div:DIVOp|Lo[24], RegDesloc:DesReg|temp[24]             ;
+;                                 ; due to stuck port clock_enable ;                                                                             ;
+; Registrador:LOW|Saida[23]       ; Stuck at GND                   ; mult:MULTOp|lo[23], div:DIVOp|Lo[23], RegDesloc:DesReg|temp[23]             ;
+;                                 ; due to stuck port clock_enable ;                                                                             ;
+; Registrador:LOW|Saida[22]       ; Stuck at GND                   ; mult:MULTOp|lo[22], div:DIVOp|Lo[22], RegDesloc:DesReg|temp[22]             ;
+;                                 ; due to stuck port clock_enable ;                                                                             ;
+; Registrador:LOW|Saida[21]       ; Stuck at GND                   ; mult:MULTOp|lo[21], div:DIVOp|Lo[21], RegDesloc:DesReg|temp[21]             ;
+;                                 ; due to stuck port clock_enable ;                                                                             ;
+; Registrador:LOW|Saida[20]       ; Stuck at GND                   ; mult:MULTOp|lo[20], div:DIVOp|Lo[20], RegDesloc:DesReg|temp[20]             ;
+;                                 ; due to stuck port clock_enable ;                                                                             ;
+; Registrador:LOW|Saida[18]       ; Stuck at GND                   ; mult:MULTOp|lo[18], div:DIVOp|Lo[18], RegDesloc:DesReg|temp[18]             ;
+;                                 ; due to stuck port clock_enable ;                                                                             ;
+; Registrador:LOW|Saida[17]       ; Stuck at GND                   ; mult:MULTOp|lo[17], div:DIVOp|Lo[17], RegDesloc:DesReg|temp[17]             ;
+;                                 ; due to stuck port clock_enable ;                                                                             ;
+; Registrador:LOW|Saida[16]       ; Stuck at GND                   ; mult:MULTOp|lo[16], div:DIVOp|Lo[16], RegDesloc:DesReg|temp[16]             ;
+;                                 ; due to stuck port clock_enable ;                                                                             ;
+; Registrador:LOW|Saida[15]       ; Stuck at GND                   ; mult:MULTOp|lo[15], div:DIVOp|Lo[15], RegDesloc:DesReg|temp[15]             ;
+;                                 ; due to stuck port clock_enable ;                                                                             ;
+; Registrador:HIGH|Saida[16]      ; Stuck at GND                   ; mult:MULTOp|hi[16]                                                          ;
+;                                 ; due to stuck port clock_enable ;                                                                             ;
+; Registrador:HIGH|Saida[17]      ; Stuck at GND                   ; mult:MULTOp|hi[17]                                                          ;
+;                                 ; due to stuck port clock_enable ;                                                                             ;
+; Registrador:HIGH|Saida[18]      ; Stuck at GND                   ; mult:MULTOp|hi[18]                                                          ;
+;                                 ; due to stuck port clock_enable ;                                                                             ;
+; Registrador:HIGH|Saida[19]      ; Stuck at GND                   ; mult:MULTOp|hi[19]                                                          ;
+;                                 ; due to stuck port clock_enable ;                                                                             ;
+; Registrador:HIGH|Saida[20]      ; Stuck at GND                   ; mult:MULTOp|hi[20]                                                          ;
+;                                 ; due to stuck port clock_enable ;                                                                             ;
+; Registrador:HIGH|Saida[21]      ; Stuck at GND                   ; mult:MULTOp|hi[21]                                                          ;
+;                                 ; due to stuck port clock_enable ;                                                                             ;
+; Registrador:HIGH|Saida[22]      ; Stuck at GND                   ; mult:MULTOp|hi[22]                                                          ;
+;                                 ; due to stuck port clock_enable ;                                                                             ;
+; Registrador:HIGH|Saida[23]      ; Stuck at GND                   ; mult:MULTOp|hi[23]                                                          ;
+;                                 ; due to stuck port clock_enable ;                                                                             ;
+; Registrador:HIGH|Saida[24]      ; Stuck at GND                   ; mult:MULTOp|hi[24]                                                          ;
+;                                 ; due to stuck port clock_enable ;                                                                             ;
+; Registrador:HIGH|Saida[25]      ; Stuck at GND                   ; mult:MULTOp|hi[25]                                                          ;
+;                                 ; due to stuck port clock_enable ;                                                                             ;
+; Registrador:HIGH|Saida[26]      ; Stuck at GND                   ; mult:MULTOp|hi[26]                                                          ;
+;                                 ; due to stuck port clock_enable ;                                                                             ;
+; Registrador:HIGH|Saida[27]      ; Stuck at GND                   ; mult:MULTOp|hi[27]                                                          ;
+;                                 ; due to stuck port clock_enable ;                                                                             ;
+; Registrador:HIGH|Saida[28]      ; Stuck at GND                   ; mult:MULTOp|hi[28]                                                          ;
+;                                 ; due to stuck port clock_enable ;                                                                             ;
+; Registrador:HIGH|Saida[29]      ; Stuck at GND                   ; mult:MULTOp|hi[29]                                                          ;
+;                                 ; due to stuck port clock_enable ;                                                                             ;
+; Registrador:HIGH|Saida[30]      ; Stuck at GND                   ; mult:MULTOp|hi[30]                                                          ;
+;                                 ; due to stuck port clock_enable ;                                                                             ;
+; Registrador:HIGH|Saida[31]      ; Stuck at GND                   ; mult:MULTOp|hi[31]                                                          ;
+;                                 ; due to stuck port clock_enable ;                                                                             ;
+; Registrador:HIGH|Saida[14]      ; Stuck at GND                   ; mult:MULTOp|hi[14]                                                          ;
+;                                 ; due to stuck port clock_enable ;                                                                             ;
+; Registrador:HIGH|Saida[13]      ; Stuck at GND                   ; mult:MULTOp|hi[13]                                                          ;
+;                                 ; due to stuck port clock_enable ;                                                                             ;
+; Registrador:HIGH|Saida[12]      ; Stuck at GND                   ; mult:MULTOp|hi[12]                                                          ;
+;                                 ; due to stuck port clock_enable ;                                                                             ;
+; Registrador:HIGH|Saida[11]      ; Stuck at GND                   ; mult:MULTOp|hi[11]                                                          ;
+;                                 ; due to stuck port clock_enable ;                                                                             ;
+; Registrador:HIGH|Saida[15]      ; Stuck at GND                   ; mult:MULTOp|hi[15]                                                          ;
+;                                 ; due to stuck port clock_enable ;                                                                             ;
+; Registrador:HIGH|Saida[10]      ; Stuck at GND                   ; mult:MULTOp|hi[10]                                                          ;
+;                                 ; due to stuck port clock_enable ;                                                                             ;
+; Registrador:HIGH|Saida[9]       ; Stuck at GND                   ; mult:MULTOp|hi[9]                                                           ;
+;                                 ; due to stuck port clock_enable ;                                                                             ;
+; Registrador:HIGH|Saida[8]       ; Stuck at GND                   ; mult:MULTOp|hi[8]                                                           ;
+;                                 ; due to stuck port clock_enable ;                                                                             ;
+; Registrador:HIGH|Saida[7]       ; Stuck at GND                   ; mult:MULTOp|hi[7]                                                           ;
+;                                 ; due to stuck port clock_enable ;                                                                             ;
+; Registrador:HIGH|Saida[6]       ; Stuck at GND                   ; mult:MULTOp|hi[6]                                                           ;
+;                                 ; due to stuck port clock_enable ;                                                                             ;
+; Registrador:HIGH|Saida[5]       ; Stuck at GND                   ; mult:MULTOp|hi[5]                                                           ;
+;                                 ; due to stuck port clock_enable ;                                                                             ;
+; Registrador:HIGH|Saida[4]       ; Stuck at GND                   ; mult:MULTOp|hi[4]                                                           ;
+;                                 ; due to stuck port clock_enable ;                                                                             ;
+; Registrador:HIGH|Saida[3]       ; Stuck at GND                   ; mult:MULTOp|hi[3]                                                           ;
+;                                 ; due to stuck port clock_enable ;                                                                             ;
+; Registrador:HIGH|Saida[2]       ; Stuck at GND                   ; mult:MULTOp|hi[2]                                                           ;
+;                                 ; due to stuck port clock_enable ;                                                                             ;
+; Registrador:HIGH|Saida[1]       ; Stuck at GND                   ; mult:MULTOp|hi[1]                                                           ;
+;                                 ; due to stuck port clock_enable ;                                                                             ;
+; Registrador:HIGH|Saida[0]       ; Stuck at GND                   ; mult:MULTOp|hi[0]                                                           ;
+;                                 ; due to stuck port clock_enable ;                                                                             ;
+; Registrador:RegisterA|Saida[31] ; Lost Fanouts                   ; UnidadeControle:CtrlUnit|AWrite                                             ;
++---------------------------------+--------------------------------+-----------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -637,24 +634,33 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 102   ;
-; Number of registers using Synchronous Clear  ; 2     ;
-; Number of registers using Synchronous Load   ; 1     ;
+; Total registers                              ; 117   ;
+; Number of registers using Synchronous Clear  ; 34    ;
+; Number of registers using Synchronous Load   ; 10    ;
 ; Number of registers using Asynchronous Clear ; 96    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 1     ;
+; Number of registers using Clock Enable       ; 40    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                        ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output              ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
-; 255:1              ; 4 bits    ; 680 ALUTs     ; 180 ALUTs            ; 500 ALUTs              ; Yes        ; |VCPU|UnidadeControle:CtrlUnit|state[0] ;
-; 255:1              ; 2 bits    ; 340 ALUTs     ; 70 ALUTs             ; 270 ALUTs              ; Yes        ; |VCPU|UnidadeControle:CtrlUnit|state[1] ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
+; 5:1                ; 2 bits    ; 6 ALUTs       ; 4 ALUTs              ; 2 ALUTs                ; Yes        ; |VCPU|Registrador:PC|Saida[1]              ;
+; 5:1                ; 4 bits    ; 12 ALUTs      ; 8 ALUTs              ; 4 ALUTs                ; Yes        ; |VCPU|Registrador:PC|Saida[30]             ;
+; 5:1                ; 26 bits   ; 78 ALUTs      ; 52 ALUTs             ; 26 ALUTs               ; Yes        ; |VCPU|Registrador:PC|Saida[11]             ;
+; 128:1              ; 3 bits    ; 255 ALUTs     ; 42 ALUTs             ; 213 ALUTs              ; Yes        ; |VCPU|UnidadeControle:CtrlUnit|ALUOp[2]    ;
+; 128:1              ; 4 bits    ; 340 ALUTs     ; 36 ALUTs             ; 304 ALUTs              ; Yes        ; |VCPU|UnidadeControle:CtrlUnit|IorD[2]     ;
+; 128:1              ; 2 bits    ; 170 ALUTs     ; 10 ALUTs             ; 160 ALUTs              ; Yes        ; |VCPU|UnidadeControle:CtrlUnit|PCSource[1] ;
+; 128:1              ; 2 bits    ; 170 ALUTs     ; 4 ALUTs              ; 166 ALUTs              ; Yes        ; |VCPU|UnidadeControle:CtrlUnit|PCCond[0]   ;
+; 8:1                ; 17 bits   ; 85 ALUTs      ; 34 ALUTs             ; 51 ALUTs               ; No         ; |VCPU|Ula32:ALU|Mux50                      ;
+; 8:1                ; 32 bits   ; 160 ALUTs     ; 128 ALUTs            ; 32 ALUTs               ; No         ; |VCPU|Ula32:ALU|Mux31                      ;
+; 5:1                ; 2 bits    ; 6 ALUTs       ; 6 ALUTs              ; 0 ALUTs                ; No         ; |VCPU|mux_iOrD:IorDMux|out[1]              ;
+; 5:1                ; 6 bits    ; 18 ALUTs      ; 18 ALUTs             ; 0 ALUTs                ; No         ; |VCPU|mux_iOrD:IorDMux|out[7]              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------+
@@ -755,6 +761,42 @@ Encoding Type:  One-Hot
 ; srl            ; 0110111 ; Unsigned Binary                            ;
 ; OPcodeIN       ; 0111000 ; Unsigned Binary                            ;
 ; Reset          ; 0111001 ; Unsigned Binary                            ;
+; inicial        ; 0111010 ; Unsigned Binary                            ;
+; inicial_0      ; 0111011 ; Unsigned Binary                            ;
+; write_lt0      ; 0111100 ; Unsigned Binary                            ;
+; write_lt1      ; 0111101 ; Unsigned Binary                            ;
+; write_lt00     ; 0111110 ; Unsigned Binary                            ;
+; write_lt11     ; 0111111 ; Unsigned Binary                            ;
+; writemdr_1     ; 1000000 ; Unsigned Binary                            ;
+; writemdr_2     ; 1000001 ; Unsigned Binary                            ;
+; writemdr_3     ; 1000010 ; Unsigned Binary                            ;
+; lw_2           ; 1000011 ; Unsigned Binary                            ;
+; lw_3           ; 1000100 ; Unsigned Binary                            ;
+; cory_2         ; 1000101 ; Unsigned Binary                            ;
+; cory_3         ; 1000110 ; Unsigned Binary                            ;
+; lh_2           ; 1000111 ; Unsigned Binary                            ;
+; lh_3           ; 1001000 ; Unsigned Binary                            ;
+; lb_2           ; 1001001 ; Unsigned Binary                            ;
+; lb_3           ; 1001010 ; Unsigned Binary                            ;
+; cory_0         ; 1001011 ; Unsigned Binary                            ;
+; sw_2           ; 1001100 ; Unsigned Binary                            ;
+; sw_3           ; 1001101 ; Unsigned Binary                            ;
+; sw_4           ; 1001110 ; Unsigned Binary                            ;
+; cory_7         ; 1001111 ; Unsigned Binary                            ;
+; cory_8         ; 1010000 ; Unsigned Binary                            ;
+; sh_2           ; 1010001 ; Unsigned Binary                            ;
+; sh_3           ; 1010010 ; Unsigned Binary                            ;
+; sh_4           ; 1010011 ; Unsigned Binary                            ;
+; sb_2           ; 1010100 ; Unsigned Binary                            ;
+; sb_3           ; 1010101 ; Unsigned Binary                            ;
+; sb_4           ; 1010110 ; Unsigned Binary                            ;
+; overflow       ; 1010111 ; Unsigned Binary                            ;
+; OPcodeIN_2     ; 1011000 ; Unsigned Binary                            ;
+; OPcodeIN_3     ; 1011001 ; Unsigned Binary                            ;
+; cory_9         ; 1011010 ; Unsigned Binary                            ;
+; overflow_2     ; 1011011 ; Unsigned Binary                            ;
+; overflow_3     ; 1011100 ; Unsigned Binary                            ;
+; cory_10        ; 1011101 ; Unsigned Binary                            ;
 ; Opcode_R       ; 000000  ; Unsigned Binary                            ;
 ; Opcode_addi    ; 001000  ; Unsigned Binary                            ;
 ; Opcode_addiu   ; 001001  ; Unsigned Binary                            ;
@@ -960,29 +1002,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port     ; Type   ; Severity ; Details                                                                             ;
 +----------+--------+----------+-------------------------------------------------------------------------------------+
-; overflow ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 ; negativo ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; z        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; menor    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +----------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Banco_reg:registers"                                                                                               ;
-+----------+-------+------------------+---------------------------------------------------------------------------------------------------------+
-; Port     ; Type  ; Severity         ; Details                                                                                                 ;
-+----------+-------+------------------+---------------------------------------------------------------------------------------------------------+
-; writereg ; Input ; Critical Warning ; Can't connect array with 32 elements in array dimension 1 to port with 5 elements in the same dimension ;
-+----------+-------+------------------+---------------------------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "mux_regDst:RegDSTMux"                                                                                                                                                   ;
-+------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                                                                                                                 ;
-+------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; out  ; Output ; Warning  ; Output or bidir port (5 bits) is smaller than the port expression (32 bits) it drives.  The 27 most-significant bit(s) in the port expression will be connected to GND. ;
-+------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1021,16 +1042,17 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------+-------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "UnidadeControle:CtrlUnit"                                                                                                                                                 ;
-+----------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port     ; Type   ; Severity ; Details                                                                                                                                                               ;
-+----------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; IorD     ; Output ; Warning  ; Output or bidir port (3 bits) is smaller than the port expression (4 bits) it drives.  The 1 most-significant bit(s) in the port expression will be connected to GND. ;
-; ALUSrcA  ; Output ; Info     ; Explicitly unconnected                                                                                                                                                ;
-; ALUSrcB  ; Output ; Info     ; Explicitly unconnected                                                                                                                                                ;
-; EPCWrite ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                   ;
-+----------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "UnidadeControle:CtrlUnit"                                                                                                                                                  ;
++-----------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                                                                                                               ;
++-----------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; IorD      ; Output ; Warning  ; Output or bidir port (3 bits) is smaller than the port expression (4 bits) it drives.  The 1 most-significant bit(s) in the port expression will be connected to GND. ;
+; ALUSrcA   ; Output ; Info     ; Explicitly unconnected                                                                                                                                                ;
+; ALUSrcB   ; Output ; Info     ; Explicitly unconnected                                                                                                                                                ;
+; EPCWrite  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                   ;
+; WriteData ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                              ;
++-----------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-------------------------------+
@@ -1039,7 +1061,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Thu May 16 20:51:11 2019
+    Info: Processing started: Thu May 16 23:56:35 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Proj_Hardware -c Proj_Hardware
 Info: Found 1 design units, including 1 entities, in source file div.v
     Info: Found entity 1: div
@@ -1082,8 +1104,6 @@ Info: Found 1 design units, including 1 entities, in source file mux_pcsrc.v
     Info: Found entity 1: mux_pcSrc
 Info: Found 1 design units, including 1 entities, in source file shift_left2.v
     Info: Found entity 1: shift_left2
-Info: Found 1 design units, including 1 entities, in source file unidadeprocessamento.bdf
-    Info: Found entity 1: UnidadeProcessamento
 Info: Found 1 design units, including 1 entities, in source file shift_left16.v
     Info: Found entity 1: shift_left16
 Info: Found 1 design units, including 1 entities, in source file shift_leftjump.v
@@ -1110,18 +1130,12 @@ Info: Found 1 design units, including 1 entities, in source file mux_2inputs.sv
     Info: Found entity 1: mux_2inputs
 Info: Elaborating entity "VCPU" for the top level hierarchy
 Info: Elaborating entity "UnidadeControle" for hierarchy "UnidadeControle:CtrlUnit"
-Warning (10034): Output port "MemWD" at UnidadeControle.v(19) has no driver
-Warning (10034): Output port "BWD" at UnidadeControle.v(20) has no driver
-Warning (10034): Output port "PCCond" at UnidadeControle.v(25) has no driver
-Warning (10034): Output port "DR1" at UnidadeControle.v(21) has no driver
-Warning (10034): Output port "DR2" at UnidadeControle.v(22) has no driver
-Warning (10034): Output port "Low" at UnidadeControle.v(23) has no driver
-Warning (10034): Output port "High" at UnidadeControle.v(24) has no driver
-Warning (10034): Output port "PCWriteCond" at UnidadeControle.v(26) has no driver
-Warning (10034): Output port "ALUOutWrite" at UnidadeControle.v(34) has no driver
-Warning (10034): Output port "LowReg" at UnidadeControle.v(37) has no driver
-Warning (10034): Output port "HighReg" at UnidadeControle.v(38) has no driver
-Warning (10034): Output port "EPCWrite" at UnidadeControle.v(40) has no driver
+Warning (10034): Output port "DR1" at UnidadeControle.v(25) has no driver
+Warning (10034): Output port "DR2" at UnidadeControle.v(26) has no driver
+Warning (10034): Output port "Low" at UnidadeControle.v(27) has no driver
+Warning (10034): Output port "High" at UnidadeControle.v(28) has no driver
+Warning (10034): Output port "LowReg" at UnidadeControle.v(41) has no driver
+Warning (10034): Output port "HighReg" at UnidadeControle.v(42) has no driver
 Info: Elaborating entity "mux_2inputs" for hierarchy "mux_2inputs:ALUorMemMux"
 Warning (10270): Verilog HDL Case Statement warning at mux_2inputs.sv(10): incomplete case statement has no default case item
 Warning (10240): Verilog HDL Always Construct warning at mux_2inputs.sv(10): inferring latch(es) for variable "outputA", which holds its previous value in one or more paths through the always construct
@@ -1206,342 +1220,39 @@ Warning (10230): Verilog HDL assignment warning at div.v(77): truncated value wi
 Warning (10230): Verilog HDL assignment warning at div.v(101): truncated value with size 32 to match size of target (6)
 Info: Elaborating entity "mult" for hierarchy "mult:MULTOp"
 Warning: Net is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[31]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[30]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[29]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[28]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[27]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[26]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[25]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[24]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[23]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[22]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[21]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[20]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[19]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[18]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[17]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[16]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[15]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[14]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[13]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[12]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[11]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[10]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[9]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[8]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[7]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[6]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[5]" is missing source, defaulting to GND
-Warning: Net is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[31]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[30]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[29]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[28]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[27]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[26]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[25]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[24]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[23]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[22]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[21]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[20]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[19]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[18]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[17]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[16]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[15]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[14]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[13]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[12]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[11]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[10]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[9]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[8]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[7]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[6]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[5]" is missing source, defaulting to GND
-Warning: Net is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[31]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[30]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[29]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[28]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[27]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[26]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[25]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[24]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[23]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[22]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[21]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[20]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[19]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[18]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[17]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[16]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[15]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[14]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[13]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[12]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[11]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[10]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[9]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[8]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[7]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[6]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[5]" is missing source, defaulting to GND
-Warning: Net is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[31]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[30]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[29]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[28]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[27]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[26]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[25]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[24]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[23]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[22]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[21]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[20]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[19]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[18]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[17]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[16]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[15]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[14]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[13]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[12]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[11]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[10]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[9]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[8]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[7]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[6]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[5]" is missing source, defaulting to GND
-Warning: Net is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[31]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[30]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[29]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[28]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[27]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[26]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[25]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[24]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[23]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[22]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[21]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[20]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[19]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[18]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[17]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[16]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[15]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[14]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[13]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[12]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[11]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[10]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[9]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[8]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[7]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[6]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[5]" is missing source, defaulting to GND
-Warning: Net is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[31]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[30]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[29]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[28]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[27]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[26]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[25]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[24]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[23]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[22]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[21]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[20]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[19]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[18]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[17]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[16]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[15]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[14]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[13]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[12]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[11]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[10]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[9]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[8]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[7]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[6]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[5]" is missing source, defaulting to GND
-Warning: Net is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[31]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[30]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[29]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[28]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[27]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[26]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[25]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[24]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[23]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[22]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[21]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[20]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[19]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[18]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[17]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[16]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[15]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[14]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[13]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[12]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[11]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[10]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[9]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[8]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[7]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[6]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[5]" is missing source, defaulting to GND
-Warning: Net is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[31]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[30]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[29]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[28]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[27]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[26]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[25]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[24]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[23]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[22]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[21]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[20]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[19]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[18]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[17]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[16]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[15]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[14]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[13]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[12]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[11]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[10]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[9]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[8]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[7]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[6]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[5]" is missing source, defaulting to GND
-Warning: Net is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[31]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[30]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[29]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[28]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[27]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[26]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[25]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[24]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[23]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[22]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[21]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[20]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[19]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[18]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[17]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[16]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[15]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[14]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[13]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[12]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[11]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[10]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[9]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[8]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[7]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[6]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[5]" is missing source, defaulting to GND
-Warning: Net is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[31]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[30]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[29]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[28]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[27]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[26]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[25]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[24]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[23]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[22]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[21]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[20]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[19]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[18]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[17]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[16]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[15]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[14]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[13]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[12]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[11]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[10]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[9]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[8]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[7]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[6]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[5]" is missing source, defaulting to GND
-Warning: Net is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[31]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[30]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[29]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[28]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[27]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[26]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[25]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[24]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[23]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[22]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[21]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[20]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[19]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[18]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[17]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[16]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[15]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[14]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[13]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[12]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[11]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[10]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[9]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[8]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[7]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[6]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[5]" is missing source, defaulting to GND
-Warning: Net is missing source, defaulting to GND
     Warning (12110): Net "IorD[3]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[31]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[30]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[29]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[28]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[27]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[26]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[25]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[24]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[23]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[22]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[21]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[20]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[19]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[18]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[17]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[16]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[15]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[14]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[13]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[12]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[11]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[10]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[9]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[8]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[7]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[6]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDstOut[5]" is missing source, defaulting to GND
+Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[0]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[1]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[2]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[3]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[4]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[5]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[6]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[7]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[8]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[9]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[10]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[11]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[12]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[13]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[14]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[15]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[16]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[17]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[18]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[19]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[20]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[21]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[22]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[23]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[24]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[25]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[26]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[27]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[28]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[29]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[30]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[31]" is permanently enabled
 Warning: LATCH primitive "mux_2inputs:ALUorMemMux|outputA[0]" is permanently enabled
 Warning: LATCH primitive "mux_2inputs:ALUorMemMux|outputA[1]" is permanently enabled
 Warning: LATCH primitive "mux_2inputs:ALUorMemMux|outputA[2]" is permanently enabled
@@ -1574,6 +1285,38 @@ Warning: LATCH primitive "mux_2inputs:ALUorMemMux|outputA[28]" is permanently en
 Warning: LATCH primitive "mux_2inputs:ALUorMemMux|outputA[29]" is permanently enabled
 Warning: LATCH primitive "mux_2inputs:ALUorMemMux|outputA[30]" is permanently enabled
 Warning: LATCH primitive "mux_2inputs:ALUorMemMux|outputA[31]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[0]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[1]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[2]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[3]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[4]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[5]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[6]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[7]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[8]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[9]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[10]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[11]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[12]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[13]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[14]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[15]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[16]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[17]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[18]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[19]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[20]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[21]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[22]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[23]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[24]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[25]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[26]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[27]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[28]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[29]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[30]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[31]" is permanently enabled
 Warning: LATCH primitive "mux_2inputs:ALUorMemMux|outputA[0]" is permanently enabled
 Warning: LATCH primitive "mux_2inputs:ALUorMemMux|outputA[1]" is permanently enabled
 Warning: LATCH primitive "mux_2inputs:ALUorMemMux|outputA[2]" is permanently enabled
@@ -1606,7 +1349,7 @@ Warning: LATCH primitive "mux_2inputs:ALUorMemMux|outputA[28]" is permanently en
 Warning: LATCH primitive "mux_2inputs:ALUorMemMux|outputA[29]" is permanently enabled
 Warning: LATCH primitive "mux_2inputs:ALUorMemMux|outputA[30]" is permanently enabled
 Warning: LATCH primitive "mux_2inputs:ALUorMemMux|outputA[31]" is permanently enabled
-Warning: 10 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning: 8 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning: Output pins are stuck at VCC or GND
     Warning (13410): Pin "EPCOut[0]" is stuck at GND
     Warning (13410): Pin "EPCOut[1]" is stuck at GND
@@ -1640,40 +1383,39 @@ Warning: Output pins are stuck at VCC or GND
     Warning (13410): Pin "EPCOut[29]" is stuck at GND
     Warning (13410): Pin "EPCOut[30]" is stuck at GND
     Warning (13410): Pin "EPCOut[31]" is stuck at GND
-    Warning (13410): Pin "CurState[6]" is stuck at GND
-Info: 1541 registers lost all their fanouts during netlist optimizations. The first 1541 are displayed below.
-    Info: Register "Registrador:B|Saida[0]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:B|Saida[1]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:B|Saida[2]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:B|Saida[3]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:B|Saida[4]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:B|Saida[5]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:B|Saida[6]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:B|Saida[7]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:B|Saida[8]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:B|Saida[9]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:B|Saida[10]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:B|Saida[11]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:B|Saida[12]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:B|Saida[13]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:B|Saida[14]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:B|Saida[15]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:B|Saida[16]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:B|Saida[17]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:B|Saida[18]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:B|Saida[19]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:B|Saida[20]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:B|Saida[21]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:B|Saida[22]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:B|Saida[23]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:B|Saida[24]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:B|Saida[25]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:B|Saida[26]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:B|Saida[27]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:B|Saida[28]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:B|Saida[29]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:B|Saida[30]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:B|Saida[31]" lost all its fanouts during netlist optimizations.
+Info: 1545 registers lost all their fanouts during netlist optimizations. The first 1545 are displayed below.
+    Info: Register "Registrador:RegisterB|Saida[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:RegisterB|Saida[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:RegisterB|Saida[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:RegisterB|Saida[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:RegisterB|Saida[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:RegisterB|Saida[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:RegisterB|Saida[6]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:RegisterB|Saida[7]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:RegisterB|Saida[8]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:RegisterB|Saida[9]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:RegisterB|Saida[10]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:RegisterB|Saida[11]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:RegisterB|Saida[12]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:RegisterB|Saida[13]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:RegisterB|Saida[14]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:RegisterB|Saida[15]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:RegisterB|Saida[16]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:RegisterB|Saida[17]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:RegisterB|Saida[18]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:RegisterB|Saida[19]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:RegisterB|Saida[20]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:RegisterB|Saida[21]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:RegisterB|Saida[22]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:RegisterB|Saida[23]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:RegisterB|Saida[24]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:RegisterB|Saida[25]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:RegisterB|Saida[26]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:RegisterB|Saida[27]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:RegisterB|Saida[28]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:RegisterB|Saida[29]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:RegisterB|Saida[30]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:RegisterB|Saida[31]" lost all its fanouts during netlist optimizations.
     Info: Register "mult:MULTOp|multiplicand[5]" lost all its fanouts during netlist optimizations.
     Info: Register "mult:MULTOp|multiplicand[4]" lost all its fanouts during netlist optimizations.
     Info: Register "mult:MULTOp|multiplicand[3]" lost all its fanouts during netlist optimizations.
@@ -2115,38 +1857,38 @@ Info: 1541 registers lost all their fanouts during netlist optimizations. The fi
     Info: Register "RegDesloc:DesReg|temp[2]" lost all its fanouts during netlist optimizations.
     Info: Register "RegDesloc:DesReg|temp[1]" lost all its fanouts during netlist optimizations.
     Info: Register "RegDesloc:DesReg|temp[0]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:A|Saida[31]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:A|Saida[30]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:A|Saida[29]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:A|Saida[28]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:A|Saida[27]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:A|Saida[26]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:A|Saida[25]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:A|Saida[24]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:A|Saida[23]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:A|Saida[22]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:A|Saida[21]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:A|Saida[20]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:A|Saida[19]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:A|Saida[18]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:A|Saida[17]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:A|Saida[16]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:A|Saida[15]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:A|Saida[14]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:A|Saida[13]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:A|Saida[12]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:A|Saida[11]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:A|Saida[10]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:A|Saida[9]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:A|Saida[8]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:A|Saida[7]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:A|Saida[6]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:A|Saida[5]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:A|Saida[4]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:A|Saida[3]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:A|Saida[2]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:A|Saida[1]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:A|Saida[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:RegisterA|Saida[31]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:RegisterA|Saida[30]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:RegisterA|Saida[29]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:RegisterA|Saida[28]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:RegisterA|Saida[27]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:RegisterA|Saida[26]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:RegisterA|Saida[25]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:RegisterA|Saida[24]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:RegisterA|Saida[23]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:RegisterA|Saida[22]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:RegisterA|Saida[21]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:RegisterA|Saida[20]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:RegisterA|Saida[19]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:RegisterA|Saida[18]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:RegisterA|Saida[17]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:RegisterA|Saida[16]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:RegisterA|Saida[15]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:RegisterA|Saida[14]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:RegisterA|Saida[13]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:RegisterA|Saida[12]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:RegisterA|Saida[11]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:RegisterA|Saida[10]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:RegisterA|Saida[9]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:RegisterA|Saida[8]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:RegisterA|Saida[7]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:RegisterA|Saida[6]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:RegisterA|Saida[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:RegisterA|Saida[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:RegisterA|Saida[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:RegisterA|Saida[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:RegisterA|Saida[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:RegisterA|Saida[0]" lost all its fanouts during netlist optimizations.
     Info: Register "Banco_reg:registers|Reg0[31]" lost all its fanouts during netlist optimizations.
     Info: Register "Banco_reg:registers|Reg0[30]" lost all its fanouts during netlist optimizations.
     Info: Register "Banco_reg:registers|Reg0[29]" lost all its fanouts during netlist optimizations.
@@ -3171,29 +2913,33 @@ Info: 1541 registers lost all their fanouts during netlist optimizations. The fi
     Info: Register "Banco_reg:registers|Reg31[2]" lost all its fanouts during netlist optimizations.
     Info: Register "Banco_reg:registers|Reg31[1]" lost all its fanouts during netlist optimizations.
     Info: Register "Banco_reg:registers|Reg31[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "UnidadeControle:CtrlUnit|BWD[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "UnidadeControle:CtrlUnit|BWD[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "UnidadeControle:CtrlUnit|MemWD[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "UnidadeControle:CtrlUnit|MemWD[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "UnidadeControle:CtrlUnit|RegDst[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "UnidadeControle:CtrlUnit|RegDst[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "UnidadeControle:CtrlUnit|MemToReg[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "UnidadeControle:CtrlUnit|MemToReg[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "UnidadeControle:CtrlUnit|MemToReg[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "UnidadeControle:CtrlUnit|MemToReg[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "UnidadeControle:CtrlUnit|RegWrite" lost all its fanouts during netlist optimizations.
     Info: Register "UnidadeControle:CtrlUnit|AWrite" lost all its fanouts during netlist optimizations.
     Info: Register "UnidadeControle:CtrlUnit|BWrite" lost all its fanouts during netlist optimizations.
-    Info: Register "UnidadeControle:CtrlUnit|RegWrite" lost all its fanouts during netlist optimizations.
-    Info: Register "UnidadeControle:CtrlUnit|MemToReg[0]" lost all its fanouts during netlist optimizations.
-    Info: Register "UnidadeControle:CtrlUnit|MemToReg[1]" lost all its fanouts during netlist optimizations.
-    Info: Register "UnidadeControle:CtrlUnit|MemToReg[2]" lost all its fanouts during netlist optimizations.
-    Info: Register "UnidadeControle:CtrlUnit|MemToReg[3]" lost all its fanouts during netlist optimizations.
-    Info: Register "UnidadeControle:CtrlUnit|RegDst[0]" lost all its fanouts during netlist optimizations.
-    Info: Register "UnidadeControle:CtrlUnit|RegDst[1]" lost all its fanouts during netlist optimizations.
     Info: Register "mult:MULTOp|doing.01" lost all its fanouts during netlist optimizations.
     Info: Register "mult:MULTOp|doing.10" lost all its fanouts during netlist optimizations.
     Info: Register "mult:MULTOp|doing.00" lost all its fanouts during netlist optimizations.
 Info: Generated suppressed messages file C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/Proj_Hardware.map.smsg
-Info: Implemented 353 device resources after synthesis - the final resource count might be different
+Info: Implemented 555 device resources after synthesis - the final resource count might be different
     Info: Implemented 2 input pins
     Info: Implemented 135 output pins
-    Info: Implemented 184 logic cells
+    Info: Implemented 386 logic cells
     Info: Implemented 32 RAM segments
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 454 warnings
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 176 warnings
     Info: Peak virtual memory: 266 megabytes
-    Info: Processing ended: Thu May 16 20:51:15 2019
-    Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:03
+    Info: Processing ended: Thu May 16 23:56:41 2019
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:11
 
 
 +------------------------------------------+
