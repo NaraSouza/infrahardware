@@ -15,7 +15,7 @@ wire [31:0] auxC;
 assign auxA = (selector[0]) ? {32'd1} :inputA;
 assign auxB = (selector[0]) ? inputB : {32'd4};
 assign auxC = (selector[1]) ? auxB: auxA;
-assign out = (selector[2]) ? auxC :  inputC;
+assign out = (selector[2]) ? inputC :  auxC;
 
 endmodule
 	 

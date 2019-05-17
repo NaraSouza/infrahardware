@@ -1,20 +1,26 @@
 module VCPU(
 	input clock,
 	input reset,
-	
+	output logic PCWrite,
 	output logic [5:0] OPCode, //opcode
 	
 	output logic [31:0] PCOut,
 	output logic [31:0] EPCOut,
 	output logic [31:0] MDROut,
-	
+	output logic [31:0] AluSrcAOut,
+	output logic [31:0] AluSrcBOut,
 	output logic [31:0] RegAIn,
 	output logic [31:0] RegBIn,
+	
+	output logic [1:0] AluSrcA,
+
+	output logic [2:0] AluSrcB,
 	
 	output logic [4:0] rs,
     output logic [4:0] rt,
     
     output logic [15:0] inst15_0,
+    output logic [31:0] ALURegOut,
     
 	output logic [6:0] CurState // ???? verificar o que eh. Provavelmente eh o estado atual da maquina de estados
 );
@@ -61,13 +67,13 @@ logic [31:0] RegBOut;
 logic [15:0] RegBHalf;
 logic [8:0]  RegBByte;
 
-logic [1:0] AluSrcA;
+//logic [1:0] AluSrcA;
 logic RegAWrite;
-logic [31:0] AluSrcAOut;
+// logic [31:0] AluSrcAOut;
 
-logic [2:0] AluSrcB;
+//logic [2:0] AluSrcB;
 logic RegBWrite;
-logic [31:0] AluSrcBOut;
+// logic [31:0] AluSrcBOut;
 
 
 logic [3:0] MemToReg;
@@ -82,12 +88,12 @@ logic [31:0] SL2Out;
 logic ALURegWrite;
 logic [2:0] ALUOp;
 logic [31:0] ALUOut; 	// ALU output
-logic [31:0] ALURegOut; // Registrador que guarda ALU output
+// logic [31:0] ALURegOut; // Registrador que guarda ALU output
 
 logic EPCWrite;
 logic [1:0] PCSource;
 logic PCWriteCond;
-logic PCWrite;
+// logic PCWrite;
 logic PCWCtrl; // controla se escreve ou n em PC; baseado nos bools anteriores(resultado final, basicamente)
 logic [31:0] PCSrcOut;
 logic [1:0] PCCond;
@@ -145,8 +151,8 @@ UnidadeControle CtrlUnit(
 	.USExt(USExt),
 	//Mux
 	.IorD(IorD), 
-	.ALUSrcA(ALUSrcA),
-	.ALUSrcB(ALUSrcB),
+	.ALUSrcA(AluSrcA),
+	.ALUSrcB(AluSrcB),
 	.PCSource(PCSource),
 	.ALUorMem(ALUorMem),
 	.RegDst(RegDst),
@@ -198,7 +204,7 @@ mux_pccond MuxPCCond(
 Registrador PC(
 	.Clk(clock),
 	.Reset(reset),
-	.Load(PCWCtrl),
+	.Load(PCWrite),
 	.Entrada(AorMemOut),
 	.Saida(PCOut)
 );
@@ -318,7 +324,7 @@ Registrador RegisterB(
 	.Saida(RegBOut)
 );
 
-mux_aluSrcA ALUSrcA(
+mux_srcA ALUSrcA(
 	.selector(AluSrcA),
 	.inputA(PCOut),
 	.inputB(MDROut),
@@ -326,7 +332,7 @@ mux_aluSrcA ALUSrcA(
 	.out(AluSrcAOut)
 );
 
-mux_aluSrcB ALUSrcB(
+mux_srcB  ALUSrcB(
 	// 1 e 4 sao retornados pela caixa magica
 	.selector(AluSrcB),
 	.inputA(RegBOut), //000

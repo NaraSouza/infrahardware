@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Proj_Hardware
-Fri May 17 17:29:30 2019
+Fri May 17 19:34:40 2019
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -15,34 +15,37 @@ Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis RAM Summary
   9. State Machine - |VCPU|mult:MULTOp|doing
- 10. Registers Removed During Synthesis
- 11. Removed Registers Triggering Further Register Optimizations
- 12. General Register Statistics
- 13. Multiplexer Restructuring Statistics (Restructuring Performed)
- 14. Source assignments for Memoria:Mem|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
- 15. Source assignments for Memoria:Mem|LPM_RAM_DQ:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
- 16. Source assignments for Memoria:Mem|LPM_RAM_DQ:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
- 17. Source assignments for Memoria:Mem|LPM_RAM_DQ:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
- 18. Parameter Settings for User Entity Instance: UnidadeControle:CtrlUnit
- 19. Parameter Settings for User Entity Instance: Memoria:Mem|LPM_RAM_DQ:MEM
- 20. Parameter Settings for User Entity Instance: Memoria:Mem|LPM_RAM_DQ:MEM_plus_One
- 21. Parameter Settings for User Entity Instance: Memoria:Mem|LPM_RAM_DQ:MEM_plus_Two
- 22. Parameter Settings for User Entity Instance: Memoria:Mem|LPM_RAM_DQ:MEM_plus_Three
- 23. Parameter Settings for User Entity Instance: mult:MULTOp
- 24. Port Connectivity Checks: "mux_2inputs:HIGHMux"
- 25. Port Connectivity Checks: "mux_2inputs:LOWMux"
- 26. Port Connectivity Checks: "mult:MULTOp"
- 27. Port Connectivity Checks: "div:DIVOp"
- 28. Port Connectivity Checks: "mux_2inputs:DR1Mux"
- 29. Port Connectivity Checks: "sign_extend26_32:SE26_32"
- 30. Port Connectivity Checks: "Ula32:ALU"
- 31. Port Connectivity Checks: "mux_BWD:BWDMux"
- 32. Port Connectivity Checks: "mux_2inputs:WriteDataMux"
- 33. Port Connectivity Checks: "mux_iOrD:IorDMux"
- 34. Port Connectivity Checks: "mux_2inputs:ALUorMemMux"
- 35. Port Connectivity Checks: "UnidadeControle:CtrlUnit"
- 36. Analysis & Synthesis Messages
- 37. Analysis & Synthesis Suppressed Messages
+ 10. User-Specified and Inferred Latches
+ 11. Registers Removed During Synthesis
+ 12. Removed Registers Triggering Further Register Optimizations
+ 13. General Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Source assignments for Memoria:Mem|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block|altsyncram_24a1:auto_generated
+ 16. Source assignments for Memoria:Mem|LPM_RAM_DQ:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_24a1:auto_generated
+ 17. Source assignments for Memoria:Mem|LPM_RAM_DQ:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_24a1:auto_generated
+ 18. Source assignments for Memoria:Mem|LPM_RAM_DQ:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_24a1:auto_generated
+ 19. Parameter Settings for User Entity Instance: UnidadeControle:CtrlUnit
+ 20. Parameter Settings for User Entity Instance: Memoria:Mem|LPM_RAM_DQ:MEM
+ 21. Parameter Settings for User Entity Instance: Memoria:Mem|LPM_RAM_DQ:MEM_plus_One
+ 22. Parameter Settings for User Entity Instance: Memoria:Mem|LPM_RAM_DQ:MEM_plus_Two
+ 23. Parameter Settings for User Entity Instance: Memoria:Mem|LPM_RAM_DQ:MEM_plus_Three
+ 24. Parameter Settings for User Entity Instance: mult:MULTOp
+ 25. Port Connectivity Checks: "mux_2inputs:HIGHMux"
+ 26. Port Connectivity Checks: "mux_2inputs:LOWMux"
+ 27. Port Connectivity Checks: "mult:MULTOp"
+ 28. Port Connectivity Checks: "div:DIVOp"
+ 29. Port Connectivity Checks: "mux_2inputs:DR1Mux"
+ 30. Port Connectivity Checks: "sign_extend26_32:SE26_32"
+ 31. Port Connectivity Checks: "Ula32:ALU"
+ 32. Port Connectivity Checks: "mux_srcB:ALUSrcB"
+ 33. Port Connectivity Checks: "mux_BWD:BWDMux"
+ 34. Port Connectivity Checks: "mux_2inputs:WriteDataMux"
+ 35. Port Connectivity Checks: "mux_iOrD:IorDMux"
+ 36. Port Connectivity Checks: "mux_pccond:MuxPCCond"
+ 37. Port Connectivity Checks: "mux_2inputs:ALUorMemMux"
+ 38. Port Connectivity Checks: "UnidadeControle:CtrlUnit"
+ 39. Analysis & Synthesis Messages
+ 40. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -68,16 +71,16 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                 ;
 +-------------------------------+----------------------------------------------+
-; Analysis & Synthesis Status   ; Successful - Fri May 17 17:29:30 2019        ;
+; Analysis & Synthesis Status   ; Successful - Fri May 17 19:34:40 2019        ;
 ; Quartus II Version            ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                 ; Proj_Hardware                                ;
 ; Top-level Entity Name         ; VCPU                                         ;
 ; Family                        ; Stratix II                                   ;
 ; Logic utilization             ; N/A                                          ;
-;     Combinational ALUTs       ; 1,198                                        ;
-;     Dedicated logic registers ; 1,185                                        ;
-; Total registers               ; 1185                                         ;
-; Total pins                    ; 201                                          ;
+;     Combinational ALUTs       ; 1,388                                        ;
+;     Dedicated logic registers ; 1,253                                        ;
+; Total registers               ; 1253                                         ;
+; Total pins                    ; 303                                          ;
 ; Total virtual pins            ; 0                                            ;
 ; Total block memory bits       ; 8,192                                        ;
 ; DSP block 9-bit elements      ; 0                                            ;
@@ -183,43 +186,43 @@ applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                     ;
-+----------------------------------+-----------------+----------------------------------+------------------------------------------------------------------------------------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                        ; File Name with Absolute Path                                                       ;
-+----------------------------------+-----------------+----------------------------------+------------------------------------------------------------------------------------+
-; instrucoes.mif                   ; yes             ; User Memory Initialization File  ; C:/Users/lcsl/Downloads/infrahardware-testes/ProjetoVerilog/instrucoes.mif         ;
-; div.v                            ; yes             ; User Verilog HDL File            ; C:/Users/lcsl/Downloads/infrahardware-testes/ProjetoVerilog/div.v                  ;
-; mult.v                           ; yes             ; User Verilog HDL File            ; C:/Users/lcsl/Downloads/infrahardware-testes/ProjetoVerilog/mult.v                 ;
-; Banco_reg.vhd                    ; yes             ; User VHDL File                   ; C:/Users/lcsl/Downloads/infrahardware-testes/ProjetoVerilog/Banco_reg.vhd          ;
-; Instr_Reg.vhd                    ; yes             ; User VHDL File                   ; C:/Users/lcsl/Downloads/infrahardware-testes/ProjetoVerilog/Instr_Reg.vhd          ;
-; Memoria.vhd                      ; yes             ; User VHDL File                   ; C:/Users/lcsl/Downloads/infrahardware-testes/ProjetoVerilog/Memoria.vhd            ;
-; RegDesloc.vhd                    ; yes             ; User VHDL File                   ; C:/Users/lcsl/Downloads/infrahardware-testes/ProjetoVerilog/RegDesloc.vhd          ;
-; Registrador.vhd                  ; yes             ; User VHDL File                   ; C:/Users/lcsl/Downloads/infrahardware-testes/ProjetoVerilog/Registrador.vhd        ;
-; ula32.vhd                        ; yes             ; User VHDL File                   ; C:/Users/lcsl/Downloads/infrahardware-testes/ProjetoVerilog/ula32.vhd              ;
-; sign_extend.v                    ; yes             ; User Verilog HDL File            ; C:/Users/lcsl/Downloads/infrahardware-testes/ProjetoVerilog/sign_extend.v          ;
-; mux_aluSrcA.v                    ; yes             ; User Verilog HDL File            ; C:/Users/lcsl/Downloads/infrahardware-testes/ProjetoVerilog/mux_aluSrcA.v          ;
-; mux_aluSrcB.v                    ; yes             ; User Verilog HDL File            ; C:/Users/lcsl/Downloads/infrahardware-testes/ProjetoVerilog/mux_aluSrcB.v          ;
-; mux_iOrD.v                       ; yes             ; User Verilog HDL File            ; C:/Users/lcsl/Downloads/infrahardware-testes/ProjetoVerilog/mux_iOrD.v             ;
-; mux_regDst.v                     ; yes             ; User Verilog HDL File            ; C:/Users/lcsl/Downloads/infrahardware-testes/ProjetoVerilog/mux_regDst.v           ;
-; mux_memToReg.v                   ; yes             ; User Verilog HDL File            ; C:/Users/lcsl/Downloads/infrahardware-testes/ProjetoVerilog/mux_memToReg.v         ;
-; mux_pcSrc.v                      ; yes             ; User Verilog HDL File            ; C:/Users/lcsl/Downloads/infrahardware-testes/ProjetoVerilog/mux_pcSrc.v            ;
-; shift_left2.v                    ; yes             ; User Verilog HDL File            ; C:/Users/lcsl/Downloads/infrahardware-testes/ProjetoVerilog/shift_left2.v          ;
-; shift_left16.v                   ; yes             ; User Verilog HDL File            ; C:/Users/lcsl/Downloads/infrahardware-testes/ProjetoVerilog/shift_left16.v         ;
-; shift_leftJump.v                 ; yes             ; User Verilog HDL File            ; C:/Users/lcsl/Downloads/infrahardware-testes/ProjetoVerilog/shift_leftJump.v       ;
-; sign_extend26_32.v               ; yes             ; User Verilog HDL File            ; C:/Users/lcsl/Downloads/infrahardware-testes/ProjetoVerilog/sign_extend26_32.v     ;
-; mux_dr2.v                        ; yes             ; User Verilog HDL File            ; C:/Users/lcsl/Downloads/infrahardware-testes/ProjetoVerilog/mux_dr2.v              ;
-; UnidadeControle.v                ; yes             ; User Verilog HDL File            ; C:/Users/lcsl/Downloads/infrahardware-testes/ProjetoVerilog/UnidadeControle.v      ;
-; VCPU.sv                          ; yes             ; User SystemVerilog HDL File      ; C:/Users/lcsl/Downloads/infrahardware-testes/ProjetoVerilog/VCPU.sv                ;
-; mux_BWD.v                        ; yes             ; User Verilog HDL File            ; C:/Users/lcsl/Downloads/infrahardware-testes/ProjetoVerilog/mux_BWD.v              ;
-; mux_memWD.V                      ; yes             ; User Verilog HDL File            ; C:/Users/lcsl/Downloads/infrahardware-testes/ProjetoVerilog/mux_memWD.V            ;
-; mux_pccond.sv                    ; yes             ; User SystemVerilog HDL File      ; C:/Users/lcsl/Downloads/infrahardware-testes/ProjetoVerilog/mux_pccond.sv          ;
-; mux_2inputs.sv                   ; yes             ; User SystemVerilog HDL File      ; C:/Users/lcsl/Downloads/infrahardware-testes/ProjetoVerilog/mux_2inputs.sv         ;
-; lpm_ram_dq.tdf                   ; yes             ; Megafunction                     ; c:/programfiles/altera/quartus9/quartus/libraries/megafunctions/lpm_ram_dq.tdf     ;
-; altram.tdf                       ; yes             ; Megafunction                     ; c:/programfiles/altera/quartus9/quartus/libraries/megafunctions/altram.tdf         ;
-; altsyncram.tdf                   ; yes             ; Megafunction                     ; c:/programfiles/altera/quartus9/quartus/libraries/megafunctions/altsyncram.tdf     ;
-; db/altsyncram_g2a1.tdf           ; yes             ; Auto-Generated Megafunction      ; C:/Users/lcsl/Downloads/infrahardware-testes/ProjetoVerilog/db/altsyncram_g2a1.tdf ;
-+----------------------------------+-----------------+----------------------------------+------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                 ;
++----------------------------------+-----------------+----------------------------------+--------------------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                        ; File Name with Absolute Path                                                   ;
++----------------------------------+-----------------+----------------------------------+--------------------------------------------------------------------------------+
+; instrucoes2.mif                  ; yes             ; User Memory Initialization File  ; C:/Users/lcsl/Downloads/infrahardware/ProjetoVerilog/instrucoes2.mif           ;
+; div.v                            ; yes             ; User Verilog HDL File            ; C:/Users/lcsl/Downloads/infrahardware/ProjetoVerilog/div.v                     ;
+; mult.v                           ; yes             ; User Verilog HDL File            ; C:/Users/lcsl/Downloads/infrahardware/ProjetoVerilog/mult.v                    ;
+; Banco_reg.vhd                    ; yes             ; User VHDL File                   ; C:/Users/lcsl/Downloads/infrahardware/ProjetoVerilog/Banco_reg.vhd             ;
+; Instr_Reg.vhd                    ; yes             ; User VHDL File                   ; C:/Users/lcsl/Downloads/infrahardware/ProjetoVerilog/Instr_Reg.vhd             ;
+; Memoria.vhd                      ; yes             ; User VHDL File                   ; C:/Users/lcsl/Downloads/infrahardware/ProjetoVerilog/Memoria.vhd               ;
+; RegDesloc.vhd                    ; yes             ; User VHDL File                   ; C:/Users/lcsl/Downloads/infrahardware/ProjetoVerilog/RegDesloc.vhd             ;
+; Registrador.vhd                  ; yes             ; User VHDL File                   ; C:/Users/lcsl/Downloads/infrahardware/ProjetoVerilog/Registrador.vhd           ;
+; ula32.vhd                        ; yes             ; User VHDL File                   ; C:/Users/lcsl/Downloads/infrahardware/ProjetoVerilog/ula32.vhd                 ;
+; sign_extend.v                    ; yes             ; User Verilog HDL File            ; C:/Users/lcsl/Downloads/infrahardware/ProjetoVerilog/sign_extend.v             ;
+; mux_iOrD.v                       ; yes             ; User Verilog HDL File            ; C:/Users/lcsl/Downloads/infrahardware/ProjetoVerilog/mux_iOrD.v                ;
+; mux_regDst.v                     ; yes             ; User Verilog HDL File            ; C:/Users/lcsl/Downloads/infrahardware/ProjetoVerilog/mux_regDst.v              ;
+; mux_memToReg.v                   ; yes             ; User Verilog HDL File            ; C:/Users/lcsl/Downloads/infrahardware/ProjetoVerilog/mux_memToReg.v            ;
+; mux_pcSrc.v                      ; yes             ; User Verilog HDL File            ; C:/Users/lcsl/Downloads/infrahardware/ProjetoVerilog/mux_pcSrc.v               ;
+; shift_left2.v                    ; yes             ; User Verilog HDL File            ; C:/Users/lcsl/Downloads/infrahardware/ProjetoVerilog/shift_left2.v             ;
+; shift_left16.v                   ; yes             ; User Verilog HDL File            ; C:/Users/lcsl/Downloads/infrahardware/ProjetoVerilog/shift_left16.v            ;
+; shift_leftJump.v                 ; yes             ; User Verilog HDL File            ; C:/Users/lcsl/Downloads/infrahardware/ProjetoVerilog/shift_leftJump.v          ;
+; sign_extend26_32.v               ; yes             ; User Verilog HDL File            ; C:/Users/lcsl/Downloads/infrahardware/ProjetoVerilog/sign_extend26_32.v        ;
+; mux_dr2.v                        ; yes             ; User Verilog HDL File            ; C:/Users/lcsl/Downloads/infrahardware/ProjetoVerilog/mux_dr2.v                 ;
+; UnidadeControle.v                ; yes             ; User Verilog HDL File            ; C:/Users/lcsl/Downloads/infrahardware/ProjetoVerilog/UnidadeControle.v         ;
+; VCPU.sv                          ; yes             ; User SystemVerilog HDL File      ; C:/Users/lcsl/Downloads/infrahardware/ProjetoVerilog/VCPU.sv                   ;
+; mux_BWD.v                        ; yes             ; User Verilog HDL File            ; C:/Users/lcsl/Downloads/infrahardware/ProjetoVerilog/mux_BWD.v                 ;
+; mux_memWD.V                      ; yes             ; User Verilog HDL File            ; C:/Users/lcsl/Downloads/infrahardware/ProjetoVerilog/mux_memWD.V               ;
+; mux_pccond.sv                    ; yes             ; User SystemVerilog HDL File      ; C:/Users/lcsl/Downloads/infrahardware/ProjetoVerilog/mux_pccond.sv             ;
+; mux_2inputs.sv                   ; yes             ; User SystemVerilog HDL File      ; C:/Users/lcsl/Downloads/infrahardware/ProjetoVerilog/mux_2inputs.sv            ;
+; mux_srcB.sv                      ; yes             ; User SystemVerilog HDL File      ; C:/Users/lcsl/Downloads/infrahardware/ProjetoVerilog/mux_srcB.sv               ;
+; mux_srcA.sv                      ; yes             ; User SystemVerilog HDL File      ; C:/Users/lcsl/Downloads/infrahardware/ProjetoVerilog/mux_srcA.sv               ;
+; lpm_ram_dq.tdf                   ; yes             ; Megafunction                     ; c:/programfiles/altera/quartus9/quartus/libraries/megafunctions/lpm_ram_dq.tdf ;
+; altram.tdf                       ; yes             ; Megafunction                     ; c:/programfiles/altera/quartus9/quartus/libraries/megafunctions/altram.tdf     ;
+; altsyncram.tdf                   ; yes             ; Megafunction                     ; c:/programfiles/altera/quartus9/quartus/libraries/megafunctions/altsyncram.tdf ;
+; db/altsyncram_24a1.tdf           ; yes             ; Auto-Generated Megafunction      ; C:/Users/lcsl/Downloads/infrahardware/ProjetoVerilog/db/altsyncram_24a1.tdf    ;
++----------------------------------+-----------------+----------------------------------+--------------------------------------------------------------------------------+
 
 
 +-------------------------------------------------------+
@@ -227,39 +230,39 @@ applicable agreement for further details.
 +-----------------------------------------------+-------+
 ; Resource                                      ; Usage ;
 +-----------------------------------------------+-------+
-; Estimated ALUTs Used                          ; 1198  ;
-; Dedicated logic registers                     ; 1185  ;
+; Estimated ALUTs Used                          ; 1388  ;
+; Dedicated logic registers                     ; 1253  ;
 ;                                               ;       ;
-; Estimated ALUTs Unavailable                   ; 92    ;
+; Estimated ALUTs Unavailable                   ; 130   ;
 ;                                               ;       ;
-; Total combinational functions                 ; 1198  ;
+; Total combinational functions                 ; 1388  ;
 ; Combinational ALUT usage by number of inputs  ;       ;
-;     -- 7 input functions                      ; 4     ;
-;     -- 6 input functions                      ; 792   ;
-;     -- 5 input functions                      ; 163   ;
-;     -- 4 input functions                      ; 98    ;
-;     -- <=3 input functions                    ; 141   ;
+;     -- 7 input functions                      ; 13    ;
+;     -- 6 input functions                      ; 821   ;
+;     -- 5 input functions                      ; 202   ;
+;     -- 4 input functions                      ; 112   ;
+;     -- <=3 input functions                    ; 240   ;
 ;                                               ;       ;
 ; Combinational ALUTs by mode                   ;       ;
-;     -- normal mode                            ; 1171  ;
-;     -- extended LUT mode                      ; 4     ;
+;     -- normal mode                            ; 1352  ;
+;     -- extended LUT mode                      ; 13    ;
 ;     -- arithmetic mode                        ; 23    ;
 ;     -- shared arithmetic mode                 ; 0     ;
 ;                                               ;       ;
-; Estimated ALUT/register pairs used            ; 2230  ;
+; Estimated ALUT/register pairs used            ; 2427  ;
 ;                                               ;       ;
-; Total registers                               ; 1185  ;
-;     -- Dedicated logic registers              ; 1185  ;
+; Total registers                               ; 1253  ;
+;     -- Dedicated logic registers              ; 1253  ;
 ;     -- I/O registers                          ; 0     ;
 ;                                               ;       ;
-; Estimated ALMs:  partially or completely used ; 1,115 ;
+; Estimated ALMs:  partially or completely used ; 1,214 ;
 ;                                               ;       ;
-; I/O pins                                      ; 201   ;
+; I/O pins                                      ; 303   ;
 ; Total block memory bits                       ; 8192  ;
 ; Maximum fan-out node                          ; clock ;
-; Maximum fan-out                               ; 1217  ;
-; Total fan-out                                 ; 11666 ;
-; Average fan-out                               ; 4.46  ;
+; Maximum fan-out                               ; 1285  ;
+; Total fan-out                                 ; 12820 ;
+; Average fan-out                               ; 4.31  ;
 +-----------------------------------------------+-------+
 
 
@@ -268,50 +271,53 @@ applicable agreement for further details.
 +-------------------------------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                      ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                         ; Library Name ;
 +-------------------------------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------+--------------+
-; |VCPU                                           ; 1198 (2)          ; 1185 (0)     ; 8192              ; 0            ; 0       ; 0         ; 0         ; 201  ; 0            ; |VCPU                                                                                                       ; work         ;
+; |VCPU                                           ; 1388 (1)          ; 1253 (0)     ; 8192              ; 0            ; 0       ; 0         ; 0         ; 303  ; 0            ; |VCPU                                                                                                       ; work         ;
 ;    |Banco_reg:registers|                        ; 736 (736)         ; 1024 (1024)  ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Banco_reg:registers                                                                                   ; work         ;
 ;    |Instr_Reg:IR|                               ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Instr_Reg:IR                                                                                          ; work         ;
 ;    |Memoria:Mem|                                ; 23 (23)           ; 0 (0)        ; 8192              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Memoria:Mem                                                                                           ; work         ;
 ;       |lpm_ram_dq:MEM_plus_One|                 ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Memoria:Mem|lpm_ram_dq:MEM_plus_One                                                                   ; work         ;
 ;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Memoria:Mem|lpm_ram_dq:MEM_plus_One|altram:sram                                                       ; work         ;
 ;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Memoria:Mem|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block                                  ;              ;
-;                |altsyncram_g2a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Memoria:Mem|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated   ;              ;
+;                |altsyncram_24a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Memoria:Mem|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_24a1:auto_generated   ;              ;
 ;       |lpm_ram_dq:MEM_plus_Three|               ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Memoria:Mem|lpm_ram_dq:MEM_plus_Three                                                                 ;              ;
 ;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Memoria:Mem|lpm_ram_dq:MEM_plus_Three|altram:sram                                                     ;              ;
 ;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Memoria:Mem|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block                                ; work         ;
-;                |altsyncram_g2a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Memoria:Mem|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated ; work         ;
+;                |altsyncram_24a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Memoria:Mem|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_24a1:auto_generated ; work         ;
 ;       |lpm_ram_dq:MEM_plus_Two|                 ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Memoria:Mem|lpm_ram_dq:MEM_plus_Two                                                                   ;              ;
 ;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Memoria:Mem|lpm_ram_dq:MEM_plus_Two|altram:sram                                                       ;              ;
 ;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Memoria:Mem|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block                                  ;              ;
-;                |altsyncram_g2a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Memoria:Mem|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated   ;              ;
+;                |altsyncram_24a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Memoria:Mem|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_24a1:auto_generated   ;              ;
 ;       |lpm_ram_dq:MEM|                          ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Memoria:Mem|lpm_ram_dq:MEM                                                                            ; work         ;
 ;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Memoria:Mem|lpm_ram_dq:MEM|altram:sram                                                                ; work         ;
 ;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Memoria:Mem|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block                                           ; work         ;
-;                |altsyncram_g2a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Memoria:Mem|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated            ; work         ;
+;                |altsyncram_24a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Memoria:Mem|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_24a1:auto_generated            ; work         ;
 ;    |Registrador:ALUOutReg|                      ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Registrador:ALUOutReg                                                                                 ; work         ;
 ;    |Registrador:MDR|                            ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Registrador:MDR                                                                                       ; work         ;
 ;    |Registrador:PC|                             ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Registrador:PC                                                                                        ; work         ;
-;    |Ula32:ALU|                                  ; 147 (147)         ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Ula32:ALU                                                                                             ; work         ;
-;    |UnidadeControle:CtrlUnit|                   ; 140 (140)         ; 33 (33)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|UnidadeControle:CtrlUnit                                                                              ;              ;
+;    |Registrador:RegisterA|                      ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Registrador:RegisterA                                                                                 ; work         ;
+;    |Registrador:RegisterB|                      ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Registrador:RegisterB                                                                                 ; work         ;
+;    |Ula32:ALU|                                  ; 170 (170)         ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Ula32:ALU                                                                                             ; work         ;
+;    |UnidadeControle:CtrlUnit|                   ; 177 (177)         ; 37 (37)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|UnidadeControle:CtrlUnit                                                                              ;              ;
 ;    |mux_iOrD:IorDMux|                           ; 8 (8)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|mux_iOrD:IorDMux                                                                                      ; work         ;
 ;    |mux_memToReg:MemToRegMux|                   ; 84 (84)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|mux_memToReg:MemToRegMux                                                                              ; work         ;
 ;    |mux_pcSrc:pcSrcMux|                         ; 52 (52)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|mux_pcSrc:pcSrcMux                                                                                    ; work         ;
 ;    |mux_regDst:RegDSTMux|                       ; 5 (5)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|mux_regDst:RegDSTMux                                                                                  ; work         ;
-;    |sign_extend:USExtMux|                       ; 1 (1)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|sign_extend:USExtMux                                                                                  ; work         ;
+;    |mux_srcA:ALUSrcA|                           ; 65 (65)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|mux_srcA:ALUSrcA                                                                                      ; work         ;
+;    |mux_srcB:ALUSrcB|                           ; 67 (67)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|mux_srcB:ALUSrcB                                                                                      ; work         ;
 +-------------------------------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                                                                          ;
-+------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+----------------+
-; Name                                                                                                             ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF            ;
-+------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+----------------+
-; Memoria:Mem|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|ALTSYNCRAM   ; AUTO ; Single Port ; 256          ; 8            ; --           ; --           ; 2048 ; instrucoes.mif ;
-; Memoria:Mem|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 256          ; 8            ; --           ; --           ; 2048 ; instrucoes.mif ;
-; Memoria:Mem|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|ALTSYNCRAM   ; AUTO ; Single Port ; 256          ; 8            ; --           ; --           ; 2048 ; instrucoes.mif ;
-; Memoria:Mem|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|ALTSYNCRAM            ; AUTO ; Single Port ; 256          ; 8            ; --           ; --           ; 2048 ; instrucoes.mif ;
-+------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+----------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                           ;
++------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+-----------------+
+; Name                                                                                                             ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF             ;
++------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+-----------------+
+; Memoria:Mem|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_24a1:auto_generated|ALTSYNCRAM   ; AUTO ; Single Port ; 256          ; 8            ; --           ; --           ; 2048 ; instrucoes2.mif ;
+; Memoria:Mem|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_24a1:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 256          ; 8            ; --           ; --           ; 2048 ; instrucoes2.mif ;
+; Memoria:Mem|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_24a1:auto_generated|ALTSYNCRAM   ; AUTO ; Single Port ; 256          ; 8            ; --           ; --           ; 2048 ; instrucoes2.mif ;
+; Memoria:Mem|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_24a1:auto_generated|ALTSYNCRAM            ; AUTO ; Single Port ; 256          ; 8            ; --           ; --           ; 2048 ; instrucoes2.mif ;
++------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+-----------------+
 
 
 Encoding Type:  One-Hot
@@ -324,6 +330,80 @@ Encoding Type:  One-Hot
 ; doing.01 ; 1        ; 0        ; 1        ;
 ; doing.10 ; 1        ; 1        ; 0        ;
 +----------+----------+----------+----------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                   ;
++-----------------------------------------------------+------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal    ; Free of Timing Hazards ;
++-----------------------------------------------------+------------------------+------------------------+
+; mux_srcA:ALUSrcA|out[0]                             ; mux_srcA:ALUSrcA|Mux32 ; yes                    ;
+; mux_srcA:ALUSrcA|out[1]                             ; mux_srcA:ALUSrcA|Mux32 ; yes                    ;
+; mux_srcA:ALUSrcA|out[2]                             ; mux_srcA:ALUSrcA|Mux32 ; yes                    ;
+; mux_srcA:ALUSrcA|out[3]                             ; mux_srcA:ALUSrcA|Mux32 ; yes                    ;
+; mux_srcA:ALUSrcA|out[4]                             ; mux_srcA:ALUSrcA|Mux32 ; yes                    ;
+; mux_srcA:ALUSrcA|out[5]                             ; mux_srcA:ALUSrcA|Mux32 ; yes                    ;
+; mux_srcA:ALUSrcA|out[6]                             ; mux_srcA:ALUSrcA|Mux32 ; yes                    ;
+; mux_srcA:ALUSrcA|out[7]                             ; mux_srcA:ALUSrcA|Mux32 ; yes                    ;
+; mux_srcA:ALUSrcA|out[8]                             ; mux_srcA:ALUSrcA|Mux32 ; yes                    ;
+; mux_srcA:ALUSrcA|out[9]                             ; mux_srcA:ALUSrcA|Mux32 ; yes                    ;
+; mux_srcA:ALUSrcA|out[10]                            ; mux_srcA:ALUSrcA|Mux32 ; yes                    ;
+; mux_srcA:ALUSrcA|out[11]                            ; mux_srcA:ALUSrcA|Mux32 ; yes                    ;
+; mux_srcA:ALUSrcA|out[12]                            ; mux_srcA:ALUSrcA|Mux32 ; yes                    ;
+; mux_srcA:ALUSrcA|out[13]                            ; mux_srcA:ALUSrcA|Mux32 ; yes                    ;
+; mux_srcA:ALUSrcA|out[14]                            ; mux_srcA:ALUSrcA|Mux32 ; yes                    ;
+; mux_srcA:ALUSrcA|out[15]                            ; mux_srcA:ALUSrcA|Mux32 ; yes                    ;
+; mux_srcA:ALUSrcA|out[16]                            ; mux_srcA:ALUSrcA|Mux32 ; yes                    ;
+; mux_srcA:ALUSrcA|out[17]                            ; mux_srcA:ALUSrcA|Mux32 ; yes                    ;
+; mux_srcA:ALUSrcA|out[18]                            ; mux_srcA:ALUSrcA|Mux32 ; yes                    ;
+; mux_srcA:ALUSrcA|out[19]                            ; mux_srcA:ALUSrcA|Mux32 ; yes                    ;
+; mux_srcA:ALUSrcA|out[20]                            ; mux_srcA:ALUSrcA|Mux32 ; yes                    ;
+; mux_srcA:ALUSrcA|out[21]                            ; mux_srcA:ALUSrcA|Mux32 ; yes                    ;
+; mux_srcA:ALUSrcA|out[22]                            ; mux_srcA:ALUSrcA|Mux32 ; yes                    ;
+; mux_srcA:ALUSrcA|out[23]                            ; mux_srcA:ALUSrcA|Mux32 ; yes                    ;
+; mux_srcA:ALUSrcA|out[24]                            ; mux_srcA:ALUSrcA|Mux32 ; yes                    ;
+; mux_srcA:ALUSrcA|out[25]                            ; mux_srcA:ALUSrcA|Mux32 ; yes                    ;
+; mux_srcA:ALUSrcA|out[26]                            ; mux_srcA:ALUSrcA|Mux32 ; yes                    ;
+; mux_srcA:ALUSrcA|out[27]                            ; mux_srcA:ALUSrcA|Mux32 ; yes                    ;
+; mux_srcA:ALUSrcA|out[28]                            ; mux_srcA:ALUSrcA|Mux32 ; yes                    ;
+; mux_srcA:ALUSrcA|out[29]                            ; mux_srcA:ALUSrcA|Mux32 ; yes                    ;
+; mux_srcA:ALUSrcA|out[30]                            ; mux_srcA:ALUSrcA|Mux32 ; yes                    ;
+; mux_srcA:ALUSrcA|out[31]                            ; mux_srcA:ALUSrcA|Mux32 ; yes                    ;
+; mux_srcB:ALUSrcB|out[0]                             ; mux_srcB:ALUSrcB|Mux32 ; yes                    ;
+; mux_srcB:ALUSrcB|out[1]                             ; mux_srcB:ALUSrcB|Mux32 ; yes                    ;
+; mux_srcB:ALUSrcB|out[2]                             ; mux_srcB:ALUSrcB|Mux32 ; yes                    ;
+; mux_srcB:ALUSrcB|out[3]                             ; mux_srcB:ALUSrcB|Mux32 ; yes                    ;
+; mux_srcB:ALUSrcB|out[4]                             ; mux_srcB:ALUSrcB|Mux32 ; yes                    ;
+; mux_srcB:ALUSrcB|out[5]                             ; mux_srcB:ALUSrcB|Mux32 ; yes                    ;
+; mux_srcB:ALUSrcB|out[6]                             ; mux_srcB:ALUSrcB|Mux32 ; yes                    ;
+; mux_srcB:ALUSrcB|out[7]                             ; mux_srcB:ALUSrcB|Mux32 ; yes                    ;
+; mux_srcB:ALUSrcB|out[8]                             ; mux_srcB:ALUSrcB|Mux32 ; yes                    ;
+; mux_srcB:ALUSrcB|out[9]                             ; mux_srcB:ALUSrcB|Mux32 ; yes                    ;
+; mux_srcB:ALUSrcB|out[10]                            ; mux_srcB:ALUSrcB|Mux32 ; yes                    ;
+; mux_srcB:ALUSrcB|out[11]                            ; mux_srcB:ALUSrcB|Mux32 ; yes                    ;
+; mux_srcB:ALUSrcB|out[12]                            ; mux_srcB:ALUSrcB|Mux32 ; yes                    ;
+; mux_srcB:ALUSrcB|out[13]                            ; mux_srcB:ALUSrcB|Mux32 ; yes                    ;
+; mux_srcB:ALUSrcB|out[14]                            ; mux_srcB:ALUSrcB|Mux32 ; yes                    ;
+; mux_srcB:ALUSrcB|out[15]                            ; mux_srcB:ALUSrcB|Mux32 ; yes                    ;
+; mux_srcB:ALUSrcB|out[16]                            ; mux_srcB:ALUSrcB|Mux32 ; yes                    ;
+; mux_srcB:ALUSrcB|out[17]                            ; mux_srcB:ALUSrcB|Mux32 ; yes                    ;
+; mux_srcB:ALUSrcB|out[18]                            ; mux_srcB:ALUSrcB|Mux32 ; yes                    ;
+; mux_srcB:ALUSrcB|out[19]                            ; mux_srcB:ALUSrcB|Mux32 ; yes                    ;
+; mux_srcB:ALUSrcB|out[20]                            ; mux_srcB:ALUSrcB|Mux32 ; yes                    ;
+; mux_srcB:ALUSrcB|out[21]                            ; mux_srcB:ALUSrcB|Mux32 ; yes                    ;
+; mux_srcB:ALUSrcB|out[22]                            ; mux_srcB:ALUSrcB|Mux32 ; yes                    ;
+; mux_srcB:ALUSrcB|out[23]                            ; mux_srcB:ALUSrcB|Mux32 ; yes                    ;
+; mux_srcB:ALUSrcB|out[24]                            ; mux_srcB:ALUSrcB|Mux32 ; yes                    ;
+; mux_srcB:ALUSrcB|out[25]                            ; mux_srcB:ALUSrcB|Mux32 ; yes                    ;
+; mux_srcB:ALUSrcB|out[26]                            ; mux_srcB:ALUSrcB|Mux32 ; yes                    ;
+; mux_srcB:ALUSrcB|out[27]                            ; mux_srcB:ALUSrcB|Mux32 ; yes                    ;
+; mux_srcB:ALUSrcB|out[28]                            ; mux_srcB:ALUSrcB|Mux32 ; yes                    ;
+; mux_srcB:ALUSrcB|out[29]                            ; mux_srcB:ALUSrcB|Mux32 ; yes                    ;
+; mux_srcB:ALUSrcB|out[30]                            ; mux_srcB:ALUSrcB|Mux32 ; yes                    ;
+; mux_srcB:ALUSrcB|out[31]                            ; mux_srcB:ALUSrcB|Mux32 ; yes                    ;
+; Number of user-specified and inferred latches = 64  ;                        ;                        ;
++-----------------------------------------------------+------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
 +---------------------------------------------------------------------------------------+
@@ -348,159 +428,153 @@ Encoding Type:  One-Hot
 ; div:DIVOp|B[0..63]                      ; Lost fanout                                 ;
 ; div:DIVOp|RESTO[0..63]                  ; Lost fanout                                 ;
 ; div:DIVOp|DivFim                        ; Lost fanout                                 ;
-; Registrador:RegisterB|Saida[0..31]      ; Lost fanout                                 ;
-; Registrador:RegisterA|Saida[0..31]      ; Lost fanout                                 ;
 ; UnidadeControle:CtrlUnit|BWD[0..1]      ; Lost fanout                                 ;
 ; UnidadeControle:CtrlUnit|DR1            ; Lost fanout                                 ;
 ; UnidadeControle:CtrlUnit|DR2            ; Lost fanout                                 ;
-; UnidadeControle:CtrlUnit|AWrite         ; Lost fanout                                 ;
-; UnidadeControle:CtrlUnit|BWrite         ; Lost fanout                                 ;
-; UnidadeControle:CtrlUnit|PCWriteCond    ; Stuck at VCC due to stuck port data_in      ;
 ; RegDesloc:DesReg|temp[0..30]            ; Merged with RegDesloc:DesReg|temp[31]       ;
 ; RegDesloc:DesReg|temp[31]               ; Stuck at GND due to stuck port data_in      ;
+; UnidadeControle:CtrlUnit|BWrite         ; Merged with UnidadeControle:CtrlUnit|AWrite ;
 ; mult:MULTOp|doing.01                    ; Lost fanout                                 ;
 ; mult:MULTOp|doing.10                    ; Lost fanout                                 ;
 ; mult:MULTOp|doing.00                    ; Lost fanout                                 ;
-; Total Number of Removed Registers = 579 ;                                             ;
+; Total Number of Removed Registers = 513 ;                                             ;
 +-----------------------------------------+---------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                               ;
-+---------------------------------+--------------------------------+----------------------------------------+
-; Register name                   ; Reason for Removal             ; Registers Removed due to This Register ;
-+---------------------------------+--------------------------------+----------------------------------------+
-; Registrador:LOW|Saida[31]       ; Stuck at GND                   ; mult:MULTOp|lo[31], div:DIVOp|Lo[31]   ;
-;                                 ; due to stuck port clock_enable ;                                        ;
-; Registrador:LOW|Saida[30]       ; Stuck at GND                   ; mult:MULTOp|lo[30], div:DIVOp|Lo[30]   ;
-;                                 ; due to stuck port clock_enable ;                                        ;
-; Registrador:LOW|Saida[29]       ; Stuck at GND                   ; mult:MULTOp|lo[29], div:DIVOp|Lo[29]   ;
-;                                 ; due to stuck port clock_enable ;                                        ;
-; Registrador:LOW|Saida[28]       ; Stuck at GND                   ; mult:MULTOp|lo[28], div:DIVOp|Lo[28]   ;
-;                                 ; due to stuck port clock_enable ;                                        ;
-; Registrador:LOW|Saida[27]       ; Stuck at GND                   ; mult:MULTOp|lo[27], div:DIVOp|Lo[27]   ;
-;                                 ; due to stuck port clock_enable ;                                        ;
-; Registrador:LOW|Saida[26]       ; Stuck at GND                   ; mult:MULTOp|lo[26], div:DIVOp|Lo[26]   ;
-;                                 ; due to stuck port clock_enable ;                                        ;
-; Registrador:LOW|Saida[25]       ; Stuck at GND                   ; mult:MULTOp|lo[25], div:DIVOp|Lo[25]   ;
-;                                 ; due to stuck port clock_enable ;                                        ;
-; Registrador:LOW|Saida[24]       ; Stuck at GND                   ; mult:MULTOp|lo[24], div:DIVOp|Lo[24]   ;
-;                                 ; due to stuck port clock_enable ;                                        ;
-; Registrador:LOW|Saida[23]       ; Stuck at GND                   ; mult:MULTOp|lo[23], div:DIVOp|Lo[23]   ;
-;                                 ; due to stuck port clock_enable ;                                        ;
-; Registrador:LOW|Saida[22]       ; Stuck at GND                   ; mult:MULTOp|lo[22], div:DIVOp|Lo[22]   ;
-;                                 ; due to stuck port clock_enable ;                                        ;
-; Registrador:LOW|Saida[21]       ; Stuck at GND                   ; mult:MULTOp|lo[21], div:DIVOp|Lo[21]   ;
-;                                 ; due to stuck port clock_enable ;                                        ;
-; Registrador:LOW|Saida[20]       ; Stuck at GND                   ; mult:MULTOp|lo[20], div:DIVOp|Lo[20]   ;
-;                                 ; due to stuck port clock_enable ;                                        ;
-; Registrador:LOW|Saida[19]       ; Stuck at GND                   ; mult:MULTOp|lo[19], div:DIVOp|Lo[19]   ;
-;                                 ; due to stuck port clock_enable ;                                        ;
-; Registrador:LOW|Saida[18]       ; Stuck at GND                   ; mult:MULTOp|lo[18], div:DIVOp|Lo[18]   ;
-;                                 ; due to stuck port clock_enable ;                                        ;
-; Registrador:LOW|Saida[17]       ; Stuck at GND                   ; mult:MULTOp|lo[17], div:DIVOp|Lo[17]   ;
-;                                 ; due to stuck port clock_enable ;                                        ;
-; Registrador:LOW|Saida[16]       ; Stuck at GND                   ; mult:MULTOp|lo[16], div:DIVOp|Lo[16]   ;
-;                                 ; due to stuck port clock_enable ;                                        ;
-; Registrador:LOW|Saida[15]       ; Stuck at GND                   ; mult:MULTOp|lo[15], div:DIVOp|Lo[15]   ;
-;                                 ; due to stuck port clock_enable ;                                        ;
-; Registrador:LOW|Saida[14]       ; Stuck at GND                   ; mult:MULTOp|lo[14], div:DIVOp|Lo[14]   ;
-;                                 ; due to stuck port clock_enable ;                                        ;
-; Registrador:LOW|Saida[13]       ; Stuck at GND                   ; mult:MULTOp|lo[13], div:DIVOp|Lo[13]   ;
-;                                 ; due to stuck port clock_enable ;                                        ;
-; Registrador:LOW|Saida[12]       ; Stuck at GND                   ; mult:MULTOp|lo[12], div:DIVOp|Lo[12]   ;
-;                                 ; due to stuck port clock_enable ;                                        ;
-; Registrador:LOW|Saida[11]       ; Stuck at GND                   ; mult:MULTOp|lo[11], div:DIVOp|Lo[11]   ;
-;                                 ; due to stuck port clock_enable ;                                        ;
-; Registrador:LOW|Saida[10]       ; Stuck at GND                   ; mult:MULTOp|lo[10], div:DIVOp|Lo[10]   ;
-;                                 ; due to stuck port clock_enable ;                                        ;
-; Registrador:LOW|Saida[9]        ; Stuck at GND                   ; mult:MULTOp|lo[9], div:DIVOp|Lo[9]     ;
-;                                 ; due to stuck port clock_enable ;                                        ;
-; Registrador:LOW|Saida[8]        ; Stuck at GND                   ; mult:MULTOp|lo[8], div:DIVOp|Lo[8]     ;
-;                                 ; due to stuck port clock_enable ;                                        ;
-; Registrador:LOW|Saida[7]        ; Stuck at GND                   ; mult:MULTOp|lo[7], div:DIVOp|Lo[7]     ;
-;                                 ; due to stuck port clock_enable ;                                        ;
-; Registrador:LOW|Saida[6]        ; Stuck at GND                   ; mult:MULTOp|lo[6], div:DIVOp|Lo[6]     ;
-;                                 ; due to stuck port clock_enable ;                                        ;
-; Registrador:LOW|Saida[5]        ; Stuck at GND                   ; mult:MULTOp|lo[5], div:DIVOp|Lo[5]     ;
-;                                 ; due to stuck port clock_enable ;                                        ;
-; Registrador:LOW|Saida[4]        ; Stuck at GND                   ; mult:MULTOp|lo[4], div:DIVOp|Lo[4]     ;
-;                                 ; due to stuck port clock_enable ;                                        ;
-; Registrador:LOW|Saida[3]        ; Stuck at GND                   ; mult:MULTOp|lo[3], div:DIVOp|Lo[3]     ;
-;                                 ; due to stuck port clock_enable ;                                        ;
-; Registrador:LOW|Saida[2]        ; Stuck at GND                   ; mult:MULTOp|lo[2], div:DIVOp|Lo[2]     ;
-;                                 ; due to stuck port clock_enable ;                                        ;
-; Registrador:LOW|Saida[1]        ; Stuck at GND                   ; mult:MULTOp|lo[1], div:DIVOp|Lo[1]     ;
-;                                 ; due to stuck port clock_enable ;                                        ;
-; Registrador:LOW|Saida[0]        ; Stuck at GND                   ; mult:MULTOp|lo[0], div:DIVOp|Lo[0]     ;
-;                                 ; due to stuck port clock_enable ;                                        ;
-; Registrador:HIGH|Saida[31]      ; Stuck at GND                   ; mult:MULTOp|hi[31]                     ;
-;                                 ; due to stuck port clock_enable ;                                        ;
-; Registrador:HIGH|Saida[30]      ; Stuck at GND                   ; mult:MULTOp|hi[30]                     ;
-;                                 ; due to stuck port clock_enable ;                                        ;
-; Registrador:HIGH|Saida[29]      ; Stuck at GND                   ; mult:MULTOp|hi[29]                     ;
-;                                 ; due to stuck port clock_enable ;                                        ;
-; Registrador:HIGH|Saida[28]      ; Stuck at GND                   ; mult:MULTOp|hi[28]                     ;
-;                                 ; due to stuck port clock_enable ;                                        ;
-; Registrador:HIGH|Saida[27]      ; Stuck at GND                   ; mult:MULTOp|hi[27]                     ;
-;                                 ; due to stuck port clock_enable ;                                        ;
-; Registrador:HIGH|Saida[26]      ; Stuck at GND                   ; mult:MULTOp|hi[26]                     ;
-;                                 ; due to stuck port clock_enable ;                                        ;
-; Registrador:HIGH|Saida[25]      ; Stuck at GND                   ; mult:MULTOp|hi[25]                     ;
-;                                 ; due to stuck port clock_enable ;                                        ;
-; Registrador:HIGH|Saida[24]      ; Stuck at GND                   ; mult:MULTOp|hi[24]                     ;
-;                                 ; due to stuck port clock_enable ;                                        ;
-; Registrador:HIGH|Saida[23]      ; Stuck at GND                   ; mult:MULTOp|hi[23]                     ;
-;                                 ; due to stuck port clock_enable ;                                        ;
-; Registrador:HIGH|Saida[22]      ; Stuck at GND                   ; mult:MULTOp|hi[22]                     ;
-;                                 ; due to stuck port clock_enable ;                                        ;
-; Registrador:HIGH|Saida[21]      ; Stuck at GND                   ; mult:MULTOp|hi[21]                     ;
-;                                 ; due to stuck port clock_enable ;                                        ;
-; Registrador:HIGH|Saida[20]      ; Stuck at GND                   ; mult:MULTOp|hi[20]                     ;
-;                                 ; due to stuck port clock_enable ;                                        ;
-; Registrador:HIGH|Saida[19]      ; Stuck at GND                   ; mult:MULTOp|hi[19]                     ;
-;                                 ; due to stuck port clock_enable ;                                        ;
-; Registrador:HIGH|Saida[18]      ; Stuck at GND                   ; mult:MULTOp|hi[18]                     ;
-;                                 ; due to stuck port clock_enable ;                                        ;
-; Registrador:HIGH|Saida[17]      ; Stuck at GND                   ; mult:MULTOp|hi[17]                     ;
-;                                 ; due to stuck port clock_enable ;                                        ;
-; Registrador:HIGH|Saida[16]      ; Stuck at GND                   ; mult:MULTOp|hi[16]                     ;
-;                                 ; due to stuck port clock_enable ;                                        ;
-; Registrador:HIGH|Saida[15]      ; Stuck at GND                   ; mult:MULTOp|hi[15]                     ;
-;                                 ; due to stuck port clock_enable ;                                        ;
-; Registrador:HIGH|Saida[14]      ; Stuck at GND                   ; mult:MULTOp|hi[14]                     ;
-;                                 ; due to stuck port clock_enable ;                                        ;
-; Registrador:HIGH|Saida[13]      ; Stuck at GND                   ; mult:MULTOp|hi[13]                     ;
-;                                 ; due to stuck port clock_enable ;                                        ;
-; Registrador:HIGH|Saida[12]      ; Stuck at GND                   ; mult:MULTOp|hi[12]                     ;
-;                                 ; due to stuck port clock_enable ;                                        ;
-; Registrador:HIGH|Saida[11]      ; Stuck at GND                   ; mult:MULTOp|hi[11]                     ;
-;                                 ; due to stuck port clock_enable ;                                        ;
-; Registrador:HIGH|Saida[10]      ; Stuck at GND                   ; mult:MULTOp|hi[10]                     ;
-;                                 ; due to stuck port clock_enable ;                                        ;
-; Registrador:HIGH|Saida[9]       ; Stuck at GND                   ; mult:MULTOp|hi[9]                      ;
-;                                 ; due to stuck port clock_enable ;                                        ;
-; Registrador:HIGH|Saida[8]       ; Stuck at GND                   ; mult:MULTOp|hi[8]                      ;
-;                                 ; due to stuck port clock_enable ;                                        ;
-; Registrador:HIGH|Saida[7]       ; Stuck at GND                   ; mult:MULTOp|hi[7]                      ;
-;                                 ; due to stuck port clock_enable ;                                        ;
-; Registrador:HIGH|Saida[6]       ; Stuck at GND                   ; mult:MULTOp|hi[6]                      ;
-;                                 ; due to stuck port clock_enable ;                                        ;
-; Registrador:HIGH|Saida[5]       ; Stuck at GND                   ; mult:MULTOp|hi[5]                      ;
-;                                 ; due to stuck port clock_enable ;                                        ;
-; Registrador:HIGH|Saida[4]       ; Stuck at GND                   ; mult:MULTOp|hi[4]                      ;
-;                                 ; due to stuck port clock_enable ;                                        ;
-; Registrador:HIGH|Saida[3]       ; Stuck at GND                   ; mult:MULTOp|hi[3]                      ;
-;                                 ; due to stuck port clock_enable ;                                        ;
-; Registrador:HIGH|Saida[2]       ; Stuck at GND                   ; mult:MULTOp|hi[2]                      ;
-;                                 ; due to stuck port clock_enable ;                                        ;
-; Registrador:HIGH|Saida[1]       ; Stuck at GND                   ; mult:MULTOp|hi[1]                      ;
-;                                 ; due to stuck port clock_enable ;                                        ;
-; Registrador:HIGH|Saida[0]       ; Stuck at GND                   ; mult:MULTOp|hi[0]                      ;
-;                                 ; due to stuck port clock_enable ;                                        ;
-; Registrador:RegisterB|Saida[31] ; Lost Fanouts                   ; UnidadeControle:CtrlUnit|BWrite        ;
-; Registrador:RegisterA|Saida[31] ; Lost Fanouts                   ; UnidadeControle:CtrlUnit|AWrite        ;
-+---------------------------------+--------------------------------+----------------------------------------+
++------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                          ;
++----------------------------+--------------------------------+----------------------------------------+
+; Register name              ; Reason for Removal             ; Registers Removed due to This Register ;
++----------------------------+--------------------------------+----------------------------------------+
+; Registrador:LOW|Saida[31]  ; Stuck at GND                   ; mult:MULTOp|lo[31], div:DIVOp|Lo[31]   ;
+;                            ; due to stuck port clock_enable ;                                        ;
+; Registrador:LOW|Saida[30]  ; Stuck at GND                   ; mult:MULTOp|lo[30], div:DIVOp|Lo[30]   ;
+;                            ; due to stuck port clock_enable ;                                        ;
+; Registrador:LOW|Saida[29]  ; Stuck at GND                   ; mult:MULTOp|lo[29], div:DIVOp|Lo[29]   ;
+;                            ; due to stuck port clock_enable ;                                        ;
+; Registrador:LOW|Saida[28]  ; Stuck at GND                   ; mult:MULTOp|lo[28], div:DIVOp|Lo[28]   ;
+;                            ; due to stuck port clock_enable ;                                        ;
+; Registrador:LOW|Saida[27]  ; Stuck at GND                   ; mult:MULTOp|lo[27], div:DIVOp|Lo[27]   ;
+;                            ; due to stuck port clock_enable ;                                        ;
+; Registrador:LOW|Saida[26]  ; Stuck at GND                   ; mult:MULTOp|lo[26], div:DIVOp|Lo[26]   ;
+;                            ; due to stuck port clock_enable ;                                        ;
+; Registrador:LOW|Saida[25]  ; Stuck at GND                   ; mult:MULTOp|lo[25], div:DIVOp|Lo[25]   ;
+;                            ; due to stuck port clock_enable ;                                        ;
+; Registrador:LOW|Saida[24]  ; Stuck at GND                   ; mult:MULTOp|lo[24], div:DIVOp|Lo[24]   ;
+;                            ; due to stuck port clock_enable ;                                        ;
+; Registrador:LOW|Saida[23]  ; Stuck at GND                   ; mult:MULTOp|lo[23], div:DIVOp|Lo[23]   ;
+;                            ; due to stuck port clock_enable ;                                        ;
+; Registrador:LOW|Saida[22]  ; Stuck at GND                   ; mult:MULTOp|lo[22], div:DIVOp|Lo[22]   ;
+;                            ; due to stuck port clock_enable ;                                        ;
+; Registrador:LOW|Saida[21]  ; Stuck at GND                   ; mult:MULTOp|lo[21], div:DIVOp|Lo[21]   ;
+;                            ; due to stuck port clock_enable ;                                        ;
+; Registrador:LOW|Saida[20]  ; Stuck at GND                   ; mult:MULTOp|lo[20], div:DIVOp|Lo[20]   ;
+;                            ; due to stuck port clock_enable ;                                        ;
+; Registrador:LOW|Saida[19]  ; Stuck at GND                   ; mult:MULTOp|lo[19], div:DIVOp|Lo[19]   ;
+;                            ; due to stuck port clock_enable ;                                        ;
+; Registrador:LOW|Saida[18]  ; Stuck at GND                   ; mult:MULTOp|lo[18], div:DIVOp|Lo[18]   ;
+;                            ; due to stuck port clock_enable ;                                        ;
+; Registrador:LOW|Saida[17]  ; Stuck at GND                   ; mult:MULTOp|lo[17], div:DIVOp|Lo[17]   ;
+;                            ; due to stuck port clock_enable ;                                        ;
+; Registrador:LOW|Saida[16]  ; Stuck at GND                   ; mult:MULTOp|lo[16], div:DIVOp|Lo[16]   ;
+;                            ; due to stuck port clock_enable ;                                        ;
+; Registrador:LOW|Saida[15]  ; Stuck at GND                   ; mult:MULTOp|lo[15], div:DIVOp|Lo[15]   ;
+;                            ; due to stuck port clock_enable ;                                        ;
+; Registrador:LOW|Saida[14]  ; Stuck at GND                   ; mult:MULTOp|lo[14], div:DIVOp|Lo[14]   ;
+;                            ; due to stuck port clock_enable ;                                        ;
+; Registrador:LOW|Saida[13]  ; Stuck at GND                   ; mult:MULTOp|lo[13], div:DIVOp|Lo[13]   ;
+;                            ; due to stuck port clock_enable ;                                        ;
+; Registrador:LOW|Saida[12]  ; Stuck at GND                   ; mult:MULTOp|lo[12], div:DIVOp|Lo[12]   ;
+;                            ; due to stuck port clock_enable ;                                        ;
+; Registrador:LOW|Saida[11]  ; Stuck at GND                   ; mult:MULTOp|lo[11], div:DIVOp|Lo[11]   ;
+;                            ; due to stuck port clock_enable ;                                        ;
+; Registrador:LOW|Saida[10]  ; Stuck at GND                   ; mult:MULTOp|lo[10], div:DIVOp|Lo[10]   ;
+;                            ; due to stuck port clock_enable ;                                        ;
+; Registrador:LOW|Saida[9]   ; Stuck at GND                   ; mult:MULTOp|lo[9], div:DIVOp|Lo[9]     ;
+;                            ; due to stuck port clock_enable ;                                        ;
+; Registrador:LOW|Saida[8]   ; Stuck at GND                   ; mult:MULTOp|lo[8], div:DIVOp|Lo[8]     ;
+;                            ; due to stuck port clock_enable ;                                        ;
+; Registrador:LOW|Saida[7]   ; Stuck at GND                   ; mult:MULTOp|lo[7], div:DIVOp|Lo[7]     ;
+;                            ; due to stuck port clock_enable ;                                        ;
+; Registrador:LOW|Saida[6]   ; Stuck at GND                   ; mult:MULTOp|lo[6], div:DIVOp|Lo[6]     ;
+;                            ; due to stuck port clock_enable ;                                        ;
+; Registrador:LOW|Saida[5]   ; Stuck at GND                   ; mult:MULTOp|lo[5], div:DIVOp|Lo[5]     ;
+;                            ; due to stuck port clock_enable ;                                        ;
+; Registrador:LOW|Saida[4]   ; Stuck at GND                   ; mult:MULTOp|lo[4], div:DIVOp|Lo[4]     ;
+;                            ; due to stuck port clock_enable ;                                        ;
+; Registrador:LOW|Saida[3]   ; Stuck at GND                   ; mult:MULTOp|lo[3], div:DIVOp|Lo[3]     ;
+;                            ; due to stuck port clock_enable ;                                        ;
+; Registrador:LOW|Saida[2]   ; Stuck at GND                   ; mult:MULTOp|lo[2], div:DIVOp|Lo[2]     ;
+;                            ; due to stuck port clock_enable ;                                        ;
+; Registrador:LOW|Saida[1]   ; Stuck at GND                   ; mult:MULTOp|lo[1], div:DIVOp|Lo[1]     ;
+;                            ; due to stuck port clock_enable ;                                        ;
+; Registrador:LOW|Saida[0]   ; Stuck at GND                   ; mult:MULTOp|lo[0], div:DIVOp|Lo[0]     ;
+;                            ; due to stuck port clock_enable ;                                        ;
+; Registrador:HIGH|Saida[31] ; Stuck at GND                   ; mult:MULTOp|hi[31]                     ;
+;                            ; due to stuck port clock_enable ;                                        ;
+; Registrador:HIGH|Saida[30] ; Stuck at GND                   ; mult:MULTOp|hi[30]                     ;
+;                            ; due to stuck port clock_enable ;                                        ;
+; Registrador:HIGH|Saida[29] ; Stuck at GND                   ; mult:MULTOp|hi[29]                     ;
+;                            ; due to stuck port clock_enable ;                                        ;
+; Registrador:HIGH|Saida[28] ; Stuck at GND                   ; mult:MULTOp|hi[28]                     ;
+;                            ; due to stuck port clock_enable ;                                        ;
+; Registrador:HIGH|Saida[27] ; Stuck at GND                   ; mult:MULTOp|hi[27]                     ;
+;                            ; due to stuck port clock_enable ;                                        ;
+; Registrador:HIGH|Saida[26] ; Stuck at GND                   ; mult:MULTOp|hi[26]                     ;
+;                            ; due to stuck port clock_enable ;                                        ;
+; Registrador:HIGH|Saida[25] ; Stuck at GND                   ; mult:MULTOp|hi[25]                     ;
+;                            ; due to stuck port clock_enable ;                                        ;
+; Registrador:HIGH|Saida[24] ; Stuck at GND                   ; mult:MULTOp|hi[24]                     ;
+;                            ; due to stuck port clock_enable ;                                        ;
+; Registrador:HIGH|Saida[23] ; Stuck at GND                   ; mult:MULTOp|hi[23]                     ;
+;                            ; due to stuck port clock_enable ;                                        ;
+; Registrador:HIGH|Saida[22] ; Stuck at GND                   ; mult:MULTOp|hi[22]                     ;
+;                            ; due to stuck port clock_enable ;                                        ;
+; Registrador:HIGH|Saida[21] ; Stuck at GND                   ; mult:MULTOp|hi[21]                     ;
+;                            ; due to stuck port clock_enable ;                                        ;
+; Registrador:HIGH|Saida[20] ; Stuck at GND                   ; mult:MULTOp|hi[20]                     ;
+;                            ; due to stuck port clock_enable ;                                        ;
+; Registrador:HIGH|Saida[19] ; Stuck at GND                   ; mult:MULTOp|hi[19]                     ;
+;                            ; due to stuck port clock_enable ;                                        ;
+; Registrador:HIGH|Saida[18] ; Stuck at GND                   ; mult:MULTOp|hi[18]                     ;
+;                            ; due to stuck port clock_enable ;                                        ;
+; Registrador:HIGH|Saida[17] ; Stuck at GND                   ; mult:MULTOp|hi[17]                     ;
+;                            ; due to stuck port clock_enable ;                                        ;
+; Registrador:HIGH|Saida[16] ; Stuck at GND                   ; mult:MULTOp|hi[16]                     ;
+;                            ; due to stuck port clock_enable ;                                        ;
+; Registrador:HIGH|Saida[15] ; Stuck at GND                   ; mult:MULTOp|hi[15]                     ;
+;                            ; due to stuck port clock_enable ;                                        ;
+; Registrador:HIGH|Saida[14] ; Stuck at GND                   ; mult:MULTOp|hi[14]                     ;
+;                            ; due to stuck port clock_enable ;                                        ;
+; Registrador:HIGH|Saida[13] ; Stuck at GND                   ; mult:MULTOp|hi[13]                     ;
+;                            ; due to stuck port clock_enable ;                                        ;
+; Registrador:HIGH|Saida[12] ; Stuck at GND                   ; mult:MULTOp|hi[12]                     ;
+;                            ; due to stuck port clock_enable ;                                        ;
+; Registrador:HIGH|Saida[11] ; Stuck at GND                   ; mult:MULTOp|hi[11]                     ;
+;                            ; due to stuck port clock_enable ;                                        ;
+; Registrador:HIGH|Saida[10] ; Stuck at GND                   ; mult:MULTOp|hi[10]                     ;
+;                            ; due to stuck port clock_enable ;                                        ;
+; Registrador:HIGH|Saida[9]  ; Stuck at GND                   ; mult:MULTOp|hi[9]                      ;
+;                            ; due to stuck port clock_enable ;                                        ;
+; Registrador:HIGH|Saida[8]  ; Stuck at GND                   ; mult:MULTOp|hi[8]                      ;
+;                            ; due to stuck port clock_enable ;                                        ;
+; Registrador:HIGH|Saida[7]  ; Stuck at GND                   ; mult:MULTOp|hi[7]                      ;
+;                            ; due to stuck port clock_enable ;                                        ;
+; Registrador:HIGH|Saida[6]  ; Stuck at GND                   ; mult:MULTOp|hi[6]                      ;
+;                            ; due to stuck port clock_enable ;                                        ;
+; Registrador:HIGH|Saida[5]  ; Stuck at GND                   ; mult:MULTOp|hi[5]                      ;
+;                            ; due to stuck port clock_enable ;                                        ;
+; Registrador:HIGH|Saida[4]  ; Stuck at GND                   ; mult:MULTOp|hi[4]                      ;
+;                            ; due to stuck port clock_enable ;                                        ;
+; Registrador:HIGH|Saida[3]  ; Stuck at GND                   ; mult:MULTOp|hi[3]                      ;
+;                            ; due to stuck port clock_enable ;                                        ;
+; Registrador:HIGH|Saida[2]  ; Stuck at GND                   ; mult:MULTOp|hi[2]                      ;
+;                            ; due to stuck port clock_enable ;                                        ;
+; Registrador:HIGH|Saida[1]  ; Stuck at GND                   ; mult:MULTOp|hi[1]                      ;
+;                            ; due to stuck port clock_enable ;                                        ;
+; Registrador:HIGH|Saida[0]  ; Stuck at GND                   ; mult:MULTOp|hi[0]                      ;
+;                            ; due to stuck port clock_enable ;                                        ;
++----------------------------+--------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -508,12 +582,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1185  ;
-; Number of registers using Synchronous Clear  ; 11    ;
-; Number of registers using Synchronous Load   ; 47    ;
-; Number of registers using Asynchronous Clear ; 1152  ;
+; Total registers                              ; 1253  ;
+; Number of registers using Synchronous Clear  ; 15    ;
+; Number of registers using Synchronous Load   ; 49    ;
+; Number of registers using Asynchronous Clear ; 1216  ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 1172  ;
+; Number of registers using Clock Enable       ; 1240  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -523,30 +597,34 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                 ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
-; 128:1              ; 3 bits    ; 255 ALUTs     ; 42 ALUTs             ; 213 ALUTs              ; Yes        ; |VCPU|UnidadeControle:CtrlUnit|ALUOp[0]    ;
-; 128:1              ; 6 bits    ; 510 ALUTs     ; 48 ALUTs             ; 462 ALUTs              ; Yes        ; |VCPU|UnidadeControle:CtrlUnit|RegDst[0]   ;
-; 128:1              ; 4 bits    ; 340 ALUTs     ; 36 ALUTs             ; 304 ALUTs              ; Yes        ; |VCPU|UnidadeControle:CtrlUnit|MemWR       ;
-; 128:1              ; 2 bits    ; 170 ALUTs     ; 10 ALUTs             ; 160 ALUTs              ; Yes        ; |VCPU|UnidadeControle:CtrlUnit|PCSource[0] ;
-; 128:1              ; 2 bits    ; 170 ALUTs     ; 4 ALUTs              ; 166 ALUTs              ; Yes        ; |VCPU|UnidadeControle:CtrlUnit|PCCond[1]   ;
-; 128:1              ; 2 bits    ; 170 ALUTs     ; 4 ALUTs              ; 166 ALUTs              ; Yes        ; |VCPU|UnidadeControle:CtrlUnit|MemWD[1]    ;
+; 128:1              ; 5 bits    ; 425 ALUTs     ; 70 ALUTs             ; 355 ALUTs              ; Yes        ; |VCPU|UnidadeControle:CtrlUnit|ALUOp[0]    ;
+; 128:1              ; 3 bits    ; 255 ALUTs     ; 33 ALUTs             ; 222 ALUTs              ; Yes        ; |VCPU|UnidadeControle:CtrlUnit|ALUSrcB[2]  ;
+; 128:1              ; 6 bits    ; 510 ALUTs     ; 48 ALUTs             ; 462 ALUTs              ; Yes        ; |VCPU|UnidadeControle:CtrlUnit|MemToReg[0] ;
+; 128:1              ; 4 bits    ; 340 ALUTs     ; 36 ALUTs             ; 304 ALUTs              ; Yes        ; |VCPU|UnidadeControle:CtrlUnit|IorD[2]     ;
+; 128:1              ; 2 bits    ; 170 ALUTs     ; 10 ALUTs             ; 160 ALUTs              ; Yes        ; |VCPU|UnidadeControle:CtrlUnit|PCSource[1] ;
+; 128:1              ; 2 bits    ; 170 ALUTs     ; 4 ALUTs              ; 166 ALUTs              ; Yes        ; |VCPU|UnidadeControle:CtrlUnit|MemWD[0]    ;
+; 3:1                ; 32 bits   ; 64 ALUTs      ; 64 ALUTs             ; 0 ALUTs                ; No         ; |VCPU|mux_srcA:ALUSrcA|Mux17               ;
 ; 4:1                ; 2 bits    ; 4 ALUTs       ; 4 ALUTs              ; 0 ALUTs                ; No         ; |VCPU|mux_pcSrc:pcSrcMux|out[0]            ;
-; 4:1                ; 30 bits   ; 60 ALUTs      ; 60 ALUTs             ; 0 ALUTs                ; No         ; |VCPU|mux_pcSrc:pcSrcMux|out[2]            ;
+; 4:1                ; 30 bits   ; 60 ALUTs      ; 60 ALUTs             ; 0 ALUTs                ; No         ; |VCPU|mux_pcSrc:pcSrcMux|out[9]            ;
 ; 3:1                ; 4 bits    ; 8 ALUTs       ; 8 ALUTs              ; 0 ALUTs                ; No         ; |VCPU|mux_regDst:RegDSTMux|out[4]          ;
-; 8:1                ; 17 bits   ; 85 ALUTs      ; 34 ALUTs             ; 51 ALUTs               ; No         ; |VCPU|Ula32:ALU|Mux54                      ;
+; 8:1                ; 32 bits   ; 160 ALUTs     ; 64 ALUTs             ; 96 ALUTs               ; No         ; |VCPU|Ula32:ALU|Mux38                      ;
 ; 8:1                ; 32 bits   ; 160 ALUTs     ; 128 ALUTs            ; 32 ALUTs               ; No         ; |VCPU|Ula32:ALU|Mux0                       ;
 ; 5:1                ; 2 bits    ; 6 ALUTs       ; 6 ALUTs              ; 0 ALUTs                ; No         ; |VCPU|mux_iOrD:IorDMux|out[1]              ;
-; 5:1                ; 6 bits    ; 18 ALUTs      ; 18 ALUTs             ; 0 ALUTs                ; No         ; |VCPU|mux_iOrD:IorDMux|out[6]              ;
-; 32:1               ; 32 bits   ; 672 ALUTs     ; 672 ALUTs            ; 0 ALUTs                ; No         ; |VCPU|Banco_reg:registers|Mux21            ;
-; 32:1               ; 32 bits   ; 672 ALUTs     ; 672 ALUTs            ; 0 ALUTs                ; No         ; |VCPU|Banco_reg:registers|Mux36            ;
-; 8:1                ; 3 bits    ; 15 ALUTs      ; 12 ALUTs             ; 3 ALUTs                ; No         ; |VCPU|mux_memToReg:MemToRegMux|out[4]      ;
+; 5:1                ; 6 bits    ; 18 ALUTs      ; 18 ALUTs             ; 0 ALUTs                ; No         ; |VCPU|mux_iOrD:IorDMux|out[4]              ;
+; 32:1               ; 32 bits   ; 672 ALUTs     ; 672 ALUTs            ; 0 ALUTs                ; No         ; |VCPU|Banco_reg:registers|Mux22            ;
+; 32:1               ; 32 bits   ; 672 ALUTs     ; 672 ALUTs            ; 0 ALUTs                ; No         ; |VCPU|Banco_reg:registers|Mux47            ;
+; 4:1                ; 2 bits    ; 4 ALUTs       ; 4 ALUTs              ; 0 ALUTs                ; No         ; |VCPU|mux_srcB:ALUSrcB|Mux1                ;
+; 4:1                ; 14 bits   ; 28 ALUTs      ; 28 ALUTs             ; 0 ALUTs                ; No         ; |VCPU|mux_srcB:ALUSrcB|Mux30               ;
+; 5:1                ; 16 bits   ; 48 ALUTs      ; 48 ALUTs             ; 0 ALUTs                ; No         ; |VCPU|mux_srcB:ALUSrcB|Mux5                ;
+; 8:1                ; 3 bits    ; 15 ALUTs      ; 12 ALUTs             ; 3 ALUTs                ; No         ; |VCPU|mux_memToReg:MemToRegMux|out[2]      ;
 ; 8:1                ; 4 bits    ; 20 ALUTs      ; 16 ALUTs             ; 4 ALUTs                ; No         ; |VCPU|mux_memToReg:MemToRegMux|out[7]      ;
-; 9:1                ; 8 bits    ; 48 ALUTs      ; 40 ALUTs             ; 8 ALUTs                ; No         ; |VCPU|mux_memToReg:MemToRegMux|out[15]     ;
-; 10:1               ; 16 bits   ; 96 ALUTs      ; 96 ALUTs             ; 0 ALUTs                ; No         ; |VCPU|mux_memToReg:MemToRegMux|out[27]     ;
+; 9:1                ; 8 bits    ; 48 ALUTs      ; 40 ALUTs             ; 8 ALUTs                ; No         ; |VCPU|mux_memToReg:MemToRegMux|out[9]      ;
+; 10:1               ; 16 bits   ; 96 ALUTs      ; 96 ALUTs             ; 0 ALUTs                ; No         ; |VCPU|mux_memToReg:MemToRegMux|out[24]     ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------+
-; Source assignments for Memoria:Mem|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated ;
+; Source assignments for Memoria:Mem|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block|altsyncram_24a1:auto_generated ;
 +---------------------------------+--------------------+------+-----------------------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                                  ;
 +---------------------------------+--------------------+------+-----------------------------------------------------+
@@ -555,7 +633,7 @@ Encoding Type:  One-Hot
 
 
 +----------------------------------------------------------------------------------------------------------------------------+
-; Source assignments for Memoria:Mem|LPM_RAM_DQ:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated ;
+; Source assignments for Memoria:Mem|LPM_RAM_DQ:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_24a1:auto_generated ;
 +---------------------------------+--------------------+------+--------------------------------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                                           ;
 +---------------------------------+--------------------+------+--------------------------------------------------------------+
@@ -564,7 +642,7 @@ Encoding Type:  One-Hot
 
 
 +----------------------------------------------------------------------------------------------------------------------------+
-; Source assignments for Memoria:Mem|LPM_RAM_DQ:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated ;
+; Source assignments for Memoria:Mem|LPM_RAM_DQ:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_24a1:auto_generated ;
 +---------------------------------+--------------------+------+--------------------------------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                                           ;
 +---------------------------------+--------------------+------+--------------------------------------------------------------+
@@ -573,7 +651,7 @@ Encoding Type:  One-Hot
 
 
 +------------------------------------------------------------------------------------------------------------------------------+
-; Source assignments for Memoria:Mem|LPM_RAM_DQ:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated ;
+; Source assignments for Memoria:Mem|LPM_RAM_DQ:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_24a1:auto_generated ;
 +---------------------------------+--------------------+------+----------------------------------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                                             ;
 +---------------------------------+--------------------+------+----------------------------------------------------------------+
@@ -687,6 +765,7 @@ Encoding Type:  One-Hot
 ; write_2        ; 1100010 ; Unsigned Binary                            ;
 ; cory_12        ; 1100011 ; Unsigned Binary                            ;
 ; cory_13        ; 1100100 ; Unsigned Binary                            ;
+; cory_14        ; 1100101 ; Unsigned Binary                            ;
 ; Opcode_R       ; 000000  ; Unsigned Binary                            ;
 ; Opcode_addi    ; 001000  ; Unsigned Binary                            ;
 ; Opcode_addiu   ; 001001  ; Unsigned Binary                            ;
@@ -728,93 +807,93 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 +-------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: Memoria:Mem|LPM_RAM_DQ:MEM ;
-+------------------------+----------------+-------------------------------+
-; Parameter Name         ; Value          ; Type                          ;
-+------------------------+----------------+-------------------------------+
-; LPM_WIDTH              ; 8              ; Signed Integer                ;
-; LPM_WIDTHAD            ; 8              ; Signed Integer                ;
-; LPM_NUMWORDS           ; 0              ; Signed Integer                ;
-; LPM_INDATA             ; REGISTERED     ; Untyped                       ;
-; LPM_ADDRESS_CONTROL    ; REGISTERED     ; Untyped                       ;
-; LPM_OUTDATA            ; REGISTERED     ; Untyped                       ;
-; LPM_FILE               ; instrucoes.mif ; Untyped                       ;
-; USE_EAB                ; ON             ; Untyped                       ;
-; DEVICE_FAMILY          ; Stratix II     ; Untyped                       ;
-; CBXI_PARAMETER         ; NOTHING        ; Untyped                       ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                    ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                  ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                  ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                ;
-+------------------------+----------------+-------------------------------+
++------------------------+-----------------+------------------------------+
+; Parameter Name         ; Value           ; Type                         ;
++------------------------+-----------------+------------------------------+
+; LPM_WIDTH              ; 8               ; Signed Integer               ;
+; LPM_WIDTHAD            ; 8               ; Signed Integer               ;
+; LPM_NUMWORDS           ; 0               ; Signed Integer               ;
+; LPM_INDATA             ; REGISTERED      ; Untyped                      ;
+; LPM_ADDRESS_CONTROL    ; REGISTERED      ; Untyped                      ;
+; LPM_OUTDATA            ; REGISTERED      ; Untyped                      ;
+; LPM_FILE               ; instrucoes2.mif ; Untyped                      ;
+; USE_EAB                ; ON              ; Untyped                      ;
+; DEVICE_FAMILY          ; Stratix II      ; Untyped                      ;
+; CBXI_PARAMETER         ; NOTHING         ; Untyped                      ;
+; AUTO_CARRY_CHAINS      ; ON              ; AUTO_CARRY                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF             ; IGNORE_CARRY                 ;
+; AUTO_CASCADE_CHAINS    ; ON              ; AUTO_CASCADE                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF             ; IGNORE_CASCADE               ;
++------------------------+-----------------+------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +----------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: Memoria:Mem|LPM_RAM_DQ:MEM_plus_One ;
-+------------------------+----------------+----------------------------------------+
-; Parameter Name         ; Value          ; Type                                   ;
-+------------------------+----------------+----------------------------------------+
-; LPM_WIDTH              ; 8              ; Signed Integer                         ;
-; LPM_WIDTHAD            ; 8              ; Signed Integer                         ;
-; LPM_NUMWORDS           ; 0              ; Signed Integer                         ;
-; LPM_INDATA             ; REGISTERED     ; Untyped                                ;
-; LPM_ADDRESS_CONTROL    ; REGISTERED     ; Untyped                                ;
-; LPM_OUTDATA            ; REGISTERED     ; Untyped                                ;
-; LPM_FILE               ; instrucoes.mif ; Untyped                                ;
-; USE_EAB                ; ON             ; Untyped                                ;
-; DEVICE_FAMILY          ; Stratix II     ; Untyped                                ;
-; CBXI_PARAMETER         ; NOTHING        ; Untyped                                ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                             ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                           ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                           ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                         ;
-+------------------------+----------------+----------------------------------------+
++------------------------+-----------------+---------------------------------------+
+; Parameter Name         ; Value           ; Type                                  ;
++------------------------+-----------------+---------------------------------------+
+; LPM_WIDTH              ; 8               ; Signed Integer                        ;
+; LPM_WIDTHAD            ; 8               ; Signed Integer                        ;
+; LPM_NUMWORDS           ; 0               ; Signed Integer                        ;
+; LPM_INDATA             ; REGISTERED      ; Untyped                               ;
+; LPM_ADDRESS_CONTROL    ; REGISTERED      ; Untyped                               ;
+; LPM_OUTDATA            ; REGISTERED      ; Untyped                               ;
+; LPM_FILE               ; instrucoes2.mif ; Untyped                               ;
+; USE_EAB                ; ON              ; Untyped                               ;
+; DEVICE_FAMILY          ; Stratix II      ; Untyped                               ;
+; CBXI_PARAMETER         ; NOTHING         ; Untyped                               ;
+; AUTO_CARRY_CHAINS      ; ON              ; AUTO_CARRY                            ;
+; IGNORE_CARRY_BUFFERS   ; OFF             ; IGNORE_CARRY                          ;
+; AUTO_CASCADE_CHAINS    ; ON              ; AUTO_CASCADE                          ;
+; IGNORE_CASCADE_BUFFERS ; OFF             ; IGNORE_CASCADE                        ;
++------------------------+-----------------+---------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +----------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: Memoria:Mem|LPM_RAM_DQ:MEM_plus_Two ;
-+------------------------+----------------+----------------------------------------+
-; Parameter Name         ; Value          ; Type                                   ;
-+------------------------+----------------+----------------------------------------+
-; LPM_WIDTH              ; 8              ; Signed Integer                         ;
-; LPM_WIDTHAD            ; 8              ; Signed Integer                         ;
-; LPM_NUMWORDS           ; 0              ; Signed Integer                         ;
-; LPM_INDATA             ; REGISTERED     ; Untyped                                ;
-; LPM_ADDRESS_CONTROL    ; REGISTERED     ; Untyped                                ;
-; LPM_OUTDATA            ; REGISTERED     ; Untyped                                ;
-; LPM_FILE               ; instrucoes.mif ; Untyped                                ;
-; USE_EAB                ; ON             ; Untyped                                ;
-; DEVICE_FAMILY          ; Stratix II     ; Untyped                                ;
-; CBXI_PARAMETER         ; NOTHING        ; Untyped                                ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                             ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                           ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                           ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                         ;
-+------------------------+----------------+----------------------------------------+
++------------------------+-----------------+---------------------------------------+
+; Parameter Name         ; Value           ; Type                                  ;
++------------------------+-----------------+---------------------------------------+
+; LPM_WIDTH              ; 8               ; Signed Integer                        ;
+; LPM_WIDTHAD            ; 8               ; Signed Integer                        ;
+; LPM_NUMWORDS           ; 0               ; Signed Integer                        ;
+; LPM_INDATA             ; REGISTERED      ; Untyped                               ;
+; LPM_ADDRESS_CONTROL    ; REGISTERED      ; Untyped                               ;
+; LPM_OUTDATA            ; REGISTERED      ; Untyped                               ;
+; LPM_FILE               ; instrucoes2.mif ; Untyped                               ;
+; USE_EAB                ; ON              ; Untyped                               ;
+; DEVICE_FAMILY          ; Stratix II      ; Untyped                               ;
+; CBXI_PARAMETER         ; NOTHING         ; Untyped                               ;
+; AUTO_CARRY_CHAINS      ; ON              ; AUTO_CARRY                            ;
+; IGNORE_CARRY_BUFFERS   ; OFF             ; IGNORE_CARRY                          ;
+; AUTO_CASCADE_CHAINS    ; ON              ; AUTO_CASCADE                          ;
+; IGNORE_CASCADE_BUFFERS ; OFF             ; IGNORE_CASCADE                        ;
++------------------------+-----------------+---------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +------------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: Memoria:Mem|LPM_RAM_DQ:MEM_plus_Three ;
-+------------------------+----------------+------------------------------------------+
-; Parameter Name         ; Value          ; Type                                     ;
-+------------------------+----------------+------------------------------------------+
-; LPM_WIDTH              ; 8              ; Signed Integer                           ;
-; LPM_WIDTHAD            ; 8              ; Signed Integer                           ;
-; LPM_NUMWORDS           ; 0              ; Signed Integer                           ;
-; LPM_INDATA             ; REGISTERED     ; Untyped                                  ;
-; LPM_ADDRESS_CONTROL    ; REGISTERED     ; Untyped                                  ;
-; LPM_OUTDATA            ; REGISTERED     ; Untyped                                  ;
-; LPM_FILE               ; instrucoes.mif ; Untyped                                  ;
-; USE_EAB                ; ON             ; Untyped                                  ;
-; DEVICE_FAMILY          ; Stratix II     ; Untyped                                  ;
-; CBXI_PARAMETER         ; NOTHING        ; Untyped                                  ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                               ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                             ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                             ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                           ;
-+------------------------+----------------+------------------------------------------+
++------------------------+-----------------+-----------------------------------------+
+; Parameter Name         ; Value           ; Type                                    ;
++------------------------+-----------------+-----------------------------------------+
+; LPM_WIDTH              ; 8               ; Signed Integer                          ;
+; LPM_WIDTHAD            ; 8               ; Signed Integer                          ;
+; LPM_NUMWORDS           ; 0               ; Signed Integer                          ;
+; LPM_INDATA             ; REGISTERED      ; Untyped                                 ;
+; LPM_ADDRESS_CONTROL    ; REGISTERED      ; Untyped                                 ;
+; LPM_OUTDATA            ; REGISTERED      ; Untyped                                 ;
+; LPM_FILE               ; instrucoes2.mif ; Untyped                                 ;
+; USE_EAB                ; ON              ; Untyped                                 ;
+; DEVICE_FAMILY          ; Stratix II      ; Untyped                                 ;
+; CBXI_PARAMETER         ; NOTHING         ; Untyped                                 ;
+; AUTO_CARRY_CHAINS      ; ON              ; AUTO_CARRY                              ;
+; IGNORE_CARRY_BUFFERS   ; OFF             ; IGNORE_CARRY                            ;
+; AUTO_CASCADE_CHAINS    ; ON              ; AUTO_CASCADE                            ;
+; IGNORE_CASCADE_BUFFERS ; OFF             ; IGNORE_CASCADE                          ;
++------------------------+-----------------+-----------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -896,6 +975,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------+--------+----------+-------------------------------------------------------------------------------------+
 
 
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "mux_srcB:ALUSrcB"                                                                                                                                   ;
++----------+-------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type  ; Severity ; Details                                                                                                                                          ;
++----------+-------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+; selector ; Input ; Warning  ; Input port expression (3 bits) is smaller than the input port (4 bits) it drives.  Extra input bit(s) "selector[3..3]" will be connected to GND. ;
++----------+-------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "mux_BWD:BWDMux"                                                                                                                                                                 ;
 +------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -923,6 +1011,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "mux_pccond:MuxPCCond"                                                               ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; out  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "mux_2inputs:ALUorMemMux"                                                                                                                            ;
 +----------+-------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -932,18 +1029,17 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------+-------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "UnidadeControle:CtrlUnit"                                                                                                                                                  ;
-+-----------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port      ; Type   ; Severity ; Details                                                                                                                                                               ;
-+-----------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; IorD      ; Output ; Warning  ; Output or bidir port (3 bits) is smaller than the port expression (4 bits) it drives.  The 1 most-significant bit(s) in the port expression will be connected to GND. ;
-; ALUSrcA   ; Output ; Info     ; Explicitly unconnected                                                                                                                                                ;
-; ALUSrcB   ; Output ; Info     ; Explicitly unconnected                                                                                                                                                ;
-; EPCWrite  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                   ;
-; WriteData ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                              ;
-; ShiftCtrl ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                              ;
-+-----------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "UnidadeControle:CtrlUnit"                                                                                                                                                    ;
++-------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                                                                                                               ;
++-------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; IorD        ; Output ; Warning  ; Output or bidir port (3 bits) is smaller than the port expression (4 bits) it drives.  The 1 most-significant bit(s) in the port expression will be connected to GND. ;
+; PCWriteCond ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                   ;
+; EPCWrite    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                   ;
+; WriteData   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                              ;
+; ShiftCtrl   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                              ;
++-------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-------------------------------+
@@ -952,7 +1048,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Fri May 17 17:29:12 2019
+    Info: Processing started: Fri May 17 19:34:18 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Proj_Hardware -c Proj_Hardware
 Info: Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info: Found 1 design units, including 1 entities, in source file div.v
@@ -1020,7 +1116,12 @@ Info: Found 1 design units, including 1 entities, in source file mux_pccond.sv
     Info: Found entity 1: mux_pccond
 Info: Found 1 design units, including 1 entities, in source file mux_2inputs.sv
     Info: Found entity 1: mux_2inputs
+Info: Found 1 design units, including 1 entities, in source file mux_srcb.sv
+    Info: Found entity 1: mux_srcB
+Info: Found 1 design units, including 1 entities, in source file mux_srca.sv
+    Info: Found entity 1: mux_srcA
 Info: Elaborating entity "VCPU" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at VCPU.sv(97): object "PCWCtrl" assigned a value but never read
 Info: Elaborating entity "UnidadeControle" for hierarchy "UnidadeControle:CtrlUnit"
 Warning (10034): Output port "Low" at UnidadeControle.v(27) has no driver
 Warning (10034): Output port "High" at UnidadeControle.v(28) has no driver
@@ -1075,7 +1176,7 @@ Info: Instantiated megafunction "Memoria:Mem|LPM_RAM_DQ:MEM" with the following 
     Info: Parameter "LPM_INDATA" = "REGISTERED"
     Info: Parameter "LPM_ADDRESS_CONTROL" = "REGISTERED"
     Info: Parameter "LPM_OUTDATA" = "REGISTERED"
-    Info: Parameter "LPM_FILE" = "instrucoes.mif"
+    Info: Parameter "LPM_FILE" = "instrucoes2.mif"
     Info: Parameter "LPM_TYPE" = "LPM_RAM_DQ"
     Info: Parameter "USE_EAB" = "ON"
     Info: Parameter "INTENDED_DEVICE_FAMILY" = "UNUSED"
@@ -1085,16 +1186,84 @@ Warning: Assertion warning: altram does not support Stratix II device family -- 
 Info: Elaborated megafunction instantiation "Memoria:Mem|LPM_RAM_DQ:MEM|altram:sram", which is child of megafunction instantiation "Memoria:Mem|LPM_RAM_DQ:MEM"
 Info: Elaborating entity "altsyncram" for hierarchy "Memoria:Mem|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block"
 Info: Elaborated megafunction instantiation "Memoria:Mem|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block", which is child of megafunction instantiation "Memoria:Mem|LPM_RAM_DQ:MEM"
-Info: Found 1 design units, including 1 entities, in source file db/altsyncram_g2a1.tdf
-    Info: Found entity 1: altsyncram_g2a1
-Info: Elaborating entity "altsyncram_g2a1" for hierarchy "Memoria:Mem|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated"
+Info: Found 1 design units, including 1 entities, in source file db/altsyncram_24a1.tdf
+    Info: Found entity 1: altsyncram_24a1
+Info: Elaborating entity "altsyncram_24a1" for hierarchy "Memoria:Mem|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block|altsyncram_24a1:auto_generated"
 Info: Elaborating entity "mux_memWD" for hierarchy "mux_memWD:memWDMux"
 Info: Elaborating entity "Instr_Reg" for hierarchy "Instr_Reg:IR"
 Info: Elaborating entity "mux_regDst" for hierarchy "mux_regDst:RegDSTMux"
 Info: Elaborating entity "mux_memToReg" for hierarchy "mux_memToReg:MemToRegMux"
 Info: Elaborating entity "Banco_reg" for hierarchy "Banco_reg:registers"
-Info: Elaborating entity "mux_aluSrcA" for hierarchy "mux_aluSrcA:ALUSrcA"
-Info: Elaborating entity "mux_aluSrcB" for hierarchy "mux_aluSrcB:ALUSrcB"
+Info: Elaborating entity "mux_srcA" for hierarchy "mux_srcA:ALUSrcA"
+Warning (10270): Verilog HDL Case Statement warning at mux_srcA.sv(10): incomplete case statement has no default case item
+Warning (10240): Verilog HDL Always Construct warning at mux_srcA.sv(10): inferring latch(es) for variable "out", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "out[0]" at mux_srcA.sv(10)
+Info (10041): Inferred latch for "out[1]" at mux_srcA.sv(10)
+Info (10041): Inferred latch for "out[2]" at mux_srcA.sv(10)
+Info (10041): Inferred latch for "out[3]" at mux_srcA.sv(10)
+Info (10041): Inferred latch for "out[4]" at mux_srcA.sv(10)
+Info (10041): Inferred latch for "out[5]" at mux_srcA.sv(10)
+Info (10041): Inferred latch for "out[6]" at mux_srcA.sv(10)
+Info (10041): Inferred latch for "out[7]" at mux_srcA.sv(10)
+Info (10041): Inferred latch for "out[8]" at mux_srcA.sv(10)
+Info (10041): Inferred latch for "out[9]" at mux_srcA.sv(10)
+Info (10041): Inferred latch for "out[10]" at mux_srcA.sv(10)
+Info (10041): Inferred latch for "out[11]" at mux_srcA.sv(10)
+Info (10041): Inferred latch for "out[12]" at mux_srcA.sv(10)
+Info (10041): Inferred latch for "out[13]" at mux_srcA.sv(10)
+Info (10041): Inferred latch for "out[14]" at mux_srcA.sv(10)
+Info (10041): Inferred latch for "out[15]" at mux_srcA.sv(10)
+Info (10041): Inferred latch for "out[16]" at mux_srcA.sv(10)
+Info (10041): Inferred latch for "out[17]" at mux_srcA.sv(10)
+Info (10041): Inferred latch for "out[18]" at mux_srcA.sv(10)
+Info (10041): Inferred latch for "out[19]" at mux_srcA.sv(10)
+Info (10041): Inferred latch for "out[20]" at mux_srcA.sv(10)
+Info (10041): Inferred latch for "out[21]" at mux_srcA.sv(10)
+Info (10041): Inferred latch for "out[22]" at mux_srcA.sv(10)
+Info (10041): Inferred latch for "out[23]" at mux_srcA.sv(10)
+Info (10041): Inferred latch for "out[24]" at mux_srcA.sv(10)
+Info (10041): Inferred latch for "out[25]" at mux_srcA.sv(10)
+Info (10041): Inferred latch for "out[26]" at mux_srcA.sv(10)
+Info (10041): Inferred latch for "out[27]" at mux_srcA.sv(10)
+Info (10041): Inferred latch for "out[28]" at mux_srcA.sv(10)
+Info (10041): Inferred latch for "out[29]" at mux_srcA.sv(10)
+Info (10041): Inferred latch for "out[30]" at mux_srcA.sv(10)
+Info (10041): Inferred latch for "out[31]" at mux_srcA.sv(10)
+Info: Elaborating entity "mux_srcB" for hierarchy "mux_srcB:ALUSrcB"
+Warning (10270): Verilog HDL Case Statement warning at mux_srcB.sv(11): incomplete case statement has no default case item
+Warning (10240): Verilog HDL Always Construct warning at mux_srcB.sv(11): inferring latch(es) for variable "out", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "out[0]" at mux_srcB.sv(11)
+Info (10041): Inferred latch for "out[1]" at mux_srcB.sv(11)
+Info (10041): Inferred latch for "out[2]" at mux_srcB.sv(11)
+Info (10041): Inferred latch for "out[3]" at mux_srcB.sv(11)
+Info (10041): Inferred latch for "out[4]" at mux_srcB.sv(11)
+Info (10041): Inferred latch for "out[5]" at mux_srcB.sv(11)
+Info (10041): Inferred latch for "out[6]" at mux_srcB.sv(11)
+Info (10041): Inferred latch for "out[7]" at mux_srcB.sv(11)
+Info (10041): Inferred latch for "out[8]" at mux_srcB.sv(11)
+Info (10041): Inferred latch for "out[9]" at mux_srcB.sv(11)
+Info (10041): Inferred latch for "out[10]" at mux_srcB.sv(11)
+Info (10041): Inferred latch for "out[11]" at mux_srcB.sv(11)
+Info (10041): Inferred latch for "out[12]" at mux_srcB.sv(11)
+Info (10041): Inferred latch for "out[13]" at mux_srcB.sv(11)
+Info (10041): Inferred latch for "out[14]" at mux_srcB.sv(11)
+Info (10041): Inferred latch for "out[15]" at mux_srcB.sv(11)
+Info (10041): Inferred latch for "out[16]" at mux_srcB.sv(11)
+Info (10041): Inferred latch for "out[17]" at mux_srcB.sv(11)
+Info (10041): Inferred latch for "out[18]" at mux_srcB.sv(11)
+Info (10041): Inferred latch for "out[19]" at mux_srcB.sv(11)
+Info (10041): Inferred latch for "out[20]" at mux_srcB.sv(11)
+Info (10041): Inferred latch for "out[21]" at mux_srcB.sv(11)
+Info (10041): Inferred latch for "out[22]" at mux_srcB.sv(11)
+Info (10041): Inferred latch for "out[23]" at mux_srcB.sv(11)
+Info (10041): Inferred latch for "out[24]" at mux_srcB.sv(11)
+Info (10041): Inferred latch for "out[25]" at mux_srcB.sv(11)
+Info (10041): Inferred latch for "out[26]" at mux_srcB.sv(11)
+Info (10041): Inferred latch for "out[27]" at mux_srcB.sv(11)
+Info (10041): Inferred latch for "out[28]" at mux_srcB.sv(11)
+Info (10041): Inferred latch for "out[29]" at mux_srcB.sv(11)
+Info (10041): Inferred latch for "out[30]" at mux_srcB.sv(11)
+Info (10041): Inferred latch for "out[31]" at mux_srcB.sv(11)
 Info: Elaborating entity "Ula32" for hierarchy "Ula32:ALU"
 Info: Elaborating entity "mux_pcSrc" for hierarchy "mux_pcSrc:pcSrcMux"
 Info: Elaborating entity "sign_extend26_32" for hierarchy "sign_extend26_32:SE26_32"
@@ -1239,7 +1408,135 @@ Warning: LATCH primitive "mux_2inputs:ALUorMemMux|outputA[28]" is permanently en
 Warning: LATCH primitive "mux_2inputs:ALUorMemMux|outputA[29]" is permanently enabled
 Warning: LATCH primitive "mux_2inputs:ALUorMemMux|outputA[30]" is permanently enabled
 Warning: LATCH primitive "mux_2inputs:ALUorMemMux|outputA[31]" is permanently enabled
-Warning: 8 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning: 9 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning: Latch mux_srcA:ALUSrcA|out[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|ALUSrcA[0]
+Warning: Latch mux_srcA:ALUSrcA|out[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|ALUSrcA[0]
+Warning: Latch mux_srcA:ALUSrcA|out[2] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|ALUSrcA[0]
+Warning: Latch mux_srcA:ALUSrcA|out[3] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|ALUSrcA[0]
+Warning: Latch mux_srcA:ALUSrcA|out[4] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|ALUSrcA[0]
+Warning: Latch mux_srcA:ALUSrcA|out[5] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|ALUSrcA[0]
+Warning: Latch mux_srcA:ALUSrcA|out[6] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|ALUSrcA[0]
+Warning: Latch mux_srcA:ALUSrcA|out[7] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|ALUSrcA[0]
+Warning: Latch mux_srcA:ALUSrcA|out[8] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|ALUSrcA[0]
+Warning: Latch mux_srcA:ALUSrcA|out[9] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|ALUSrcA[0]
+Warning: Latch mux_srcA:ALUSrcA|out[10] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|ALUSrcA[0]
+Warning: Latch mux_srcA:ALUSrcA|out[11] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|ALUSrcA[0]
+Warning: Latch mux_srcA:ALUSrcA|out[12] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|ALUSrcA[0]
+Warning: Latch mux_srcA:ALUSrcA|out[13] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|ALUSrcA[0]
+Warning: Latch mux_srcA:ALUSrcA|out[14] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|ALUSrcA[0]
+Warning: Latch mux_srcA:ALUSrcA|out[15] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|ALUSrcA[0]
+Warning: Latch mux_srcA:ALUSrcA|out[16] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|ALUSrcA[0]
+Warning: Latch mux_srcA:ALUSrcA|out[17] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|ALUSrcA[0]
+Warning: Latch mux_srcA:ALUSrcA|out[18] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|ALUSrcA[0]
+Warning: Latch mux_srcA:ALUSrcA|out[19] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|ALUSrcA[0]
+Warning: Latch mux_srcA:ALUSrcA|out[20] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|ALUSrcA[0]
+Warning: Latch mux_srcA:ALUSrcA|out[21] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|ALUSrcA[0]
+Warning: Latch mux_srcA:ALUSrcA|out[22] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|ALUSrcA[0]
+Warning: Latch mux_srcA:ALUSrcA|out[23] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|ALUSrcA[0]
+Warning: Latch mux_srcA:ALUSrcA|out[24] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|ALUSrcA[0]
+Warning: Latch mux_srcA:ALUSrcA|out[25] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|ALUSrcA[0]
+Warning: Latch mux_srcA:ALUSrcA|out[26] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|ALUSrcA[0]
+Warning: Latch mux_srcA:ALUSrcA|out[27] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|ALUSrcA[0]
+Warning: Latch mux_srcA:ALUSrcA|out[28] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|ALUSrcA[0]
+Warning: Latch mux_srcA:ALUSrcA|out[29] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|ALUSrcA[0]
+Warning: Latch mux_srcA:ALUSrcA|out[30] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|ALUSrcA[0]
+Warning: Latch mux_srcA:ALUSrcA|out[31] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|ALUSrcA[0]
+Warning: Latch mux_srcB:ALUSrcB|out[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|ALUSrcB[1]
+Warning: Latch mux_srcB:ALUSrcB|out[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|ALUSrcB[2]
+Warning: Latch mux_srcB:ALUSrcB|out[2] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|ALUSrcB[0]
+Warning: Latch mux_srcB:ALUSrcB|out[3] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|ALUSrcB[0]
+Warning: Latch mux_srcB:ALUSrcB|out[4] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|ALUSrcB[0]
+Warning: Latch mux_srcB:ALUSrcB|out[5] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|ALUSrcB[0]
+Warning: Latch mux_srcB:ALUSrcB|out[6] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|ALUSrcB[0]
+Warning: Latch mux_srcB:ALUSrcB|out[7] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|ALUSrcB[0]
+Warning: Latch mux_srcB:ALUSrcB|out[8] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|ALUSrcB[0]
+Warning: Latch mux_srcB:ALUSrcB|out[9] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|ALUSrcB[0]
+Warning: Latch mux_srcB:ALUSrcB|out[10] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|ALUSrcB[0]
+Warning: Latch mux_srcB:ALUSrcB|out[11] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|ALUSrcB[0]
+Warning: Latch mux_srcB:ALUSrcB|out[12] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|ALUSrcB[0]
+Warning: Latch mux_srcB:ALUSrcB|out[13] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|ALUSrcB[0]
+Warning: Latch mux_srcB:ALUSrcB|out[14] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|ALUSrcB[0]
+Warning: Latch mux_srcB:ALUSrcB|out[15] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|ALUSrcB[0]
+Warning: Latch mux_srcB:ALUSrcB|out[16] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|ALUSrcB[0]
+Warning: Latch mux_srcB:ALUSrcB|out[17] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|ALUSrcB[0]
+Warning: Latch mux_srcB:ALUSrcB|out[18] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|ALUSrcB[0]
+Warning: Latch mux_srcB:ALUSrcB|out[19] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|ALUSrcB[0]
+Warning: Latch mux_srcB:ALUSrcB|out[20] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|ALUSrcB[0]
+Warning: Latch mux_srcB:ALUSrcB|out[21] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|ALUSrcB[0]
+Warning: Latch mux_srcB:ALUSrcB|out[22] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|ALUSrcB[0]
+Warning: Latch mux_srcB:ALUSrcB|out[23] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|ALUSrcB[0]
+Warning: Latch mux_srcB:ALUSrcB|out[24] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|ALUSrcB[0]
+Warning: Latch mux_srcB:ALUSrcB|out[25] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|ALUSrcB[0]
+Warning: Latch mux_srcB:ALUSrcB|out[26] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|ALUSrcB[0]
+Warning: Latch mux_srcB:ALUSrcB|out[27] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|ALUSrcB[0]
+Warning: Latch mux_srcB:ALUSrcB|out[28] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|ALUSrcB[0]
+Warning: Latch mux_srcB:ALUSrcB|out[29] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|ALUSrcB[0]
+Warning: Latch mux_srcB:ALUSrcB|out[30] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|ALUSrcB[0]
+Warning: Latch mux_srcB:ALUSrcB|out[31] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|ALUSrcB[0]
 Warning: Output pins are stuck at VCC or GND
     Warning (13410): Pin "EPCOut[0]" is stuck at GND
     Warning (13410): Pin "EPCOut[1]" is stuck at GND
@@ -1273,7 +1570,7 @@ Warning: Output pins are stuck at VCC or GND
     Warning (13410): Pin "EPCOut[29]" is stuck at GND
     Warning (13410): Pin "EPCOut[30]" is stuck at GND
     Warning (13410): Pin "EPCOut[31]" is stuck at GND
-Info: 482 registers lost all their fanouts during netlist optimizations. The first 482 are displayed below.
+Info: 416 registers lost all their fanouts during netlist optimizations. The first 416 are displayed below.
     Info: Register "mult:MULTOp|multiplicand[5]" lost all its fanouts during netlist optimizations.
     Info: Register "mult:MULTOp|multiplicand[4]" lost all its fanouts during netlist optimizations.
     Info: Register "mult:MULTOp|multiplicand[3]" lost all its fanouts during netlist optimizations.
@@ -1683,95 +1980,29 @@ Info: 482 registers lost all their fanouts during netlist optimizations. The fir
     Info: Register "div:DIVOp|RESTO[62]" lost all its fanouts during netlist optimizations.
     Info: Register "div:DIVOp|RESTO[63]" lost all its fanouts during netlist optimizations.
     Info: Register "div:DIVOp|DivFim" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:RegisterB|Saida[31]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:RegisterB|Saida[30]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:RegisterB|Saida[29]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:RegisterB|Saida[28]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:RegisterB|Saida[27]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:RegisterB|Saida[26]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:RegisterB|Saida[25]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:RegisterB|Saida[24]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:RegisterB|Saida[23]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:RegisterB|Saida[22]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:RegisterB|Saida[21]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:RegisterB|Saida[20]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:RegisterB|Saida[19]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:RegisterB|Saida[18]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:RegisterB|Saida[17]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:RegisterB|Saida[16]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:RegisterB|Saida[15]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:RegisterB|Saida[14]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:RegisterB|Saida[13]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:RegisterB|Saida[12]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:RegisterB|Saida[11]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:RegisterB|Saida[10]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:RegisterB|Saida[9]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:RegisterB|Saida[8]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:RegisterB|Saida[7]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:RegisterB|Saida[6]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:RegisterB|Saida[5]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:RegisterB|Saida[4]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:RegisterB|Saida[3]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:RegisterB|Saida[2]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:RegisterB|Saida[1]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:RegisterB|Saida[0]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:RegisterA|Saida[31]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:RegisterA|Saida[30]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:RegisterA|Saida[29]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:RegisterA|Saida[28]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:RegisterA|Saida[27]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:RegisterA|Saida[26]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:RegisterA|Saida[25]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:RegisterA|Saida[24]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:RegisterA|Saida[23]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:RegisterA|Saida[22]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:RegisterA|Saida[21]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:RegisterA|Saida[20]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:RegisterA|Saida[19]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:RegisterA|Saida[18]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:RegisterA|Saida[17]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:RegisterA|Saida[16]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:RegisterA|Saida[15]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:RegisterA|Saida[14]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:RegisterA|Saida[13]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:RegisterA|Saida[12]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:RegisterA|Saida[11]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:RegisterA|Saida[10]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:RegisterA|Saida[9]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:RegisterA|Saida[8]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:RegisterA|Saida[7]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:RegisterA|Saida[6]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:RegisterA|Saida[5]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:RegisterA|Saida[4]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:RegisterA|Saida[3]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:RegisterA|Saida[2]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:RegisterA|Saida[1]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:RegisterA|Saida[0]" lost all its fanouts during netlist optimizations.
     Info: Register "UnidadeControle:CtrlUnit|BWD[1]" lost all its fanouts during netlist optimizations.
     Info: Register "UnidadeControle:CtrlUnit|BWD[0]" lost all its fanouts during netlist optimizations.
     Info: Register "UnidadeControle:CtrlUnit|DR1" lost all its fanouts during netlist optimizations.
     Info: Register "UnidadeControle:CtrlUnit|DR2" lost all its fanouts during netlist optimizations.
-    Info: Register "UnidadeControle:CtrlUnit|AWrite" lost all its fanouts during netlist optimizations.
-    Info: Register "UnidadeControle:CtrlUnit|BWrite" lost all its fanouts during netlist optimizations.
     Info: Register "mult:MULTOp|doing.01" lost all its fanouts during netlist optimizations.
     Info: Register "mult:MULTOp|doing.10" lost all its fanouts during netlist optimizations.
     Info: Register "mult:MULTOp|doing.00" lost all its fanouts during netlist optimizations.
-Info: Generated suppressed messages file C:/Users/lcsl/Downloads/infrahardware-testes/ProjetoVerilog/Proj_Hardware.map.smsg
-Info: Implemented 2585 device resources after synthesis - the final resource count might be different
+Info: Generated suppressed messages file C:/Users/lcsl/Downloads/infrahardware/ProjetoVerilog/Proj_Hardware.map.smsg
+Info: Implemented 2940 device resources after synthesis - the final resource count might be different
     Info: Implemented 2 input pins
-    Info: Implemented 199 output pins
-    Info: Implemented 2352 logic cells
+    Info: Implemented 301 output pins
+    Info: Implemented 2605 logic cells
     Info: Implemented 32 RAM segments
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 174 warnings
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 307 warnings
     Info: Peak virtual memory: 334 megabytes
-    Info: Processing ended: Fri May 17 17:29:30 2019
-    Info: Elapsed time: 00:00:18
-    Info: Total CPU time (on all processors): 00:00:21
+    Info: Processing ended: Fri May 17 19:34:40 2019
+    Info: Elapsed time: 00:00:22
+    Info: Total CPU time (on all processors): 00:00:25
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in C:/Users/lcsl/Downloads/infrahardware-testes/ProjetoVerilog/Proj_Hardware.map.smsg.
+The suppressed messages can be found in C:/Users/lcsl/Downloads/infrahardware/ProjetoVerilog/Proj_Hardware.map.smsg.
 
 

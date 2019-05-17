@@ -104,6 +104,7 @@ set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE CPUWForm.vwf
+set_global_assignment -name MIF_FILE instrucoes2.mif
 set_global_assignment -name MIF_FILE instrucoes.mif
 set_global_assignment -name VERILOG_FILE div.v
 set_global_assignment -name VERILOG_FILE mult.v
@@ -135,4 +136,6 @@ set_global_assignment -name VERILOG_FILE mux_memWD.V
 set_global_assignment -name SYSTEMVERILOG_FILE mux_pccond.sv
 set_global_assignment -name SYSTEMVERILOG_FILE mux_2inputs.sv
 set_global_assignment -name VECTOR_WAVEFORM_FILE CPUWForm.vwf
+set_global_assignment -name SYSTEMVERILOG_FILE mux_srcB.sv
+set_global_assignment -name SYSTEMVERILOG_FILE mux_srcA.sv
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
