@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for Proj_Hardware
-Tue May 14 23:20:06 2019
+Thu May 16 20:48:22 2019
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -16,19 +16,30 @@ Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
   8. Slow Model Recovery Summary
   9. Slow Model Removal Summary
  10. Slow Model Minimum Pulse Width Summary
- 11. Slow Model Datasheet Report
- 12. Fast Model Setup Summary
- 13. Fast Model Hold Summary
- 14. Fast Model Recovery Summary
- 15. Fast Model Removal Summary
- 16. Fast Model Minimum Pulse Width Summary
- 17. Fast Model Datasheet Report
- 18. Multicorner Timing Analysis Summary
- 19. Clock Transfers
- 20. Report TCCS
- 21. Report RSKM
- 22. Unconstrained Paths
- 23. TimeQuest Timing Analyzer Messages
+ 11. Setup Times
+ 12. Hold Times
+ 13. Clock to Output Times
+ 14. Minimum Clock to Output Times
+ 15. Fast Model Setup Summary
+ 16. Fast Model Hold Summary
+ 17. Fast Model Recovery Summary
+ 18. Fast Model Removal Summary
+ 19. Fast Model Minimum Pulse Width Summary
+ 20. Setup Times
+ 21. Hold Times
+ 22. Clock to Output Times
+ 23. Minimum Clock to Output Times
+ 24. Multicorner Timing Analysis Summary
+ 25. Setup Times
+ 26. Hold Times
+ 27. Clock to Output Times
+ 28. Minimum Clock to Output Times
+ 29. Setup Transfers
+ 30. Hold Transfers
+ 31. Report TCCS
+ 32. Report RSKM
+ 33. Unconstrained Paths
+ 34. TimeQuest Timing Analyzer Messages
 
 
 
@@ -75,28 +86,41 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-----------
-; Clocks ;
-----------
-No clocks to report.
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                            ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets   ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+; clock      ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clock } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
 
 
----------------------------
-; Slow Model Fmax Summary ;
----------------------------
-No paths to report.
++--------------------------------------------------+
+; Slow Model Fmax Summary                          ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 165.78 MHz ; 165.78 MHz      ; clock      ;      ;
++------------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
-----------------------------
-; Slow Model Setup Summary ;
-----------------------------
-No paths to report.
++--------------------------------+
+; Slow Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clock ; -5.032 ; -229.877      ;
++-------+--------+---------------+
 
 
----------------------------
-; Slow Model Hold Summary ;
----------------------------
-No paths to report.
++-------------------------------+
+; Slow Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clock ; 0.341 ; 0.000         ;
++-------+-------+---------------+
 
 
 -------------------------------
@@ -111,28 +135,283 @@ No paths to report.
 No paths to report.
 
 
-------------------------------------------
++----------------------------------------+
 ; Slow Model Minimum Pulse Width Summary ;
-------------------------------------------
-No paths to report.
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; clock ; -1.000 ; -130.600              ;
++-------+--------+-----------------------+
 
 
--------------------------------
-; Slow Model Datasheet Report ;
--------------------------------
-Nothing to report.
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; reset     ; clock      ; 5.414 ; 5.414 ; Rise       ; clock           ;
++-----------+------------+-------+-------+------------+-----------------+
 
 
-----------------------------
-; Fast Model Setup Summary ;
-----------------------------
-No paths to report.
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; reset     ; clock      ; -2.993 ; -2.993 ; Rise       ; clock           ;
++-----------+------------+--------+--------+------------+-----------------+
 
 
----------------------------
-; Fast Model Hold Summary ;
----------------------------
-No paths to report.
++---------------------------------------------------------------------------+
+; Clock to Output Times                                                     ;
++---------------+------------+-------+-------+------------+-----------------+
+; Data Port     ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++---------------+------------+-------+-------+------------+-----------------+
+; CurState[*]   ; clock      ; 6.298 ; 6.298 ; Rise       ; clock           ;
+;  CurState[0]  ; clock      ; 5.790 ; 5.790 ; Rise       ; clock           ;
+;  CurState[1]  ; clock      ; 5.599 ; 5.599 ; Rise       ; clock           ;
+;  CurState[2]  ; clock      ; 6.298 ; 6.298 ; Rise       ; clock           ;
+;  CurState[3]  ; clock      ; 5.647 ; 5.647 ; Rise       ; clock           ;
+;  CurState[4]  ; clock      ; 5.623 ; 5.623 ; Rise       ; clock           ;
+;  CurState[5]  ; clock      ; 5.812 ; 5.812 ; Rise       ; clock           ;
+; MDROut[*]     ; clock      ; 6.871 ; 6.871 ; Rise       ; clock           ;
+;  MDROut[0]    ; clock      ; 5.976 ; 5.976 ; Rise       ; clock           ;
+;  MDROut[1]    ; clock      ; 6.291 ; 6.291 ; Rise       ; clock           ;
+;  MDROut[2]    ; clock      ; 5.788 ; 5.788 ; Rise       ; clock           ;
+;  MDROut[3]    ; clock      ; 6.282 ; 6.282 ; Rise       ; clock           ;
+;  MDROut[4]    ; clock      ; 6.858 ; 6.858 ; Rise       ; clock           ;
+;  MDROut[5]    ; clock      ; 6.301 ; 6.301 ; Rise       ; clock           ;
+;  MDROut[6]    ; clock      ; 6.607 ; 6.607 ; Rise       ; clock           ;
+;  MDROut[7]    ; clock      ; 6.222 ; 6.222 ; Rise       ; clock           ;
+;  MDROut[8]    ; clock      ; 6.008 ; 6.008 ; Rise       ; clock           ;
+;  MDROut[9]    ; clock      ; 6.587 ; 6.587 ; Rise       ; clock           ;
+;  MDROut[10]   ; clock      ; 5.982 ; 5.982 ; Rise       ; clock           ;
+;  MDROut[11]   ; clock      ; 5.948 ; 5.948 ; Rise       ; clock           ;
+;  MDROut[12]   ; clock      ; 6.039 ; 6.039 ; Rise       ; clock           ;
+;  MDROut[13]   ; clock      ; 5.723 ; 5.723 ; Rise       ; clock           ;
+;  MDROut[14]   ; clock      ; 6.207 ; 6.207 ; Rise       ; clock           ;
+;  MDROut[15]   ; clock      ; 5.721 ; 5.721 ; Rise       ; clock           ;
+;  MDROut[16]   ; clock      ; 6.019 ; 6.019 ; Rise       ; clock           ;
+;  MDROut[17]   ; clock      ; 6.106 ; 6.106 ; Rise       ; clock           ;
+;  MDROut[18]   ; clock      ; 5.999 ; 5.999 ; Rise       ; clock           ;
+;  MDROut[19]   ; clock      ; 6.026 ; 6.026 ; Rise       ; clock           ;
+;  MDROut[20]   ; clock      ; 5.788 ; 5.788 ; Rise       ; clock           ;
+;  MDROut[21]   ; clock      ; 6.264 ; 6.264 ; Rise       ; clock           ;
+;  MDROut[22]   ; clock      ; 6.164 ; 6.164 ; Rise       ; clock           ;
+;  MDROut[23]   ; clock      ; 6.441 ; 6.441 ; Rise       ; clock           ;
+;  MDROut[24]   ; clock      ; 6.130 ; 6.130 ; Rise       ; clock           ;
+;  MDROut[25]   ; clock      ; 5.983 ; 5.983 ; Rise       ; clock           ;
+;  MDROut[26]   ; clock      ; 6.777 ; 6.777 ; Rise       ; clock           ;
+;  MDROut[27]   ; clock      ; 6.469 ; 6.469 ; Rise       ; clock           ;
+;  MDROut[28]   ; clock      ; 6.545 ; 6.545 ; Rise       ; clock           ;
+;  MDROut[29]   ; clock      ; 6.297 ; 6.297 ; Rise       ; clock           ;
+;  MDROut[30]   ; clock      ; 6.233 ; 6.233 ; Rise       ; clock           ;
+;  MDROut[31]   ; clock      ; 6.871 ; 6.871 ; Rise       ; clock           ;
+; OPCode[*]     ; clock      ; 6.521 ; 6.521 ; Rise       ; clock           ;
+;  OPCode[0]    ; clock      ; 5.755 ; 5.755 ; Rise       ; clock           ;
+;  OPCode[1]    ; clock      ; 5.951 ; 5.951 ; Rise       ; clock           ;
+;  OPCode[2]    ; clock      ; 6.521 ; 6.521 ; Rise       ; clock           ;
+;  OPCode[3]    ; clock      ; 6.515 ; 6.515 ; Rise       ; clock           ;
+;  OPCode[4]    ; clock      ; 6.010 ; 6.010 ; Rise       ; clock           ;
+;  OPCode[5]    ; clock      ; 5.723 ; 5.723 ; Rise       ; clock           ;
+; PCOut[*]      ; clock      ; 7.088 ; 7.088 ; Rise       ; clock           ;
+;  PCOut[0]     ; clock      ; 6.918 ; 6.918 ; Rise       ; clock           ;
+;  PCOut[1]     ; clock      ; 6.451 ; 6.451 ; Rise       ; clock           ;
+;  PCOut[2]     ; clock      ; 6.937 ; 6.937 ; Rise       ; clock           ;
+;  PCOut[3]     ; clock      ; 6.839 ; 6.839 ; Rise       ; clock           ;
+;  PCOut[4]     ; clock      ; 6.531 ; 6.531 ; Rise       ; clock           ;
+;  PCOut[5]     ; clock      ; 6.820 ; 6.820 ; Rise       ; clock           ;
+;  PCOut[6]     ; clock      ; 5.683 ; 5.683 ; Rise       ; clock           ;
+;  PCOut[7]     ; clock      ; 5.969 ; 5.969 ; Rise       ; clock           ;
+;  PCOut[8]     ; clock      ; 5.404 ; 5.404 ; Rise       ; clock           ;
+;  PCOut[9]     ; clock      ; 5.432 ; 5.432 ; Rise       ; clock           ;
+;  PCOut[10]    ; clock      ; 5.800 ; 5.800 ; Rise       ; clock           ;
+;  PCOut[11]    ; clock      ; 6.265 ; 6.265 ; Rise       ; clock           ;
+;  PCOut[12]    ; clock      ; 6.067 ; 6.067 ; Rise       ; clock           ;
+;  PCOut[13]    ; clock      ; 6.337 ; 6.337 ; Rise       ; clock           ;
+;  PCOut[14]    ; clock      ; 6.556 ; 6.556 ; Rise       ; clock           ;
+;  PCOut[15]    ; clock      ; 5.095 ; 5.095 ; Rise       ; clock           ;
+;  PCOut[16]    ; clock      ; 5.768 ; 5.768 ; Rise       ; clock           ;
+;  PCOut[17]    ; clock      ; 6.004 ; 6.004 ; Rise       ; clock           ;
+;  PCOut[18]    ; clock      ; 5.977 ; 5.977 ; Rise       ; clock           ;
+;  PCOut[19]    ; clock      ; 5.052 ; 5.052 ; Rise       ; clock           ;
+;  PCOut[20]    ; clock      ; 5.861 ; 5.861 ; Rise       ; clock           ;
+;  PCOut[21]    ; clock      ; 6.277 ; 6.277 ; Rise       ; clock           ;
+;  PCOut[22]    ; clock      ; 5.596 ; 5.596 ; Rise       ; clock           ;
+;  PCOut[23]    ; clock      ; 6.259 ; 6.259 ; Rise       ; clock           ;
+;  PCOut[24]    ; clock      ; 5.979 ; 5.979 ; Rise       ; clock           ;
+;  PCOut[25]    ; clock      ; 5.941 ; 5.941 ; Rise       ; clock           ;
+;  PCOut[26]    ; clock      ; 7.088 ; 7.088 ; Rise       ; clock           ;
+;  PCOut[27]    ; clock      ; 6.881 ; 6.881 ; Rise       ; clock           ;
+;  PCOut[28]    ; clock      ; 6.520 ; 6.520 ; Rise       ; clock           ;
+;  PCOut[29]    ; clock      ; 5.052 ; 5.052 ; Rise       ; clock           ;
+;  PCOut[30]    ; clock      ; 5.255 ; 5.255 ; Rise       ; clock           ;
+;  PCOut[31]    ; clock      ; 5.732 ; 5.732 ; Rise       ; clock           ;
+; inst15_0[*]   ; clock      ; 7.282 ; 7.282 ; Rise       ; clock           ;
+;  inst15_0[0]  ; clock      ; 6.024 ; 6.024 ; Rise       ; clock           ;
+;  inst15_0[1]  ; clock      ; 5.983 ; 5.983 ; Rise       ; clock           ;
+;  inst15_0[2]  ; clock      ; 5.899 ; 5.899 ; Rise       ; clock           ;
+;  inst15_0[3]  ; clock      ; 7.282 ; 7.282 ; Rise       ; clock           ;
+;  inst15_0[4]  ; clock      ; 6.184 ; 6.184 ; Rise       ; clock           ;
+;  inst15_0[5]  ; clock      ; 5.618 ; 5.618 ; Rise       ; clock           ;
+;  inst15_0[6]  ; clock      ; 6.039 ; 6.039 ; Rise       ; clock           ;
+;  inst15_0[7]  ; clock      ; 5.678 ; 5.678 ; Rise       ; clock           ;
+;  inst15_0[8]  ; clock      ; 5.719 ; 5.719 ; Rise       ; clock           ;
+;  inst15_0[9]  ; clock      ; 5.519 ; 5.519 ; Rise       ; clock           ;
+;  inst15_0[10] ; clock      ; 5.982 ; 5.982 ; Rise       ; clock           ;
+;  inst15_0[11] ; clock      ; 5.255 ; 5.255 ; Rise       ; clock           ;
+;  inst15_0[12] ; clock      ; 6.221 ; 6.221 ; Rise       ; clock           ;
+;  inst15_0[13] ; clock      ; 7.165 ; 7.165 ; Rise       ; clock           ;
+;  inst15_0[14] ; clock      ; 6.696 ; 6.696 ; Rise       ; clock           ;
+;  inst15_0[15] ; clock      ; 5.092 ; 5.092 ; Rise       ; clock           ;
+; rs[*]         ; clock      ; 6.651 ; 6.651 ; Rise       ; clock           ;
+;  rs[0]        ; clock      ; 6.058 ; 6.058 ; Rise       ; clock           ;
+;  rs[1]        ; clock      ; 6.218 ; 6.218 ; Rise       ; clock           ;
+;  rs[2]        ; clock      ; 6.015 ; 6.015 ; Rise       ; clock           ;
+;  rs[3]        ; clock      ; 6.651 ; 6.651 ; Rise       ; clock           ;
+;  rs[4]        ; clock      ; 5.990 ; 5.990 ; Rise       ; clock           ;
+; rt[*]         ; clock      ; 6.327 ; 6.327 ; Rise       ; clock           ;
+;  rt[0]        ; clock      ; 5.788 ; 5.788 ; Rise       ; clock           ;
+;  rt[1]        ; clock      ; 6.327 ; 6.327 ; Rise       ; clock           ;
+;  rt[2]        ; clock      ; 6.293 ; 6.293 ; Rise       ; clock           ;
+;  rt[3]        ; clock      ; 6.064 ; 6.064 ; Rise       ; clock           ;
+;  rt[4]        ; clock      ; 5.929 ; 5.929 ; Rise       ; clock           ;
++---------------+------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                             ;
++---------------+------------+-------+-------+------------+-----------------+
+; Data Port     ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++---------------+------------+-------+-------+------------+-----------------+
+; CurState[*]   ; clock      ; 5.599 ; 5.599 ; Rise       ; clock           ;
+;  CurState[0]  ; clock      ; 5.790 ; 5.790 ; Rise       ; clock           ;
+;  CurState[1]  ; clock      ; 5.599 ; 5.599 ; Rise       ; clock           ;
+;  CurState[2]  ; clock      ; 6.298 ; 6.298 ; Rise       ; clock           ;
+;  CurState[3]  ; clock      ; 5.647 ; 5.647 ; Rise       ; clock           ;
+;  CurState[4]  ; clock      ; 5.623 ; 5.623 ; Rise       ; clock           ;
+;  CurState[5]  ; clock      ; 5.812 ; 5.812 ; Rise       ; clock           ;
+; MDROut[*]     ; clock      ; 5.721 ; 5.721 ; Rise       ; clock           ;
+;  MDROut[0]    ; clock      ; 5.976 ; 5.976 ; Rise       ; clock           ;
+;  MDROut[1]    ; clock      ; 6.291 ; 6.291 ; Rise       ; clock           ;
+;  MDROut[2]    ; clock      ; 5.788 ; 5.788 ; Rise       ; clock           ;
+;  MDROut[3]    ; clock      ; 6.282 ; 6.282 ; Rise       ; clock           ;
+;  MDROut[4]    ; clock      ; 6.858 ; 6.858 ; Rise       ; clock           ;
+;  MDROut[5]    ; clock      ; 6.301 ; 6.301 ; Rise       ; clock           ;
+;  MDROut[6]    ; clock      ; 6.607 ; 6.607 ; Rise       ; clock           ;
+;  MDROut[7]    ; clock      ; 6.222 ; 6.222 ; Rise       ; clock           ;
+;  MDROut[8]    ; clock      ; 6.008 ; 6.008 ; Rise       ; clock           ;
+;  MDROut[9]    ; clock      ; 6.587 ; 6.587 ; Rise       ; clock           ;
+;  MDROut[10]   ; clock      ; 5.982 ; 5.982 ; Rise       ; clock           ;
+;  MDROut[11]   ; clock      ; 5.948 ; 5.948 ; Rise       ; clock           ;
+;  MDROut[12]   ; clock      ; 6.039 ; 6.039 ; Rise       ; clock           ;
+;  MDROut[13]   ; clock      ; 5.723 ; 5.723 ; Rise       ; clock           ;
+;  MDROut[14]   ; clock      ; 6.207 ; 6.207 ; Rise       ; clock           ;
+;  MDROut[15]   ; clock      ; 5.721 ; 5.721 ; Rise       ; clock           ;
+;  MDROut[16]   ; clock      ; 6.019 ; 6.019 ; Rise       ; clock           ;
+;  MDROut[17]   ; clock      ; 6.106 ; 6.106 ; Rise       ; clock           ;
+;  MDROut[18]   ; clock      ; 5.999 ; 5.999 ; Rise       ; clock           ;
+;  MDROut[19]   ; clock      ; 6.026 ; 6.026 ; Rise       ; clock           ;
+;  MDROut[20]   ; clock      ; 5.788 ; 5.788 ; Rise       ; clock           ;
+;  MDROut[21]   ; clock      ; 6.264 ; 6.264 ; Rise       ; clock           ;
+;  MDROut[22]   ; clock      ; 6.164 ; 6.164 ; Rise       ; clock           ;
+;  MDROut[23]   ; clock      ; 6.441 ; 6.441 ; Rise       ; clock           ;
+;  MDROut[24]   ; clock      ; 6.130 ; 6.130 ; Rise       ; clock           ;
+;  MDROut[25]   ; clock      ; 5.983 ; 5.983 ; Rise       ; clock           ;
+;  MDROut[26]   ; clock      ; 6.777 ; 6.777 ; Rise       ; clock           ;
+;  MDROut[27]   ; clock      ; 6.469 ; 6.469 ; Rise       ; clock           ;
+;  MDROut[28]   ; clock      ; 6.545 ; 6.545 ; Rise       ; clock           ;
+;  MDROut[29]   ; clock      ; 6.297 ; 6.297 ; Rise       ; clock           ;
+;  MDROut[30]   ; clock      ; 6.233 ; 6.233 ; Rise       ; clock           ;
+;  MDROut[31]   ; clock      ; 6.871 ; 6.871 ; Rise       ; clock           ;
+; OPCode[*]     ; clock      ; 5.723 ; 5.723 ; Rise       ; clock           ;
+;  OPCode[0]    ; clock      ; 5.755 ; 5.755 ; Rise       ; clock           ;
+;  OPCode[1]    ; clock      ; 5.951 ; 5.951 ; Rise       ; clock           ;
+;  OPCode[2]    ; clock      ; 6.521 ; 6.521 ; Rise       ; clock           ;
+;  OPCode[3]    ; clock      ; 6.515 ; 6.515 ; Rise       ; clock           ;
+;  OPCode[4]    ; clock      ; 6.010 ; 6.010 ; Rise       ; clock           ;
+;  OPCode[5]    ; clock      ; 5.723 ; 5.723 ; Rise       ; clock           ;
+; PCOut[*]      ; clock      ; 5.052 ; 5.052 ; Rise       ; clock           ;
+;  PCOut[0]     ; clock      ; 6.918 ; 6.918 ; Rise       ; clock           ;
+;  PCOut[1]     ; clock      ; 6.451 ; 6.451 ; Rise       ; clock           ;
+;  PCOut[2]     ; clock      ; 6.937 ; 6.937 ; Rise       ; clock           ;
+;  PCOut[3]     ; clock      ; 6.839 ; 6.839 ; Rise       ; clock           ;
+;  PCOut[4]     ; clock      ; 6.531 ; 6.531 ; Rise       ; clock           ;
+;  PCOut[5]     ; clock      ; 6.820 ; 6.820 ; Rise       ; clock           ;
+;  PCOut[6]     ; clock      ; 5.683 ; 5.683 ; Rise       ; clock           ;
+;  PCOut[7]     ; clock      ; 5.969 ; 5.969 ; Rise       ; clock           ;
+;  PCOut[8]     ; clock      ; 5.404 ; 5.404 ; Rise       ; clock           ;
+;  PCOut[9]     ; clock      ; 5.432 ; 5.432 ; Rise       ; clock           ;
+;  PCOut[10]    ; clock      ; 5.800 ; 5.800 ; Rise       ; clock           ;
+;  PCOut[11]    ; clock      ; 6.265 ; 6.265 ; Rise       ; clock           ;
+;  PCOut[12]    ; clock      ; 6.067 ; 6.067 ; Rise       ; clock           ;
+;  PCOut[13]    ; clock      ; 6.337 ; 6.337 ; Rise       ; clock           ;
+;  PCOut[14]    ; clock      ; 6.556 ; 6.556 ; Rise       ; clock           ;
+;  PCOut[15]    ; clock      ; 5.095 ; 5.095 ; Rise       ; clock           ;
+;  PCOut[16]    ; clock      ; 5.768 ; 5.768 ; Rise       ; clock           ;
+;  PCOut[17]    ; clock      ; 6.004 ; 6.004 ; Rise       ; clock           ;
+;  PCOut[18]    ; clock      ; 5.977 ; 5.977 ; Rise       ; clock           ;
+;  PCOut[19]    ; clock      ; 5.052 ; 5.052 ; Rise       ; clock           ;
+;  PCOut[20]    ; clock      ; 5.861 ; 5.861 ; Rise       ; clock           ;
+;  PCOut[21]    ; clock      ; 6.277 ; 6.277 ; Rise       ; clock           ;
+;  PCOut[22]    ; clock      ; 5.596 ; 5.596 ; Rise       ; clock           ;
+;  PCOut[23]    ; clock      ; 6.259 ; 6.259 ; Rise       ; clock           ;
+;  PCOut[24]    ; clock      ; 5.979 ; 5.979 ; Rise       ; clock           ;
+;  PCOut[25]    ; clock      ; 5.941 ; 5.941 ; Rise       ; clock           ;
+;  PCOut[26]    ; clock      ; 7.088 ; 7.088 ; Rise       ; clock           ;
+;  PCOut[27]    ; clock      ; 6.881 ; 6.881 ; Rise       ; clock           ;
+;  PCOut[28]    ; clock      ; 6.520 ; 6.520 ; Rise       ; clock           ;
+;  PCOut[29]    ; clock      ; 5.052 ; 5.052 ; Rise       ; clock           ;
+;  PCOut[30]    ; clock      ; 5.255 ; 5.255 ; Rise       ; clock           ;
+;  PCOut[31]    ; clock      ; 5.732 ; 5.732 ; Rise       ; clock           ;
+; inst15_0[*]   ; clock      ; 5.092 ; 5.092 ; Rise       ; clock           ;
+;  inst15_0[0]  ; clock      ; 6.024 ; 6.024 ; Rise       ; clock           ;
+;  inst15_0[1]  ; clock      ; 5.983 ; 5.983 ; Rise       ; clock           ;
+;  inst15_0[2]  ; clock      ; 5.899 ; 5.899 ; Rise       ; clock           ;
+;  inst15_0[3]  ; clock      ; 7.282 ; 7.282 ; Rise       ; clock           ;
+;  inst15_0[4]  ; clock      ; 6.184 ; 6.184 ; Rise       ; clock           ;
+;  inst15_0[5]  ; clock      ; 5.618 ; 5.618 ; Rise       ; clock           ;
+;  inst15_0[6]  ; clock      ; 6.039 ; 6.039 ; Rise       ; clock           ;
+;  inst15_0[7]  ; clock      ; 5.678 ; 5.678 ; Rise       ; clock           ;
+;  inst15_0[8]  ; clock      ; 5.719 ; 5.719 ; Rise       ; clock           ;
+;  inst15_0[9]  ; clock      ; 5.519 ; 5.519 ; Rise       ; clock           ;
+;  inst15_0[10] ; clock      ; 5.982 ; 5.982 ; Rise       ; clock           ;
+;  inst15_0[11] ; clock      ; 5.255 ; 5.255 ; Rise       ; clock           ;
+;  inst15_0[12] ; clock      ; 6.221 ; 6.221 ; Rise       ; clock           ;
+;  inst15_0[13] ; clock      ; 7.165 ; 7.165 ; Rise       ; clock           ;
+;  inst15_0[14] ; clock      ; 6.696 ; 6.696 ; Rise       ; clock           ;
+;  inst15_0[15] ; clock      ; 5.092 ; 5.092 ; Rise       ; clock           ;
+; rs[*]         ; clock      ; 5.990 ; 5.990 ; Rise       ; clock           ;
+;  rs[0]        ; clock      ; 6.058 ; 6.058 ; Rise       ; clock           ;
+;  rs[1]        ; clock      ; 6.218 ; 6.218 ; Rise       ; clock           ;
+;  rs[2]        ; clock      ; 6.015 ; 6.015 ; Rise       ; clock           ;
+;  rs[3]        ; clock      ; 6.651 ; 6.651 ; Rise       ; clock           ;
+;  rs[4]        ; clock      ; 5.990 ; 5.990 ; Rise       ; clock           ;
+; rt[*]         ; clock      ; 5.788 ; 5.788 ; Rise       ; clock           ;
+;  rt[0]        ; clock      ; 5.788 ; 5.788 ; Rise       ; clock           ;
+;  rt[1]        ; clock      ; 6.327 ; 6.327 ; Rise       ; clock           ;
+;  rt[2]        ; clock      ; 6.293 ; 6.293 ; Rise       ; clock           ;
+;  rt[3]        ; clock      ; 6.064 ; 6.064 ; Rise       ; clock           ;
+;  rt[4]        ; clock      ; 5.929 ; 5.929 ; Rise       ; clock           ;
++---------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------+
+; Fast Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clock ; -2.297 ; -64.104       ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Fast Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clock ; 0.223 ; 0.000         ;
++-------+-------+---------------+
 
 
 -------------------------------
@@ -147,32 +426,549 @@ No paths to report.
 No paths to report.
 
 
-------------------------------------------
++----------------------------------------+
 ; Fast Model Minimum Pulse Width Summary ;
-------------------------------------------
-No paths to report.
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; clock ; -1.000 ; -134.272              ;
++-------+--------+-----------------------+
 
 
--------------------------------
-; Fast Model Datasheet Report ;
--------------------------------
-Nothing to report.
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; reset     ; clock      ; 3.042 ; 3.042 ; Rise       ; clock           ;
++-----------+------------+-------+-------+------------+-----------------+
 
 
-+----------------------------------------------------------------------------+
-; Multicorner Timing Analysis Summary                                        ;
-+------------------+-------+------+----------+---------+---------------------+
-; Clock            ; Setup ; Hold ; Recovery ; Removal ; Minimum Pulse Width ;
-+------------------+-------+------+----------+---------+---------------------+
-; Worst-case Slack ; N/A   ; N/A  ; N/A      ; N/A     ; N/A                 ;
-; Design-wide TNS  ; 0.0   ; 0.0  ; 0.0      ; 0.0     ; 0.0                 ;
-+------------------+-------+------+----------+---------+---------------------+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; reset     ; clock      ; -1.891 ; -1.891 ; Rise       ; clock           ;
++-----------+------------+--------+--------+------------+-----------------+
 
 
--------------------
-; Clock Transfers ;
--------------------
-Nothing to report.
++---------------------------------------------------------------------------+
+; Clock to Output Times                                                     ;
++---------------+------------+-------+-------+------------+-----------------+
+; Data Port     ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++---------------+------------+-------+-------+------------+-----------------+
+; CurState[*]   ; clock      ; 3.651 ; 3.651 ; Rise       ; clock           ;
+;  CurState[0]  ; clock      ; 3.288 ; 3.288 ; Rise       ; clock           ;
+;  CurState[1]  ; clock      ; 3.220 ; 3.220 ; Rise       ; clock           ;
+;  CurState[2]  ; clock      ; 3.651 ; 3.651 ; Rise       ; clock           ;
+;  CurState[3]  ; clock      ; 3.265 ; 3.265 ; Rise       ; clock           ;
+;  CurState[4]  ; clock      ; 3.235 ; 3.235 ; Rise       ; clock           ;
+;  CurState[5]  ; clock      ; 3.326 ; 3.326 ; Rise       ; clock           ;
+; MDROut[*]     ; clock      ; 3.879 ; 3.879 ; Rise       ; clock           ;
+;  MDROut[0]    ; clock      ; 3.408 ; 3.408 ; Rise       ; clock           ;
+;  MDROut[1]    ; clock      ; 3.606 ; 3.606 ; Rise       ; clock           ;
+;  MDROut[2]    ; clock      ; 3.398 ; 3.398 ; Rise       ; clock           ;
+;  MDROut[3]    ; clock      ; 3.557 ; 3.557 ; Rise       ; clock           ;
+;  MDROut[4]    ; clock      ; 3.842 ; 3.842 ; Rise       ; clock           ;
+;  MDROut[5]    ; clock      ; 3.611 ; 3.611 ; Rise       ; clock           ;
+;  MDROut[6]    ; clock      ; 3.732 ; 3.732 ; Rise       ; clock           ;
+;  MDROut[7]    ; clock      ; 3.504 ; 3.504 ; Rise       ; clock           ;
+;  MDROut[8]    ; clock      ; 3.428 ; 3.428 ; Rise       ; clock           ;
+;  MDROut[9]    ; clock      ; 3.753 ; 3.753 ; Rise       ; clock           ;
+;  MDROut[10]   ; clock      ; 3.392 ; 3.392 ; Rise       ; clock           ;
+;  MDROut[11]   ; clock      ; 3.417 ; 3.417 ; Rise       ; clock           ;
+;  MDROut[12]   ; clock      ; 3.521 ; 3.521 ; Rise       ; clock           ;
+;  MDROut[13]   ; clock      ; 3.291 ; 3.291 ; Rise       ; clock           ;
+;  MDROut[14]   ; clock      ; 3.595 ; 3.595 ; Rise       ; clock           ;
+;  MDROut[15]   ; clock      ; 3.298 ; 3.298 ; Rise       ; clock           ;
+;  MDROut[16]   ; clock      ; 3.458 ; 3.458 ; Rise       ; clock           ;
+;  MDROut[17]   ; clock      ; 3.516 ; 3.516 ; Rise       ; clock           ;
+;  MDROut[18]   ; clock      ; 3.504 ; 3.504 ; Rise       ; clock           ;
+;  MDROut[19]   ; clock      ; 3.462 ; 3.462 ; Rise       ; clock           ;
+;  MDROut[20]   ; clock      ; 3.347 ; 3.347 ; Rise       ; clock           ;
+;  MDROut[21]   ; clock      ; 3.554 ; 3.554 ; Rise       ; clock           ;
+;  MDROut[22]   ; clock      ; 3.516 ; 3.516 ; Rise       ; clock           ;
+;  MDROut[23]   ; clock      ; 3.660 ; 3.660 ; Rise       ; clock           ;
+;  MDROut[24]   ; clock      ; 3.549 ; 3.549 ; Rise       ; clock           ;
+;  MDROut[25]   ; clock      ; 3.531 ; 3.531 ; Rise       ; clock           ;
+;  MDROut[26]   ; clock      ; 3.790 ; 3.790 ; Rise       ; clock           ;
+;  MDROut[27]   ; clock      ; 3.634 ; 3.634 ; Rise       ; clock           ;
+;  MDROut[28]   ; clock      ; 3.698 ; 3.698 ; Rise       ; clock           ;
+;  MDROut[29]   ; clock      ; 3.573 ; 3.573 ; Rise       ; clock           ;
+;  MDROut[30]   ; clock      ; 3.550 ; 3.550 ; Rise       ; clock           ;
+;  MDROut[31]   ; clock      ; 3.879 ; 3.879 ; Rise       ; clock           ;
+; OPCode[*]     ; clock      ; 3.690 ; 3.690 ; Rise       ; clock           ;
+;  OPCode[0]    ; clock      ; 3.373 ; 3.373 ; Rise       ; clock           ;
+;  OPCode[1]    ; clock      ; 3.361 ; 3.361 ; Rise       ; clock           ;
+;  OPCode[2]    ; clock      ; 3.649 ; 3.649 ; Rise       ; clock           ;
+;  OPCode[3]    ; clock      ; 3.690 ; 3.690 ; Rise       ; clock           ;
+;  OPCode[4]    ; clock      ; 3.412 ; 3.412 ; Rise       ; clock           ;
+;  OPCode[5]    ; clock      ; 3.385 ; 3.385 ; Rise       ; clock           ;
+; PCOut[*]      ; clock      ; 4.007 ; 4.007 ; Rise       ; clock           ;
+;  PCOut[0]     ; clock      ; 3.853 ; 3.853 ; Rise       ; clock           ;
+;  PCOut[1]     ; clock      ; 3.616 ; 3.616 ; Rise       ; clock           ;
+;  PCOut[2]     ; clock      ; 3.897 ; 3.897 ; Rise       ; clock           ;
+;  PCOut[3]     ; clock      ; 3.856 ; 3.856 ; Rise       ; clock           ;
+;  PCOut[4]     ; clock      ; 3.706 ; 3.706 ; Rise       ; clock           ;
+;  PCOut[5]     ; clock      ; 3.890 ; 3.890 ; Rise       ; clock           ;
+;  PCOut[6]     ; clock      ; 3.366 ; 3.366 ; Rise       ; clock           ;
+;  PCOut[7]     ; clock      ; 3.397 ; 3.397 ; Rise       ; clock           ;
+;  PCOut[8]     ; clock      ; 3.132 ; 3.132 ; Rise       ; clock           ;
+;  PCOut[9]     ; clock      ; 3.144 ; 3.144 ; Rise       ; clock           ;
+;  PCOut[10]    ; clock      ; 3.313 ; 3.313 ; Rise       ; clock           ;
+;  PCOut[11]    ; clock      ; 3.641 ; 3.641 ; Rise       ; clock           ;
+;  PCOut[12]    ; clock      ; 3.544 ; 3.544 ; Rise       ; clock           ;
+;  PCOut[13]    ; clock      ; 3.567 ; 3.567 ; Rise       ; clock           ;
+;  PCOut[14]    ; clock      ; 3.690 ; 3.690 ; Rise       ; clock           ;
+;  PCOut[15]    ; clock      ; 2.968 ; 2.968 ; Rise       ; clock           ;
+;  PCOut[16]    ; clock      ; 3.295 ; 3.295 ; Rise       ; clock           ;
+;  PCOut[17]    ; clock      ; 3.512 ; 3.512 ; Rise       ; clock           ;
+;  PCOut[18]    ; clock      ; 3.417 ; 3.417 ; Rise       ; clock           ;
+;  PCOut[19]    ; clock      ; 2.920 ; 2.920 ; Rise       ; clock           ;
+;  PCOut[20]    ; clock      ; 3.449 ; 3.449 ; Rise       ; clock           ;
+;  PCOut[21]    ; clock      ; 3.546 ; 3.546 ; Rise       ; clock           ;
+;  PCOut[22]    ; clock      ; 3.306 ; 3.306 ; Rise       ; clock           ;
+;  PCOut[23]    ; clock      ; 3.544 ; 3.544 ; Rise       ; clock           ;
+;  PCOut[24]    ; clock      ; 3.526 ; 3.526 ; Rise       ; clock           ;
+;  PCOut[25]    ; clock      ; 3.367 ; 3.367 ; Rise       ; clock           ;
+;  PCOut[26]    ; clock      ; 4.007 ; 4.007 ; Rise       ; clock           ;
+;  PCOut[27]    ; clock      ; 3.929 ; 3.929 ; Rise       ; clock           ;
+;  PCOut[28]    ; clock      ; 3.658 ; 3.658 ; Rise       ; clock           ;
+;  PCOut[29]    ; clock      ; 2.936 ; 2.936 ; Rise       ; clock           ;
+;  PCOut[30]    ; clock      ; 3.049 ; 3.049 ; Rise       ; clock           ;
+;  PCOut[31]    ; clock      ; 3.277 ; 3.277 ; Rise       ; clock           ;
+; inst15_0[*]   ; clock      ; 4.048 ; 4.048 ; Rise       ; clock           ;
+;  inst15_0[0]  ; clock      ; 3.420 ; 3.420 ; Rise       ; clock           ;
+;  inst15_0[1]  ; clock      ; 3.475 ; 3.475 ; Rise       ; clock           ;
+;  inst15_0[2]  ; clock      ; 3.377 ; 3.377 ; Rise       ; clock           ;
+;  inst15_0[3]  ; clock      ; 4.009 ; 4.009 ; Rise       ; clock           ;
+;  inst15_0[4]  ; clock      ; 3.607 ; 3.607 ; Rise       ; clock           ;
+;  inst15_0[5]  ; clock      ; 3.229 ; 3.229 ; Rise       ; clock           ;
+;  inst15_0[6]  ; clock      ; 3.430 ; 3.430 ; Rise       ; clock           ;
+;  inst15_0[7]  ; clock      ; 3.281 ; 3.281 ; Rise       ; clock           ;
+;  inst15_0[8]  ; clock      ; 3.268 ; 3.268 ; Rise       ; clock           ;
+;  inst15_0[9]  ; clock      ; 3.180 ; 3.180 ; Rise       ; clock           ;
+;  inst15_0[10] ; clock      ; 3.398 ; 3.398 ; Rise       ; clock           ;
+;  inst15_0[11] ; clock      ; 3.035 ; 3.035 ; Rise       ; clock           ;
+;  inst15_0[12] ; clock      ; 3.529 ; 3.529 ; Rise       ; clock           ;
+;  inst15_0[13] ; clock      ; 4.048 ; 4.048 ; Rise       ; clock           ;
+;  inst15_0[14] ; clock      ; 3.971 ; 3.971 ; Rise       ; clock           ;
+;  inst15_0[15] ; clock      ; 2.957 ; 2.957 ; Rise       ; clock           ;
+; rs[*]         ; clock      ; 3.771 ; 3.771 ; Rise       ; clock           ;
+;  rs[0]        ; clock      ; 3.487 ; 3.487 ; Rise       ; clock           ;
+;  rs[1]        ; clock      ; 3.548 ; 3.548 ; Rise       ; clock           ;
+;  rs[2]        ; clock      ; 3.448 ; 3.448 ; Rise       ; clock           ;
+;  rs[3]        ; clock      ; 3.771 ; 3.771 ; Rise       ; clock           ;
+;  rs[4]        ; clock      ; 3.450 ; 3.450 ; Rise       ; clock           ;
+; rt[*]         ; clock      ; 3.566 ; 3.566 ; Rise       ; clock           ;
+;  rt[0]        ; clock      ; 3.344 ; 3.344 ; Rise       ; clock           ;
+;  rt[1]        ; clock      ; 3.556 ; 3.556 ; Rise       ; clock           ;
+;  rt[2]        ; clock      ; 3.566 ; 3.566 ; Rise       ; clock           ;
+;  rt[3]        ; clock      ; 3.529 ; 3.529 ; Rise       ; clock           ;
+;  rt[4]        ; clock      ; 3.402 ; 3.402 ; Rise       ; clock           ;
++---------------+------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                             ;
++---------------+------------+-------+-------+------------+-----------------+
+; Data Port     ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++---------------+------------+-------+-------+------------+-----------------+
+; CurState[*]   ; clock      ; 3.220 ; 3.220 ; Rise       ; clock           ;
+;  CurState[0]  ; clock      ; 3.288 ; 3.288 ; Rise       ; clock           ;
+;  CurState[1]  ; clock      ; 3.220 ; 3.220 ; Rise       ; clock           ;
+;  CurState[2]  ; clock      ; 3.651 ; 3.651 ; Rise       ; clock           ;
+;  CurState[3]  ; clock      ; 3.265 ; 3.265 ; Rise       ; clock           ;
+;  CurState[4]  ; clock      ; 3.235 ; 3.235 ; Rise       ; clock           ;
+;  CurState[5]  ; clock      ; 3.326 ; 3.326 ; Rise       ; clock           ;
+; MDROut[*]     ; clock      ; 3.291 ; 3.291 ; Rise       ; clock           ;
+;  MDROut[0]    ; clock      ; 3.408 ; 3.408 ; Rise       ; clock           ;
+;  MDROut[1]    ; clock      ; 3.606 ; 3.606 ; Rise       ; clock           ;
+;  MDROut[2]    ; clock      ; 3.398 ; 3.398 ; Rise       ; clock           ;
+;  MDROut[3]    ; clock      ; 3.557 ; 3.557 ; Rise       ; clock           ;
+;  MDROut[4]    ; clock      ; 3.842 ; 3.842 ; Rise       ; clock           ;
+;  MDROut[5]    ; clock      ; 3.611 ; 3.611 ; Rise       ; clock           ;
+;  MDROut[6]    ; clock      ; 3.732 ; 3.732 ; Rise       ; clock           ;
+;  MDROut[7]    ; clock      ; 3.504 ; 3.504 ; Rise       ; clock           ;
+;  MDROut[8]    ; clock      ; 3.428 ; 3.428 ; Rise       ; clock           ;
+;  MDROut[9]    ; clock      ; 3.753 ; 3.753 ; Rise       ; clock           ;
+;  MDROut[10]   ; clock      ; 3.392 ; 3.392 ; Rise       ; clock           ;
+;  MDROut[11]   ; clock      ; 3.417 ; 3.417 ; Rise       ; clock           ;
+;  MDROut[12]   ; clock      ; 3.521 ; 3.521 ; Rise       ; clock           ;
+;  MDROut[13]   ; clock      ; 3.291 ; 3.291 ; Rise       ; clock           ;
+;  MDROut[14]   ; clock      ; 3.595 ; 3.595 ; Rise       ; clock           ;
+;  MDROut[15]   ; clock      ; 3.298 ; 3.298 ; Rise       ; clock           ;
+;  MDROut[16]   ; clock      ; 3.458 ; 3.458 ; Rise       ; clock           ;
+;  MDROut[17]   ; clock      ; 3.516 ; 3.516 ; Rise       ; clock           ;
+;  MDROut[18]   ; clock      ; 3.504 ; 3.504 ; Rise       ; clock           ;
+;  MDROut[19]   ; clock      ; 3.462 ; 3.462 ; Rise       ; clock           ;
+;  MDROut[20]   ; clock      ; 3.347 ; 3.347 ; Rise       ; clock           ;
+;  MDROut[21]   ; clock      ; 3.554 ; 3.554 ; Rise       ; clock           ;
+;  MDROut[22]   ; clock      ; 3.516 ; 3.516 ; Rise       ; clock           ;
+;  MDROut[23]   ; clock      ; 3.660 ; 3.660 ; Rise       ; clock           ;
+;  MDROut[24]   ; clock      ; 3.549 ; 3.549 ; Rise       ; clock           ;
+;  MDROut[25]   ; clock      ; 3.531 ; 3.531 ; Rise       ; clock           ;
+;  MDROut[26]   ; clock      ; 3.790 ; 3.790 ; Rise       ; clock           ;
+;  MDROut[27]   ; clock      ; 3.634 ; 3.634 ; Rise       ; clock           ;
+;  MDROut[28]   ; clock      ; 3.698 ; 3.698 ; Rise       ; clock           ;
+;  MDROut[29]   ; clock      ; 3.573 ; 3.573 ; Rise       ; clock           ;
+;  MDROut[30]   ; clock      ; 3.550 ; 3.550 ; Rise       ; clock           ;
+;  MDROut[31]   ; clock      ; 3.879 ; 3.879 ; Rise       ; clock           ;
+; OPCode[*]     ; clock      ; 3.361 ; 3.361 ; Rise       ; clock           ;
+;  OPCode[0]    ; clock      ; 3.373 ; 3.373 ; Rise       ; clock           ;
+;  OPCode[1]    ; clock      ; 3.361 ; 3.361 ; Rise       ; clock           ;
+;  OPCode[2]    ; clock      ; 3.649 ; 3.649 ; Rise       ; clock           ;
+;  OPCode[3]    ; clock      ; 3.690 ; 3.690 ; Rise       ; clock           ;
+;  OPCode[4]    ; clock      ; 3.412 ; 3.412 ; Rise       ; clock           ;
+;  OPCode[5]    ; clock      ; 3.385 ; 3.385 ; Rise       ; clock           ;
+; PCOut[*]      ; clock      ; 2.920 ; 2.920 ; Rise       ; clock           ;
+;  PCOut[0]     ; clock      ; 3.853 ; 3.853 ; Rise       ; clock           ;
+;  PCOut[1]     ; clock      ; 3.616 ; 3.616 ; Rise       ; clock           ;
+;  PCOut[2]     ; clock      ; 3.897 ; 3.897 ; Rise       ; clock           ;
+;  PCOut[3]     ; clock      ; 3.856 ; 3.856 ; Rise       ; clock           ;
+;  PCOut[4]     ; clock      ; 3.706 ; 3.706 ; Rise       ; clock           ;
+;  PCOut[5]     ; clock      ; 3.890 ; 3.890 ; Rise       ; clock           ;
+;  PCOut[6]     ; clock      ; 3.366 ; 3.366 ; Rise       ; clock           ;
+;  PCOut[7]     ; clock      ; 3.397 ; 3.397 ; Rise       ; clock           ;
+;  PCOut[8]     ; clock      ; 3.132 ; 3.132 ; Rise       ; clock           ;
+;  PCOut[9]     ; clock      ; 3.144 ; 3.144 ; Rise       ; clock           ;
+;  PCOut[10]    ; clock      ; 3.313 ; 3.313 ; Rise       ; clock           ;
+;  PCOut[11]    ; clock      ; 3.641 ; 3.641 ; Rise       ; clock           ;
+;  PCOut[12]    ; clock      ; 3.544 ; 3.544 ; Rise       ; clock           ;
+;  PCOut[13]    ; clock      ; 3.567 ; 3.567 ; Rise       ; clock           ;
+;  PCOut[14]    ; clock      ; 3.690 ; 3.690 ; Rise       ; clock           ;
+;  PCOut[15]    ; clock      ; 2.968 ; 2.968 ; Rise       ; clock           ;
+;  PCOut[16]    ; clock      ; 3.295 ; 3.295 ; Rise       ; clock           ;
+;  PCOut[17]    ; clock      ; 3.512 ; 3.512 ; Rise       ; clock           ;
+;  PCOut[18]    ; clock      ; 3.417 ; 3.417 ; Rise       ; clock           ;
+;  PCOut[19]    ; clock      ; 2.920 ; 2.920 ; Rise       ; clock           ;
+;  PCOut[20]    ; clock      ; 3.449 ; 3.449 ; Rise       ; clock           ;
+;  PCOut[21]    ; clock      ; 3.546 ; 3.546 ; Rise       ; clock           ;
+;  PCOut[22]    ; clock      ; 3.306 ; 3.306 ; Rise       ; clock           ;
+;  PCOut[23]    ; clock      ; 3.544 ; 3.544 ; Rise       ; clock           ;
+;  PCOut[24]    ; clock      ; 3.526 ; 3.526 ; Rise       ; clock           ;
+;  PCOut[25]    ; clock      ; 3.367 ; 3.367 ; Rise       ; clock           ;
+;  PCOut[26]    ; clock      ; 4.007 ; 4.007 ; Rise       ; clock           ;
+;  PCOut[27]    ; clock      ; 3.929 ; 3.929 ; Rise       ; clock           ;
+;  PCOut[28]    ; clock      ; 3.658 ; 3.658 ; Rise       ; clock           ;
+;  PCOut[29]    ; clock      ; 2.936 ; 2.936 ; Rise       ; clock           ;
+;  PCOut[30]    ; clock      ; 3.049 ; 3.049 ; Rise       ; clock           ;
+;  PCOut[31]    ; clock      ; 3.277 ; 3.277 ; Rise       ; clock           ;
+; inst15_0[*]   ; clock      ; 2.957 ; 2.957 ; Rise       ; clock           ;
+;  inst15_0[0]  ; clock      ; 3.420 ; 3.420 ; Rise       ; clock           ;
+;  inst15_0[1]  ; clock      ; 3.475 ; 3.475 ; Rise       ; clock           ;
+;  inst15_0[2]  ; clock      ; 3.377 ; 3.377 ; Rise       ; clock           ;
+;  inst15_0[3]  ; clock      ; 4.009 ; 4.009 ; Rise       ; clock           ;
+;  inst15_0[4]  ; clock      ; 3.607 ; 3.607 ; Rise       ; clock           ;
+;  inst15_0[5]  ; clock      ; 3.229 ; 3.229 ; Rise       ; clock           ;
+;  inst15_0[6]  ; clock      ; 3.430 ; 3.430 ; Rise       ; clock           ;
+;  inst15_0[7]  ; clock      ; 3.281 ; 3.281 ; Rise       ; clock           ;
+;  inst15_0[8]  ; clock      ; 3.268 ; 3.268 ; Rise       ; clock           ;
+;  inst15_0[9]  ; clock      ; 3.180 ; 3.180 ; Rise       ; clock           ;
+;  inst15_0[10] ; clock      ; 3.398 ; 3.398 ; Rise       ; clock           ;
+;  inst15_0[11] ; clock      ; 3.035 ; 3.035 ; Rise       ; clock           ;
+;  inst15_0[12] ; clock      ; 3.529 ; 3.529 ; Rise       ; clock           ;
+;  inst15_0[13] ; clock      ; 4.048 ; 4.048 ; Rise       ; clock           ;
+;  inst15_0[14] ; clock      ; 3.971 ; 3.971 ; Rise       ; clock           ;
+;  inst15_0[15] ; clock      ; 2.957 ; 2.957 ; Rise       ; clock           ;
+; rs[*]         ; clock      ; 3.448 ; 3.448 ; Rise       ; clock           ;
+;  rs[0]        ; clock      ; 3.487 ; 3.487 ; Rise       ; clock           ;
+;  rs[1]        ; clock      ; 3.548 ; 3.548 ; Rise       ; clock           ;
+;  rs[2]        ; clock      ; 3.448 ; 3.448 ; Rise       ; clock           ;
+;  rs[3]        ; clock      ; 3.771 ; 3.771 ; Rise       ; clock           ;
+;  rs[4]        ; clock      ; 3.450 ; 3.450 ; Rise       ; clock           ;
+; rt[*]         ; clock      ; 3.344 ; 3.344 ; Rise       ; clock           ;
+;  rt[0]        ; clock      ; 3.344 ; 3.344 ; Rise       ; clock           ;
+;  rt[1]        ; clock      ; 3.556 ; 3.556 ; Rise       ; clock           ;
+;  rt[2]        ; clock      ; 3.566 ; 3.566 ; Rise       ; clock           ;
+;  rt[3]        ; clock      ; 3.529 ; 3.529 ; Rise       ; clock           ;
+;  rt[4]        ; clock      ; 3.402 ; 3.402 ; Rise       ; clock           ;
++---------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                            ;
++------------------+----------+-------+----------+---------+---------------------+
+; Clock            ; Setup    ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+----------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -5.032   ; 0.223 ; N/A      ; N/A     ; -1.000              ;
+;  clock           ; -5.032   ; 0.223 ; N/A      ; N/A     ; -1.000              ;
+; Design-wide TNS  ; -229.877 ; 0.0   ; 0.0      ; 0.0     ; -134.272            ;
+;  clock           ; -229.877 ; 0.000 ; N/A      ; N/A     ; -134.272            ;
++------------------+----------+-------+----------+---------+---------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; reset     ; clock      ; 5.414 ; 5.414 ; Rise       ; clock           ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; reset     ; clock      ; -1.891 ; -1.891 ; Rise       ; clock           ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Clock to Output Times                                                     ;
++---------------+------------+-------+-------+------------+-----------------+
+; Data Port     ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++---------------+------------+-------+-------+------------+-----------------+
+; CurState[*]   ; clock      ; 6.298 ; 6.298 ; Rise       ; clock           ;
+;  CurState[0]  ; clock      ; 5.790 ; 5.790 ; Rise       ; clock           ;
+;  CurState[1]  ; clock      ; 5.599 ; 5.599 ; Rise       ; clock           ;
+;  CurState[2]  ; clock      ; 6.298 ; 6.298 ; Rise       ; clock           ;
+;  CurState[3]  ; clock      ; 5.647 ; 5.647 ; Rise       ; clock           ;
+;  CurState[4]  ; clock      ; 5.623 ; 5.623 ; Rise       ; clock           ;
+;  CurState[5]  ; clock      ; 5.812 ; 5.812 ; Rise       ; clock           ;
+; MDROut[*]     ; clock      ; 6.871 ; 6.871 ; Rise       ; clock           ;
+;  MDROut[0]    ; clock      ; 5.976 ; 5.976 ; Rise       ; clock           ;
+;  MDROut[1]    ; clock      ; 6.291 ; 6.291 ; Rise       ; clock           ;
+;  MDROut[2]    ; clock      ; 5.788 ; 5.788 ; Rise       ; clock           ;
+;  MDROut[3]    ; clock      ; 6.282 ; 6.282 ; Rise       ; clock           ;
+;  MDROut[4]    ; clock      ; 6.858 ; 6.858 ; Rise       ; clock           ;
+;  MDROut[5]    ; clock      ; 6.301 ; 6.301 ; Rise       ; clock           ;
+;  MDROut[6]    ; clock      ; 6.607 ; 6.607 ; Rise       ; clock           ;
+;  MDROut[7]    ; clock      ; 6.222 ; 6.222 ; Rise       ; clock           ;
+;  MDROut[8]    ; clock      ; 6.008 ; 6.008 ; Rise       ; clock           ;
+;  MDROut[9]    ; clock      ; 6.587 ; 6.587 ; Rise       ; clock           ;
+;  MDROut[10]   ; clock      ; 5.982 ; 5.982 ; Rise       ; clock           ;
+;  MDROut[11]   ; clock      ; 5.948 ; 5.948 ; Rise       ; clock           ;
+;  MDROut[12]   ; clock      ; 6.039 ; 6.039 ; Rise       ; clock           ;
+;  MDROut[13]   ; clock      ; 5.723 ; 5.723 ; Rise       ; clock           ;
+;  MDROut[14]   ; clock      ; 6.207 ; 6.207 ; Rise       ; clock           ;
+;  MDROut[15]   ; clock      ; 5.721 ; 5.721 ; Rise       ; clock           ;
+;  MDROut[16]   ; clock      ; 6.019 ; 6.019 ; Rise       ; clock           ;
+;  MDROut[17]   ; clock      ; 6.106 ; 6.106 ; Rise       ; clock           ;
+;  MDROut[18]   ; clock      ; 5.999 ; 5.999 ; Rise       ; clock           ;
+;  MDROut[19]   ; clock      ; 6.026 ; 6.026 ; Rise       ; clock           ;
+;  MDROut[20]   ; clock      ; 5.788 ; 5.788 ; Rise       ; clock           ;
+;  MDROut[21]   ; clock      ; 6.264 ; 6.264 ; Rise       ; clock           ;
+;  MDROut[22]   ; clock      ; 6.164 ; 6.164 ; Rise       ; clock           ;
+;  MDROut[23]   ; clock      ; 6.441 ; 6.441 ; Rise       ; clock           ;
+;  MDROut[24]   ; clock      ; 6.130 ; 6.130 ; Rise       ; clock           ;
+;  MDROut[25]   ; clock      ; 5.983 ; 5.983 ; Rise       ; clock           ;
+;  MDROut[26]   ; clock      ; 6.777 ; 6.777 ; Rise       ; clock           ;
+;  MDROut[27]   ; clock      ; 6.469 ; 6.469 ; Rise       ; clock           ;
+;  MDROut[28]   ; clock      ; 6.545 ; 6.545 ; Rise       ; clock           ;
+;  MDROut[29]   ; clock      ; 6.297 ; 6.297 ; Rise       ; clock           ;
+;  MDROut[30]   ; clock      ; 6.233 ; 6.233 ; Rise       ; clock           ;
+;  MDROut[31]   ; clock      ; 6.871 ; 6.871 ; Rise       ; clock           ;
+; OPCode[*]     ; clock      ; 6.521 ; 6.521 ; Rise       ; clock           ;
+;  OPCode[0]    ; clock      ; 5.755 ; 5.755 ; Rise       ; clock           ;
+;  OPCode[1]    ; clock      ; 5.951 ; 5.951 ; Rise       ; clock           ;
+;  OPCode[2]    ; clock      ; 6.521 ; 6.521 ; Rise       ; clock           ;
+;  OPCode[3]    ; clock      ; 6.515 ; 6.515 ; Rise       ; clock           ;
+;  OPCode[4]    ; clock      ; 6.010 ; 6.010 ; Rise       ; clock           ;
+;  OPCode[5]    ; clock      ; 5.723 ; 5.723 ; Rise       ; clock           ;
+; PCOut[*]      ; clock      ; 7.088 ; 7.088 ; Rise       ; clock           ;
+;  PCOut[0]     ; clock      ; 6.918 ; 6.918 ; Rise       ; clock           ;
+;  PCOut[1]     ; clock      ; 6.451 ; 6.451 ; Rise       ; clock           ;
+;  PCOut[2]     ; clock      ; 6.937 ; 6.937 ; Rise       ; clock           ;
+;  PCOut[3]     ; clock      ; 6.839 ; 6.839 ; Rise       ; clock           ;
+;  PCOut[4]     ; clock      ; 6.531 ; 6.531 ; Rise       ; clock           ;
+;  PCOut[5]     ; clock      ; 6.820 ; 6.820 ; Rise       ; clock           ;
+;  PCOut[6]     ; clock      ; 5.683 ; 5.683 ; Rise       ; clock           ;
+;  PCOut[7]     ; clock      ; 5.969 ; 5.969 ; Rise       ; clock           ;
+;  PCOut[8]     ; clock      ; 5.404 ; 5.404 ; Rise       ; clock           ;
+;  PCOut[9]     ; clock      ; 5.432 ; 5.432 ; Rise       ; clock           ;
+;  PCOut[10]    ; clock      ; 5.800 ; 5.800 ; Rise       ; clock           ;
+;  PCOut[11]    ; clock      ; 6.265 ; 6.265 ; Rise       ; clock           ;
+;  PCOut[12]    ; clock      ; 6.067 ; 6.067 ; Rise       ; clock           ;
+;  PCOut[13]    ; clock      ; 6.337 ; 6.337 ; Rise       ; clock           ;
+;  PCOut[14]    ; clock      ; 6.556 ; 6.556 ; Rise       ; clock           ;
+;  PCOut[15]    ; clock      ; 5.095 ; 5.095 ; Rise       ; clock           ;
+;  PCOut[16]    ; clock      ; 5.768 ; 5.768 ; Rise       ; clock           ;
+;  PCOut[17]    ; clock      ; 6.004 ; 6.004 ; Rise       ; clock           ;
+;  PCOut[18]    ; clock      ; 5.977 ; 5.977 ; Rise       ; clock           ;
+;  PCOut[19]    ; clock      ; 5.052 ; 5.052 ; Rise       ; clock           ;
+;  PCOut[20]    ; clock      ; 5.861 ; 5.861 ; Rise       ; clock           ;
+;  PCOut[21]    ; clock      ; 6.277 ; 6.277 ; Rise       ; clock           ;
+;  PCOut[22]    ; clock      ; 5.596 ; 5.596 ; Rise       ; clock           ;
+;  PCOut[23]    ; clock      ; 6.259 ; 6.259 ; Rise       ; clock           ;
+;  PCOut[24]    ; clock      ; 5.979 ; 5.979 ; Rise       ; clock           ;
+;  PCOut[25]    ; clock      ; 5.941 ; 5.941 ; Rise       ; clock           ;
+;  PCOut[26]    ; clock      ; 7.088 ; 7.088 ; Rise       ; clock           ;
+;  PCOut[27]    ; clock      ; 6.881 ; 6.881 ; Rise       ; clock           ;
+;  PCOut[28]    ; clock      ; 6.520 ; 6.520 ; Rise       ; clock           ;
+;  PCOut[29]    ; clock      ; 5.052 ; 5.052 ; Rise       ; clock           ;
+;  PCOut[30]    ; clock      ; 5.255 ; 5.255 ; Rise       ; clock           ;
+;  PCOut[31]    ; clock      ; 5.732 ; 5.732 ; Rise       ; clock           ;
+; inst15_0[*]   ; clock      ; 7.282 ; 7.282 ; Rise       ; clock           ;
+;  inst15_0[0]  ; clock      ; 6.024 ; 6.024 ; Rise       ; clock           ;
+;  inst15_0[1]  ; clock      ; 5.983 ; 5.983 ; Rise       ; clock           ;
+;  inst15_0[2]  ; clock      ; 5.899 ; 5.899 ; Rise       ; clock           ;
+;  inst15_0[3]  ; clock      ; 7.282 ; 7.282 ; Rise       ; clock           ;
+;  inst15_0[4]  ; clock      ; 6.184 ; 6.184 ; Rise       ; clock           ;
+;  inst15_0[5]  ; clock      ; 5.618 ; 5.618 ; Rise       ; clock           ;
+;  inst15_0[6]  ; clock      ; 6.039 ; 6.039 ; Rise       ; clock           ;
+;  inst15_0[7]  ; clock      ; 5.678 ; 5.678 ; Rise       ; clock           ;
+;  inst15_0[8]  ; clock      ; 5.719 ; 5.719 ; Rise       ; clock           ;
+;  inst15_0[9]  ; clock      ; 5.519 ; 5.519 ; Rise       ; clock           ;
+;  inst15_0[10] ; clock      ; 5.982 ; 5.982 ; Rise       ; clock           ;
+;  inst15_0[11] ; clock      ; 5.255 ; 5.255 ; Rise       ; clock           ;
+;  inst15_0[12] ; clock      ; 6.221 ; 6.221 ; Rise       ; clock           ;
+;  inst15_0[13] ; clock      ; 7.165 ; 7.165 ; Rise       ; clock           ;
+;  inst15_0[14] ; clock      ; 6.696 ; 6.696 ; Rise       ; clock           ;
+;  inst15_0[15] ; clock      ; 5.092 ; 5.092 ; Rise       ; clock           ;
+; rs[*]         ; clock      ; 6.651 ; 6.651 ; Rise       ; clock           ;
+;  rs[0]        ; clock      ; 6.058 ; 6.058 ; Rise       ; clock           ;
+;  rs[1]        ; clock      ; 6.218 ; 6.218 ; Rise       ; clock           ;
+;  rs[2]        ; clock      ; 6.015 ; 6.015 ; Rise       ; clock           ;
+;  rs[3]        ; clock      ; 6.651 ; 6.651 ; Rise       ; clock           ;
+;  rs[4]        ; clock      ; 5.990 ; 5.990 ; Rise       ; clock           ;
+; rt[*]         ; clock      ; 6.327 ; 6.327 ; Rise       ; clock           ;
+;  rt[0]        ; clock      ; 5.788 ; 5.788 ; Rise       ; clock           ;
+;  rt[1]        ; clock      ; 6.327 ; 6.327 ; Rise       ; clock           ;
+;  rt[2]        ; clock      ; 6.293 ; 6.293 ; Rise       ; clock           ;
+;  rt[3]        ; clock      ; 6.064 ; 6.064 ; Rise       ; clock           ;
+;  rt[4]        ; clock      ; 5.929 ; 5.929 ; Rise       ; clock           ;
++---------------+------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                             ;
++---------------+------------+-------+-------+------------+-----------------+
+; Data Port     ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++---------------+------------+-------+-------+------------+-----------------+
+; CurState[*]   ; clock      ; 3.220 ; 3.220 ; Rise       ; clock           ;
+;  CurState[0]  ; clock      ; 3.288 ; 3.288 ; Rise       ; clock           ;
+;  CurState[1]  ; clock      ; 3.220 ; 3.220 ; Rise       ; clock           ;
+;  CurState[2]  ; clock      ; 3.651 ; 3.651 ; Rise       ; clock           ;
+;  CurState[3]  ; clock      ; 3.265 ; 3.265 ; Rise       ; clock           ;
+;  CurState[4]  ; clock      ; 3.235 ; 3.235 ; Rise       ; clock           ;
+;  CurState[5]  ; clock      ; 3.326 ; 3.326 ; Rise       ; clock           ;
+; MDROut[*]     ; clock      ; 3.291 ; 3.291 ; Rise       ; clock           ;
+;  MDROut[0]    ; clock      ; 3.408 ; 3.408 ; Rise       ; clock           ;
+;  MDROut[1]    ; clock      ; 3.606 ; 3.606 ; Rise       ; clock           ;
+;  MDROut[2]    ; clock      ; 3.398 ; 3.398 ; Rise       ; clock           ;
+;  MDROut[3]    ; clock      ; 3.557 ; 3.557 ; Rise       ; clock           ;
+;  MDROut[4]    ; clock      ; 3.842 ; 3.842 ; Rise       ; clock           ;
+;  MDROut[5]    ; clock      ; 3.611 ; 3.611 ; Rise       ; clock           ;
+;  MDROut[6]    ; clock      ; 3.732 ; 3.732 ; Rise       ; clock           ;
+;  MDROut[7]    ; clock      ; 3.504 ; 3.504 ; Rise       ; clock           ;
+;  MDROut[8]    ; clock      ; 3.428 ; 3.428 ; Rise       ; clock           ;
+;  MDROut[9]    ; clock      ; 3.753 ; 3.753 ; Rise       ; clock           ;
+;  MDROut[10]   ; clock      ; 3.392 ; 3.392 ; Rise       ; clock           ;
+;  MDROut[11]   ; clock      ; 3.417 ; 3.417 ; Rise       ; clock           ;
+;  MDROut[12]   ; clock      ; 3.521 ; 3.521 ; Rise       ; clock           ;
+;  MDROut[13]   ; clock      ; 3.291 ; 3.291 ; Rise       ; clock           ;
+;  MDROut[14]   ; clock      ; 3.595 ; 3.595 ; Rise       ; clock           ;
+;  MDROut[15]   ; clock      ; 3.298 ; 3.298 ; Rise       ; clock           ;
+;  MDROut[16]   ; clock      ; 3.458 ; 3.458 ; Rise       ; clock           ;
+;  MDROut[17]   ; clock      ; 3.516 ; 3.516 ; Rise       ; clock           ;
+;  MDROut[18]   ; clock      ; 3.504 ; 3.504 ; Rise       ; clock           ;
+;  MDROut[19]   ; clock      ; 3.462 ; 3.462 ; Rise       ; clock           ;
+;  MDROut[20]   ; clock      ; 3.347 ; 3.347 ; Rise       ; clock           ;
+;  MDROut[21]   ; clock      ; 3.554 ; 3.554 ; Rise       ; clock           ;
+;  MDROut[22]   ; clock      ; 3.516 ; 3.516 ; Rise       ; clock           ;
+;  MDROut[23]   ; clock      ; 3.660 ; 3.660 ; Rise       ; clock           ;
+;  MDROut[24]   ; clock      ; 3.549 ; 3.549 ; Rise       ; clock           ;
+;  MDROut[25]   ; clock      ; 3.531 ; 3.531 ; Rise       ; clock           ;
+;  MDROut[26]   ; clock      ; 3.790 ; 3.790 ; Rise       ; clock           ;
+;  MDROut[27]   ; clock      ; 3.634 ; 3.634 ; Rise       ; clock           ;
+;  MDROut[28]   ; clock      ; 3.698 ; 3.698 ; Rise       ; clock           ;
+;  MDROut[29]   ; clock      ; 3.573 ; 3.573 ; Rise       ; clock           ;
+;  MDROut[30]   ; clock      ; 3.550 ; 3.550 ; Rise       ; clock           ;
+;  MDROut[31]   ; clock      ; 3.879 ; 3.879 ; Rise       ; clock           ;
+; OPCode[*]     ; clock      ; 3.361 ; 3.361 ; Rise       ; clock           ;
+;  OPCode[0]    ; clock      ; 3.373 ; 3.373 ; Rise       ; clock           ;
+;  OPCode[1]    ; clock      ; 3.361 ; 3.361 ; Rise       ; clock           ;
+;  OPCode[2]    ; clock      ; 3.649 ; 3.649 ; Rise       ; clock           ;
+;  OPCode[3]    ; clock      ; 3.690 ; 3.690 ; Rise       ; clock           ;
+;  OPCode[4]    ; clock      ; 3.412 ; 3.412 ; Rise       ; clock           ;
+;  OPCode[5]    ; clock      ; 3.385 ; 3.385 ; Rise       ; clock           ;
+; PCOut[*]      ; clock      ; 2.920 ; 2.920 ; Rise       ; clock           ;
+;  PCOut[0]     ; clock      ; 3.853 ; 3.853 ; Rise       ; clock           ;
+;  PCOut[1]     ; clock      ; 3.616 ; 3.616 ; Rise       ; clock           ;
+;  PCOut[2]     ; clock      ; 3.897 ; 3.897 ; Rise       ; clock           ;
+;  PCOut[3]     ; clock      ; 3.856 ; 3.856 ; Rise       ; clock           ;
+;  PCOut[4]     ; clock      ; 3.706 ; 3.706 ; Rise       ; clock           ;
+;  PCOut[5]     ; clock      ; 3.890 ; 3.890 ; Rise       ; clock           ;
+;  PCOut[6]     ; clock      ; 3.366 ; 3.366 ; Rise       ; clock           ;
+;  PCOut[7]     ; clock      ; 3.397 ; 3.397 ; Rise       ; clock           ;
+;  PCOut[8]     ; clock      ; 3.132 ; 3.132 ; Rise       ; clock           ;
+;  PCOut[9]     ; clock      ; 3.144 ; 3.144 ; Rise       ; clock           ;
+;  PCOut[10]    ; clock      ; 3.313 ; 3.313 ; Rise       ; clock           ;
+;  PCOut[11]    ; clock      ; 3.641 ; 3.641 ; Rise       ; clock           ;
+;  PCOut[12]    ; clock      ; 3.544 ; 3.544 ; Rise       ; clock           ;
+;  PCOut[13]    ; clock      ; 3.567 ; 3.567 ; Rise       ; clock           ;
+;  PCOut[14]    ; clock      ; 3.690 ; 3.690 ; Rise       ; clock           ;
+;  PCOut[15]    ; clock      ; 2.968 ; 2.968 ; Rise       ; clock           ;
+;  PCOut[16]    ; clock      ; 3.295 ; 3.295 ; Rise       ; clock           ;
+;  PCOut[17]    ; clock      ; 3.512 ; 3.512 ; Rise       ; clock           ;
+;  PCOut[18]    ; clock      ; 3.417 ; 3.417 ; Rise       ; clock           ;
+;  PCOut[19]    ; clock      ; 2.920 ; 2.920 ; Rise       ; clock           ;
+;  PCOut[20]    ; clock      ; 3.449 ; 3.449 ; Rise       ; clock           ;
+;  PCOut[21]    ; clock      ; 3.546 ; 3.546 ; Rise       ; clock           ;
+;  PCOut[22]    ; clock      ; 3.306 ; 3.306 ; Rise       ; clock           ;
+;  PCOut[23]    ; clock      ; 3.544 ; 3.544 ; Rise       ; clock           ;
+;  PCOut[24]    ; clock      ; 3.526 ; 3.526 ; Rise       ; clock           ;
+;  PCOut[25]    ; clock      ; 3.367 ; 3.367 ; Rise       ; clock           ;
+;  PCOut[26]    ; clock      ; 4.007 ; 4.007 ; Rise       ; clock           ;
+;  PCOut[27]    ; clock      ; 3.929 ; 3.929 ; Rise       ; clock           ;
+;  PCOut[28]    ; clock      ; 3.658 ; 3.658 ; Rise       ; clock           ;
+;  PCOut[29]    ; clock      ; 2.936 ; 2.936 ; Rise       ; clock           ;
+;  PCOut[30]    ; clock      ; 3.049 ; 3.049 ; Rise       ; clock           ;
+;  PCOut[31]    ; clock      ; 3.277 ; 3.277 ; Rise       ; clock           ;
+; inst15_0[*]   ; clock      ; 2.957 ; 2.957 ; Rise       ; clock           ;
+;  inst15_0[0]  ; clock      ; 3.420 ; 3.420 ; Rise       ; clock           ;
+;  inst15_0[1]  ; clock      ; 3.475 ; 3.475 ; Rise       ; clock           ;
+;  inst15_0[2]  ; clock      ; 3.377 ; 3.377 ; Rise       ; clock           ;
+;  inst15_0[3]  ; clock      ; 4.009 ; 4.009 ; Rise       ; clock           ;
+;  inst15_0[4]  ; clock      ; 3.607 ; 3.607 ; Rise       ; clock           ;
+;  inst15_0[5]  ; clock      ; 3.229 ; 3.229 ; Rise       ; clock           ;
+;  inst15_0[6]  ; clock      ; 3.430 ; 3.430 ; Rise       ; clock           ;
+;  inst15_0[7]  ; clock      ; 3.281 ; 3.281 ; Rise       ; clock           ;
+;  inst15_0[8]  ; clock      ; 3.268 ; 3.268 ; Rise       ; clock           ;
+;  inst15_0[9]  ; clock      ; 3.180 ; 3.180 ; Rise       ; clock           ;
+;  inst15_0[10] ; clock      ; 3.398 ; 3.398 ; Rise       ; clock           ;
+;  inst15_0[11] ; clock      ; 3.035 ; 3.035 ; Rise       ; clock           ;
+;  inst15_0[12] ; clock      ; 3.529 ; 3.529 ; Rise       ; clock           ;
+;  inst15_0[13] ; clock      ; 4.048 ; 4.048 ; Rise       ; clock           ;
+;  inst15_0[14] ; clock      ; 3.971 ; 3.971 ; Rise       ; clock           ;
+;  inst15_0[15] ; clock      ; 2.957 ; 2.957 ; Rise       ; clock           ;
+; rs[*]         ; clock      ; 3.448 ; 3.448 ; Rise       ; clock           ;
+;  rs[0]        ; clock      ; 3.487 ; 3.487 ; Rise       ; clock           ;
+;  rs[1]        ; clock      ; 3.548 ; 3.548 ; Rise       ; clock           ;
+;  rs[2]        ; clock      ; 3.448 ; 3.448 ; Rise       ; clock           ;
+;  rs[3]        ; clock      ; 3.771 ; 3.771 ; Rise       ; clock           ;
+;  rs[4]        ; clock      ; 3.450 ; 3.450 ; Rise       ; clock           ;
+; rt[*]         ; clock      ; 3.344 ; 3.344 ; Rise       ; clock           ;
+;  rt[0]        ; clock      ; 3.344 ; 3.344 ; Rise       ; clock           ;
+;  rt[1]        ; clock      ; 3.556 ; 3.556 ; Rise       ; clock           ;
+;  rt[2]        ; clock      ; 3.566 ; 3.566 ; Rise       ; clock           ;
+;  rt[3]        ; clock      ; 3.529 ; 3.529 ; Rise       ; clock           ;
+;  rt[4]        ; clock      ; 3.402 ; 3.402 ; Rise       ; clock           ;
++---------------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clock      ; clock    ; 1996     ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clock      ; clock    ; 1996     ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
 
 ---------------
@@ -194,10 +990,10 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 +---------------------------------+-------+------+
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
-; Unconstrained Input Ports       ; 0     ; 0    ;
-; Unconstrained Input Port Paths  ; 0     ; 0    ;
-; Unconstrained Output Ports      ; 0     ; 0    ;
-; Unconstrained Output Port Paths ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 1     ; 1    ;
+; Unconstrained Input Port Paths  ; 102   ; 102  ;
+; Unconstrained Output Ports      ; 102   ; 102  ;
+; Unconstrained Output Port Paths ; 102   ; 102  ;
 +---------------------------------+-------+------+
 
 
@@ -207,131 +1003,136 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II TimeQuest Timing Analyzer
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Tue May 14 23:20:03 2019
+    Info: Processing started: Thu May 16 20:48:19 2019
 Info: Command: quartus_sta Proj_Hardware -c Proj_Hardware
 Info: qsta_default_script.tcl version: #1
-Info: Detected changes in source files.
-    Info: Source file: C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/VCPU.sv has changed.
-    Info: A new file was added to the project: C:/Users/Ivan Neves/Desktop/infrahardware/ProjetoVerilog/mux_memWD.V.
 Warning: Found USE_TIMEQUEST_TIMING_ANALYZER=OFF. The TimeQuest Timing Analyzer is not the default Timing Analysis Tool during full compilation.
 Critical Warning: Synopsys Design Constraints File file not found: 'Proj_Hardware.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Info: No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
-Info: The command derive_clocks did not find any clocks to derive.  No clocks were created or changed.
-Warning: No clocks defined in design.
-Info: No clocks to report
+Info: Deriving Clocks
+    Info: create_clock -period 1.000 -name clock clock
 Info: Analyzing Slow Model
-Info: No fmax paths to report
-Info: No Setup paths to report
-Info: No Hold paths to report
+Critical Warning: Timing requirements not met
+Info: Worst-case setup slack is -5.032
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:    -5.032      -229.877 clock 
+Info: Worst-case hold slack is 0.341
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:     0.341         0.000 clock 
 Info: No Recovery paths to report
 Info: No Removal paths to report
-Info: No Minimum Pulse Width paths to report
+Info: Worst-case minimum pulse width slack is -1.000
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:    -1.000      -130.600 clock 
 Info: The selected device family is not supported by the report_metastability command.
 Info: Analyzing Fast Model
 Info: Started post-fitting delay annotation
 Warning: Found 135 output pins without output pin load capacitance assignment
-    Info: Pin "ControlOp[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "ControlOp[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "ControlOp[2]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "ControlOp[3]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "ControlOp[4]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "ControlOp[5]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "PCout[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "PCout[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "PCout[2]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "PCout[3]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "PCout[4]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "PCout[5]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "PCout[6]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "PCout[7]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "PCout[8]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "PCout[9]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "PCout[10]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "PCout[11]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "PCout[12]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "PCout[13]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "PCout[14]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "PCout[15]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "PCout[16]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "PCout[17]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "PCout[18]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "PCout[19]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "PCout[20]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "PCout[21]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "PCout[22]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "PCout[23]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "PCout[24]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "PCout[25]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "PCout[26]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "PCout[27]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "PCout[28]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "PCout[29]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "PCout[30]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "PCout[31]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "EPCout[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "EPCout[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "EPCout[2]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "EPCout[3]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "EPCout[4]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "EPCout[5]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "EPCout[6]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "EPCout[7]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "EPCout[8]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "EPCout[9]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "EPCout[10]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "EPCout[11]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "EPCout[12]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "EPCout[13]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "EPCout[14]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "EPCout[15]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "EPCout[16]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "EPCout[17]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "EPCout[18]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "EPCout[19]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "EPCout[20]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "EPCout[21]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "EPCout[22]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "EPCout[23]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "EPCout[24]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "EPCout[25]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "EPCout[26]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "EPCout[27]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "EPCout[28]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "EPCout[29]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "EPCout[30]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "EPCout[31]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "MDRout[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "MDRout[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "MDRout[2]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "MDRout[3]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "MDRout[4]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "MDRout[5]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "MDRout[6]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "MDRout[7]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "MDRout[8]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "MDRout[9]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "MDRout[10]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "MDRout[11]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "MDRout[12]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "MDRout[13]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "MDRout[14]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "MDRout[15]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "MDRout[16]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "MDRout[17]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "MDRout[18]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "MDRout[19]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "MDRout[20]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "MDRout[21]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "MDRout[22]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "MDRout[23]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "MDRout[24]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "MDRout[25]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "MDRout[26]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "MDRout[27]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "MDRout[28]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "MDRout[29]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "MDRout[30]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info: Pin "MDRout[31]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "OPCode[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "OPCode[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "OPCode[2]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "OPCode[3]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "OPCode[4]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "OPCode[5]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "PCOut[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "PCOut[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "PCOut[2]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "PCOut[3]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "PCOut[4]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "PCOut[5]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "PCOut[6]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "PCOut[7]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "PCOut[8]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "PCOut[9]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "PCOut[10]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "PCOut[11]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "PCOut[12]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "PCOut[13]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "PCOut[14]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "PCOut[15]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "PCOut[16]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "PCOut[17]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "PCOut[18]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "PCOut[19]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "PCOut[20]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "PCOut[21]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "PCOut[22]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "PCOut[23]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "PCOut[24]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "PCOut[25]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "PCOut[26]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "PCOut[27]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "PCOut[28]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "PCOut[29]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "PCOut[30]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "PCOut[31]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "EPCOut[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "EPCOut[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "EPCOut[2]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "EPCOut[3]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "EPCOut[4]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "EPCOut[5]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "EPCOut[6]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "EPCOut[7]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "EPCOut[8]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "EPCOut[9]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "EPCOut[10]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "EPCOut[11]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "EPCOut[12]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "EPCOut[13]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "EPCOut[14]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "EPCOut[15]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "EPCOut[16]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "EPCOut[17]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "EPCOut[18]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "EPCOut[19]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "EPCOut[20]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "EPCOut[21]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "EPCOut[22]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "EPCOut[23]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "EPCOut[24]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "EPCOut[25]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "EPCOut[26]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "EPCOut[27]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "EPCOut[28]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "EPCOut[29]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "EPCOut[30]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "EPCOut[31]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "MDROut[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "MDROut[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "MDROut[2]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "MDROut[3]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "MDROut[4]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "MDROut[5]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "MDROut[6]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "MDROut[7]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "MDROut[8]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "MDROut[9]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "MDROut[10]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "MDROut[11]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "MDROut[12]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "MDROut[13]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "MDROut[14]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "MDROut[15]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "MDROut[16]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "MDROut[17]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "MDROut[18]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "MDROut[19]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "MDROut[20]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "MDROut[21]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "MDROut[22]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "MDROut[23]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "MDROut[24]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "MDROut[25]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "MDROut[26]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "MDROut[27]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "MDROut[28]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "MDROut[29]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "MDROut[30]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "MDROut[31]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
     Info: Pin "rs[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
     Info: Pin "rs[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
     Info: Pin "rs[2]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
@@ -366,20 +1167,27 @@ Warning: Found 135 output pins without output pin load capacitance assignment
     Info: Pin "CurState[5]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
     Info: Pin "CurState[6]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
 Info: Delay annotation completed successfully
-Info: No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
-Info: The command derive_clocks did not find any clocks to derive.  No clocks were created or changed.
-Warning: No clocks defined in design.
-Info: No Setup paths to report
-Info: No Hold paths to report
+Critical Warning: Timing requirements not met
+Info: Worst-case setup slack is -2.297
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:    -2.297       -64.104 clock 
+Info: Worst-case hold slack is 0.223
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:     0.223         0.000 clock 
 Info: No Recovery paths to report
 Info: No Removal paths to report
-Info: No Minimum Pulse Width paths to report
+Info: Worst-case minimum pulse width slack is -1.000
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:    -1.000      -134.272 clock 
 Info: The selected device family is not supported by the report_metastability command.
-Info: Design is fully constrained for setup requirements
-Info: Design is fully constrained for hold requirements
+Info: Design is not fully constrained for setup requirements
+Info: Design is not fully constrained for hold requirements
 Info: Quartus II TimeQuest Timing Analyzer was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 232 megabytes
-    Info: Processing ended: Tue May 14 23:20:06 2019
+    Info: Peak virtual memory: 233 megabytes
+    Info: Processing ended: Thu May 16 20:48:22 2019
     Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:01
 

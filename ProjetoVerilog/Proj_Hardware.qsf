@@ -43,32 +43,6 @@ set_global_assignment -name ORIGINAL_QUARTUS_VERSION "9.1 SP2"
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "16:31:20  OCTOBER 24, 2018"
 set_global_assignment -name LAST_QUARTUS_VERSION "9.1 SP2"
 set_global_assignment -name MISC_FILE "H:/PROJETO VERILOG HARDWARE/Proj_Hardware.dpf"
-set_global_assignment -name VERILOG_FILE div.v
-set_global_assignment -name VERILOG_FILE mult.v
-set_global_assignment -name VHDL_FILE Banco_reg.vhd
-set_global_assignment -name VHDL_FILE Instr_Reg.vhd
-set_global_assignment -name VHDL_FILE Memoria.vhd
-set_global_assignment -name VHDL_FILE RegDesloc.vhd
-set_global_assignment -name VHDL_FILE Registrador.vhd
-set_global_assignment -name VHDL_FILE ula32.vhd
-set_global_assignment -name VERILOG_FILE sign_extend.v
-set_global_assignment -name VERILOG_FILE mux_f_h_or_b.v
-set_global_assignment -name VERILOG_FILE mux_aluSrcA.v
-set_global_assignment -name VERILOG_FILE mux_aluSrcB.v
-set_global_assignment -name VERILOG_FILE mux_iOrD.v
-set_global_assignment -name VERILOG_FILE mux_regDst.v
-set_global_assignment -name VERILOG_FILE mux_memToReg.v
-set_global_assignment -name VERILOG_FILE mux_pcSrc.v
-set_global_assignment -name VERILOG_FILE shift_left2.v
-set_global_assignment -name BDF_FILE UnidadeProcessamento.bdf
-set_global_assignment -name VERILOG_FILE shift_left16.v
-set_global_assignment -name VERILOG_FILE shift_leftJump.v
-set_global_assignment -name VERILOG_FILE concat_25_0.v
-set_global_assignment -name VERILOG_FILE sign_extend26_32.v
-set_global_assignment -name VERILOG_FILE mux_dr2.v
-set_global_assignment -name VERILOG_FILE mux_store_f_h_or_b.v
-set_global_assignment -name VERILOG_FILE UnidadeControle.v
-set_global_assignment -name BDF_FILE Proc_Control.bdf
 
 # Analysis & Synthesis Assignments
 # ================================
@@ -125,13 +99,40 @@ set_global_assignment -name DEVICE AUTO
 
 # end ENTITY(VeryCPU)
 # -------------------
-set_global_assignment -name SYSTEMVERILOG_FILE VCPU.sv
-set_global_assignment -name VERILOG_FILE mux_BWD.v
-set_global_assignment -name VERILOG_FILE mux_memWD.V
-set_global_assignment -name SYSTEMVERILOG_FILE mux_pccond.sv
 set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
 set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE CPUWForm.vwf
+set_global_assignment -name MIF_FILE instrucoes.mif
+set_global_assignment -name VERILOG_FILE div.v
+set_global_assignment -name VERILOG_FILE mult.v
+set_global_assignment -name VHDL_FILE Banco_reg.vhd
+set_global_assignment -name VHDL_FILE Instr_Reg.vhd
+set_global_assignment -name VHDL_FILE Memoria.vhd
+set_global_assignment -name VHDL_FILE RegDesloc.vhd
+set_global_assignment -name VHDL_FILE Registrador.vhd
+set_global_assignment -name VHDL_FILE ula32.vhd
+set_global_assignment -name VERILOG_FILE sign_extend.v
+set_global_assignment -name VERILOG_FILE mux_f_h_or_b.v
+set_global_assignment -name VERILOG_FILE mux_aluSrcA.v
+set_global_assignment -name VERILOG_FILE mux_aluSrcB.v
+set_global_assignment -name VERILOG_FILE mux_iOrD.v
+set_global_assignment -name VERILOG_FILE mux_regDst.v
+set_global_assignment -name VERILOG_FILE mux_memToReg.v
+set_global_assignment -name VERILOG_FILE mux_pcSrc.v
+set_global_assignment -name VERILOG_FILE shift_left2.v
+set_global_assignment -name VERILOG_FILE shift_left16.v
+set_global_assignment -name VERILOG_FILE shift_leftJump.v
+set_global_assignment -name VERILOG_FILE concat_25_0.v
+set_global_assignment -name VERILOG_FILE sign_extend26_32.v
+set_global_assignment -name VERILOG_FILE mux_dr2.v
+set_global_assignment -name VERILOG_FILE mux_store_f_h_or_b.v
+set_global_assignment -name VERILOG_FILE UnidadeControle.v
+set_global_assignment -name SYSTEMVERILOG_FILE VCPU.sv
+set_global_assignment -name VERILOG_FILE mux_BWD.v
+set_global_assignment -name VERILOG_FILE mux_memWD.V
+set_global_assignment -name SYSTEMVERILOG_FILE mux_pccond.sv
 set_global_assignment -name SYSTEMVERILOG_FILE mux_2inputs.sv
+set_global_assignment -name VECTOR_WAVEFORM_FILE CPUWForm.vwf
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

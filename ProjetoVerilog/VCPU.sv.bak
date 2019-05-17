@@ -8,6 +8,9 @@ module VCPU(
 	output logic [31:0] EPCOut,
 	output logic [31:0] MDROut,
 	
+	output logic [31:0] RegAIn,
+	output logic [31:0] RegBIn,
+	
 	output logic [4:0] rs,
     output logic [4:0] rt,
     
@@ -49,11 +52,11 @@ logic [31:0] MemWDout;
 
 logic RegWrite;
 logic [1:0] RegDst;
-logic [31:0] RegDstOut;
+logic [4:0] RegDstOut;
 
-logic [31:0] RegAIn;
+//logic [31:0] RegAIn;
 logic [31:0] RegAOut;
-logic [31:0] RegBIn;
+//logic [31:0] RegBIn;
 logic [31:0] RegBOut;
 logic [15:0] RegBHalf;
 logic [8:0]  RegBByte;
@@ -131,12 +134,12 @@ logic [2:0] ShiftCtrl;
 logic [31:0] DesRegOut;
 
 // Ainda é a versão provisória!!
-UnidadeControle CtrlUnit(
+unctr CtrlUnit(
 	//sinais de entrada
-	.Clk(clock),
+	.clock(clock),
 	.reset(reset),
 	.funct(funct),
-	.Opcode(OPCode),
+	.ControlOp(OPCode),
 	//sinais de saida
 	.MemWR(MemWR),
 	.USExt(USExt),
@@ -157,7 +160,23 @@ UnidadeControle CtrlUnit(
 	.AWrite(RegAWrite),
 	.BWrite(RegBWrite),
 	.ALUOutWrite(ALURegWrite),
-	.state(CurState)
+	.state(CurState),
+	.MemWD(MemWD),
+	.BWD(BWD),
+	.DR1(DR1),
+	.DR2(DR2),
+	.Low(MuxLowSel),
+	.High(MuxHighSel),
+	.PCCond(PCCond),
+	//Escrita em Registradores
+	.MDRWrite(WrMDR),
+	.LowReg(WrLow),
+	.HighReg(WrHigh),
+	.EPCWrite(EPCWrite),
+	.Z(Zero),
+	.O(Overflow),
+	.GT(GreaterThan),
+	.LT(LessThan)
 );
 
 
@@ -283,7 +302,7 @@ Banco_Reg registers(
 	.ReadData2(RegBIn)
 );
 
-Registrador A(
+Registrador RegisterA(
 	.Clk(clock),
 	.Reset(reset),
 	.Load(RegAWrite),
@@ -291,7 +310,7 @@ Registrador A(
 	.Saida(RegAOut)
 );
 
-Registrador B(
+Registrador RegisterB(
 	.Clk(clock),
 	.Reset(reset),
 	.Load(RegBWrite),
@@ -405,7 +424,7 @@ div DIVOp(
 	.DivFim(DivEnd),
 	.DivisaoPorZero(DivZero),
 	.Hi(DivHighOut),
-	.Lo(DivLowOut),
+	.Lo(DivLowOut)
 );
 
 mult MULTOp(
@@ -416,7 +435,7 @@ mult MULTOp(
 	.reset(reset),
 	.hi(MultHighOut),
 	.lo(MultLowOut),
-	.done(MultEnd),
+	.done(MultEnd)
 );
 
 mux_2inputs LOWMux(
@@ -437,7 +456,7 @@ Registrador HIGH(
 	.Clk(clock),
 	.Reset(reset),
 	.Load(WrLow),
-	.Entrada(MuxHightOut),
+	.Entrada(MuxHighOut),
 	.Saida(RegHighOut)
 );
 
@@ -452,7 +471,6 @@ Registrador LOW(
 assign inst25_0 [25:21] = rs;
 assign inst25_0 [20:16] = rt;
 assign inst25_0 [15:0] = inst15_0;
-
 
 assign RegBHalf = RegBOut[15:0];
 assign RegBByte = RegBOut[8:0];

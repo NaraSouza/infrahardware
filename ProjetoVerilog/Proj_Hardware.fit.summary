@@ -1,15 +1,15 @@
-Fitter Status : Successful - Thu May 16 11:50:32 2019
+Fitter Status : Successful - Fri May 17 17:29:43 2019
 Quartus II Version : 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition
 Revision Name : Proj_Hardware
 Top-level Entity Name : VCPU
 Family : Stratix II
 Device : EP2S15F484C3
 Timing Models : Final
-Logic utilization : < 1 %
-    Combinational ALUTs : 26 / 12,480 ( < 1 % )
-    Dedicated logic registers : 94 / 12,480 ( < 1 % )
-Total registers : 94
-Total pins : 137 / 343 ( 40 % )
+Logic utilization : 16 %
+    Combinational ALUTs : 1,214 / 12,480 ( 10 % )
+    Dedicated logic registers : 1,188 / 12,480 ( 10 % )
+Total registers : 1188
+Total pins : 201 / 343 ( 59 % )
 Total virtual pins : 0
 Total block memory bits : 8,192 / 419,328 ( 2 % )
 DSP block 9-bit elements : 0 / 96 ( 0 % )
