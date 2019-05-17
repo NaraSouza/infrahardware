@@ -19,6 +19,8 @@ module VCPU(
 	output logic [4:0] rs,
     output logic [4:0] rt,
     
+    output logic LessThan,
+    
     output logic [15:0] inst15_0,
     output logic [31:0] ALURegOut,
     
@@ -104,7 +106,7 @@ logic Negative;
 logic Zero;
 logic Equal;
 logic GreaterThan;
-logic LessThan;
+// logic LessThan;
 
 
 
@@ -281,7 +283,7 @@ mux_regDst RegDSTMux(
 	.out(RegDstOut)
 );
 
-mux_memToReg MemToRegMux(
+mega_mux MemToRegMux(
 	// 227, 0 e 1 estão sendo usados dentro da caixa magica
 	.selector(MemToReg),
 	.inputA(ALURegOut),//0000

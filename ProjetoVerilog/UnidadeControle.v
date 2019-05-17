@@ -146,6 +146,8 @@ parameter [6:0] write_2 = 7'd98;
 parameter [6:0] cory_12 = 7'd99;
 parameter [6:0] cory_13 = 7'd100;
 parameter [6:0] cory_14 = 7'd101;
+parameter [6:0] cory_15 = 7'd102;
+parameter [6:0] cory_16 = 7'd103;
 
 parameter [5:0] Opcode_R = 6'h00;
 
@@ -333,6 +335,9 @@ always@ (posedge clock) begin
 			ALUSrcB = 3'b100;
 			ALUOp = 3'b111;
 			ALUOutWrite = 1;
+			state = cory_15;
+		end
+		cory_15: begin
 			if (LT == 1) begin
 				state = write_lt1;
 			end
