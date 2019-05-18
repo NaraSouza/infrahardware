@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Proj_Hardware
-Sat May 18 05:33:43 2019
+Sat May 18 05:45:26 2019
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -20,10 +20,10 @@ Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
  12. Removed Registers Triggering Further Register Optimizations
  13. General Register Statistics
  14. Multiplexer Restructuring Statistics (Restructuring Performed)
- 15. Source assignments for Memoria:Mem|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block|altsyncram_d991:auto_generated
- 16. Source assignments for Memoria:Mem|LPM_RAM_DQ:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_d991:auto_generated
- 17. Source assignments for Memoria:Mem|LPM_RAM_DQ:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_d991:auto_generated
- 18. Source assignments for Memoria:Mem|LPM_RAM_DQ:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_d991:auto_generated
+ 15. Source assignments for Memoria:Mem|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block|altsyncram_gla1:auto_generated
+ 16. Source assignments for Memoria:Mem|LPM_RAM_DQ:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_gla1:auto_generated
+ 17. Source assignments for Memoria:Mem|LPM_RAM_DQ:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_gla1:auto_generated
+ 18. Source assignments for Memoria:Mem|LPM_RAM_DQ:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_gla1:auto_generated
  19. Parameter Settings for User Entity Instance: UnidadeControle:CtrlUnit
  20. Parameter Settings for User Entity Instance: Memoria:Mem|LPM_RAM_DQ:MEM
  21. Parameter Settings for User Entity Instance: Memoria:Mem|LPM_RAM_DQ:MEM_plus_One
@@ -71,15 +71,15 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                 ;
 +-------------------------------+----------------------------------------------+
-; Analysis & Synthesis Status   ; Successful - Sat May 18 05:33:43 2019        ;
+; Analysis & Synthesis Status   ; Successful - Sat May 18 05:45:26 2019        ;
 ; Quartus II Version            ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                 ; Proj_Hardware                                ;
 ; Top-level Entity Name         ; VCPU                                         ;
 ; Family                        ; Stratix II                                   ;
 ; Logic utilization             ; N/A                                          ;
-;     Combinational ALUTs       ; 1,433                                        ;
-;     Dedicated logic registers ; 1,258                                        ;
-; Total registers               ; 1258                                         ;
+;     Combinational ALUTs       ; 1,793                                        ;
+;     Dedicated logic registers ; 1,294                                        ;
+; Total registers               ; 1294                                         ;
 ; Total pins                    ; 344                                          ;
 ; Total virtual pins            ; 0                                            ;
 ; Total block memory bits       ; 8,192                                        ;
@@ -185,7 +185,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------+-----------------+----------------------------------+-----------------------------------------------------------------------------------------------------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                        ; File Name with Absolute Path                                                                        ;
 +----------------------------------+-----------------+----------------------------------+-----------------------------------------------------------------------------------------------------+
-; dec.mif                          ; yes             ; User Memory Initialization File  ; C:/Users/Rukazu/Downloads/infrahardware/ProjetoVerilog/dec.mif                                      ;
+; instrucoes-rsllv.mif             ; yes             ; User Memory Initialization File  ; C:/Users/Rukazu/Downloads/infrahardware/ProjetoVerilog/instrucoes-rsllv.mif                         ;
 ; mux_rgDst.sv                     ; yes             ; User SystemVerilog HDL File      ; C:/Users/Rukazu/Downloads/infrahardware/ProjetoVerilog/mux_rgDst.sv                                 ;
 ; div.v                            ; yes             ; User Verilog HDL File            ; C:/Users/Rukazu/Downloads/infrahardware/ProjetoVerilog/div.v                                        ;
 ; mult.v                           ; yes             ; User Verilog HDL File            ; C:/Users/Rukazu/Downloads/infrahardware/ProjetoVerilog/mult.v                                       ;
@@ -215,7 +215,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; lpm_ram_dq.tdf                   ; yes             ; Megafunction                     ; c:/users/rukazu/downloads/alteraquartus91sp2portable/quartus/libraries/megafunctions/lpm_ram_dq.tdf ;
 ; altram.tdf                       ; yes             ; Megafunction                     ; c:/users/rukazu/downloads/alteraquartus91sp2portable/quartus/libraries/megafunctions/altram.tdf     ;
 ; altsyncram.tdf                   ; yes             ; Megafunction                     ; c:/users/rukazu/downloads/alteraquartus91sp2portable/quartus/libraries/megafunctions/altsyncram.tdf ;
-; db/altsyncram_d991.tdf           ; yes             ; Auto-Generated Megafunction      ; C:/Users/Rukazu/Downloads/infrahardware/ProjetoVerilog/db/altsyncram_d991.tdf                       ;
+; db/altsyncram_gla1.tdf           ; yes             ; Auto-Generated Megafunction      ; C:/Users/Rukazu/Downloads/infrahardware/ProjetoVerilog/db/altsyncram_gla1.tdf                       ;
 +----------------------------------+-----------------+----------------------------------+-----------------------------------------------------------------------------------------------------+
 
 
@@ -224,39 +224,39 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-----------------------------------------------+-------+
 ; Resource                                      ; Usage ;
 +-----------------------------------------------+-------+
-; Estimated ALUTs Used                          ; 1433  ;
-; Dedicated logic registers                     ; 1258  ;
+; Estimated ALUTs Used                          ; 1793  ;
+; Dedicated logic registers                     ; 1294  ;
 ;                                               ;       ;
-; Estimated ALUTs Unavailable                   ; 122   ;
+; Estimated ALUTs Unavailable                   ; 296   ;
 ;                                               ;       ;
-; Total combinational functions                 ; 1433  ;
+; Total combinational functions                 ; 1793  ;
 ; Combinational ALUT usage by number of inputs  ;       ;
-;     -- 7 input functions                      ; 9     ;
-;     -- 6 input functions                      ; 817   ;
-;     -- 5 input functions                      ; 220   ;
-;     -- 4 input functions                      ; 112   ;
-;     -- <=3 input functions                    ; 275   ;
+;     -- 7 input functions                      ; 16    ;
+;     -- 6 input functions                      ; 984   ;
+;     -- 5 input functions                      ; 313   ;
+;     -- 4 input functions                      ; 145   ;
+;     -- <=3 input functions                    ; 335   ;
 ;                                               ;       ;
 ; Combinational ALUTs by mode                   ;       ;
-;     -- normal mode                            ; 1401  ;
-;     -- extended LUT mode                      ; 9     ;
+;     -- normal mode                            ; 1754  ;
+;     -- extended LUT mode                      ; 16    ;
 ;     -- arithmetic mode                        ; 23    ;
 ;     -- shared arithmetic mode                 ; 0     ;
 ;                                               ;       ;
-; Estimated ALUT/register pairs used            ; 2462  ;
+; Estimated ALUT/register pairs used            ; 2943  ;
 ;                                               ;       ;
-; Total registers                               ; 1258  ;
-;     -- Dedicated logic registers              ; 1258  ;
+; Total registers                               ; 1294  ;
+;     -- Dedicated logic registers              ; 1294  ;
 ;     -- I/O registers                          ; 0     ;
 ;                                               ;       ;
-; Estimated ALMs:  partially or completely used ; 1,231 ;
+; Estimated ALMs:  partially or completely used ; 1,472 ;
 ;                                               ;       ;
 ; I/O pins                                      ; 344   ;
 ; Total block memory bits                       ; 8192  ;
 ; Maximum fan-out node                          ; clock ;
-; Maximum fan-out                               ; 1290  ;
-; Total fan-out                                 ; 13015 ;
-; Average fan-out                               ; 4.24  ;
+; Maximum fan-out                               ; 1326  ;
+; Total fan-out                                 ; 15004 ;
+; Average fan-out                               ; 4.33  ;
 +-----------------------------------------------+-------+
 
 
@@ -265,36 +265,39 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-------------------------------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                      ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                         ; Library Name ;
 +-------------------------------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------+--------------+
-; |VCPU                                           ; 1433 (2)          ; 1258 (0)     ; 8192              ; 0            ; 0       ; 0         ; 0         ; 344  ; 0            ; |VCPU                                                                                                       ; work         ;
+; |VCPU                                           ; 1793 (2)          ; 1294 (0)     ; 8192              ; 0            ; 0       ; 0         ; 0         ; 344  ; 0            ; |VCPU                                                                                                       ; work         ;
 ;    |Banco_reg:registers|                        ; 736 (736)         ; 1024 (1024)  ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Banco_reg:registers                                                                                   ; work         ;
 ;    |Instr_Reg:IR|                               ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Instr_Reg:IR                                                                                          ; work         ;
 ;    |Memoria:Mem|                                ; 23 (23)           ; 0 (0)        ; 8192              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Memoria:Mem                                                                                           ; work         ;
-;       |lpm_ram_dq:MEM_plus_One|                 ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Memoria:Mem|lpm_ram_dq:MEM_plus_One                                                                   ;              ;
-;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Memoria:Mem|lpm_ram_dq:MEM_plus_One|altram:sram                                                       ; work         ;
-;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Memoria:Mem|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block                                  ;              ;
-;                |altsyncram_d991:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Memoria:Mem|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_d991:auto_generated   ; work         ;
-;       |lpm_ram_dq:MEM_plus_Three|               ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Memoria:Mem|lpm_ram_dq:MEM_plus_Three                                                                 ; work         ;
+;       |lpm_ram_dq:MEM_plus_One|                 ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Memoria:Mem|lpm_ram_dq:MEM_plus_One                                                                   ; work         ;
+;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Memoria:Mem|lpm_ram_dq:MEM_plus_One|altram:sram                                                       ;              ;
+;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Memoria:Mem|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block                                  ; work         ;
+;                |altsyncram_gla1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Memoria:Mem|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_gla1:auto_generated   ;              ;
+;       |lpm_ram_dq:MEM_plus_Three|               ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Memoria:Mem|lpm_ram_dq:MEM_plus_Three                                                                 ;              ;
 ;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Memoria:Mem|lpm_ram_dq:MEM_plus_Three|altram:sram                                                     ; work         ;
 ;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Memoria:Mem|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block                                ; work         ;
-;                |altsyncram_d991:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Memoria:Mem|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_d991:auto_generated ; work         ;
-;       |lpm_ram_dq:MEM_plus_Two|                 ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Memoria:Mem|lpm_ram_dq:MEM_plus_Two                                                                   ;              ;
-;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Memoria:Mem|lpm_ram_dq:MEM_plus_Two|altram:sram                                                       ; work         ;
-;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Memoria:Mem|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block                                  ;              ;
-;                |altsyncram_d991:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Memoria:Mem|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_d991:auto_generated   ;              ;
+;                |altsyncram_gla1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Memoria:Mem|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_gla1:auto_generated ; work         ;
+;       |lpm_ram_dq:MEM_plus_Two|                 ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Memoria:Mem|lpm_ram_dq:MEM_plus_Two                                                                   ; work         ;
+;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Memoria:Mem|lpm_ram_dq:MEM_plus_Two|altram:sram                                                       ;              ;
+;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Memoria:Mem|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block                                  ; work         ;
+;                |altsyncram_gla1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Memoria:Mem|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_gla1:auto_generated   ;              ;
 ;       |lpm_ram_dq:MEM|                          ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Memoria:Mem|lpm_ram_dq:MEM                                                                            ; work         ;
 ;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Memoria:Mem|lpm_ram_dq:MEM|altram:sram                                                                ; work         ;
-;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Memoria:Mem|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block                                           ;              ;
-;                |altsyncram_d991:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Memoria:Mem|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_d991:auto_generated            ; work         ;
+;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Memoria:Mem|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block                                           ; work         ;
+;                |altsyncram_gla1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Memoria:Mem|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_gla1:auto_generated            ;              ;
+;    |RegDesloc:DesReg|                           ; 352 (352)         ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|RegDesloc:DesReg                                                                                      ; work         ;
 ;    |Registrador:ALUOutReg|                      ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Registrador:ALUOutReg                                                                                 ; work         ;
 ;    |Registrador:MDR|                            ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Registrador:MDR                                                                                       ; work         ;
-;    |Registrador:PC|                             ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Registrador:PC                                                                                        ; work         ;
+;    |Registrador:PC|                             ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Registrador:PC                                                                                        ;              ;
 ;    |Registrador:RegisterA|                      ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Registrador:RegisterA                                                                                 ; work         ;
 ;    |Registrador:RegisterB|                      ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Registrador:RegisterB                                                                                 ; work         ;
-;    |Ula32:ALU|                                  ; 172 (172)         ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Ula32:ALU                                                                                             ; work         ;
-;    |UnidadeControle:CtrlUnit|                   ; 176 (176)         ; 42 (42)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|UnidadeControle:CtrlUnit                                                                              ;              ;
-;    |mega_mux:MemToRegMux|                       ; 118 (118)         ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|mega_mux:MemToRegMux                                                                                  ; work         ;
+;    |Ula32:ALU|                                  ; 170 (170)         ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|Ula32:ALU                                                                                             ; work         ;
+;    |UnidadeControle:CtrlUnit|                   ; 187 (187)         ; 46 (46)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|UnidadeControle:CtrlUnit                                                                              ;              ;
+;    |mega_mux:MemToRegMux|                       ; 115 (115)         ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|mega_mux:MemToRegMux                                                                                  ; work         ;
+;    |mux_2inputs:DR1Mux|                         ; 5 (5)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|mux_2inputs:DR1Mux                                                                                    ; work         ;
 ;    |mux_IorD:IorDMux|                           ; 17 (17)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|mux_IorD:IorDMux                                                                                      ; work         ;
-;    |mux_pcSrc:pcSrcMux|                         ; 52 (52)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|mux_pcSrc:pcSrcMux                                                                                    ; work         ;
+;    |mux_dr2:DR2Mux|                             ; 5 (5)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|mux_dr2:DR2Mux                                                                                        ; work         ;
+;    |mux_pcSrc:pcSrcMux|                         ; 44 (44)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|mux_pcSrc:pcSrcMux                                                                                    ; work         ;
 ;    |mux_rgDst:RegDSTMux|                        ; 5 (5)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|mux_rgDst:RegDSTMux                                                                                   ; work         ;
 ;    |mux_srcA:ALUSrcA|                           ; 65 (65)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|mux_srcA:ALUSrcA                                                                                      ; work         ;
 ;    |mux_srcB:ALUSrcB|                           ; 67 (67)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VCPU|mux_srcB:ALUSrcB                                                                                      ; work         ;
@@ -302,16 +305,16 @@ Parallel compilation was disabled, but you have multiple processors available. E
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                                                                   ;
-+------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+---------+
-; Name                                                                                                             ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF     ;
-+------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+---------+
-; Memoria:Mem|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_d991:auto_generated|ALTSYNCRAM   ; AUTO ; Single Port ; 256          ; 8            ; --           ; --           ; 2048 ; dec.mif ;
-; Memoria:Mem|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_d991:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 256          ; 8            ; --           ; --           ; 2048 ; dec.mif ;
-; Memoria:Mem|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_d991:auto_generated|ALTSYNCRAM   ; AUTO ; Single Port ; 256          ; 8            ; --           ; --           ; 2048 ; dec.mif ;
-; Memoria:Mem|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_d991:auto_generated|ALTSYNCRAM            ; AUTO ; Single Port ; 256          ; 8            ; --           ; --           ; 2048 ; dec.mif ;
-+------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                                ;
++------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+----------------------+
+; Name                                                                                                             ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF                  ;
++------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+----------------------+
+; Memoria:Mem|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_gla1:auto_generated|ALTSYNCRAM   ; AUTO ; Single Port ; 256          ; 8            ; --           ; --           ; 2048 ; instrucoes-rsllv.mif ;
+; Memoria:Mem|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_gla1:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 256          ; 8            ; --           ; --           ; 2048 ; instrucoes-rsllv.mif ;
+; Memoria:Mem|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_gla1:auto_generated|ALTSYNCRAM   ; AUTO ; Single Port ; 256          ; 8            ; --           ; --           ; 2048 ; instrucoes-rsllv.mif ;
+; Memoria:Mem|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_gla1:auto_generated|ALTSYNCRAM            ; AUTO ; Single Port ; 256          ; 8            ; --           ; --           ; 2048 ; instrucoes-rsllv.mif ;
++------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+----------------------+
 
 
 Encoding Type:  One-Hot
@@ -455,21 +458,18 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 ; div:DIVOp|RESTO[0..63]                  ; Lost fanout                                 ;
 ; div:DIVOp|DivFim                        ; Lost fanout                                 ;
 ; UnidadeControle:CtrlUnit|BWD[0..1]      ; Lost fanout                                 ;
-; UnidadeControle:CtrlUnit|DR1            ; Lost fanout                                 ;
-; UnidadeControle:CtrlUnit|DR2            ; Lost fanout                                 ;
 ; mult:MULTOp|lo[0..31]                   ; Stuck at GND due to stuck port data_in      ;
 ; mult:MULTOp|hi[0..31]                   ; Stuck at GND due to stuck port data_in      ;
 ; UnidadeControle:CtrlUnit|LowReg         ; Stuck at GND due to stuck port data_in      ;
 ; UnidadeControle:CtrlUnit|HighReg        ; Stuck at GND due to stuck port data_in      ;
 ; Registrador:LOW|Saida[0..31]            ; Stuck at GND due to stuck port clock_enable ;
 ; Registrador:HIGH|Saida[0..31]           ; Stuck at GND due to stuck port clock_enable ;
-; RegDesloc:DesReg|temp[0..30]            ; Merged with RegDesloc:DesReg|temp[31]       ;
-; RegDesloc:DesReg|temp[31]               ; Stuck at GND due to stuck port data_in      ;
+; UnidadeControle:CtrlUnit|DR2            ; Merged with UnidadeControle:CtrlUnit|DR1    ;
 ; UnidadeControle:CtrlUnit|BWrite         ; Merged with UnidadeControle:CtrlUnit|AWrite ;
 ; mult:MULTOp|doing.01                    ; Lost fanout                                 ;
 ; mult:MULTOp|doing.10                    ; Lost fanout                                 ;
 ; mult:MULTOp|doing.00                    ; Lost fanout                                 ;
-; Total Number of Removed Registers = 515 ;                                             ;
+; Total Number of Removed Registers = 482 ;                                             ;
 +-----------------------------------------+---------------------------------------------+
 
 
@@ -614,12 +614,12 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1258  ;
-; Number of registers using Synchronous Clear  ; 15    ;
-; Number of registers using Synchronous Load   ; 49    ;
-; Number of registers using Asynchronous Clear ; 1216  ;
+; Total registers                              ; 1294  ;
+; Number of registers using Synchronous Clear  ; 43    ;
+; Number of registers using Synchronous Load   ; 50    ;
+; Number of registers using Asynchronous Clear ; 1248  ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 1245  ;
+; Number of registers using Clock Enable       ; 1274  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -629,34 +629,37 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                   ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
-; 3:1                ; 2 bits    ; 4 ALUTs       ; 2 ALUTs              ; 2 ALUTs                ; Yes        ; |VCPU|UnidadeControle:CtrlUnit|wait_count[1] ;
-; 32:1               ; 32 bits   ; 672 ALUTs     ; 672 ALUTs            ; 0 ALUTs                ; Yes        ; |VCPU|Registrador:RegisterA|Saida[15]        ;
-; 128:1              ; 5 bits    ; 425 ALUTs     ; 70 ALUTs             ; 355 ALUTs              ; Yes        ; |VCPU|UnidadeControle:CtrlUnit|ALUOp[1]      ;
+; 3:1                ; 2 bits    ; 4 ALUTs       ; 2 ALUTs              ; 2 ALUTs                ; Yes        ; |VCPU|UnidadeControle:CtrlUnit|wait_count[0] ;
+; 32:1               ; 32 bits   ; 672 ALUTs     ; 672 ALUTs            ; 0 ALUTs                ; Yes        ; |VCPU|Registrador:RegisterA|Saida[28]        ;
+; 128:1              ; 5 bits    ; 425 ALUTs     ; 70 ALUTs             ; 355 ALUTs              ; Yes        ; |VCPU|UnidadeControle:CtrlUnit|ALUSrcA[0]    ;
 ; 128:1              ; 3 bits    ; 255 ALUTs     ; 33 ALUTs             ; 222 ALUTs              ; Yes        ; |VCPU|UnidadeControle:CtrlUnit|ALUSrcB[0]    ;
-; 128:1              ; 6 bits    ; 510 ALUTs     ; 48 ALUTs             ; 462 ALUTs              ; Yes        ; |VCPU|UnidadeControle:CtrlUnit|RegDst[1]     ;
+; 128:1              ; 6 bits    ; 510 ALUTs     ; 48 ALUTs             ; 462 ALUTs              ; Yes        ; |VCPU|UnidadeControle:CtrlUnit|RegDst[0]     ;
 ; 128:1              ; 4 bits    ; 340 ALUTs     ; 32 ALUTs             ; 308 ALUTs              ; Yes        ; |VCPU|UnidadeControle:CtrlUnit|MemWR         ;
-; 128:1              ; 2 bits    ; 170 ALUTs     ; 10 ALUTs             ; 160 ALUTs              ; Yes        ; |VCPU|UnidadeControle:CtrlUnit|PCSource[0]   ;
+; 128:1              ; 2 bits    ; 170 ALUTs     ; 10 ALUTs             ; 160 ALUTs              ; Yes        ; |VCPU|UnidadeControle:CtrlUnit|PCSource[1]   ;
 ; 128:1              ; 2 bits    ; 170 ALUTs     ; 4 ALUTs              ; 166 ALUTs              ; Yes        ; |VCPU|UnidadeControle:CtrlUnit|PCCond[0]     ;
-; 128:1              ; 2 bits    ; 170 ALUTs     ; 4 ALUTs              ; 166 ALUTs              ; Yes        ; |VCPU|UnidadeControle:CtrlUnit|MemWD[1]      ;
-; 3:1                ; 32 bits   ; 64 ALUTs      ; 64 ALUTs             ; 0 ALUTs                ; No         ; |VCPU|mux_srcA:ALUSrcA|Mux4                  ;
-; 4:1                ; 2 bits    ; 4 ALUTs       ; 4 ALUTs              ; 0 ALUTs                ; No         ; |VCPU|mux_pcSrc:pcSrcMux|out[1]              ;
-; 4:1                ; 30 bits   ; 60 ALUTs      ; 60 ALUTs             ; 0 ALUTs                ; No         ; |VCPU|mux_pcSrc:pcSrcMux|out[13]             ;
-; 4:1                ; 5 bits    ; 10 ALUTs      ; 10 ALUTs             ; 0 ALUTs                ; No         ; |VCPU|mux_rgDst:RegDSTMux|Mux30              ;
-; 8:1                ; 32 bits   ; 160 ALUTs     ; 64 ALUTs             ; 96 ALUTs               ; No         ; |VCPU|Ula32:ALU|Mux42                        ;
-; 8:1                ; 32 bits   ; 160 ALUTs     ; 128 ALUTs            ; 32 ALUTs               ; No         ; |VCPU|Ula32:ALU|Mux15                        ;
-; 6:1                ; 8 bits    ; 32 ALUTs      ; 32 ALUTs             ; 0 ALUTs                ; No         ; |VCPU|mux_IorD:IorDMux|Mux1                  ;
+; 128:1              ; 3 bits    ; 255 ALUTs     ; 18 ALUTs             ; 237 ALUTs              ; Yes        ; |VCPU|UnidadeControle:CtrlUnit|ShiftCtrl[0]  ;
+; 128:1              ; 2 bits    ; 170 ALUTs     ; 4 ALUTs              ; 166 ALUTs              ; Yes        ; |VCPU|UnidadeControle:CtrlUnit|MemWD[0]      ;
+; 14:1               ; 13 bits   ; 117 ALUTs     ; 78 ALUTs             ; 39 ALUTs               ; Yes        ; |VCPU|RegDesloc:DesReg|temp[9]               ;
+; 14:1               ; 13 bits   ; 117 ALUTs     ; 78 ALUTs             ; 39 ALUTs               ; Yes        ; |VCPU|RegDesloc:DesReg|temp[25]              ;
+; 3:1                ; 32 bits   ; 64 ALUTs      ; 64 ALUTs             ; 0 ALUTs                ; No         ; |VCPU|mux_srcA:ALUSrcA|Mux31                 ;
+; 4:1                ; 2 bits    ; 4 ALUTs       ; 4 ALUTs              ; 0 ALUTs                ; No         ; |VCPU|mux_pcSrc:pcSrcMux|out[0]              ;
+; 4:1                ; 30 bits   ; 60 ALUTs      ; 60 ALUTs             ; 0 ALUTs                ; No         ; |VCPU|mux_pcSrc:pcSrcMux|out[27]             ;
+; 4:1                ; 5 bits    ; 10 ALUTs      ; 10 ALUTs             ; 0 ALUTs                ; No         ; |VCPU|mux_rgDst:RegDSTMux|Mux27              ;
+; 8:1                ; 32 bits   ; 160 ALUTs     ; 64 ALUTs             ; 96 ALUTs               ; No         ; |VCPU|Ula32:ALU|Mux52                        ;
+; 8:1                ; 32 bits   ; 160 ALUTs     ; 128 ALUTs            ; 32 ALUTs               ; No         ; |VCPU|Ula32:ALU|Mux18                        ;
+; 6:1                ; 8 bits    ; 32 ALUTs      ; 32 ALUTs             ; 0 ALUTs                ; No         ; |VCPU|mux_IorD:IorDMux|Mux2                  ;
 ; 11:1               ; 8 bits    ; 56 ALUTs      ; 48 ALUTs             ; 8 ALUTs                ; No         ; |VCPU|mega_mux:MemToRegMux|Mux0              ;
-; 32:1               ; 32 bits   ; 672 ALUTs     ; 672 ALUTs            ; 0 ALUTs                ; No         ; |VCPU|Banco_reg:registers|Mux47              ;
+; 32:1               ; 32 bits   ; 672 ALUTs     ; 672 ALUTs            ; 0 ALUTs                ; No         ; |VCPU|Banco_reg:registers|Mux46              ;
 ; 4:1                ; 2 bits    ; 4 ALUTs       ; 4 ALUTs              ; 0 ALUTs                ; No         ; |VCPU|mux_srcB:ALUSrcB|Mux1                  ;
-; 4:1                ; 14 bits   ; 28 ALUTs      ; 28 ALUTs             ; 0 ALUTs                ; No         ; |VCPU|mux_srcB:ALUSrcB|Mux23                 ;
+; 4:1                ; 14 bits   ; 28 ALUTs      ; 28 ALUTs             ; 0 ALUTs                ; No         ; |VCPU|mux_srcB:ALUSrcB|Mux31                 ;
 ; 12:1               ; 8 bits    ; 64 ALUTs      ; 48 ALUTs             ; 16 ALUTs               ; No         ; |VCPU|mega_mux:MemToRegMux|Mux14             ;
-; 5:1                ; 16 bits   ; 48 ALUTs      ; 48 ALUTs             ; 0 ALUTs                ; No         ; |VCPU|mux_srcB:ALUSrcB|Mux9                  ;
-; 13:1               ; 16 bits   ; 128 ALUTs     ; 112 ALUTs            ; 16 ALUTs               ; No         ; |VCPU|mega_mux:MemToRegMux|Mux31             ;
+; 5:1                ; 16 bits   ; 48 ALUTs      ; 48 ALUTs             ; 0 ALUTs                ; No         ; |VCPU|mux_srcB:ALUSrcB|Mux15                 ;
+; 13:1               ; 16 bits   ; 128 ALUTs     ; 112 ALUTs            ; 16 ALUTs               ; No         ; |VCPU|mega_mux:MemToRegMux|Mux21             ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------+
-; Source assignments for Memoria:Mem|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block|altsyncram_d991:auto_generated ;
+; Source assignments for Memoria:Mem|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block|altsyncram_gla1:auto_generated ;
 +---------------------------------+--------------------+------+-----------------------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                                  ;
 +---------------------------------+--------------------+------+-----------------------------------------------------+
@@ -665,7 +668,7 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 
 
 +----------------------------------------------------------------------------------------------------------------------------+
-; Source assignments for Memoria:Mem|LPM_RAM_DQ:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_d991:auto_generated ;
+; Source assignments for Memoria:Mem|LPM_RAM_DQ:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_gla1:auto_generated ;
 +---------------------------------+--------------------+------+--------------------------------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                                           ;
 +---------------------------------+--------------------+------+--------------------------------------------------------------+
@@ -674,7 +677,7 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 
 
 +----------------------------------------------------------------------------------------------------------------------------+
-; Source assignments for Memoria:Mem|LPM_RAM_DQ:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_d991:auto_generated ;
+; Source assignments for Memoria:Mem|LPM_RAM_DQ:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_gla1:auto_generated ;
 +---------------------------------+--------------------+------+--------------------------------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                                           ;
 +---------------------------------+--------------------+------+--------------------------------------------------------------+
@@ -683,7 +686,7 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 
 
 +------------------------------------------------------------------------------------------------------------------------------+
-; Source assignments for Memoria:Mem|LPM_RAM_DQ:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_d991:auto_generated ;
+; Source assignments for Memoria:Mem|LPM_RAM_DQ:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_gla1:auto_generated ;
 +---------------------------------+--------------------+------+----------------------------------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                                             ;
 +---------------------------------+--------------------+------+----------------------------------------------------------------+
@@ -846,93 +849,93 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 +-------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: Memoria:Mem|LPM_RAM_DQ:MEM ;
-+------------------------+------------+-----------------------------------+
-; Parameter Name         ; Value      ; Type                              ;
-+------------------------+------------+-----------------------------------+
-; LPM_WIDTH              ; 8          ; Signed Integer                    ;
-; LPM_WIDTHAD            ; 8          ; Signed Integer                    ;
-; LPM_NUMWORDS           ; 0          ; Signed Integer                    ;
-; LPM_INDATA             ; REGISTERED ; Untyped                           ;
-; LPM_ADDRESS_CONTROL    ; REGISTERED ; Untyped                           ;
-; LPM_OUTDATA            ; REGISTERED ; Untyped                           ;
-; LPM_FILE               ; dec.mif    ; Untyped                           ;
-; USE_EAB                ; ON         ; Untyped                           ;
-; DEVICE_FAMILY          ; Stratix II ; Untyped                           ;
-; CBXI_PARAMETER         ; NOTHING    ; Untyped                           ;
-; AUTO_CARRY_CHAINS      ; ON         ; AUTO_CARRY                        ;
-; IGNORE_CARRY_BUFFERS   ; OFF        ; IGNORE_CARRY                      ;
-; AUTO_CASCADE_CHAINS    ; ON         ; AUTO_CASCADE                      ;
-; IGNORE_CASCADE_BUFFERS ; OFF        ; IGNORE_CASCADE                    ;
-+------------------------+------------+-----------------------------------+
++------------------------+----------------------+-------------------------+
+; Parameter Name         ; Value                ; Type                    ;
++------------------------+----------------------+-------------------------+
+; LPM_WIDTH              ; 8                    ; Signed Integer          ;
+; LPM_WIDTHAD            ; 8                    ; Signed Integer          ;
+; LPM_NUMWORDS           ; 0                    ; Signed Integer          ;
+; LPM_INDATA             ; REGISTERED           ; Untyped                 ;
+; LPM_ADDRESS_CONTROL    ; REGISTERED           ; Untyped                 ;
+; LPM_OUTDATA            ; REGISTERED           ; Untyped                 ;
+; LPM_FILE               ; instrucoes-rsllv.mif ; Untyped                 ;
+; USE_EAB                ; ON                   ; Untyped                 ;
+; DEVICE_FAMILY          ; Stratix II           ; Untyped                 ;
+; CBXI_PARAMETER         ; NOTHING              ; Untyped                 ;
+; AUTO_CARRY_CHAINS      ; ON                   ; AUTO_CARRY              ;
+; IGNORE_CARRY_BUFFERS   ; OFF                  ; IGNORE_CARRY            ;
+; AUTO_CASCADE_CHAINS    ; ON                   ; AUTO_CASCADE            ;
+; IGNORE_CASCADE_BUFFERS ; OFF                  ; IGNORE_CASCADE          ;
++------------------------+----------------------+-------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +----------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: Memoria:Mem|LPM_RAM_DQ:MEM_plus_One ;
-+------------------------+------------+--------------------------------------------+
-; Parameter Name         ; Value      ; Type                                       ;
-+------------------------+------------+--------------------------------------------+
-; LPM_WIDTH              ; 8          ; Signed Integer                             ;
-; LPM_WIDTHAD            ; 8          ; Signed Integer                             ;
-; LPM_NUMWORDS           ; 0          ; Signed Integer                             ;
-; LPM_INDATA             ; REGISTERED ; Untyped                                    ;
-; LPM_ADDRESS_CONTROL    ; REGISTERED ; Untyped                                    ;
-; LPM_OUTDATA            ; REGISTERED ; Untyped                                    ;
-; LPM_FILE               ; dec.mif    ; Untyped                                    ;
-; USE_EAB                ; ON         ; Untyped                                    ;
-; DEVICE_FAMILY          ; Stratix II ; Untyped                                    ;
-; CBXI_PARAMETER         ; NOTHING    ; Untyped                                    ;
-; AUTO_CARRY_CHAINS      ; ON         ; AUTO_CARRY                                 ;
-; IGNORE_CARRY_BUFFERS   ; OFF        ; IGNORE_CARRY                               ;
-; AUTO_CASCADE_CHAINS    ; ON         ; AUTO_CASCADE                               ;
-; IGNORE_CASCADE_BUFFERS ; OFF        ; IGNORE_CASCADE                             ;
-+------------------------+------------+--------------------------------------------+
++------------------------+----------------------+----------------------------------+
+; Parameter Name         ; Value                ; Type                             ;
++------------------------+----------------------+----------------------------------+
+; LPM_WIDTH              ; 8                    ; Signed Integer                   ;
+; LPM_WIDTHAD            ; 8                    ; Signed Integer                   ;
+; LPM_NUMWORDS           ; 0                    ; Signed Integer                   ;
+; LPM_INDATA             ; REGISTERED           ; Untyped                          ;
+; LPM_ADDRESS_CONTROL    ; REGISTERED           ; Untyped                          ;
+; LPM_OUTDATA            ; REGISTERED           ; Untyped                          ;
+; LPM_FILE               ; instrucoes-rsllv.mif ; Untyped                          ;
+; USE_EAB                ; ON                   ; Untyped                          ;
+; DEVICE_FAMILY          ; Stratix II           ; Untyped                          ;
+; CBXI_PARAMETER         ; NOTHING              ; Untyped                          ;
+; AUTO_CARRY_CHAINS      ; ON                   ; AUTO_CARRY                       ;
+; IGNORE_CARRY_BUFFERS   ; OFF                  ; IGNORE_CARRY                     ;
+; AUTO_CASCADE_CHAINS    ; ON                   ; AUTO_CASCADE                     ;
+; IGNORE_CASCADE_BUFFERS ; OFF                  ; IGNORE_CASCADE                   ;
++------------------------+----------------------+----------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +----------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: Memoria:Mem|LPM_RAM_DQ:MEM_plus_Two ;
-+------------------------+------------+--------------------------------------------+
-; Parameter Name         ; Value      ; Type                                       ;
-+------------------------+------------+--------------------------------------------+
-; LPM_WIDTH              ; 8          ; Signed Integer                             ;
-; LPM_WIDTHAD            ; 8          ; Signed Integer                             ;
-; LPM_NUMWORDS           ; 0          ; Signed Integer                             ;
-; LPM_INDATA             ; REGISTERED ; Untyped                                    ;
-; LPM_ADDRESS_CONTROL    ; REGISTERED ; Untyped                                    ;
-; LPM_OUTDATA            ; REGISTERED ; Untyped                                    ;
-; LPM_FILE               ; dec.mif    ; Untyped                                    ;
-; USE_EAB                ; ON         ; Untyped                                    ;
-; DEVICE_FAMILY          ; Stratix II ; Untyped                                    ;
-; CBXI_PARAMETER         ; NOTHING    ; Untyped                                    ;
-; AUTO_CARRY_CHAINS      ; ON         ; AUTO_CARRY                                 ;
-; IGNORE_CARRY_BUFFERS   ; OFF        ; IGNORE_CARRY                               ;
-; AUTO_CASCADE_CHAINS    ; ON         ; AUTO_CASCADE                               ;
-; IGNORE_CASCADE_BUFFERS ; OFF        ; IGNORE_CASCADE                             ;
-+------------------------+------------+--------------------------------------------+
++------------------------+----------------------+----------------------------------+
+; Parameter Name         ; Value                ; Type                             ;
++------------------------+----------------------+----------------------------------+
+; LPM_WIDTH              ; 8                    ; Signed Integer                   ;
+; LPM_WIDTHAD            ; 8                    ; Signed Integer                   ;
+; LPM_NUMWORDS           ; 0                    ; Signed Integer                   ;
+; LPM_INDATA             ; REGISTERED           ; Untyped                          ;
+; LPM_ADDRESS_CONTROL    ; REGISTERED           ; Untyped                          ;
+; LPM_OUTDATA            ; REGISTERED           ; Untyped                          ;
+; LPM_FILE               ; instrucoes-rsllv.mif ; Untyped                          ;
+; USE_EAB                ; ON                   ; Untyped                          ;
+; DEVICE_FAMILY          ; Stratix II           ; Untyped                          ;
+; CBXI_PARAMETER         ; NOTHING              ; Untyped                          ;
+; AUTO_CARRY_CHAINS      ; ON                   ; AUTO_CARRY                       ;
+; IGNORE_CARRY_BUFFERS   ; OFF                  ; IGNORE_CARRY                     ;
+; AUTO_CASCADE_CHAINS    ; ON                   ; AUTO_CASCADE                     ;
+; IGNORE_CASCADE_BUFFERS ; OFF                  ; IGNORE_CASCADE                   ;
++------------------------+----------------------+----------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +------------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: Memoria:Mem|LPM_RAM_DQ:MEM_plus_Three ;
-+------------------------+------------+----------------------------------------------+
-; Parameter Name         ; Value      ; Type                                         ;
-+------------------------+------------+----------------------------------------------+
-; LPM_WIDTH              ; 8          ; Signed Integer                               ;
-; LPM_WIDTHAD            ; 8          ; Signed Integer                               ;
-; LPM_NUMWORDS           ; 0          ; Signed Integer                               ;
-; LPM_INDATA             ; REGISTERED ; Untyped                                      ;
-; LPM_ADDRESS_CONTROL    ; REGISTERED ; Untyped                                      ;
-; LPM_OUTDATA            ; REGISTERED ; Untyped                                      ;
-; LPM_FILE               ; dec.mif    ; Untyped                                      ;
-; USE_EAB                ; ON         ; Untyped                                      ;
-; DEVICE_FAMILY          ; Stratix II ; Untyped                                      ;
-; CBXI_PARAMETER         ; NOTHING    ; Untyped                                      ;
-; AUTO_CARRY_CHAINS      ; ON         ; AUTO_CARRY                                   ;
-; IGNORE_CARRY_BUFFERS   ; OFF        ; IGNORE_CARRY                                 ;
-; AUTO_CASCADE_CHAINS    ; ON         ; AUTO_CASCADE                                 ;
-; IGNORE_CASCADE_BUFFERS ; OFF        ; IGNORE_CASCADE                               ;
-+------------------------+------------+----------------------------------------------+
++------------------------+----------------------+------------------------------------+
+; Parameter Name         ; Value                ; Type                               ;
++------------------------+----------------------+------------------------------------+
+; LPM_WIDTH              ; 8                    ; Signed Integer                     ;
+; LPM_WIDTHAD            ; 8                    ; Signed Integer                     ;
+; LPM_NUMWORDS           ; 0                    ; Signed Integer                     ;
+; LPM_INDATA             ; REGISTERED           ; Untyped                            ;
+; LPM_ADDRESS_CONTROL    ; REGISTERED           ; Untyped                            ;
+; LPM_OUTDATA            ; REGISTERED           ; Untyped                            ;
+; LPM_FILE               ; instrucoes-rsllv.mif ; Untyped                            ;
+; USE_EAB                ; ON                   ; Untyped                            ;
+; DEVICE_FAMILY          ; Stratix II           ; Untyped                            ;
+; CBXI_PARAMETER         ; NOTHING              ; Untyped                            ;
+; AUTO_CARRY_CHAINS      ; ON                   ; AUTO_CARRY                         ;
+; IGNORE_CARRY_BUFFERS   ; OFF                  ; IGNORE_CARRY                       ;
+; AUTO_CASCADE_CHAINS    ; ON                   ; AUTO_CASCADE                       ;
+; IGNORE_CASCADE_BUFFERS ; OFF                  ; IGNORE_CASCADE                     ;
++------------------------+----------------------+------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -1080,7 +1083,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; IorD       ; Output ; Warning  ; Output or bidir port (3 bits) is smaller than the port expression (4 bits) it drives.  The 1 most-significant bit(s) in the port expression will be connected to GND. ;
 ; EPCWrite   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                   ;
 ; WriteData  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                              ;
-; ShiftCtrl  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                              ;
 +------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -1090,7 +1092,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Sat May 18 05:33:26 2019
+    Info: Processing started: Sat May 18 05:45:03 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Proj_Hardware -c Proj_Hardware
 Info: Found 1 design units, including 1 entities, in source file mux_rgdst.sv
     Info: Found entity 1: mux_rgDst
@@ -1254,7 +1256,7 @@ Info: Instantiated megafunction "Memoria:Mem|LPM_RAM_DQ:MEM" with the following 
     Info: Parameter "LPM_INDATA" = "REGISTERED"
     Info: Parameter "LPM_ADDRESS_CONTROL" = "REGISTERED"
     Info: Parameter "LPM_OUTDATA" = "REGISTERED"
-    Info: Parameter "LPM_FILE" = "dec.mif"
+    Info: Parameter "LPM_FILE" = "instrucoes-rsllv.mif"
     Info: Parameter "LPM_TYPE" = "LPM_RAM_DQ"
     Info: Parameter "USE_EAB" = "ON"
     Info: Parameter "INTENDED_DEVICE_FAMILY" = "UNUSED"
@@ -1264,10 +1266,10 @@ Warning: Assertion warning: altram does not support Stratix II device family -- 
 Info: Elaborated megafunction instantiation "Memoria:Mem|LPM_RAM_DQ:MEM|altram:sram", which is child of megafunction instantiation "Memoria:Mem|LPM_RAM_DQ:MEM"
 Info: Elaborating entity "altsyncram" for hierarchy "Memoria:Mem|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block"
 Info: Elaborated megafunction instantiation "Memoria:Mem|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block", which is child of megafunction instantiation "Memoria:Mem|LPM_RAM_DQ:MEM"
-Info: Found 1 design units, including 1 entities, in source file db/altsyncram_d991.tdf
-    Info: Found entity 1: altsyncram_d991
-Info: Elaborating entity "altsyncram_d991" for hierarchy "Memoria:Mem|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block|altsyncram_d991:auto_generated"
-Critical Warning: Memory depth (256) in the design file differs from memory depth (4) in the Memory Initialization File "dec.mif" -- setting initial value for remaining addresses to 0
+Info: Found 1 design units, including 1 entities, in source file db/altsyncram_gla1.tdf
+    Info: Found entity 1: altsyncram_gla1
+Info: Elaborating entity "altsyncram_gla1" for hierarchy "Memoria:Mem|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block|altsyncram_gla1:auto_generated"
+Critical Warning: Memory depth (256) in the design file differs from memory depth (12) in the Memory Initialization File "instrucoes-rsllv.mif" -- setting initial value for remaining addresses to 0
 Info: Elaborating entity "mux_memWD" for hierarchy "mux_memWD:memWDMux"
 Info: Elaborating entity "Instr_Reg" for hierarchy "Instr_Reg:IR"
 Info: Elaborating entity "mux_rgDst" for hierarchy "mux_rgDst:RegDSTMux"
@@ -1393,6 +1395,38 @@ Warning (10230): Verilog HDL assignment warning at div.v(101): truncated value w
 Info: Elaborating entity "mult" for hierarchy "mult:MULTOp"
 Warning: Net is missing source, defaulting to GND
     Warning (12110): Net "IorD[3]" is missing source, defaulting to GND
+Warning: LATCH primitive "mux_2inputs:DR1Mux|outputA[0]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:DR1Mux|outputA[1]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:DR1Mux|outputA[2]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:DR1Mux|outputA[3]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:DR1Mux|outputA[4]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:DR1Mux|outputA[5]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:DR1Mux|outputA[6]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:DR1Mux|outputA[7]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:DR1Mux|outputA[8]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:DR1Mux|outputA[9]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:DR1Mux|outputA[10]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:DR1Mux|outputA[11]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:DR1Mux|outputA[12]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:DR1Mux|outputA[13]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:DR1Mux|outputA[14]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:DR1Mux|outputA[15]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:DR1Mux|outputA[16]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:DR1Mux|outputA[17]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:DR1Mux|outputA[18]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:DR1Mux|outputA[19]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:DR1Mux|outputA[20]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:DR1Mux|outputA[21]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:DR1Mux|outputA[22]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:DR1Mux|outputA[23]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:DR1Mux|outputA[24]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:DR1Mux|outputA[25]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:DR1Mux|outputA[26]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:DR1Mux|outputA[27]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:DR1Mux|outputA[28]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:DR1Mux|outputA[29]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:DR1Mux|outputA[30]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:DR1Mux|outputA[31]" is permanently enabled
 Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[0]" is permanently enabled
 Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[1]" is permanently enabled
 Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[2]" is permanently enabled
@@ -1457,6 +1491,38 @@ Warning: LATCH primitive "mux_2inputs:ALUorMemMux|outputA[28]" is permanently en
 Warning: LATCH primitive "mux_2inputs:ALUorMemMux|outputA[29]" is permanently enabled
 Warning: LATCH primitive "mux_2inputs:ALUorMemMux|outputA[30]" is permanently enabled
 Warning: LATCH primitive "mux_2inputs:ALUorMemMux|outputA[31]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:DR1Mux|outputA[0]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:DR1Mux|outputA[1]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:DR1Mux|outputA[2]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:DR1Mux|outputA[3]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:DR1Mux|outputA[4]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:DR1Mux|outputA[5]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:DR1Mux|outputA[6]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:DR1Mux|outputA[7]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:DR1Mux|outputA[8]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:DR1Mux|outputA[9]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:DR1Mux|outputA[10]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:DR1Mux|outputA[11]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:DR1Mux|outputA[12]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:DR1Mux|outputA[13]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:DR1Mux|outputA[14]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:DR1Mux|outputA[15]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:DR1Mux|outputA[16]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:DR1Mux|outputA[17]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:DR1Mux|outputA[18]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:DR1Mux|outputA[19]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:DR1Mux|outputA[20]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:DR1Mux|outputA[21]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:DR1Mux|outputA[22]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:DR1Mux|outputA[23]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:DR1Mux|outputA[24]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:DR1Mux|outputA[25]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:DR1Mux|outputA[26]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:DR1Mux|outputA[27]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:DR1Mux|outputA[28]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:DR1Mux|outputA[29]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:DR1Mux|outputA[30]" is permanently enabled
+Warning: LATCH primitive "mux_2inputs:DR1Mux|outputA[31]" is permanently enabled
 Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[0]" is permanently enabled
 Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[1]" is permanently enabled
 Warning: LATCH primitive "mux_2inputs:WriteDataMux|outputA[2]" is permanently enabled
@@ -1653,19 +1719,19 @@ Warning: Latch mux_srcB:ALUSrcB|out[31] has unsafe behavior
 Warning: Latch mega_mux:MemToRegMux|out[0] has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|MemToReg[3]
 Warning: Latch mega_mux:MemToRegMux|out[1] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|MemToReg[3]
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|MemToReg[1]
 Warning: Latch mega_mux:MemToRegMux|out[2] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|MemToReg[3]
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|MemToReg[1]
 Warning: Latch mega_mux:MemToRegMux|out[3] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|MemToReg[3]
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|MemToReg[1]
 Warning: Latch mega_mux:MemToRegMux|out[4] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|MemToReg[3]
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|MemToReg[1]
 Warning: Latch mega_mux:MemToRegMux|out[5] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|MemToReg[3]
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|MemToReg[1]
 Warning: Latch mega_mux:MemToRegMux|out[6] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|MemToReg[3]
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|MemToReg[1]
 Warning: Latch mega_mux:MemToRegMux|out[7] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|MemToReg[3]
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|MemToReg[1]
 Warning: Latch mega_mux:MemToRegMux|out[8] has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|MemToReg[1]
 Warning: Latch mega_mux:MemToRegMux|out[9] has unsafe behavior
@@ -1683,37 +1749,37 @@ Warning: Latch mega_mux:MemToRegMux|out[14] has unsafe behavior
 Warning: Latch mega_mux:MemToRegMux|out[15] has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|MemToReg[1]
 Warning: Latch mega_mux:MemToRegMux|out[16] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|MemToReg[1]
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|MemToReg[2]
 Warning: Latch mega_mux:MemToRegMux|out[17] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|MemToReg[1]
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|MemToReg[2]
 Warning: Latch mega_mux:MemToRegMux|out[18] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|MemToReg[1]
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|MemToReg[2]
 Warning: Latch mega_mux:MemToRegMux|out[19] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|MemToReg[1]
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|MemToReg[2]
 Warning: Latch mega_mux:MemToRegMux|out[20] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|MemToReg[1]
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|MemToReg[2]
 Warning: Latch mega_mux:MemToRegMux|out[21] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|MemToReg[1]
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|MemToReg[2]
 Warning: Latch mega_mux:MemToRegMux|out[22] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|MemToReg[1]
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|MemToReg[2]
 Warning: Latch mega_mux:MemToRegMux|out[23] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|MemToReg[1]
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|MemToReg[2]
 Warning: Latch mega_mux:MemToRegMux|out[24] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|MemToReg[1]
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|MemToReg[2]
 Warning: Latch mega_mux:MemToRegMux|out[25] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|MemToReg[1]
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|MemToReg[2]
 Warning: Latch mega_mux:MemToRegMux|out[26] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|MemToReg[1]
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|MemToReg[2]
 Warning: Latch mega_mux:MemToRegMux|out[27] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|MemToReg[1]
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|MemToReg[2]
 Warning: Latch mega_mux:MemToRegMux|out[28] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|MemToReg[1]
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|MemToReg[2]
 Warning: Latch mega_mux:MemToRegMux|out[29] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|MemToReg[1]
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|MemToReg[2]
 Warning: Latch mega_mux:MemToRegMux|out[30] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|MemToReg[1]
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|MemToReg[2]
 Warning: Latch mega_mux:MemToRegMux|out[31] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|MemToReg[1]
+    Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|MemToReg[2]
 Warning: Latch mux_IorD:IorDMux|out[0] has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal UnidadeControle:CtrlUnit|IorD[2]
 Warning: Latch mux_IorD:IorDMux|out[1] has unsafe behavior
@@ -1763,7 +1829,7 @@ Warning: Output pins are stuck at VCC or GND
     Warning (13410): Pin "EPCOut[29]" is stuck at GND
     Warning (13410): Pin "EPCOut[30]" is stuck at GND
     Warning (13410): Pin "EPCOut[31]" is stuck at GND
-Info: 352 registers lost all their fanouts during netlist optimizations. The first 352 are displayed below.
+Info: 350 registers lost all their fanouts during netlist optimizations. The first 350 are displayed below.
     Info: Register "mult:MULTOp|multiplicand[5]" lost all its fanouts during netlist optimizations.
     Info: Register "mult:MULTOp|multiplicand[4]" lost all its fanouts during netlist optimizations.
     Info: Register "mult:MULTOp|multiplicand[3]" lost all its fanouts during netlist optimizations.
@@ -2111,22 +2177,20 @@ Info: 352 registers lost all their fanouts during netlist optimizations. The fir
     Info: Register "div:DIVOp|DivFim" lost all its fanouts during netlist optimizations.
     Info: Register "UnidadeControle:CtrlUnit|BWD[1]" lost all its fanouts during netlist optimizations.
     Info: Register "UnidadeControle:CtrlUnit|BWD[0]" lost all its fanouts during netlist optimizations.
-    Info: Register "UnidadeControle:CtrlUnit|DR1" lost all its fanouts during netlist optimizations.
-    Info: Register "UnidadeControle:CtrlUnit|DR2" lost all its fanouts during netlist optimizations.
     Info: Register "mult:MULTOp|doing.01" lost all its fanouts during netlist optimizations.
     Info: Register "mult:MULTOp|doing.10" lost all its fanouts during netlist optimizations.
     Info: Register "mult:MULTOp|doing.00" lost all its fanouts during netlist optimizations.
 Info: Generated suppressed messages file C:/Users/Rukazu/Downloads/infrahardware/ProjetoVerilog/Proj_Hardware.map.smsg
-Info: Implemented 2996 device resources after synthesis - the final resource count might be different
+Info: Implemented 3358 device resources after synthesis - the final resource count might be different
     Info: Implemented 2 input pins
     Info: Implemented 342 output pins
-    Info: Implemented 2620 logic cells
+    Info: Implemented 2982 logic cells
     Info: Implemented 32 RAM segments
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 389 warnings
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 453 warnings
     Info: Peak virtual memory: 283 megabytes
-    Info: Processing ended: Sat May 18 05:33:43 2019
-    Info: Elapsed time: 00:00:17
-    Info: Total CPU time (on all processors): 00:00:18
+    Info: Processing ended: Sat May 18 05:45:26 2019
+    Info: Elapsed time: 00:00:23
+    Info: Total CPU time (on all processors): 00:00:24
 
 
 +------------------------------------------+

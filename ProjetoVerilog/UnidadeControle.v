@@ -882,6 +882,7 @@ always@ (posedge clock) begin
 			state = cory_11;
 		end
 		cory_11: begin
+			ShiftCtrl = 3'b000;
 			state = write_2;
 		end
 		write_2: begin

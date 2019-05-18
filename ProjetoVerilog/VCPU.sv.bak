@@ -9,7 +9,7 @@ module VCPU(
 	output logic [31:0] MDROut,
 	output logic [31:0] AluSrcAOut,
 	output logic [31:0] AluSrcBOut,
-	output logic [31:0] RegAIn,
+	//output logic [31:0] RegAIn,
 	output logic [31:0] RegBIn,
 	output logic [5:0] funct,
 	output logic Overflow,
@@ -69,7 +69,7 @@ logic RegWrite;
 logic [1:0] RegDst;
 logic [4:0] RegDstOut;
 
-//logic [31:0] RegAIn;
+logic [31:0] RegAIn;
 logic [31:0] RegAOut;
 //logic [31:0] RegBIn;
 logic [31:0] RegBOut;

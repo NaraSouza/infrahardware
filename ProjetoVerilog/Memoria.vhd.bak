@@ -38,7 +38,7 @@
 package ram_constants is
 	constant DATA_WIDTH : INTEGER := 8;
 	constant ADDR_WIDTH : INTEGER := 8;
-	constant INIT_FILE  : STRING  := "inc.mif";
+	constant INIT_FILE  : STRING  := "dec.mif";
 end ram_constants;
 
 --*************************************************************************

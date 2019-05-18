@@ -192,7 +192,8 @@ UnidadeControle CtrlUnit(
 	.Z(Zero),
 	.O(Overflow),
 	.GT(GreaterThan),
-	.LT(LessThan)
+	.LT(LessThan),
+	.ShiftCtrl(ShiftCtrl)
 );
 
 
