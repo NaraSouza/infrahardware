@@ -485,54 +485,48 @@ always@ (posedge clock) begin
 			state = Break;
 		end
 		inc: begin
-			ALUSrcA = 2'b10;
-			USExt = 1;
-			ALUSrcB = 3'b100;
-			ALUOp = 3'b001;
-			ALUOutWrite = 1;
+			IorD = 3'b000;
+			MemWR = 0;
 			state = inc_2;
 		end
 		inc_2: begin
-			ALUOutWrite = 0;
-			IorD = 3'b101;
-			MemWR = 0;
 			state = cory_4;
 		end
 		cory_4: begin
+			MDRWrite = 1;
 			state = inc_3;
 		end
 		inc_3: begin
+			MDRWrite = 0;
 			ALUSrcA = 2'b01;
-			ALUOp = 3'b100;
+			ALUSrcB = 3'b001;
+			ALUOp = 3'b001;
+			ALUOutWrite = 1;
 			state = writeMem;
 		end
 		dec: begin
-			ALUSrcA = 2'b10;
-			USExt = 1;
-			ALUSrcB = 3'b100;
-			ALUOp = 3'b001;
-			ALUOutWrite = 1;
-			state = inc_2;
+			IorD = 3'b000;
+			MemWR = 0;
+			state = dec_2;
 		end
 		dec_2: begin
-			ALUOutWrite = 0;
-			IorD = 3'b101;
-			MemWR = 0;
 			state = cory_5;
 		end
 		cory_5: begin
-			state = inc_3;
+			state = dec_3;
 		end
 		dec_3: begin
+			MDRWrite = 0;
 			ALUSrcA = 2'b01;
 			ALUSrcB = 3'b001;
 			ALUOp = 3'b010;
+			ALUOutWrite = 1;
 			state = writeMem;
 		end
 		writeMem: begin
-			IorD = 3'b101;
-			BWD = 2'b11;
-			WriteData = 1;
+			ALUOutWrite = 0;
+			IorD = 3'b000;
+			WriteData = 0;
 			MemWR = 1;
 			state = cory_12;
 		end

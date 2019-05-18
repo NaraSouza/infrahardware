@@ -9,12 +9,14 @@ module VCPU(
 	output logic [31:0] MDROut,
 	output logic [31:0] AluSrcAOut,
 	output logic [31:0] AluSrcBOut,
-	output logic [31:0] RegAIn,
+	//output logic [31:0] RegAIn,
 	output logic [31:0] RegBIn,
 	output logic [5:0] funct,
 	output logic Overflow,
 	output logic Zero,
-	output logic PCWCtrl,
+	//output logic PCWCtrl,
+	output logic [31:0] MemOut,
+	output logic [31:0] ALUOut, 
 	
 	output logic [1:0] AluSrcA,
 
@@ -49,7 +51,7 @@ logic [31:0] SL2Jumpinst25_0Out;
 
 
 logic MemWR;
-logic [31:0] MemOut;
+//logic [31:0] MemOut;
 
 logic IRWrite;
 logic WrMDR;
@@ -67,7 +69,7 @@ logic RegWrite;
 logic [1:0] RegDst;
 logic [4:0] RegDstOut;
 
-//logic [31:0] RegAIn;
+logic [31:0] RegAIn;
 logic [31:0] RegAOut;
 //logic [31:0] RegBIn;
 logic [31:0] RegBOut;
@@ -94,14 +96,14 @@ logic [31:0] SL2Out;
 
 logic ALURegWrite;
 logic [2:0] ALUOp;
-logic [31:0] ALUOut; 	// ALU output
+//logic [31:0] ALUOut; 	// ALU output
 // logic [31:0] ALURegOut; // Registrador que guarda ALU output
 
 logic EPCWrite;
 logic [1:0] PCSource;
 logic PCWriteCond;
 // logic PCWrite;
-//logic PCWCtrl; // controla se escreve ou n em PC; baseado nos bools anteriores(resultado final, basicamente)
+logic PCWCtrl; // controla se escreve ou n em PC; baseado nos bools anteriores(resultado final, basicamente)
 logic [31:0] PCSrcOut;
 logic [1:0] PCCond;
 logic PCCondOut;
@@ -217,16 +219,16 @@ Registrador PC(
 	.Saida(PCOut)
 );
 
-mux_iOrD IorDMux(
+mux_IorD IorDMux(
 	// 253, 254 e 255
 	// escolhidos dentro da un.
 	//253 = 010
 	//254 = 011
 	//255 = 100
 	.selector(IorD),
-	.inputA(SL2Jumpinst25_0Out), //000
-	.inputB(PCOut), //001
-	.inputC(ALURegOut), //101
+	.InputA(inst25_0), //000
+	.InputB(PCOut), //001
+	.InputC(ALURegOut), //101
 	.out(IorDOut)
 );
 
@@ -238,12 +240,13 @@ mux_2inputs WriteDataMux(
 	.outputA( WriteDataOut ) // Realmente escreve em MemOut?
 );
 
-mux_BWD BWDMux(
+mux_BWD2 BWDMux(
 	.selector(BWD),
 	.MDRVal(MDROut),
 	.FullWord( RegBOut ),//00. FullWord
 	.HalfWord( RegBHalf ),//01
 	.Byte( RegBByte ),//10
+	.ALUResult (ALUOut),//11
 	.out( BWDOut )
 );
 
