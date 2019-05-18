@@ -148,6 +148,7 @@ parameter [6:0] cory_13 = 7'd100;
 parameter [6:0] cory_14 = 7'd101;
 parameter [6:0] cory_15 = 7'd102;
 parameter [6:0] cory_16 = 7'd103;
+parameter [6:0] cory_17 = 7'd104;
 
 parameter [5:0] Opcode_R = 6'h00;
 
@@ -335,6 +336,7 @@ always@ (posedge clock) begin
 			ALUSrcB = 3'b100;
 			ALUOp = 3'b111;
 			ALUOutWrite = 1;
+			state = cory_15;
 		end
 		cory_15: begin
 			if (LT == 1) begin
@@ -401,12 +403,15 @@ always@ (posedge clock) begin
 			ALUSrcB = 3'b000;
 			ALUOp = 3'b111;
 			ALUOutWrite = 1;
+			state = cory_16;		
+		end
+		cory_16: begin
 			if (LT == 1) begin
 				state = write_lt11;
 			end
 			else if (LT == 0) begin
 				state = write_lt00;
-			end			
+			end
 		end
 		write_lt11: begin
 			ALUOutWrite = 0;
@@ -437,12 +442,17 @@ always@ (posedge clock) begin
 			state = cory_12;
 		end
 		jal: begin
-			MemToReg = 4'b101;
+			RegWrite = 0;
+			MemToReg = 4'b111;
 			RegDst = 2'b11;
-			RegWrite = 1;
+			state = cory_17;
+		end
+		cory_17: begin
+			RegWrite = 0;
 			state = jal_2;
 		end
 		jal_2: begin
+			RegWrite = 0;
 			PCSource = 2'b00;
 			ALUorMem = 0;
 			PCWrite = 1;

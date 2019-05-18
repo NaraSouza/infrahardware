@@ -276,7 +276,7 @@ Instr_Reg IR(
 	.Instr15_0(inst15_0)
 );
 
-mux_regDst RegDSTMux(
+mux_rgDst RegDSTMux(
 	.selector(RegDst),
 	.inputA( rt ), // rd?
 	.inputB( rd ),  // rt?

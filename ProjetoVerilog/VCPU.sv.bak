@@ -11,6 +11,11 @@ module VCPU(
 	output logic [31:0] AluSrcBOut,
 	output logic [31:0] RegAIn,
 	output logic [31:0] RegBIn,
+	output logic [31:0] RegAOut,
+	output logic [31:0] RegBOut,
+	output logic [31:0] SL16Out,
+	output logic [31:0] SL2Out,
+	output logic [31:0] MemOut,
 	
 	output logic [1:0] AluSrcA,
 
@@ -19,7 +24,7 @@ module VCPU(
 	output logic [4:0] rs,
     output logic [4:0] rt,
     
-    output logic LessThan;
+    output logic LessThan,
     
     output logic [15:0] inst15_0,
     output logic [31:0] ALURegOut,
@@ -44,7 +49,7 @@ logic [31:0] SL2Jumpinst25_0Out;
 
 
 logic MemWR;
-logic [31:0] MemOut;
+//logic [31:0] MemOut;
 
 logic IRWrite;
 logic WrMDR;
@@ -63,9 +68,9 @@ logic [1:0] RegDst;
 logic [4:0] RegDstOut;
 
 //logic [31:0] RegAIn;
-logic [31:0] RegAOut;
 //logic [31:0] RegBIn;
-logic [31:0] RegBOut;
+//logic [31:0] RegAOut;
+//logic [31:0] RegBOut;
 logic [15:0] RegBHalf;
 logic [8:0]  RegBByte;
 
@@ -84,8 +89,8 @@ logic [31:0] MemToRegOut;
 logic USExt;			// Flag de (un)sign extend p/ ALUSrcB
 // Outputs que vão para ALUSrcB baseado no USExt
 logic [31:0] USExtOut;
-logic [31:0] SL16Out;
-logic [31:0] SL2Out;
+//logic [31:0] SL16Out;
+//logic [31:0] SL2Out;
 
 logic ALURegWrite;
 logic [2:0] ALUOp;
@@ -276,7 +281,7 @@ Instr_Reg IR(
 	.Instr15_0(inst15_0)
 );
 
-mux_regDst RegDSTMux(
+mux_rgDst RegDSTMux(
 	.selector(RegDst),
 	.inputA( rt ), // rd?
 	.inputB( rd ),  // rt?
