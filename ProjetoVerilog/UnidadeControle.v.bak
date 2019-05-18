@@ -273,11 +273,11 @@ always@ (posedge clock) begin
 					case(funct)
 						funct_add: state = add;
 						funct_and: state = And;
-						funct_div: state = div;
-						funct_mult: state = mult;
+						funct_div: state = inicial;
+						funct_mult: state = inicial;
 						funct_jr: state = jr;
-						funct_mfhi: state = mfhi;
-						funct_mflo: state = mflo;
+						funct_mfhi: state = inicial;
+						funct_mflo: state = inicial;
 						funct_sll: state = sll;
 						funct_sllv: state = sllv;
 						funct_slt: state = slt;
@@ -482,6 +482,16 @@ always@ (posedge clock) begin
 			state = cory_12;
 		end
 		Break: begin
+			IRWrite = 0;
+			PCWrite = 0;
+			RegWrite = 0; 
+			AWrite = 0;
+			BWrite = 0;
+			ALUOutWrite = 0;
+			MDRWrite = 0;
+			LowReg = 0;
+			HighReg = 0;
+			EPCWrite = 0;
 			state = Break;
 		end
 		inc: begin
@@ -882,6 +892,7 @@ always@ (posedge clock) begin
 			state = cory_11;
 		end
 		cory_11: begin
+			ShiftCtrl = 3'b000;
 			state = write_2;
 		end
 		write_2: begin

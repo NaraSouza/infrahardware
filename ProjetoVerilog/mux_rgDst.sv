@@ -1,9 +1,9 @@
 module mux_rgDst(
 	//TODO: Verificar se output está correto
 	input wire [1:0] selector,
-	input wire [31:0] inputA,//00
-	input wire [31:0] inputB,//00
-	output wire [31:0] out);
+	input wire [4:0] inputA,//00
+	input wire [4:0] inputB,//00
+	output wire [4:0] out);
 	
 	
 always

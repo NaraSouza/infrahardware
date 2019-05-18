@@ -156,6 +156,7 @@ parameter [6:0] cory_18 = 7'd105;
 parameter [6:0] cory_19 = 7'd106;
 parameter [6:0] cory_20 = 7'd107;
 parameter [6:0] cory_21 = 7'd108;
+parameter [6:0] cory_22 = 7'd109;
 
 parameter [5:0] Opcode_R = 6'h00;
 
@@ -273,11 +274,11 @@ always@ (posedge clock) begin
 					case(funct)
 						funct_add: state = add;
 						funct_and: state = And;
-						funct_div: state = div;
-						funct_mult: state = mult;
+						funct_div: state = inicial;
+						funct_mult: state = inicial;
 						funct_jr: state = jr;
-						funct_mfhi: state = mfhi;
-						funct_mflo: state = mflo;
+						funct_mfhi: state = inicial;
+						funct_mflo: state = inicial;
 						funct_sll: state = sll;
 						funct_sllv: state = sllv;
 						funct_slt: state = slt;
@@ -367,14 +368,14 @@ always@ (posedge clock) begin
 			RegDst = 2'b00;
 			MemToReg = 4'b1010;
 			RegWrite = 1;
-			state = cory_12;
+			state = cory_22;
 		end
 		write_lt0: begin
 			ALUOutWrite = 0;
 			RegDst = 2'b00;
 			MemToReg = 4'b1001;
 			RegWrite = 1;
-			state = cory_12;
+			state = cory_22;
 		end
 		add: begin
 			ALUSrcA = 2'b10;
@@ -434,13 +435,26 @@ always@ (posedge clock) begin
 			RegDst = 2'b01;
 			MemToReg = 4'b1010;
 			RegWrite = 1;
-			state = cory_12;
+			state = cory_22;
 		end
 		write_lt00: begin
 			ALUOutWrite = 0;
 			RegDst = 2'b01;
 			MemToReg = 4'b1001;
 			RegWrite = 1;
+			state = cory_22;
+		end
+		cory_22: begin
+			IRWrite = 0;
+			PCWrite = 0;
+			RegWrite = 0; 
+			AWrite = 0;
+			BWrite = 0;
+			ALUOutWrite = 0;
+			MDRWrite = 0;
+			LowReg = 0;
+			HighReg = 0;
+			EPCWrite = 0;
 			state = cory_12;
 		end
 		jr: begin
@@ -482,6 +496,16 @@ always@ (posedge clock) begin
 			state = cory_12;
 		end
 		Break: begin
+			IRWrite = 0;
+			PCWrite = 0;
+			RegWrite = 0; 
+			AWrite = 0;
+			BWrite = 0;
+			ALUOutWrite = 0;
+			MDRWrite = 0;
+			LowReg = 0;
+			HighReg = 0;
+			EPCWrite = 0;
 			state = Break;
 		end
 		inc: begin
