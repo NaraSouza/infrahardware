@@ -356,12 +356,20 @@ always@ (posedge clock) begin
 			state = cory_15;
 		end
 		cory_15: begin
-			if (LT == 1) begin
-				state = write_lt1;
-			end
-			else if (LT == 0) begin
-				state = write_lt0;
-			end
+			ALUOutWrite = 0;
+			wait_count = wait_count + 2'b01;
+            if(wait_count == 2'b10) begin
+                wait_count = 2'b00;
+                if (LT == 1) begin
+					state = write_lt1;
+				end
+				else if (LT == 0) begin
+					state = write_lt0;
+				end
+            end
+            else if(wait_count != 2'b11) begin
+                state = cory_15;
+            end
 		end
 		write_lt1: begin
 			ALUOutWrite = 0;
@@ -420,15 +428,23 @@ always@ (posedge clock) begin
 			ALUSrcB = 3'b000;
 			ALUOp = 3'b111;
 			ALUOutWrite = 1;
-			state = cory_16;		
+			state = cory_16;
 		end
 		cory_16: begin
-			if (LT == 1) begin
-				state = write_lt11;
-			end
-			else if (LT == 0) begin
-				state = write_lt00;
-			end
+			ALUOutWrite = 0;
+			wait_count = wait_count + 2'b01;
+            if(wait_count == 2'b10) begin
+                wait_count = 2'b00;
+               if (LT == 1) begin
+					state = write_lt11;
+				end
+				else if (LT == 0) begin
+					state = write_lt00;
+				end
+            end
+            else if(wait_count != 2'b11) begin
+                state = cory_16;
+            end
 		end
 		write_lt11: begin
 			ALUOutWrite = 0;
@@ -537,7 +553,7 @@ always@ (posedge clock) begin
 			state = cory_5;
 		end
 		cory_5: begin
-			MDRWrite = 1
+			MDRWrite = 1;
 			state = dec_3;
 		end
 		dec_3: begin
