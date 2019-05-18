@@ -744,27 +744,33 @@ always@ (posedge clock) begin
 			ALUSrcB = 3'b100;
 			ALUOp = 3'b001;
 			ALUOutWrite = 1;
+			MDRWrite = 0;
 			state = sw_2;
 		end
 		sw_2: begin
 			ALUOutWrite = 0;
-			IorD = 3'b101;
-			MemWR = 0;
-			state = cory_6;
+			BWD = 2'b00;
+			WriteData = 1;
+			wait_count = wait_count + 2'b01;
+            if(wait_count == 2'b10) begin
+                wait_count = 2'b00;
+                state = cory_6;
+            end
+            else if(wait_count != 2'b11) begin
+                state = sw_2;
+            end
 		end
 		cory_6: begin
+			IorD = 3'b101;
+			MemWR = 1;
 			state = sw_3;
 		end
 		sw_3: begin
-			MDRWrite = 1;
 			state = sw_4;
 		end
 		sw_4: begin
 			MDRWrite = 0;
-			BWD = 2'b00;
-			WriteData = 1;
-			IorD = 3'b101;
-			MemWR = 1;
+			MemWR = 0;
 			state = cory_12;
 		end
 		sh_1: begin

@@ -5,7 +5,7 @@ module VCPU(
 	output logic [5:0] OPCode, //opcode
 	
 	output logic [31:0] PCOut,
-	output logic [31:0] EPCOut,
+	//output logic [31:0] EPCOut,
 	output logic [31:0] MDROut,
 	output logic [31:0] AluSrcAOut,
 	output logic [31:0] AluSrcBOut,
@@ -16,7 +16,8 @@ module VCPU(
 	output logic Zero,
 	//output logic PCWCtrl,
 	output logic [31:0] MemOut,
-	output logic [31:0] ALUOut, 
+	output logic [31:0] ALUOut,
+	output logic [31:0] RegBOut, 
 	
 	output logic [1:0] AluSrcA,
 
@@ -72,7 +73,7 @@ logic [4:0] RegDstOut;
 logic [31:0] RegAIn;
 logic [31:0] RegAOut;
 //logic [31:0] RegBIn;
-logic [31:0] RegBOut;
+//logic [31:0] RegBOut;
 logic [15:0] RegBHalf;
 logic [8:0]  RegBByte;
 

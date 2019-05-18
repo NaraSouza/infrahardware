@@ -556,7 +556,7 @@
 		<CBX_INST_ENTRY INSTANCE_NAME="|VCPU|mux_srcA:ALUSrcA|lpm_mux:Mux2" CBX_FILE_NAME="mux_0oc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|VCPU|Banco_reg:registers|lpm_mux:Mux530" CBX_FILE_NAME="mux_kpc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|VCPU|Banco_reg:registers|lpm_mux:Mux611" CBX_FILE_NAME="mux_kpc.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|VCPU|Memoria:Mem|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block" CBX_FILE_NAME="altsyncram_gla1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|VCPU|Memoria:Mem|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block" CBX_FILE_NAME="altsyncram_t891.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|VCPU|Ula32:ALU|lpm_mux:Mux61" CBX_FILE_NAME="mux_5oc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|VCPU|mega_mux:MemToRegMux|lpm_mux:Mux21" CBX_FILE_NAME="mux_lpc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|VCPU|mux_srcA:ALUSrcA|lpm_mux:Mux3" CBX_FILE_NAME="mux_0oc.tdf"/>
@@ -768,7 +768,7 @@
 		<CBX_INST_ENTRY INSTANCE_NAME="|VCPU|Banco_reg:registers|lpm_mux:Mux1003" CBX_FILE_NAME="mux_kpc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|VCPU|Banco_reg:registers|lpm_mux:Mux398" CBX_FILE_NAME="mux_kpc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|VCPU|Banco_reg:registers|lpm_mux:Mux479" CBX_FILE_NAME="mux_kpc.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|VCPU|Memoria:Mem|LPM_RAM_DQ:MEM_plus_Two|altram:sram|altsyncram:ram_block" CBX_FILE_NAME="altsyncram_gla1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|VCPU|Memoria:Mem|LPM_RAM_DQ:MEM_plus_Two|altram:sram|altsyncram:ram_block" CBX_FILE_NAME="altsyncram_t891.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|VCPU|RegDesloc:DesReg|lpm_mux:Mux154" CBX_FILE_NAME="mux_kpc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|VCPU|Banco_reg:registers|lpm_mux:Mux1004" CBX_FILE_NAME="mux_kpc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|VCPU|Banco_reg:registers|lpm_mux:Mux399" CBX_FILE_NAME="mux_kpc.tdf"/>
@@ -1058,7 +1058,7 @@
 		<CBX_INST_ENTRY INSTANCE_NAME="|VCPU|Banco_reg:registers|lpm_mux:Mux750" CBX_FILE_NAME="mux_kpc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|VCPU|Banco_reg:registers|lpm_mux:Mux831" CBX_FILE_NAME="mux_kpc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|VCPU|Banco_reg:registers|lpm_mux:Mux912" CBX_FILE_NAME="mux_kpc.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|VCPU|Memoria:Mem|LPM_RAM_DQ:MEM_plus_One|altram:sram|altsyncram:ram_block" CBX_FILE_NAME="altsyncram_gla1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|VCPU|Memoria:Mem|LPM_RAM_DQ:MEM_plus_One|altram:sram|altsyncram:ram_block" CBX_FILE_NAME="altsyncram_t891.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|VCPU|RegDesloc:DesReg|lpm_mux:Mux20" CBX_FILE_NAME="mux_kpc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|VCPU|Banco_reg:registers|lpm_mux:Mux1039" CBX_FILE_NAME="mux_kpc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|VCPU|Banco_reg:registers|lpm_mux:Mux670" CBX_FILE_NAME="mux_kpc.tdf"/>
@@ -1098,7 +1098,7 @@
 		<CBX_INST_ENTRY INSTANCE_NAME="|VCPU|Banco_reg:registers|lpm_mux:Mux756" CBX_FILE_NAME="mux_kpc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|VCPU|Banco_reg:registers|lpm_mux:Mux837" CBX_FILE_NAME="mux_kpc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|VCPU|Banco_reg:registers|lpm_mux:Mux918" CBX_FILE_NAME="mux_kpc.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|VCPU|Memoria:Mem|LPM_RAM_DQ:MEM_plus_Three|altram:sram|altsyncram:ram_block" CBX_FILE_NAME="altsyncram_gla1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|VCPU|Memoria:Mem|LPM_RAM_DQ:MEM_plus_Three|altram:sram|altsyncram:ram_block" CBX_FILE_NAME="altsyncram_t891.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|VCPU|RegDesloc:DesReg|lpm_mux:Mux26" CBX_FILE_NAME="mux_kpc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|VCPU|Banco_reg:registers|lpm_mux:Mux12" CBX_FILE_NAME="mux_kpc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|VCPU|Banco_reg:registers|lpm_mux:Mux120" CBX_FILE_NAME="mux_kpc.tdf"/>

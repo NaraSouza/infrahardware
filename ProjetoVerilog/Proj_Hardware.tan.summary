@@ -5,9 +5,9 @@ Timing Analyzer Summary
 Type           : Worst-case tsu
 Slack          : N/A
 Required Time  : None
-Actual Time    : 5.770 ns
+Actual Time    : 6.071 ns
 From           : reset
-To             : UnidadeControle:CtrlUnit|ALUSrcB[1]
+To             : UnidadeControle:CtrlUnit|IorD[2]
 From Clock     : --
 To Clock       : clock
 Failed Paths   : 0
@@ -15,7 +15,7 @@ Failed Paths   : 0
 Type           : Worst-case tco
 Slack          : N/A
 Required Time  : None
-Actual Time    : 17.360 ns
+Actual Time    : 16.800 ns
 From           : mux_srcB:ALUSrcB|out[0]
 To             : Zero
 From Clock     : clock
@@ -25,9 +25,9 @@ Failed Paths   : 0
 Type           : Worst-case th
 Slack          : N/A
 Required Time  : None
-Actual Time    : -2.972 ns
+Actual Time    : -0.519 ns
 From           : reset
-To             : UnidadeControle:CtrlUnit|state[6]
+To             : UnidadeControle:CtrlUnit|ALUorMem
 From Clock     : --
 To Clock       : clock
 Failed Paths   : 0
@@ -35,9 +35,9 @@ Failed Paths   : 0
 Type           : Clock Setup: 'clock'
 Slack          : N/A
 Required Time  : None
-Actual Time    : 38.49 MHz ( period = 25.978 ns )
+Actual Time    : 38.36 MHz ( period = 26.066 ns )
 From           : mux_srcB:ALUSrcB|out[0]
-To             : Registrador:PC|Saida[8]
+To             : Registrador:PC|Saida[6]
 From Clock     : clock
 To Clock       : clock
 Failed Paths   : 0
@@ -46,11 +46,11 @@ Type           : Clock Hold: 'clock'
 Slack          : Not operational: Clock Skew > Data Delay
 Required Time  : None
 Actual Time    : N/A
-From           : Registrador:PC|Saida[3]
-To             : mega_mux:MemToRegMux|out[3]
+From           : Registrador:PC|Saida[6]
+To             : mega_mux:MemToRegMux|out[6]
 From Clock     : clock
 To Clock       : clock
-Failed Paths   : 775
+Failed Paths   : 740
 
 Type           : Total number of failed paths
 Slack          : 
@@ -60,7 +60,7 @@ From           :
 To             : 
 From Clock     : 
 To Clock       : 
-Failed Paths   : 775
+Failed Paths   : 740
 
 --------------------------------------------------------------------------------------
 
