@@ -435,7 +435,7 @@ always@ (posedge clock) begin
 			RegDst = 2'b01;
 			MemToReg = 4'b1010;
 			RegWrite = 1;
-			state = cory_22;
+			state = cory_12;
 		end
 		write_lt00: begin
 			ALUOutWrite = 0;
@@ -537,6 +537,7 @@ always@ (posedge clock) begin
 			state = cory_5;
 		end
 		cory_5: begin
+			MDRWrite = 1
 			state = dec_3;
 		end
 		dec_3: begin
