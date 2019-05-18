@@ -9,6 +9,8 @@ input Z,
 input O,
 input GT,
 input LT,
+//auxiliar de espera
+output reg [1:0] wait_count,
 //sinais de saida
 output reg MemWR,
 output reg USExt,
@@ -44,6 +46,7 @@ output reg EPCWrite,
 output reg WriteData,
 output reg [2:0] ShiftCtrl
 );
+
 parameter [6:0] started = 7'd0;
 parameter [6:0] inicial_1 = 7'd1;
 parameter [6:0] inicial_2 = 7'd2;
@@ -149,6 +152,10 @@ parameter [6:0] cory_14 = 7'd101;
 parameter [6:0] cory_15 = 7'd102;
 parameter [6:0] cory_16 = 7'd103;
 parameter [6:0] cory_17 = 7'd104;
+parameter [6:0] cory_18 = 7'd105;
+parameter [6:0] cory_19 = 7'd106;
+parameter [6:0] cory_20 = 7'd107;
+parameter [6:0] cory_21 = 7'd108;
 
 parameter [5:0] Opcode_R = 6'h00;
 
@@ -251,8 +258,16 @@ always@ (posedge clock) begin
 			state = decode;
 		end
 		decode: begin
+			IRWrite = 0;
+			PCWrite = 0;
+			RegWrite = 0; 
 			AWrite = 0;
 			BWrite = 0;
+			ALUOutWrite = 0;
+			MDRWrite = 0;
+			LowReg = 0;
+			HighReg = 0;
+			EPCWrite = 0;
 			case (ControlOp)
 				Opcode_R: begin
 					case(funct)
@@ -315,6 +330,7 @@ always@ (posedge clock) begin
 		end
 		cory_13: begin
 			ALUOutWrite = 0;
+			PCWriteCond = 0;
 			state = inicial;
 		end
 		addi: begin
@@ -527,20 +543,26 @@ always@ (posedge clock) begin
 			state = cory_12;
 		end
 		beq: begin
+			ALUOutWrite = 0;
 			ALUSrcA = 2'b10;
 			ALUSrcB = 3'b000;
 			ALUOp = 3'b010;
-			if (O == 1) begin
-				state = overflow;
-			end
-			else if (O == 0) begin
-				if (Z == 1) begin
+			state = cory_18;
+		end
+		cory_18: begin
+            wait_count = wait_count + 2'b01;
+            if(wait_count == 2'b10) begin
+                wait_count = 2'b00;
+                if (Z == 1) begin
 					state = branch_1;
 				end
 				else if (Z == 0) begin
 					state = cory_12;
 				end
-			end
+            end
+            else if(wait_count != 2'b11) begin
+                state = cory_18;
+            end
 		end
 		branch_1: begin
 			PCWrite = 0;
@@ -554,12 +576,22 @@ always@ (posedge clock) begin
 			ALUSrcA = 2'b10;
 			ALUSrcB = 3'b000;
 			ALUOp = 3'b111;
-			if (GT == 0) begin
-				state = branch_2;
-			end
-			else if (GT == 1) begin
-				state = cory_12;
-			end
+			state = cory_19;
+		end
+		cory_19: begin
+			wait_count = wait_count + 2'b01;
+            if(wait_count == 2'b10) begin
+                wait_count = 2'b00;
+                if (GT == 0) begin
+					state = branch_2;
+				end
+				else if (GT == 1) begin
+					state = cory_12;
+				end
+            end
+            else if(wait_count != 2'b11) begin
+                state = cory_19;
+            end
 		end
 		branch_2: begin
 			PCWrite = 0;
@@ -573,17 +605,23 @@ always@ (posedge clock) begin
 			ALUSrcA = 2'b10;
 			ALUSrcB = 3'b000;
 			ALUOp = 3'b010;
-			if (O == 1) begin
-				state = overflow;
-			end
-			else if (O == 0) begin
-				if (Z == 0) begin
+			state = cory_20;
+		end
+		cory_20: begin
+			wait_count = wait_count + 2'b01;
+            if(wait_count == 2'b10) begin
+                wait_count = 2'b00;
+                if (Z == 0) begin
 					state = branch_3;
 				end
 				else if (Z == 1) begin
 					state = cory_12;
 				end
-			end
+
+            end
+            else if(wait_count != 2'b11) begin
+                state = cory_20;
+            end
 		end
 		branch_3: begin
 			PCWrite = 0;
@@ -597,12 +635,22 @@ always@ (posedge clock) begin
 			ALUSrcA = 2'b10;
 			ALUSrcB = 3'b000;
 			ALUOp = 3'b111;
-			if (GT == 1) begin
-				state = branch_4;
-			end
-			else if (GT == 0) begin
-				state = cory_12;
-			end
+			state = cory_21;
+		end
+		cory_21: begin
+			wait_count = wait_count + 2'b01;
+            if(wait_count == 2'b10) begin
+                wait_count = 2'b00;
+				if (GT == 1) begin
+					state = branch_4;
+				end
+				else if (GT == 0) begin
+					state = cory_12;
+				end
+            end
+            else if(wait_count != 2'b11) begin
+                state = cory_21;
+            end
 		end
 		branch_4: begin
 			PCWrite = 0;

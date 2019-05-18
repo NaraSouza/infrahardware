@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Sat May 18 01:13:11 2019
+Analysis & Synthesis Status : Successful - Sat May 18 03:33:00 2019
 Quartus II Version : 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition
 Revision Name : Proj_Hardware
 Top-level Entity Name : VCPU
 Family : Stratix II
 Logic utilization : N/A
-    Combinational ALUTs : 1,405
-    Dedicated logic registers : 1,253
-Total registers : 1253
-Total pins : 304
+    Combinational ALUTs : 1,424
+    Dedicated logic registers : 1,258
+Total registers : 1258
+Total pins : 313
 Total virtual pins : 0
 Total block memory bits : 8,192
 DSP block 9-bit elements : 0

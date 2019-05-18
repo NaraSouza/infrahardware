@@ -11,6 +11,10 @@ module VCPU(
 	output logic [31:0] AluSrcBOut,
 	output logic [31:0] RegAIn,
 	output logic [31:0] RegBIn,
+	output logic [5:0] funct,
+	output logic Overflow,
+	output logic Zero,
+	output logic PCWCtrl,
 	
 	output logic [1:0] AluSrcA,
 
@@ -27,10 +31,11 @@ module VCPU(
 	output logic [6:0] CurState // ???? verificar o que eh. Provavelmente eh o estado atual da maquina de estados
 );
 
+logic [1:0] wait_count;
 
 logic [4:0] rd;
 logic [4:0] shamt;
-logic [5:0] funct;
+// logic [5:0] funct;
 
 logic ALUorMem;
 logic [31:0] AorMemOut;
@@ -96,14 +101,14 @@ logic EPCWrite;
 logic [1:0] PCSource;
 logic PCWriteCond;
 // logic PCWrite;
-logic PCWCtrl; // controla se escreve ou n em PC; baseado nos bools anteriores(resultado final, basicamente)
+//logic PCWCtrl; // controla se escreve ou n em PC; baseado nos bools anteriores(resultado final, basicamente)
 logic [31:0] PCSrcOut;
 logic [1:0] PCCond;
 logic PCCondOut;
 
-logic Overflow;
+//logic Overflow;
 logic Negative;
-logic Zero;
+//logic Zero;
 logic Equal;
 logic GreaterThan;
 // logic LessThan;
@@ -144,6 +149,7 @@ logic [31:0] DesRegOut;
 // Ainda é a versão provisória!!
 UnidadeControle CtrlUnit(
 	//sinais de entrada
+	.wait_count(wait_count),
 	.clock(clock),
 	.reset(reset),
 	.funct(funct),
@@ -198,7 +204,7 @@ mux_2inputs ALUorMemMux(
 
 mux_pccond MuxPCCond(
 	.selector(PCCond),
-	.equal(Equal),//00
+	.equal(Zero),//00
 	.greater(GreaterThan),//01
 	.out(PCCondOut)
 );
@@ -206,7 +212,7 @@ mux_pccond MuxPCCond(
 Registrador PC(
 	.Clk(clock),
 	.Reset(reset),
-	.Load(PCWrite),
+	.Load(PCWCtrl),
 	.Entrada(AorMemOut),
 	.Saida(PCOut)
 );

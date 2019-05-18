@@ -11,11 +11,10 @@ module VCPU(
 	output logic [31:0] AluSrcBOut,
 	output logic [31:0] RegAIn,
 	output logic [31:0] RegBIn,
-	output logic [31:0] RegAOut,
-	output logic [31:0] RegBOut,
-	output logic [31:0] SL16Out,
-	output logic [31:0] SL2Out,
-	output logic [31:0] MemOut,
+	output logic [5:0] funct,
+	output logic Overflow,
+	output logic Zero,
+	output logic PCWCtrl,
 	
 	output logic [1:0] AluSrcA,
 
@@ -35,7 +34,7 @@ module VCPU(
 
 logic [4:0] rd;
 logic [4:0] shamt;
-logic [5:0] funct;
+// logic [5:0] funct;
 
 logic ALUorMem;
 logic [31:0] AorMemOut;
@@ -49,7 +48,7 @@ logic [31:0] SL2Jumpinst25_0Out;
 
 
 logic MemWR;
-//logic [31:0] MemOut;
+logic [31:0] MemOut;
 
 logic IRWrite;
 logic WrMDR;
@@ -68,9 +67,9 @@ logic [1:0] RegDst;
 logic [4:0] RegDstOut;
 
 //logic [31:0] RegAIn;
+logic [31:0] RegAOut;
 //logic [31:0] RegBIn;
-//logic [31:0] RegAOut;
-//logic [31:0] RegBOut;
+logic [31:0] RegBOut;
 logic [15:0] RegBHalf;
 logic [8:0]  RegBByte;
 
@@ -89,8 +88,8 @@ logic [31:0] MemToRegOut;
 logic USExt;			// Flag de (un)sign extend p/ ALUSrcB
 // Outputs que vão para ALUSrcB baseado no USExt
 logic [31:0] USExtOut;
-//logic [31:0] SL16Out;
-//logic [31:0] SL2Out;
+logic [31:0] SL16Out;
+logic [31:0] SL2Out;
 
 logic ALURegWrite;
 logic [2:0] ALUOp;
@@ -101,14 +100,14 @@ logic EPCWrite;
 logic [1:0] PCSource;
 logic PCWriteCond;
 // logic PCWrite;
-logic PCWCtrl; // controla se escreve ou n em PC; baseado nos bools anteriores(resultado final, basicamente)
+//logic PCWCtrl; // controla se escreve ou n em PC; baseado nos bools anteriores(resultado final, basicamente)
 logic [31:0] PCSrcOut;
 logic [1:0] PCCond;
 logic PCCondOut;
 
-logic Overflow;
+//logic Overflow;
 logic Negative;
-logic Zero;
+//logic Zero;
 logic Equal;
 logic GreaterThan;
 // logic LessThan;
@@ -203,7 +202,7 @@ mux_2inputs ALUorMemMux(
 
 mux_pccond MuxPCCond(
 	.selector(PCCond),
-	.equal(Equal),//00
+	.equal(Zero),//00
 	.greater(GreaterThan),//01
 	.out(PCCondOut)
 );
@@ -211,7 +210,7 @@ mux_pccond MuxPCCond(
 Registrador PC(
 	.Clk(clock),
 	.Reset(reset),
-	.Load(PCWrite),
+	.Load(PCWCtrl),
 	.Entrada(AorMemOut),
 	.Saida(PCOut)
 );

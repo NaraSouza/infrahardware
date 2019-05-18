@@ -104,6 +104,7 @@ set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE CPUWForm.vwf
+set_global_assignment -name MIF_FILE beq.mif
 set_global_assignment -name MIF_FILE sllv.mif
 set_global_assignment -name MIF_FILE sll_.mif
 set_global_assignment -name SYSTEMVERILOG_FILE mux_rgDst.sv
